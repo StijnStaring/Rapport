@@ -9,4 +9,8 @@ A level-1 auxiliary file: conclusion.aux
 A level-1 auxiliary file: app-A.aux
 A level-1 auxiliary file: app-n.aux
 The style file: abbrv.bst
-Database file #1: references.bib
+Database file #1: Thesis_ref.bib
+Warning--I didn't find a database entry for "h2g2"
+Warning--there's a number but no series in Eindhoven2019
+Warning--empty publisher in Eindhoven2019
+(There were 3 warnings)

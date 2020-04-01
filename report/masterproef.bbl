@@ -1,22 +1,33 @@
 \begin{thebibliography}{1}
 
-\bibitem{h2g2}
-D.~Adams.
-\newblock {\em The Hitchhiker's Guide to the Galaxy}.
-\newblock Del Rey (reprint), 1995.
-\newblock ISBN-13: 978-0345391803.
+\bibitem{Bae2019}
+I.~Bae, J.~Moon, and J.~Seo.
+\newblock {Toward a comfortable driving experience for a self-driving shuttle
+  bus}.
+\newblock {\em Electronics (Switzerland)}, 8(9):1--13, 2019.
 
-\bibitem{pratchett06:_good_omens}
-T.~Pratchett and N.~Gaiman.
-\newblock {\em Good Omens: \emph{The Nice and Accurate Prophecies of Agnes
-  Nutter, Witch}}.
-\newblock HarperTorch (reprint), 2006.
-\newblock ISBN-13: 978-0060853983.
+\bibitem{Kuderer2015a}
+M.~Kuderer, S.~Gulati, and W.~Burgard.
+\newblock {Learning driving styles for autonomous vehicles from demonstration}.
+\newblock {\em Proceedings - IEEE International Conference on Robotics and
+  Automation}, 2015-June(June):2641--2646, 2015.
 
-\bibitem{wiki}
-Wikipedia.
-\newblock Thesis or dissertation.
-\newblock URL: \url{http://en.wikipedia.org/wiki/Thesis_or_dissertation}, last
-  checked on 2010-01-07.
+\bibitem{Prof.Amnon}
+{Prof. Amnon Shashua}.
+\newblock {Experience Counts, Particularly in Safety-Critical Areas | Intel
+  Newsroom}, mar 2018.
+
+\bibitem{Turner1999}
+M.~Turner and M.~J. Griffin.
+\newblock {Motion sickness in public road transport: The effect of driver,
+  route and vehicle}.
+\newblock {\em Ergonomics}, 42(12):1646--1664, 1999.
+
+\bibitem{Eindhoven2019}
+{Yusof N.B.M}.
+\newblock {\em {Comfort in Autonomous Car : Mitigating Motion Sickness by
+  Enhancing Situation Awareness through Haptic Displays Nidzamuddin Md .
+  Yusof}}.
+\newblock Number 2019. Eindhoven, 2019.
 
 \end{thebibliography}

@@ -15,7 +15,9 @@
 \contentsline {chapter}{List of Figures and Tables}{v}{chapter*.5}%
 \contentsline {chapter}{List of Abbreviations and Symbols}{vi}{chapter*.10}%
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Wat moet er vermeld worden}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.0.1}Importance of topic}{1}{subsection.1.0.1}%
+\contentsline {subsection}{\numberline {1.0.2}Link with previous studies and problem formulation}{2}{subsection.1.0.2}%
+\contentsline {subsection}{\numberline {1.0.3}Thesis objective}{2}{subsection.1.0.3}%
 \contentsline {chapter}{\chapternumberline {2}Comfort definition and modelling}{3}{chapter.2}%
 \contentsline {chapter}{\chapternumberline {3}The Learning Algorithm\\}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}The First Topic of this Chapter}{7}{section.3.1}%

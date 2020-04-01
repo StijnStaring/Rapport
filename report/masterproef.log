@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  1 APR 2020 20:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  1 APR 2020 23:19
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -749,7 +749,7 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
 
-Package lipsum Warning: \setlipsumdefault on line 36
+Package lipsum Warning: \setlipsumdefault on line 38
 (lipsum)                \setlipsumdefault  should be substituted by
 (lipsum)                \SetLipsumDefault .
 
@@ -757,23 +757,23 @@ Package lipsum Warning: \setlipsumdefault on line 36
 ) (chap-5.aux) (conclusion.aux) (app-A.aux) (app-n.aux))
 \openout1 = `masterproef.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 40
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 42
 .
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
@@ -820,14 +820,14 @@ Sidefoothsep and sidefootwidth: 7pt and 101pt
 Sidefootvsep and sidefootheight: 13.6pt and 594.32022pt
 ******************************************************
 
-LaTeX Info: Redefining \microtypecontext on input line 40.
+LaTeX Info: Redefining \microtypecontext on input line 42.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 40.
+LaTeX Info: Redefining \showhyphens on input line 42.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -838,7 +838,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 \AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring ON on input line 40.
+Package hyperref Info: Link coloring ON on input line 42.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.
 sty"
@@ -856,10 +856,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 40.
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \nameref on input line 42.
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
 (masterproef.out) (masterproef.out)
 \@outlinefile=\write4
 \openout4 = `masterproef.out'.
@@ -868,30 +868,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `kulemtfpf' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<logokuleng.pdf, id=107, 159.33528pt x 85.358pt>
+<logokuleng.pdf, id=103, 159.33528pt x 85.358pt>
 File: logokuleng.pdf Graphic file (type pdf)
 <use logokuleng.pdf>
-Package pdftex.def Info: logokuleng.pdf  used on input line 40.
+Package pdftex.def Info: logokuleng.pdf  used on input line 42.
 (pdftex.def)             Requested size: 159.33542pt x 85.3617pt.
 LaTeX Font Info:    Font shape `T1/kulemtfpf/b/n' in size <12> not available
 (Font)              Font shape `T1/kulemtfpf/bx/n' tried instead on input line 
-40.
+42.
 LaTeX Font Info:    Font shape `T1/kulemtfpf/b/n' in size <14.4> not available
 (Font)              Font shape `T1/kulemtfpf/bx/n' tried instead on input line 
-40.
+42.
  [-1
 
 
 {C:/Users/t2vosx/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/t
 2vosx/AppData/Local/MiKTeX/2.9/tex/latex/kulemt/logokuleng.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-0.
+2.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-0.
+2.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -953,10 +953,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 
-LaTeX Warning: Citation `h2g2' on page vi undefined on input line 90.
+LaTeX Warning: Citation `h2g2' on page vi undefined on input line 92.
 
 
-Overfull \hbox (0.86812pt too wide) in paragraph at lines 90--90
+Overfull \hbox (0.86812pt too wide) in paragraph at lines 92--92
 []|\T1/lmr/m/n/10.95 (-20) ``The Answer to the Ultimate Question of Life, the U
 niverse, and Everything''
  []
@@ -967,28 +967,39 @@ niverse, and Everything''
 \openout2 = `intro.aux'.
 
  (intro.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--7
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+<figures/AV.png, id=191, 1204.5pt x 903.375pt>
+File: figures/AV.png Graphic file (type png)
+<use figures/AV.png>
+Package pdftex.def Info: figures/AV.png  used on input line 9.
+(pdftex.def)             Requested size: 238.80243pt x 179.10037pt.
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
  [1
 
 
 
-])
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
+ <./figures/AV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
-[2]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+) [2]
 \openout2 = `chap-1.aux'.
 
  (chap-1.tex
@@ -1110,7 +1121,7 @@ bibitemlist
 Class memoir Warning: The material used in the headers is too large
 (27.2pt) for the given head height (13.6pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 118.
+(in both cases you will find help in the memoir manual). on input line 120.
 
 [23
 
@@ -1124,28 +1135,28 @@ either increase the head height or redesign the header
 \tf@lot=\write7
 \openout7 = `masterproef.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
  (masterproef.aux (intro.aux) (chap-1.aux) (chap-2.aux) (chap-3.aux)
 (chap-4.aux) (chap-5.aux) (conclusion.aux) (app-A.aux) (app-n.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 Package rerunfilecheck Info: File `masterproef.out' has not changed.
-(rerunfilecheck)             Checksum: C8C69E1848E4157ED434E83B07F0E950;1536.
+(rerunfilecheck)             Checksum: E76CBC5AA0B89E9D75AB14260181F000;1463.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 118.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  ) 
 Here is how much of TeX's memory you used:
- 13538 strings out of 481518
- 221174 string characters out of 2911616
- 833371 words of memory out of 3000000
- 28337 multiletter control sequences out of 15000+200000
- 609692 words of font info for 108 fonts, out of 3000000 for 9000
+ 13563 strings out of 481518
+ 221467 string characters out of 2911616
+ 833590 words of memory out of 3000000
+ 28351 multiletter control sequences out of 15000+200000
+ 609905 words of font info for 110 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,42p,808b,585s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,11n,42p,880b,585s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.e
 nc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
 hit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
@@ -1160,9 +1171,9 @@ eX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/t2vosx/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/L
 ocal/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (31 pages, 249184 bytes).
+Output written on masterproef.pdf (31 pages, 544281 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
- 20694 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 85 named destinations out of 1000 (max. 500000)
+ 20691 words of extra memory for PDF output out of 20736 (max. 10000000)
 

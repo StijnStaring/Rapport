@@ -1,31 +1,25 @@
-\chapter{Path tracking MPC}
+\chapter{Path Planning MPC}
 \label{cha:4}
 
-MPC --> path tracking met non lin model.
-Bespreek non lin model
-Bespreek resultaten.
-Valideer de resultaten. Wat gebeurd er als de parameteres iets anders worden geschat? Zeker de parameters voor de banden zijn moeilijk om te schatten. Bespreek de tekort komingen van de het model en valideer het model hoe de referencie wordt getrackt met andere parameter values. hoe robuust is de mpc?
-(Zei paper VS)\\
+MPC --> path planning met het gevonden model.
 
-Hier kan men praten over de implementatie in het simulink model. Het zou goed zijn om het ACADO model te vervangen door een tracking MPC die in CasADi geschreven is. (reference path to follow wordt niet geupdated maar blijft constant in model --> dit is niet hoe het werkt in de realiteit.) Kan als echt tegoei wilt doen ook inladen in de template die gekregen heb van Flavia --> PID vervangen door MPC en path planner. Een simulink model is nodig om er het 15 dof vehicle model in te kunnen verwerken. \\
+Ga hier volledig in op wat MPC is.
+Valideer de MPC code door na te gaan wat de invloed is bij het varieren van de gevonden parameters.
+Hoeveel zal het verschillen? Ga in op het gebruikte point model/non-linear model en bespreek de gelijkenissen en de verschillen van het learning algorithm. (zie ook notes VS en verbeteringen NAETS)
 
 
 
-\section{The First Topic of this Chapter}
-\subsection{Item 1}
-\subsubsection{Sub-item 1}
 
 
-\subsubsection{Sub-item 2}
 
 
-\subsection{Item 2}
 
 
-\section{The Second Topic}
 
 
-\section{Conclusion}
+
+
+
 
 %%% Local Variables: 
 %%% mode: latex

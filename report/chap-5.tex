@@ -1,57 +1,13 @@
-\chapter{Validatie}
+\chapter{Path tracking MPC}
 \label{cha:5}
 
-Bespreek de validatie van de methode. Implementeer similaties in prescan.
-Bespreek de verschillende software tools bij Siemens --> Amesim, simulink, prescan.
-Hoe werken ze samen en hoe wordt de validatie precies gedaan? Wat zijn de resultaten?
+MPC --> path tracking met non lin model.
+Bespreek non lin model
+Bespreek resultaten.
+Valideer de resultaten. Wat gebeurd er als de parameteres iets anders worden geschat? Zeker de parameters voor de banden zijn moeilijk om te schatten. Bespreek de tekort komingen van de het model en valideer het model hoe de referencie wordt getrackt met andere parameter values. hoe robuust is de mpc?
+(Zei paper VS)\\
 
-Install amesim and write a chapter about how the dataset is generated. How is the amesim model defined etc. 
-
-
-
-%\begin{algorithm}[H]
-%	\SetAlgoLined
-%	\KwResult{$\bm{\theta}_{opti}$ }
-%	initialization: \\
-%	$\bm{\theta} = [1,1,...,1,1] $\\
-%	$\bm{\tilde{f}} = \frac{1}{m} \sum_{i=1}^{m}\bm{f}(\bm{r}_{obs,i}) $ \;
-%	\While{Not converged}{
-%		\For{i = 1...m}{	
-%			$\smash{\displaystyle\min_{r_{exp}}} \hspace{3 mm} \bm{\theta}^T\cdot\bm{f}(\bm{r}_{exp})$ \;
-%			\vspace{2 mm} 
-%			constraints: \\
-%			\hspace{5 mm}$vehicle\_model$\;
-%			\hspace{5 mm}$begin = initial(observed_i)$\;
-%			\hspace{5 mm}$end = [y = lane\_distance_{i}, vy = 0, ay = 0, jy = 0]$\;
-%			\hspace{5 mm}$physical\_boundaries\_vehicle$\;		
-%		} \\
-%		
-%		$\bm{f}_{obtained} = \frac{1}{m} \sum_{i=1}^{m}\bm{f}(\bm{r}_{exp,i})$ \;
-%		$\Delta \bm{\theta} = \alpha\cdot(\bm{f}./\bm{\tilde{f}}-\bm{1})$\;
-%		$\bm{\theta} = \bm{\theta} + \Delta \bm{\theta}$\;
-%		\If{$\Delta \bm{\theta} \leq \epsilon$}{
-%			$return \hspace{1 mm}\bm{\theta}$\;		
-%		}
-%	}
-%	\caption{\textbf{Learning algorithm}}
-%\end{algorithm}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Hier kan men praten over de implementatie in het simulink model. Het zou goed zijn om het ACADO model te vervangen door een tracking MPC die in CasADi geschreven is. (reference path to follow wordt niet geupdated maar blijft constant in model --> dit is niet hoe het werkt in de realiteit.) Kan als echt tegoei wilt doen ook inladen in de template die gekregen heb van Flavia --> PID vervangen door MPC en path planner. Een simulink model is nodig om er het 15 dof vehicle model in te kunnen verwerken. \\
 
 
 

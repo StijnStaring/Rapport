@@ -1,10 +1,21 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Bae2019}
 I.~Bae, J.~Moon, and J.~Seo.
 \newblock {Toward a comfortable driving experience for a self-driving shuttle
   bus}.
 \newblock {\em Electronics (Switzerland)}, 8(9):1--13, 2019.
+
+\bibitem{Bellem}
+H.~Bellem.
+\newblock {\em {Comfort in Automated Driving : Analysis of Driving Style
+  Preference in Automated Driving}}.
+\newblock PhD thesis, 2018.
+
+\bibitem{Daniel2018}
+L.~Daniel.
+\newblock {Method and system for determining and dynamically updating a route
+  and driving style for passenger comfort - US Patent}, 2018.
 
 \bibitem{AV}
 E.~David.
@@ -18,16 +29,36 @@ M.~Elbanhawi, M.~Simic, and R.~Jazar.
 \newblock {\em IEEE Intelligent Transportation Systems Magazine}, 7(3):4--17,
   2015.
 
+\bibitem{Gillis2019}
+J.~Gillis.
+\newblock {Ya Coda course presentation}, 2019.
+
 \bibitem{Kuderer2015a}
 M.~Kuderer, S.~Gulati, and W.~Burgard.
 \newblock {Learning driving styles for autonomous vehicles from demonstration}.
 \newblock {\em Proceedings - IEEE International Conference on Robotics and
   Automation}, 2015-June(June):2641--2646, 2015.
 
+\bibitem{Mercy2018}
+T.~Mercy.
+\newblock {\em {Spline-Based Motion Planning for Autonomous Mechatronic
+  Systems}}.
+\newblock PhD thesis, 2018.
+
+\bibitem{Patrinos2019}
+P.~Patrinos.
+\newblock {Model Predictive Control - Lecture Notes}, 2019.
+
 \bibitem{Prof.Amnon}
 {Prof. Amnon Shashua}.
 \newblock {Experience Counts, Particularly in Safety-Critical Areas | Intel
   Newsroom}, mar 2018.
+
+\bibitem{TongDuySon2019}
+Q.~N. {Tong Duy Son}.
+\newblock {Safety-Critical Control for Non-affine Nonlinear Systems with
+  Application on Autonomous Vehicle}.
+\newblock (August):7, 2019.
 
 \bibitem{Turner1999}
 M.~Turner and M.~J. Griffin.
@@ -35,11 +66,22 @@ M.~Turner and M.~J. Griffin.
   route and vehicle}.
 \newblock {\em Ergonomics}, 42(12):1646--1664, 1999.
 
+\bibitem{UniversityofWarwick2019}
+{University of Warwick}.
+\newblock {Do passengers prefer autonomous vehicles driven like machines or
+  like humans?}, 2019.
+
+\bibitem{Yankov}
+K.~Yankov.
+\newblock {\em {Potential Field Based Model Predictive Control for Autonomous
+  Vehicle Motion Planning and Control}}.
+\newblock PhD thesis.
+
 \bibitem{Eindhoven2019}
 {Yusof N.B.M}.
 \newblock {\em {Comfort in Autonomous Car : Mitigating Motion Sickness by
   Enhancing Situation Awareness through Haptic Displays Nidzamuddin Md .
   Yusof}}.
-\newblock Number 2019. Eindhoven, 2019.
+\newblock PhD thesis, Eindhoven, 2019.
 
 \end{thebibliography}

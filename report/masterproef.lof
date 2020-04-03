@@ -16,8 +16,15 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Concept visualization of autonomous driving. (source: \cite {AV})}}{1}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Example lane change as used as input in the inverse optimal control algorithm.}}{3}{figure.1.2}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite {Elbanhawi2015})}}{6}{figure.2.1}%
 \addvspace {10pt}
 \addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of different discretization methods.}}{12}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).}}{13}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite {Patrinos2019}).}}{14}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite {Patrinos2019}).}}{15}{figure.4.4}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

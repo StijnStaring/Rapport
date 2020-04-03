@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  2 APR 2020 09:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  3 APR 2020 10:24
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -722,6 +722,90 @@ Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 209.
 )
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts
+.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks26
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
+ty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip268
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.s
+ty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.st
+y"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks27
+\ex@=\dimen194
+))
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.st
+y"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+LaTeX Info: Redefining \boldsymbol on input line 28.
+\pmbraise@=\dimen195
+)
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
+y"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count313
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count314
+\leftroot@=\count315
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count316
+\DOTSCASE@=\count317
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box58
+\strutbox@=\box59
+\big@size=\dimen196
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count318
+\c@MaxMatrixCols=\count319
+\dotsspace@=\muskip17
+\c@parentequation=\count320
+\dspbrk@lvl=\count321
+\tag@help=\toks28
+\row@=\count322
+\column@=\count323
+\maxfields@=\count324
+\andhelp@=\toks29
+\eqnshift@=\dimen197
+\alignsep@=\dimen198
+\tagshift@=\dimen199
+\tagwidth@=\dimen256
+\totwidth@=\dimen257
+\lineht@=\dimen258
+\@envbody=\toks30
+\multlinegap=\skip269
+\multlinetaggap=\skip270
+\mathdisplay@stack=\toks31
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wrapfig\wrapfig.s
+ty"
+\wrapoverhang=\dimen259
+\WF@size=\dimen260
+\c@WF@wrappedlines=\count325
+\WF@box=\box60
+\WF@everypar=\toks32
+Package: wrapfig 2003/01/31  v 3.6
+)
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lipsum\lipsum.sty
 "
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.st
@@ -731,16 +815,16 @@ Package: expl3 2020-02-14 L3 programming layer (loader)
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
 nd-pdfmode.def"
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count313
-\l__pdf_internal_box=\box58
+\l__kernel_color_stack_int=\count326
+\l__pdf_internal_box=\box61
 ))
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse
 \xparse.sty"
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count314
-\g__xparse_grabber_int=\count315
-\l__xparse_m_args_int=\count316
-\l__xparse_v_nesting_int=\count317
+\l__xparse_current_arg_int=\count327
+\g__xparse_grabber_int=\count328
+\l__xparse_m_args_int=\count329
+\l__xparse_v_nesting_int=\count330
 )
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 
@@ -749,31 +833,31 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
 
-Package lipsum Warning: \setlipsumdefault on line 38
+Package lipsum Warning: \setlipsumdefault on line 41
 (lipsum)                \setlipsumdefault  should be substituted by
 (lipsum)                \SetLipsumDefault .
 
 (masterproef.aux (intro.aux) (chap-1.aux) (chap-2.aux) (chap-3.aux) (chap-4.aux
-) (chap-5.aux) (conclusion.aux) (app-A.aux) (app-n.aux))
+) (chap-5.aux) (chap-6.aux) (conclusion.aux) (app-A.aux) (app-n.aux))
 \openout1 = `masterproef.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 42
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 45
 .
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
@@ -782,17 +866,17 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
 pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen194
-\scratchbox=\box59
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen195
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count331
+\scratchdimen=\dimen261
+\scratchbox=\box62
+\nofMPsegments=\count332
+\nofMParguments=\count333
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen262
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
+\everyMPtoPDFconversion=\toks34
 )
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epst
 opdf-base.sty"
@@ -820,14 +904,14 @@ Sidefoothsep and sidefootwidth: 7pt and 101pt
 Sidefootvsep and sidefootheight: 13.6pt and 594.32022pt
 ******************************************************
 
-LaTeX Info: Redefining \microtypecontext on input line 42.
+LaTeX Info: Redefining \microtypecontext on input line 45.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 42.
+LaTeX Info: Redefining \showhyphens on input line 45.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -837,8 +921,8 @@ cfg"
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring ON on input line 42.
+\AtBeginShipoutBox=\box63
+Package hyperref Info: Link coloring ON on input line 45.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.
 sty"
@@ -852,14 +936,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count324
+\c@section@level=\count337
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 42.
-LaTeX Info: Redefining \ref on input line 42.
-LaTeX Info: Redefining \pageref on input line 42.
-LaTeX Info: Redefining \nameref on input line 42.
+LaTeX Info: Redefining \nameref on input line 45.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 (masterproef.out) (masterproef.out)
 \@outlinefile=\write4
 \openout4 = `masterproef.out'.
@@ -871,27 +955,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 <logokuleng.pdf, id=103, 159.33528pt x 85.358pt>
 File: logokuleng.pdf Graphic file (type pdf)
 <use logokuleng.pdf>
-Package pdftex.def Info: logokuleng.pdf  used on input line 42.
+Package pdftex.def Info: logokuleng.pdf  used on input line 45.
 (pdftex.def)             Requested size: 159.33542pt x 85.3617pt.
 LaTeX Font Info:    Font shape `T1/kulemtfpf/b/n' in size <12> not available
 (Font)              Font shape `T1/kulemtfpf/bx/n' tried instead on input line 
-42.
+45.
 LaTeX Font Info:    Font shape `T1/kulemtfpf/b/n' in size <14.4> not available
 (Font)              Font shape `T1/kulemtfpf/bx/n' tried instead on input line 
-42.
+45.
  [-1
 
 
 {C:/Users/t2vosx/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/t
 2vosx/AppData/Local/MiKTeX/2.9/tex/latex/kulemt/logokuleng.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-2.
+5.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-2.
+5.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -939,8 +1023,26 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 10.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+
+
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-[2
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-msa.
+cfg"
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+
+
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-msb.
+cfg"
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)) [2
 
 
 ] [3
@@ -953,10 +1055,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 
-LaTeX Warning: Citation `h2g2' on page vi undefined on input line 92.
+LaTeX Warning: Citation `h2g2' on page vi undefined on input line 95.
 
 
-Overfull \hbox (0.86812pt too wide) in paragraph at lines 92--92
+Overfull \hbox (0.86812pt too wide) in paragraph at lines 95--95
 []|\T1/lmr/m/n/10.95 (-20) ``The Answer to the Ultimate Question of Life, the U
 niverse, and Everything''
  []
@@ -967,11 +1069,11 @@ niverse, and Everything''
 \openout2 = `intro.aux'.
 
  (intro.tex
-<figures/AV.png, id=191, 1204.5pt x 903.375pt>
+<figures/AV.png, id=215, 1204.5pt x 903.375pt>
 File: figures/AV.png Graphic file (type png)
 <use figures/AV.png>
 Package pdftex.def Info: figures/AV.png  used on input line 9.
-(pdftex.def)             Requested size: 238.80243pt x 179.10037pt.
+(pdftex.def)             Requested size: 139.30243pt x 104.47177pt.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -980,47 +1082,70 @@ Package microtype Info: Character `029' is missing
 
 
  <./figures/AV.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+[2]
+<figures/lane_change.PNG, id=242, 384.2355pt x 120.32954pt>
+File: figures/lane_change.PNG Graphic file (type png)
+<use figures/lane_change.PNG>
+Package pdftex.def Info: figures/lane_change.PNG  used on input line 27.
+(pdftex.def)             Requested size: 318.40121pt x 99.71558pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+) [3 <./figures/lane_change.PNG>]
+\openout2 = `chap-1.aux'.
+
+ (chap-1.tex [4
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+<figures/comfort.PNG, id=253, 378.81525pt x 387.849pt>
+File: figures/comfort.PNG Graphic file (type png)
+<use figures/comfort.PNG>
+Package pdftex.def Info: figures/comfort.PNG  used on input line 12.
+(pdftex.def)             Requested size: 191.0383pt x 195.59291pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-) [2]
-\openout2 = `chap-1.aux'.
 
- (chap-1.tex
-Overfull \hbox (511.33234pt too wide) in paragraph at lines 16--36
-\T1/lmr/m/n/10.95 (-20) https://reader.elsevier.com/reader/sd/pii/0370269387911
-97X?token=71567B7640C402F2FF578E34E3BB7914CA14E4A1A29DE88D9534D96C9305E13DA52D0
-424FF1475A822FCE784725196D3 
+Underfull \hbox (badness 10000) in paragraph at lines 26--28
+
  []
 
-) [3
-
-
-
-]
+[5]) [6 <./figures/comfort.PNG>]
 \openout2 = `chap-2.aux'.
 
- (chap-2.tex [4
-
-
-
-]
+ (chap-2.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
@@ -1035,7 +1160,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[5]
+[7
+
+
+
+]
 
 Class memoir Warning: The material used in the headers is too large
 (27.2pt) for the given head height (13.6pt), it is recommended to
@@ -1046,23 +1175,167 @@ either increase the head height or redesign the header
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
-[6]) [7
+[8]) [9
 
 ]
 \openout2 = `chap-3.aux'.
 
- (chap-3.tex [8
+ (chap-3.tex [10
 
 
 
-])
-Underfull \vbox (badness 1033) has occurred while \output is active []
+]
 
- [9]
-[10]
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+Package epstopdf Info: Source file: <figures/discretized.eps>
+(epstopdf)                    date: 2020-04-02 10:15:22
+(epstopdf)                    size: 30560 bytes
+(epstopdf)             Output file: <figures/discretized-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-04-02 10:30:59
+(epstopdf)                    size: 11911 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/discretized-eps-con
+verted-to.pdf figures/discretized.eps>
+(epstopdf)             \includegraphics on input line 29.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/discretized-eps-converted-to.pdf):
+ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/discretized-eps-converted-to.pdf, id=315, 374.39874pt x 119.44624pt>
+File: figures/discretized-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/discretized-eps-converted-to.pdf>
+Package pdftex.def Info: figures/discretized-eps-converted-to.pdf  used on inpu
+t line 29.
+(pdftex.def)             Requested size: 318.40121pt x 101.58627pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+
+Overfull \vbox (13.59999pt too high) has occurred while \output is active []
+
+
+[12 <./figures/discretized-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/MS_int.eps>
+(epstopdf)                    date: 2020-04-02 10:16:33
+(epstopdf)                    size: 17328 bytes
+(epstopdf)             Output file: <figures/MS_int-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-04-02 10:31:00
+(epstopdf)                    size: 8019 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/MS_int-eps-converte
+d-to.pdf figures/MS_int.eps>
+(epstopdf)             \includegraphics on input line 62.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/MS_int-eps-converted-to.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/MS_int-eps-converted-to.pdf, id=339, 224.84pt x 102.3825pt>
+File: figures/MS_int-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/MS_int-eps-converted-to.pdf>
+Package pdftex.def Info: figures/MS_int-eps-converted-to.pdf  used on input lin
+e 62.
+(pdftex.def)             Requested size: 195.02219pt x 88.80803pt.
+Package epstopdf Info: Source file: <figures/SS.eps>
+(epstopdf)                    date: 2020-04-02 10:16:36
+(epstopdf)                    size: 17234 bytes
+(epstopdf)             Output file: <figures/SS-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-04-02 10:31:01
+(epstopdf)                    size: 8224 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/SS-eps-converted-to
+.pdf figures/SS.eps>
+(epstopdf)             \includegraphics on input line 67.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/SS-eps-converted-to.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<figures/SS-eps-converted-to.pdf, id=340, 224.84pt x 102.3825pt>
+File: figures/SS-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/SS-eps-converted-to.pdf>
+Package pdftex.def Info: figures/SS-eps-converted-to.pdf  used on input line 67
+.
+(pdftex.def)             Requested size: 195.02219pt x 88.80803pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+[13 <./figures/MS_int-eps-converted-to.pdf> <./figures/SS-eps-converted-to.pdf>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+<figures/MPC1.PNG, id=366, 660.66824pt x 349.90726pt>
+File: figures/MPC1.PNG Graphic file (type png)
+<use figures/MPC1.PNG>
+Package pdftex.def Info: figures/MPC1.PNG  used on input line 85.
+(pdftex.def)             Requested size: 278.59879pt x 147.55267pt.
+<figures/MPC2.PNG, id=369, 649.82774pt x 363.759pt>
+File: figures/MPC2.PNG Graphic file (type png)
+<use figures/MPC2.PNG>
+Package pdftex.def Info: figures/MPC2.PNG  used on input line 92.
+(pdftex.def)             Requested size: 278.59879pt x 155.95262pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `eq:MPC' on page 14 undefined on input line 97.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+)
+Overfull \vbox (13.59999pt too high) has occurred while \output is active []
+
+
+[14 <./figures/MPC1.PNG>] [15 <./figures/MPC2.PNG>]
 \openout2 = `chap-4.aux'.
 
- (chap-4.tex
+ (chap-4.tex [16
+
+
+
+]) [17]
+\openout2 = `chap-5.aux'.
+
+
+(chap-5.tex [18
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 
  []
@@ -1072,60 +1345,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
-) [11
+) [19]
+\openout2 = `chap-6.aux'.
+
+ (chap-6.tex [20
 
 
 
-]
-\openout2 = `chap-5.aux'.
-
- (chap-5.tex [12
-
-
-
-]) [13]
+]) [21]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex [14
+ (conclusion.tex [22
 
 
 
-]) [15] [16
+]) [23] [24
 
 
-] [17] [18]
+] [25] [26]
 \openout2 = `app-A.aux'.
 
 
 (app-A.tex
 
-LaTeX Warning: Citation `h2g2' on page 19 undefined on input line 5.
+LaTeX Warning: Citation `h2g2' on page 27 undefined on input line 5.
 
-) [19
+) [27
 
 
 ]
 \openout2 = `app-n.aux'.
 
- (app-n.tex [20
+ (app-n.tex [28
 
 
 
-]) [21] [22
+]) [29] [30
 
 
 ] (masterproef.bbl
 bibitemlist
-)
+[31
+
+])
 
 Class memoir Warning: The material used in the headers is too large
 (27.2pt) for the given head height (13.6pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 120.
+(in both cases you will find help in the memoir manual). on input line 124.
 
-[23
-
-]
+[32]
 \tf@toc=\write5
 \openout5 = `masterproef.toc'.
 
@@ -1135,45 +1404,56 @@ either increase the head height or redesign the header
 \tf@lot=\write7
 \openout7 = `masterproef.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
  (masterproef.aux (intro.aux) (chap-1.aux) (chap-2.aux) (chap-3.aux)
-(chap-4.aux) (chap-5.aux) (conclusion.aux) (app-A.aux) (app-n.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
+(chap-4.aux) (chap-5.aux) (chap-6.aux) (conclusion.aux) (app-A.aux) (app-n.aux)
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
 Package rerunfilecheck Info: File `masterproef.out' has not changed.
-(rerunfilecheck)             Checksum: E76CBC5AA0B89E9D75AB14260181F000;1463.
+(rerunfilecheck)             Checksum: AE8D76F722C17C8CBDFC15D32D7A6835;1510.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 13567 strings out of 481518
- 221509 string characters out of 2911616
- 833590 words of memory out of 3000000
- 28351 multiletter control sequences out of 15000+200000
- 610071 words of font info for 112 fonts, out of 3000000 for 9000
+ 14491 strings out of 481518
+ 234015 string characters out of 2911616
+ 852913 words of memory out of 3000000
+ 29163 multiletter control sequences out of 15000+200000
+ 618199 words of font info for 130 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,11n,42p,880b,585s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.e
-nc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
-hit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
-m-ts1.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/ba
-se/8r.enc}<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/lm/lmbx10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmbx12.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmcsc10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmmi10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/t2vosx/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (31 pages, 543076 bytes).
+ 38i,12n,42p,1260b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
+sy.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm
+-rm.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
+m-mathex.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
+/lm/lm-mathit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/
+dvips/lm/lm-ec.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
+/dvips/lm/lm-ts1.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/e
+nc/dvips/base/8r.enc}<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmbx10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/lm/lmbx12.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/t2vosx/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/t2vosx/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/t2vosx/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/t2vosx/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/t2vosx/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/t2vosx/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/t2vos
+x/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/
+t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/U
+sers/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on masterproef.pdf (40 pages, 821582 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 20691 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 500000)
+ 21750 words of extra memory for PDF output out of 24883 (max. 10000000)
 

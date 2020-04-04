@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{Abbeel2004}
+P.~Abbeel and A.~Y. Ng.
+\newblock {Apprenticeship learning via inverse reinforcement learning}.
+\newblock {\em Proceedings, Twenty-First International Conference on Machine
+  Learning, ICML 2004}, pages 1--8, 2004.
+
 \bibitem{Bae2019}
 I.~Bae, J.~Moon, and J.~Seo.
 \newblock {Toward a comfortable driving experience for a self-driving shuttle
@@ -11,6 +17,13 @@ H.~Bellem.
 \newblock {\em {Comfort in Automated Driving : Analysis of Driving Style
   Preference in Automated Driving}}.
 \newblock PhD thesis, 2018.
+
+\bibitem{Ziebart2008}
+{Brian D. Ziebart, Andrew Maas, J.Andrew Bagnell} and A.~K. Dey.
+\newblock {Maximum Entropy Inverse Reinforcement Learning Brian}.
+\newblock {\em Lecture Notes in Computer Science (including subseries Lecture
+  Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+  page~6, 2008.
 
 \bibitem{Daniel2018}
 L.~Daniel.
@@ -28,6 +41,13 @@ M.~Elbanhawi, M.~Simic, and R.~Jazar.
   Autonomous Cars}.
 \newblock {\em IEEE Intelligent Transportation Systems Magazine}, 7(3):4--17,
   2015.
+
+\bibitem{Gianna1996}
+C.~Gianna, S.~Heimbrand, and M.~Gresty.
+\newblock {Thresholds for detection of motion direction during passive lateral
+  whole-body acceleration in normal subjects and patients with bilateral loss
+  of labyrinthine function}.
+\newblock {\em Brain Research Bulletin}, 40(5-6):443--447, 1996.
 
 \bibitem{Gillis2019}
 J.~Gillis.
@@ -48,6 +68,11 @@ T.~Mercy.
 \bibitem{Patrinos2019}
 P.~Patrinos.
 \newblock {Model Predictive Control - Lecture Notes}, 2019.
+
+\bibitem{Powers}
+V.~{Powers, C., Mellinger, D., Kushleyev, A., Kothmann, B., Kumar}.
+\newblock {Experimental Robotics}.
+\newblock {\em ISER, June}, 88(287513):515--529, 2013.
 
 \bibitem{Prof.Amnon}
 {Prof. Amnon Shashua}.

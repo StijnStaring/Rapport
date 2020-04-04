@@ -24,33 +24,125 @@ In the following US patent \cite{Daniel2018} the idea is to assess the amount of
 In the paper 'Investigating ride comfort measures in autonomous cars' \cite{Elbanhawi2015}, it is explained that due to the introduction of autonomous vehicles there will be an other perception of comfort. Figure \ref{fig:Comfort} indicates in blue the claimed traditional comfort factors and in red the new ones that also have to be taken into account in when driving in autonomous vehicles. Concretely this can be translated into the preference of smooth trajectories and low lateral motions when the roads are assumed to be sufficiently smooth. A hypotheses is that motion sickness will be more prominent in autonomous driving due to the loss of control. Is is also argued that the amount of travel time and the distance to an obstacle are naturally parameters that contribute to a comfortable feeling. \\
 
 In 'Analysis of Driving Style Preference in Automated Driving' \cite{Bellem} three studies are conducted in order to capture the definition of comfortable driving in autonomous vehicles.
-In the first study drivers drove manually with their own driving styles and this data was used in order to look for relevant metrics that could be used in defining distinct driver styles.\\
+In the first study drivers drove manually with their own driving styles and this data was used in order to look for relevant metrics that could be used in defining distinct driver styles. It was found that these metrics are varying across the maneuver. This is a logical result because not in all maneuvers are all the comfort matrices equally dominant.\\
+The results of this research is that accelerations play a key role in comfort but are not the only factor. \cite{Bellem}\\
 
-In a second study the main metrics that were found from study one are varied in order 	 
+\begin{quote}
+	The different comfort metrics found:
+	\begin{itemize}
+		\item lateral and longitudinal acceleration;
+		\item lateral and longitudinal jerk;
+		\item quickness of maneuver;
+		\item headway distance;
+	\end{itemize}
+\end{quote}
+
+Quickness of completing a lane change or an acceleration maneuver could respectively be modelled as: $q_L = \frac{\frac{\int velocity\cdot dt}{Time}}{\Delta distance}$ and $q_A = \frac{\frac{\int acceleration\cdot dt}{Time}}{\Delta velocity}$.\\
+
+Comfortable driving as being assessed in \cite{Bellem} can be summarized as driving with small accelerations and jerk to obtain sufficient smooth trajectories and keeping sufficient headway distance in order to have a feeling of control and safety. These results suggest that when an algorithm to assess comfort is suggested for autonomous vehicles, a notion of the surrounding traffic should be inherently present. It was found that in order of the traffic density the driver is more tolerant towards less smooth driving behaviour e.g. to be able to insert in a busy lane. In this case higher comfort can be attained if the driver has a feeling of a fast responds of the vehicle translating in early peaks of acceleration. Vertical vibrations come not into scope when roads are assumed sufficiently smooth.\\
+
+In a second study the main metrics that were found from study one are varied and combinations are rated by the use of a survey about the amount of comfort. "Out of this it followed that accelerations are playing a key factor." \cite{Bellem} For lane changes it could be concluded that the maneuvers with a small lateral acceleration and early perceivable onset were more comfortable. It is further also hypothesised that the location of the acceleration peaks and the amount of symmetry of the acceleration signal also plays a role when the amount of comfort is rated.\\
+
+The relation between jerks and comfort is also confirmed by \cite{Gianna1996} where it is stated that: "Jerk has been shown to elicit a stronger influence on comfort than acceleration".
+
+
+% In mijn maneuver wordt de kleine waardes van longitudinale snelheid en versnellingen gecompenseerd door de normalisatie waarden. Dus ookal zijn ze klein, krijgen toch een grote impact mee in het berekenen van een optimale oplossing. Daarin tegen kan er wel makkelijker voldaan worden aan het perfect voldoen van de longitudinale parameters in de lane change zonder het algemene resultaat veel te veranderen. De keuzen van de wegingsfactoren worden hierdoor minder significant en sensitiviteit wordt lager. --> als verschillende maneuvers worden gecombineerd zal dit de uniekheid van de gevonden wegingsfactoren opdrijven.
 
 
 \subsection{Conclusion}
+%Zie quotes van de slides!
+In order to find parameters of driving comfort that will further on in the thesis will be used as comfort criteria, a literature study is conducted which is mainly questionnaire based. The results are that in order to be able to assess comfort higher order kinematic variables as accelerations and jerks should be taken into account. These are important variables in order to obtain a smooth vehicle path and to give a continuous and natural feeling when driving. Also should the quickness of the maneuver and the feeling of safety of the driver be taken into account. As quoted by \cite{Turner1999} states that low frequency lateral acceleration are the mean responsible for carsickness. In addition comfort assessment is influenced by the environment because in busier traffic there is a higher tolerance for less smooth trajectories. It was also found that the effect of a fast reaction of vehicle at the start of a maneuver is influencing the amount of comfort perceived in a positive way.
+
+
+\section{Inverse reinforcement learning}
+Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will lead besides also to sub-optimal solutions in comparison when the parameters are learned.  That is why it is chosen in this thesis to derive these parameters by demonstration of a human driver.\\
+
+The goal of the learning algorithm explained in this thesis is to derive the parameters of different linearly combined comfort criteria that when optimized as best as possible explain the observed data. As the match with the observed data gets better, the model as suggested by equation \ref{eq:1} is getting closer to the inner comfort model of the individual driver. However it should be noted that the driver is taken unknowingly a lot of comfort criteria into account and they are not always linearly relating. Therefore the suggested comfort cost function consisting of a linear combination of comfort criteria will always be an approximation of the reality. Yet as discussed in \cite{Kuderer2015a} the results suggest that the magnitudes of the quantities that contribute to the comfort of the user are obtained.\\
+
+\begin{equation}\label{eq:1}
+	objective = \sum_{j=1}^{N}\theta_j\cdot f_j	
+\end{equation}
+
+%"Inverse optimal control, also known as inverse reinforcement learning, is the problem of recovering an unknown reward function in a Markov decision process from expert demonstrations of the optimal policy." \cite{Levine2012} In contrary what this classic definition, the approach followed by \cite{Kuderer2015a} is not modelling teh
+
+
+In order to create a generative model that create vehicle paths $r_i$ with equivalent kinematic characteristics as the path that was observed $\tilde{r_i}$, a feature-based inverse reinforcement learning is applied. \cite{Kuderer2015a,Abbeel2004} With $i \in [1 ... m]$ and $m$ the amount of observed trajectories. A feature is encoding relevant kinematic properties and the difference between the demonstrated and calculated features says something about the similarity of the kinematic vehicle signals. \\
+
+\subsection{Background on learning algorithm}
+A feature values maps a trajectory onto a scalar and the higher the scalar value the more discomfort is experienced. An example of a that measures the amount of accelerations in a maneuver is given by equation \ref{eq:3}.
+
+\begin{equation}\label{eq:3}
+f_{1}:\bm{r}\xrightarrow{}f_1(\bm{r})=\int_{0}^{T}\ddot{x}(t)^{2}+\ddot{y}(t)^{2} dt
+\end{equation}
+
+The path that that the centre of gravity of the vehicle is following can be represented by: \ref{eq:4}.
+\begin{equation}\label{eq:4}
+\bm{r}:t \xrightarrow{}\bm{r}(t) =  \bigl( \begin{smallmatrix} x(t)\\ y(t) \end{smallmatrix}\bigr)
+\end{equation}
+
+The driver is not a deterministic agent and is modelled by a stochastic distribution: $p(\bm{r}|\bm{\theta})$ For certain weights $\bm{\theta}$ a path $\bm{r}$ is produced as being a sample of a stochastic distribution. The distribution that is chosen for this is the distribution of maximum entropy (equation: \ref{eq:entropy}). \cite{Ziebart2008}. This describes the data best because it is the distribution that is least biased. \cite{Kuderer2015a}
+\begin{equation}\label{eq:entropy}
+	p(\bm{r}|\bm{\theta}) = exp(-\bm{\theta}^T\cdot \bm{F}(\bm{r}))
+\end{equation}
+The observed feature vector $\tilde{\bm{F}} \in \mathbb{R}^N$ has on its entries the different feature values $\tilde{f_i}$ with $i \in [1...m]$. The averaged observed feature vector is $\tilde{\bm{F_av}} =sum_{j=1}^{m}\tilde{\bm{F}_j}$.\\
 
 
 
-section{Modelling of comfort}
 
-\subsection{Machine learning}
+%When the averaged observed feature vector $F$
+%
+%In order to be able to explain the observed trajectory
+%
+%
+%
+% Firstly he is generating observed paths that are a sample of a distribution and secondly he is minimizing its own comfort cost function.
+%
+%
+%
+%At the maxima, the feature expectations match, guaranteeing
+%that the learner performs equivalently to the agent’s demonstrated
+%behavior regardless of the actual reward weights the
+%agent is attempting to optimize \cite{Abbeel2004}.
+%
+%
+%
+%
+%
+% 
+%The exponential distribution is giving a higher chance to produce paths that have a low feature value associated  with a high weight factor. This means that the more influence a feature value has on the total amount of comfort (higher weight), how less likely it becomes that the driver will produce a certain path that will trigger a high value of the concerned feature value. 
+%
+%If you maximize the probability you get the most likely expected path for the chosen weights.  This can be translated in the assumption that the driver is most likely to produce a path that will be experienced as comfortable as possible by himself. The assumption that the driver is optimizing its own comfort cost function is an assumption on top of assuming that the observed path is a sample of an exponential distribution with certain weight factors. 
+%
+%The goal of the learning process is to learn the model parameters (weight factors) of the driver from their observed driving style. It is assumed that the driver can be explained by a probability distribution and that it produces paths that minimize a comfort cost function. When the comfort model of the driver is learned, it can be further used in general situations. This is done by implementing the user specific notion of comfort in the motion planning algorithm of a model predictive control planning application.
+%
+%The learned model should produce trajectories that are similar in order of comfort as experienced by the driver. This is a logical consequence because the model is derived from the observed data. The difference between the features of the observed and generated paths quantify the similarity and at convergence of the learning algorithm, the feature values are as close as possible. As close as possible should be taken with a grain of salt though. This can be explained by making a comparison between the curvature and the jerk where curvature is in order of 10^-5 and jerk is in order of 10^2. This means that a difference of 1 has a far more bigger impact on curvature than on jerk and normalization is necessary. Normalization is done by dividing the calculated features by their corresponding observed feature value in order to make it dimensionless.  This means that the optimization should be done without fixing time! The difference in feature values is the driving factor and this will indirect specify also the time of the lane change.
+%
+%Learning a model implies finding the best suitable values of the tunable parameters which are in this case the weight factors. To summarize, the goal of the learning algorithm is to find the weight factors which give the smallest difference between the feature values of the observed path and the feature values of the calculated path, which is the path that minimizes the linear comfort cost function. The calculated path is generated by the minimization of the comfort cost because minimizing the comfort cost function is equal to maximizing the exponential distribution and the resulting path is equal to the most likely generated path for certain weight factors. The most likely generated path is compared with the observed one. With this it is indirectly assumed that the observed paths are generated by a human driver that is minimizing its own unknow comfort cost function. It will be clear from the validation in chapter \ref{} if this assumption holds. From [hoofdrapport] it is assumed that this approximation is suitable in the context of learning individual driving styles on highways.  Two assumptions apply on the human driver. Firstly he is generating observed paths that are a sample of a distribution and secondly he is minimizing its own comfort cost function. It should be noted that in practice instead of using personal data also data form an expert driver can be made available to the user. This to avoid bad autonomous behavior as a result of an inexperienced human driver.
+%
+%An overview of the flow of the algorithm can be seen in Figure blablabla. (Explain flow of code and make connections with the above explained theory behind the model.)
+%
+%As explained before is the model with the learned comfort weights integrated in a path planning model predictive control implementation. A background on model predictive control is given in section blalblabla. The goal of the planning MPC is to generate a feasible trajectory with a simple model…. (zie paper VS) The objective function of the MPC is slightly different of the one used in the learning algorithm. In the training set it was important to explain the observed data but it is known beforehand that the driver demonstrated a feasible path and wants to do a lane change. Now the situation is different and features that assess the environment are a necessity. For this reason the objective function of the learning algorithm is extended with features that handle collision avoidance and following distance. A modification is also made at features six (equation blablabla). The vehicle should drive the closest to the center of the current lane. [hoofdpaper] With these features the vehicle will do automatically a lane change in order to avoid obstacles. [hoodpaper] In order to do a lane change even if there are no obstacles around the modification of feature six will be undone. 
+%
+%Note that the features of the path that are obtained by minimizing the comfort cost function should be possible to converge to the features of the observed path. The driver that is producing the observed path is assumed to maximize its personal comfort when generating the observation data which means that the most personal comfort is attained when the difference between the feature values of the observed and calculated paths are small. (this should be normalized) 
+%
+%The two last features used in [hoofdrapport]  come mainly in use when using the features in the objective function of the MPC  path planning. Leading automatically to a lane change. The features based on jerk, acceleration, curvature and velocity assure that the lane change is smooth. 
 
-\subsection{Inverse optimal control}
+
+\subsubsection{How to model a trajectory and driver}
 
 
-\subsection{How to model a driver and trajectory}
+\subsection{Entropy distribution}
 
 
-\subsection{Why do we use the entropy distribution?}
+\subsubsection{RPROP algorithm}
+
+\subsubsection{Conclusion}
 
 
-\subsection{RPROP}
-
-\section{Conclusion}
-
- 
+%\section{bekijk hiervoor de andere approaches - to be read further}
+%
+%\subsection{Machine learning approach}
+%\subsection{paper brecht approach}
 
 
 

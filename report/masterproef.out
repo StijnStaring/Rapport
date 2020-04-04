@@ -6,7 +6,7 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 6
 \BOOKMARK [0][-]{chapter.2}{State of the art modelling of comfort}{}% 7
 \BOOKMARK [1][-]{section.2.1}{What are the parameters that define comfort during driving?}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Conclusion}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Inverse reinforcement learning}{chapter.2}% 9
 \BOOKMARK [0][-]{chapter.3}{The Learning Algorithm}{}% 10
 \BOOKMARK [1][-]{section.3.1}{The First Topic of this Chapter}{chapter.3}% 11
 \BOOKMARK [0][-]{chapter.4}{Background in optimal control problems}{}% 12
@@ -22,4 +22,4 @@
 \BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 22
 \BOOKMARK [0][-]{appendix.A}{The First Appendix}{}% 23
 \BOOKMARK [0][-]{appendix.B}{The Last Appendix}{}% 24
-\BOOKMARK [0][-]{appendix*.18}{Bibliography}{}% 25
+\BOOKMARK [0][-]{appendix*.21}{Bibliography}{}% 25

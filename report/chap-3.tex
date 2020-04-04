@@ -82,17 +82,42 @@ In order to be able to deal with model-plant mismatch and disturbances, MPC uses
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{MPC1.PNG}
+	\includegraphics[width=0.6\textwidth]{MPC1.PNG}
 	\caption{Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite{Patrinos2019}).}
 	\label{fig:MPC1}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{MPC2.PNG}
+	\includegraphics[width=0.6\textwidth]{MPC2.PNG}
 	\caption{Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite{Patrinos2019}).}
 	\label{fig:MPC2}
 \end{figure}
+
+\newpage
+\begin{equation}
+\label{eq:MPC}
+\begin{aligned}
+\min_{\bm{q}(.),\bm{u}(.)} \quad & \sum_{k = 0}^{N-1}l_{k}(\bm{q}_{k},\bm{u}_{k}) + E(\bm{q}_{N}) \\
+\textrm{s.t.} \quad & \bm{\dot{q}}_{k+1} = \sum_{k = 0}^{N-1}\bm{f}(\bm{q}_{k}, \bm{u}_{k})\\
+& \bm{q}_{0}= \bm{q}_{measured}    \\
+& h(\bm{q}_{k},\bm{u}_{k}) \geq 0	\\
+& \bm{q}_{k}\in Q,\hspace{3 mm} \bm{u}_{k}\in U, \hspace{3 mm} N \in \mathbb{N}
+\end{aligned}
+\end{equation}
+
+
+
+
+%\begin{equation}\label{eq:3}
+%minimize_{\bm{q}(.),\bm{u}(.)}\sum_{k = 0}^{N-1}l_{k}(\bm{q}_{k},\bm{u}_{k}) + E(\bm{q}_{N})
+%\end{equation}
+%\hspace{42 mm} \textit{subject to:}
+%\[\bm{\dot{q}}_{k+1} = \sum_{k = 0}^{N-1}\bm{f}(\bm{q}_{k}, \bm{u}_{k})\]
+%\[\bm{q}_{0}= \bm{q}_{measured}\]
+%\[h(\bm{q}_{k},\bm{u}_{k}) \geq 0\]
+%\[\bm{q}_{k}\in Q,\hspace{3 mm} \bm{u}_{k}\in U, \hspace{3 mm} N \in \mathbb{N}\]
+
 
 Equation \ref{eq:MPC} is a representation of the solved discrete system OCP during one iteration of the MPC. It is a discretized version of equation \ref{eq:OCP}. The Runge-Kutta integration is embedded in $\bm{f}$. The hard constraints are represented by $h$. It is worth noticing that the constraints can be violated in-between the different time sample points.\\
 

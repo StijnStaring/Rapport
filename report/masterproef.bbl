@@ -53,6 +53,13 @@ C.~Gianna, S.~Heimbrand, and M.~Gresty.
 J.~Gillis.
 \newblock {Ya Coda course presentation}, 2019.
 
+\bibitem{Kretzschmar2014}
+H.~Kretzschmar, M.~Kuderer, and W.~Burgard.
+\newblock {Learning to predict trajectories of cooperatively navigating
+  agents}.
+\newblock {\em Proceedings - IEEE International Conference on Robotics and
+  Automation}, pages 4015--4020, 2014.
+
 \bibitem{Kuderer2015a}
 M.~Kuderer, S.~Gulati, and W.~Burgard.
 \newblock {Learning driving styles for autonomous vehicles from demonstration}.

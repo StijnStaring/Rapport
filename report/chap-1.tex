@@ -1,5 +1,5 @@
 \chapter{State of the art modelling of comfort}
-\label{cha:1}
+\label{cha:Literature_study}
 
 As discussed in the introduction the goal of the thesis is to learn and implement a method to capture personal experience of comfort in autonomous driving. This will be done by using an inverse optimal control approach where the weights are learned from demonstration. To be able to do this it is necessary that a literature study is done about how to define comfort in a vehicle and to gain information about inverse optimal control.\\
 This chapter will give an overview of the literature that is available and will show how the thesis fits in earlier conducted research.
@@ -57,10 +57,10 @@ In order to find parameters of driving comfort that will further on in the thesi
 \section{Inverse reinforcement learning}
 Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will lead besides also to sub-optimal solutions in comparison when the parameters are learned.  That is why it is chosen in this thesis to derive these parameters by demonstration of a human driver.\\
 
-The goal of the learning algorithm explained in this thesis is to derive the parameters of different linearly combined comfort criteria that when optimized as best as possible explain the observed data. As the match with the observed data gets better, the model as suggested by equation \ref{eq:1} is getting closer to the inner comfort model of the individual driver. However it should be noted that the driver is taken unknowingly a lot of comfort criteria into account and they are not always linearly relating. Therefore the suggested comfort cost function consisting of a linear combination of comfort criteria will always be an approximation of the reality. Yet as discussed in \cite{Kuderer2015a} the results suggest that the magnitudes of the quantities that contribute to the comfort of the user are obtained.\\
+The goal of the learning algorithm explained in this thesis is to derive the parameters of different linearly combined comfort criteria combined in the costfuntion $J$ that when optimized as best as possible explain the observed data. As the match with the observed  data gets better, the model as suggested by equation \ref{eq:1} is getting closer to the inner comfort model of the individual driver. However it should be noted that the driver is taken unknowingly a lot of comfort criteria into account and they are not always linearly relating. Therefore the suggested comfort cost function consisting of a linear combination of comfort criteria will always be an approximation of the reality. Yet as discussed in \cite{Kuderer2015a} the results suggest that the magnitudes of the quantities that contribute to the comfort of the user are obtained.\\
 
 \begin{equation}\label{eq:1}
-	objective = \sum_{j=1}^{N}\theta_j\cdot f_j	
+	J = \sum_{j=1}^{N}\theta_j\cdot f_j	
 \end{equation}
 
 %"Inverse optimal control, also known as inverse reinforcement learning, is the problem of recovering an unknown reward function in a Markov decision process from expert demonstrations of the optimal policy." \cite{Levine2012} In contrary what this classic definition, the approach followed by \cite{Kuderer2015a} is not modelling teh
@@ -84,12 +84,31 @@ The driver is not a deterministic agent and is modelled by a stochastic distribu
 \begin{equation}\label{eq:entropy}
 	p(\bm{r}|\bm{\theta}) = exp(-\bm{\theta}^T\cdot \bm{F}(\bm{r}))
 \end{equation}
+Equation \ref{eq:entropy} can be interpreted as a linear costfunction $\bm{\theta}^T\bm{F}(\bm{r})$ where agents are exponentially more likely to select trajectories with lower cost. \cite{Kuderer2015a}
 The observed feature vector $\tilde{\bm{F}} \in \mathbb{R}^N$ has on its entries the different feature values $\tilde{f_i}$ with $i \in [1...m]$. The averaged observed feature vector is $\tilde{\bm{F}}_{av} = \frac{1}{m}\sum_{j=1}^{m}\tilde{\bm{F}_j}$.\\
 
-In order to be able to explain the averaged observed feature vector, the weights $\bm{\theta}$ need to be found that match the expected features vector obtained from the distribution $\bm{F}(r_{expected}$ with the averaged observed features vector $\bm{F}_{av}$. $\bm{r}_{expected}$ is defined as $ E(p(\bm{r}|\bm{\theta}))$\\
+In order to be able to explain the averaged observed feature vector, the weights $\bm{\theta}$ need to be found that match the expected features vector obtained from the distribution $\bm{F}(r_{expected})$ with the averaged observed features vector $\bm{F}_{av}$. $\bm{r}_{expected}$ defined as $ E(p(\bm{r}|\bm{\theta}))$. To make the expected features vector match the averaged observed features vector, gradient descent method can be used with as gradient $\bm{F}_{av} - \bm{F}(r_{expected})$. Equation \ref{eq:5} summarizes the gradient descent method.
+\begin{equation}\label{eq:5}
+	\bm{\theta}^{k+1} = \bm{\theta}^{k} - (\bm{F}_{av}^k - \bm{F}(r_{expected})^k) 
+\end{equation}
+
+When $\bm{\theta}_{optimal}$ is found the gradient is minimized and the features vectors will match as closely as possible. "When the feature expectations match, guaranteeing that the learner performs equivalently to the agent's demonstrated behaviour regardless of the actual reward weights the
+agent is attempting to optimize" \cite{Abbeel2004}\\
+
+In order to calculate $\bm{F}(\bm{r}_{expected})$ a Hamiltonian Markov chain
+Monte Carlo stochastic distribution sampling approached is used in \cite{Kretzschmar2014}. In \cite{Kuderer2015a} a simplified method is proposed where it is assumed that the expected path is the one that is been assessed as the most comfortable by the driver and is thus the path that is minimizing \ref{eq:1} for certain weights. In order to be able to match with the observed data it is hereby assumed that the demonstrations not only are samples of a stochastic distribution but are also generated by optimizing an inner cost function which is similar to \ref{eq:1}. Equation \ref{eq:6} summarizes the approximation proposed by \cite{Kuderer2015a}.
+\newcommand{\argmin}{argmin}
+\begin{equation}\label{eq:6}
+	\bm{r}_{expected} = \underset{x}{\argmin}
+\end{equation}
 
 
+%\DeclareMathOperator*{\argmin}{argmin}
+If this approximation also gives acceptable results is being validated in chapter \ref{cha:Learning_algorithm} when it is tried to learn from observed data which behaves time optimal.
 
+%--> in main paper they make the assumption of calculating most likely path --> features expected = f(r_exp) instead of sampling as is done in this paper.
+%(Hamiltonian Markov chain Monte Carlo methods = very computation expensive)
+%
 
 
 

@@ -76,6 +76,10 @@ T.~Mercy.
 P.~Patrinos.
 \newblock {Model Predictive Control - Lecture Notes}, 2019.
 
+\bibitem{Panos_opti}
+P.~Patrinos.
+\newblock {Optimization - Lecture notes}, 2019.
+
 \bibitem{Powers}
 V.~{Powers, C., Mellinger, D., Kushleyev, A., Kothmann, B., Kumar}.
 \newblock {Experimental Robotics}.
@@ -85,6 +89,13 @@ V.~{Powers, C., Mellinger, D., Kushleyev, A., Kothmann, B., Kumar}.
 {Prof. Amnon Shashua}.
 \newblock {Experience Counts, Particularly in Safety-Critical Areas | Intel
   Newsroom}, mar 2018.
+
+\bibitem{RPROP}
+M.~Riedmiller and H.~Braun.
+\newblock {Direct adaptive method for faster backpropagation learning: The
+  RPROP algorithm}.
+\newblock {\em 1993 IEEE International Conference on Neural Networks}, pages
+  586--591, 1993.
 
 \bibitem{TongDuySon2019}
 Q.~N. {Tong Duy Son}.

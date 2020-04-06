@@ -5,9 +5,13 @@ MPC --> path planning met het gevonden model.
 
 Ga hier volledig in op wat MPC is.
 Valideer de MPC code door na te gaan wat de invloed is bij het varieren van de gevonden parameters.
-Hoeveel zal het verschillen? Ga in op het gebruikte point model/non-linear model en bespreek de gelijkenissen en de verschillen van het learning algorithm. (zie ook notes VS en verbeteringen NAETS)
+Hoeveel zal het verschillen? Ga in op het gebruikte point model/non-linear model en bespreek de gelijkenissen en de verschillen van het learning algorithm. (zie ook notes VS en verbeteringen NAETS)\\
 
+Zeg dat in werkelijkheid ook een notion van de omgeving moet hebben omdat uit de literatuurstudie volgt dat ook de afstand tot andere weggebruikers bijdraagt tot een veilig gevoel. --> need a notion of the environment. 
 
+%As explained before is the model with the learned comfort weights integrated in a path planning model predictive control implementation. A background on model predictive control is given in section blalblabla. The goal of the planning MPC is to generate a feasible trajectory with a simple model…. (zie paper VS) The objective function of the MPC is slightly different of the one used in the learning algorithm. In the training set it was important to explain the observed data but it is known beforehand that the driver demonstrated a feasible path and wants to do a lane change. Now the situation is different and features that assess the environment are a necessity. For this reason the objective function of the learning algorithm is extended with features that handle collision avoidance and following distance. A modification is also made at features six (equation blablabla). The vehicle should drive the closest to the center of the current lane. [hoofdpaper] With these features the vehicle will do automatically a lane change in order to avoid obstacles. [hoodpaper] In order to do a lane change even if there are no obstacles around the modification of feature six will be undone. 
+
+%The two last features used in [hoofdrapport]  come mainly in use when using the features in the objective function of the MPC  path planning. Leading automatically to a lane change. The features based on jerk, acceleration, curvature and velocity assure that the lane change is smooth. 
 
 
 

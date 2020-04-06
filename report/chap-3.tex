@@ -9,7 +9,7 @@ An optimal control problem determines the desired inputs and corresponding state
 \begin{equation}
 \label{eq:OCP}
 \begin{aligned}
-\min_{\bm{q}(.),\bm{u}(.)} \quad & \int_{0}^{T}l(\bm{q}(t),\bm{u}(t))dt + E(\bm{q}(T)) \\
+\min_{\bm{q},\bm{u}} \quad & \int_{0}^{T}l(\bm{q}(t),\bm{u}(t))dt + E(\bm{q}(T)) \\
 \textrm{s.t.} \quad & \bm{\dot{q}}(t) = \bm{f}(\bm{q}(t), \bm{u}(t))\\
 & \bm{q}(0)= \bm{q}_{0},\hspace{2 mm}\bm{q}(T)= \bm{q}_{T}    \\
 & h(\bm{q}(t),\bm{u}(t)) \geq 0	\\
@@ -99,10 +99,11 @@ In order to be able to deal with model-plant mismatch and disturbances, MPC uses
 \label{eq:MPC}
 \begin{aligned}
 \min_{\bm{q}(.),\bm{u}(.)} \quad & \sum_{k = 0}^{N-1}l_{k}(\bm{q}_{k},\bm{u}_{k}) + E(\bm{q}_{N}) \\
-\textrm{s.t.} \quad & \bm{\dot{q}}_{k+1} = \sum_{k = 0}^{N-1}\bm{f}(\bm{q}_{k}, \bm{u}_{k})\\
-& \bm{q}_{0}= \bm{q}_{measured}    \\
-& h(\bm{q}_{k},\bm{u}_{k}) \geq 0	\\
-& \bm{q}_{k}\in Q,\hspace{3 mm} \bm{u}_{k}\in U, \hspace{3 mm} N \in \mathbb{N}
+\textrm{s.t.} \quad & \bm{q}_{k+1} = \bm{f}(\bm{q}_{k}, \bm{u}_{k}) & k = [0,\cdots, N-1]\\
+& \bm{q}_{0}= \bm{q}_{measured} \\
+& h(\bm{q}_{k},\bm{u}_{k}) \geq 0	& k = [0,\cdots, N-1]\\
+& \bm{q}_{k}\in Q,\hspace{3 mm} \bm{u}_{k}\in U \hspace{3 mm} & k = [0,\cdots, N-1]\\
+& \bm{q}_{N}\in Q_f,\hspace{3 mm} N \in \mathbb{N}
 \end{aligned}
 \end{equation}
 

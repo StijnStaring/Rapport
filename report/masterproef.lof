@@ -20,6 +20,7 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite {Elbanhawi2015})}}{6}{figure.2.1}%
 \addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Non-linear vehicle bicycle model (Source: \cite {TongDuySon2019}).}}{11}{figure.3.1}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of different discretization methods.}}{16}{figure.4.1}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).}}{17}{figure.4.2}%

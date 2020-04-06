@@ -26,7 +26,9 @@
 \contentsline {subsection}{\numberline {2.2.2}RPROP algorithm}{9}{subsection.2.2.2}%
 \contentsline {subsubsection}{Conclusion}{10}{section*.13}%
 \contentsline {chapter}{\chapternumberline {3}The Learning Algorithm\\}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}The First Topic of this Chapter}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Ideal learning situation }{11}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Non-linear vehicle model}{11}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}defining the problem}{13}{subsection.3.1.2}%
 \contentsline {chapter}{\chapternumberline {4}Background in optimal control problems\\}{15}{chapter.4}%
 \contentsline {subsection}{\numberline {4.0.1}Optimal control problem (OCP)}{15}{subsection.4.0.1}%
 \contentsline {subsection}{\numberline {4.0.2}Time discretization}{16}{subsection.4.0.2}%

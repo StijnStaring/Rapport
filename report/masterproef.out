@@ -7,15 +7,15 @@
 \BOOKMARK [0][-]{chapter.2}{State of the art modelling of comfort}{}% 7
 \BOOKMARK [1][-]{section.2.1}{What are the parameters that define comfort during driving?}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.2}{Inverse reinforcement learning}{chapter.2}% 9
-\BOOKMARK [0][-]{chapter.3}{The Learning Algorithm}{}% 10
+\BOOKMARK [0][-]{chapter.3}{Learning from ideal data}{}% 10
 \BOOKMARK [1][-]{section.3.1}{Ideal learning situation }{chapter.3}% 11
 \BOOKMARK [0][-]{chapter.4}{Background in optimal control problems}{}% 12
 \BOOKMARK [0][-]{chapter.5}{Path Planning MPC}{}% 13
-\BOOKMARK [0][-]{chapter.6}{Path tracking MPC}{}% 14
+\BOOKMARK [0][-]{chapter.6}{Learning from complex vehicle model}{}% 14
 \BOOKMARK [1][-]{section.6.1}{The First Topic of this Chapter}{chapter.6}% 15
 \BOOKMARK [1][-]{section.6.2}{The Second Topic}{chapter.6}% 16
 \BOOKMARK [1][-]{section.6.3}{Conclusion}{chapter.6}% 17
-\BOOKMARK [0][-]{chapter.7}{Validatie}{}% 18
+\BOOKMARK [0][-]{chapter.7}{Validatie with expert driver data}{}% 18
 \BOOKMARK [1][-]{section.7.1}{The First Topic of this Chapter}{chapter.7}% 19
 \BOOKMARK [1][-]{section.7.2}{The Second Topic}{chapter.7}% 20
 \BOOKMARK [1][-]{section.7.3}{Conclusion}{chapter.7}% 21

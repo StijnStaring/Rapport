@@ -12,7 +12,6 @@ A level-1 auxiliary file: app-n.aux
 The style file: abbrv.bst
 Database file #1: Thesis_ref.bib
 Warning--I didn't find a database entry for "h2g2"
-Warning--I didn't find a database entry for "sonsafety"
 Name 1 in "{Brian D. Ziebart, Andrew Maas, J.Andrew Bagnell}, and Anind K. Dey" has a comma at the end for entry Ziebart2008
 while executing---line 1049 of file abbrv.bst
 Warning--empty school in Bellem

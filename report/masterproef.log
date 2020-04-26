@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  18 APR 2020 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  26 APR 2020 14:25
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -656,65 +656,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip192
 )
-("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2e\algor
-ithm2e.sty"
-Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count308
-
-("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\algocf@hangindent=\skip193
-
-("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddpa
-ge.sty"
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count309
-LaTeX Info: Redefining \checkoddpage on input line 45.
-)
-("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspace.sty"
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-)
-("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\relsize.s
-ty"
-Package: relsize 2013/03/29 ver 4.1
-)
-\skiptotal=\skip194
-\skiplinenumber=\skip195
-\skiprule=\skip196
-\skiphlne=\skip197
-\skiptext=\skip198
-\skiplength=\skip199
-\algomargin=\skip256
-\skipalgocfslide=\skip257
-\algowidth=\dimen188
-\inoutsize=\dimen189
-\inoutindent=\dimen190
-\interspacetitleruled=\dimen191
-\interspacealgoruled=\dimen192
-\interspacetitleboxruled=\dimen193
-\algocf@ruledwidth=\skip258
-\algocf@inoutbox=\box50
-\algocf@inputbox=\box51
-\AlCapSkip=\skip259
-\AlCapHSkip=\skip260
-\algoskipindent=\skip261
-\algocf@nlbox=\box52
-\algocf@hangingbox=\box53
-\algocf@untilbox=\box54
-\algocf@skipuntil=\skip262
-\algocf@capbox=\box55
-\algocf@lcaptionbox=\skip263
-\algoheightruledefault=\skip264
-\algoheightrule=\skip265
-\algotitleheightruledefault=\skip266
-\algotitleheightrule=\skip267
-\c@algocfline=\count310
-\c@algocfproc=\count311
-\c@algocf=\count312
-\algocf@algoframe=\box56
-\algocf@algobox=\box57
-) ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.sty"
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.sty"
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
 \symboldletters=\mathgroup5
@@ -735,7 +677,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
 ty"
 Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip268
+\@mathmargin=\skip193
 
 For additional information on amsmath, use the `?' option.
 
@@ -747,62 +689,62 @@ Package: amstext 2000/06/29 v2.01 AMS text
 y"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks27
-\ex@=\dimen194
+\ex@=\dimen188
 ))
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.st
 y"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 LaTeX Info: Redefining \boldsymbol on input line 28.
-\pmbraise@=\dimen195
+\pmbraise@=\dimen189
 )
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
 y"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count313
+\inf@bad=\count308
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count314
-\leftroot@=\count315
+\uproot@=\count309
+\leftroot@=\count310
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count316
-\DOTSCASE@=\count317
+\classnum@=\count311
+\DOTSCASE@=\count312
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box58
-\strutbox@=\box59
-\big@size=\dimen196
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen190
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count318
-\c@MaxMatrixCols=\count319
+\macc@depth=\count313
+\c@MaxMatrixCols=\count314
 \dotsspace@=\muskip17
-\c@parentequation=\count320
-\dspbrk@lvl=\count321
+\c@parentequation=\count315
+\dspbrk@lvl=\count316
 \tag@help=\toks28
-\row@=\count322
-\column@=\count323
-\maxfields@=\count324
+\row@=\count317
+\column@=\count318
+\maxfields@=\count319
 \andhelp@=\toks29
-\eqnshift@=\dimen197
-\alignsep@=\dimen198
-\tagshift@=\dimen199
-\tagwidth@=\dimen256
-\totwidth@=\dimen257
-\lineht@=\dimen258
+\eqnshift@=\dimen191
+\alignsep@=\dimen192
+\tagshift@=\dimen193
+\tagwidth@=\dimen194
+\totwidth@=\dimen195
+\lineht@=\dimen196
 \@envbody=\toks30
-\multlinegap=\skip269
-\multlinetaggap=\skip270
+\multlinegap=\skip194
+\multlinetaggap=\skip195
 \mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wrapfig\wrapfig.s
 ty"
-\wrapoverhang=\dimen259
-\WF@size=\dimen260
-\c@WF@wrappedlines=\count325
-\WF@box=\box60
+\wrapoverhang=\dimen197
+\WF@size=\dimen198
+\c@WF@wrappedlines=\count320
+\WF@box=\box52
 \WF@everypar=\toks32
 Package: wrapfig 2003/01/31  v 3.6
 )
@@ -819,15 +761,74 @@ Package: expl3 2020-02-14 L3 programming layer (loader)
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
 nd-pdfmode.def"
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count326
-\l__pdf_internal_box=\box61
+\l__kernel_color_stack_int=\count321
+\l__pdf_internal_box=\box53
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count327
-\g__xparse_grabber_int=\count328
-\l__xparse_m_args_int=\count329
-\l__xparse_v_nesting_int=\count330
+\l__xparse_current_arg_int=\count322
+\g__xparse_grabber_int=\count323
+\l__xparse_m_args_int=\count324
+\l__xparse_v_nesting_int=\count325
 ))
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2e\algor
+ithm2e.sty"
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count326
+
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip196
+
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddpa
+ge.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count327
+LaTeX Info: Redefining \checkoddpage on input line 45.
+)
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspace.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\relsize.s
+ty"
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip197
+\skiplinenumber=\skip198
+\skiprule=\skip199
+\skiphlne=\skip256
+\skiptext=\skip257
+\skiplength=\skip258
+\algomargin=\skip259
+\skipalgocfslide=\skip260
+\algowidth=\dimen199
+\inoutsize=\dimen256
+\inoutindent=\dimen257
+\interspacetitleruled=\dimen258
+\interspacealgoruled=\dimen259
+\interspacetitleboxruled=\dimen260
+\algocf@ruledwidth=\skip261
+\algocf@inoutbox=\box54
+\algocf@inputbox=\box55
+\AlCapSkip=\skip262
+\AlCapHSkip=\skip263
+\algoskipindent=\skip264
+\algocf@nlbox=\box56
+\algocf@hangingbox=\box57
+\algocf@untilbox=\box58
+\algocf@skipuntil=\skip265
+\algocf@capbox=\box59
+\algocf@lcaptionbox=\skip266
+\algoheightruledefault=\skip267
+\algoheightrule=\skip268
+\algotitleheightruledefault=\skip269
+\algotitleheightrule=\skip270
+\c@algocfline=\count328
+\c@algocfproc=\count329
+\c@algocf=\count330
+\algocf@algoframe=\box60
+\algocf@algobox=\box61
+)
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lipsum\lipsum.sty
 "
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
@@ -837,7 +838,7 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
 
-Package lipsum Warning: \setlipsumdefault on line 43
+Package lipsum Warning: \setlipsumdefault on line 42
 (lipsum)                \setlipsumdefault  should be substituted by
 (lipsum)                \SetLipsumDefault .
 
@@ -845,23 +846,23 @@ Package lipsum Warning: \setlipsumdefault on line 43
 ) (chap-5.aux) (chap-6.aux) (conclusion.aux) (app-A.aux) (app-n.aux))
 \openout1 = `masterproef.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 47
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 46
 .
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
@@ -908,14 +909,14 @@ Sidefoothsep and sidefootwidth: 7pt and 101pt
 Sidefootvsep and sidefootheight: 13.6pt and 594.32022pt
 ******************************************************
 
-LaTeX Info: Redefining \microtypecontext on input line 47.
+LaTeX Info: Redefining \microtypecontext on input line 46.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 47.
+LaTeX Info: Redefining \showhyphens on input line 46.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -926,7 +927,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring ON on input line 47.
+Package hyperref Info: Link coloring ON on input line 46.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.
 sty"
@@ -944,10 +945,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 47.
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 46.
+LaTeX Info: Redefining \pageref on input line 46.
+LaTeX Info: Redefining \nameref on input line 46.
 (masterproef.out) (masterproef.out)
 \@outlinefile=\write4
 \openout4 = `masterproef.out'.
@@ -956,30 +957,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `kulemtfpf' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<logokuleng.pdf, id=103, 159.33528pt x 85.358pt>
+<logokuleng.pdf, id=111, 159.33528pt x 85.358pt>
 File: logokuleng.pdf Graphic file (type pdf)
 <use logokuleng.pdf>
-Package pdftex.def Info: logokuleng.pdf  used on input line 47.
+Package pdftex.def Info: logokuleng.pdf  used on input line 46.
 (pdftex.def)             Requested size: 159.33542pt x 85.3617pt.
 LaTeX Font Info:    Font shape `T1/kulemtfpf/b/n' in size <12> not available
 (Font)              Font shape `T1/kulemtfpf/bx/n' tried instead on input line 
-47.
+46.
 LaTeX Font Info:    Font shape `T1/kulemtfpf/b/n' in size <14.4> not available
 (Font)              Font shape `T1/kulemtfpf/bx/n' tried instead on input line 
-47.
+46.
  [-1
 
 
 {C:/Users/t2vosx/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/t
 2vosx/AppData/Local/MiKTeX/2.9/tex/latex/kulemt/logokuleng.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-7.
+6.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-7.
+6.
 
 ("C:\Users\t2vosx\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1049,40 +1050,42 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )) [2
 
 
-] [3
+]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+ [3] [4
 
-] [4
+] [5
 
 
-] (masterproef.lof) (masterproef.lot) [5
+] (masterproef.lof) (masterproef.lot) [6
 
 
 ]
 
-LaTeX Warning: Citation `h2g2' on page vi undefined on input line 97.
+LaTeX Warning: Citation `h2g2' on page vii undefined on input line 96.
 
 
-Overfull \hbox (0.86812pt too wide) in paragraph at lines 97--97
+Overfull \hbox (0.86812pt too wide) in paragraph at lines 96--96
 []|\T1/lmr/m/n/10.95 (-20) ``The Answer to the Ultimate Question of Life, the U
 niverse, and Everything''
  []
 
-[6
+[7
+
+] [8
 
 ]
 \openout2 = `intro.aux'.
 
  (intro.tex
-<figures/AV.png, id=221, 1204.5pt x 903.375pt>
+<figures/AV.png, id=245, 1204.5pt x 903.375pt>
 File: figures/AV.png Graphic file (type png)
 <use figures/AV.png>
 Package pdftex.def Info: figures/AV.png  used on input line 9.
 (pdftex.def)             Requested size: 139.30243pt x 104.47177pt.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
  [1
-
 
 
  <./figures/AV.png>]
@@ -1106,7 +1109,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
  []
 
 [2]
-<figures/lane_change.PNG, id=248, 384.2355pt x 120.32954pt>
+<figures/lane_change.PNG, id=271, 384.2355pt x 120.32954pt>
 File: figures/lane_change.PNG Graphic file (type png)
 <use figures/lane_change.PNG>
 Package pdftex.def Info: figures/lane_change.PNG  used on input line 27.
@@ -1128,7 +1131,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<figures/comfort.PNG, id=259, 378.81525pt x 387.849pt>
+<figures/comfort.PNG, id=283, 378.81525pt x 387.849pt>
 File: figures/comfort.PNG Graphic file (type png)
 <use figures/comfort.PNG>
 Package pdftex.def Info: figures/comfort.PNG  used on input line 12.
@@ -1186,18 +1189,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--100
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2.
-1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.106 	\begin{equation}
-                       pdfTeX warning (ext4): destination with the same identif
-ier (name{equation.2.2.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.109 	\begin{equation}
-                       
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
@@ -1210,11 +1203,16 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-<figures/Bicycle_model_paper.png, id=363, 623.32875pt x 307.1475pt>
+<figures/Bicycle_model_paper.png, id=387, 623.32875pt x 307.1475pt>
 File: figures/Bicycle_model_paper.png Graphic file (type png)
 <use figures/Bicycle_model_paper.png>
 Package pdftex.def Info: figures/Bicycle_model_paper.png  used on input line 15
@@ -1230,12 +1228,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
 
  []
 
@@ -1250,14 +1248,156 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-) [13]
+[13]
+<figures/basic_learning.png, id=420, 532.99126pt x 241.90375pt>
+File: figures/basic_learning.png Graphic file (type png)
+<use figures/basic_learning.png>
+Package pdftex.def Info: figures/basic_learning.png  used on input line 112.
+(pdftex.def)             Requested size: 398.0pt x 180.64114pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (13.59999pt too high) has occurred while \output is active []
+
+
+[14 <./figures/basic_learning.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+
+Overfull \vbox (13.59999pt too high) has occurred while \output is active []
+
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
+
+ []
+
+[17]pdfTeX warning (ext4): destination with the same identifier (name{equation.
+3.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.236 	\begin{equation}
+                       
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Overfull \vbox (13.59999pt too high) has occurred while \output is active []
+
+
+[18pdfTeX warning (ext4): destination with the same identifier (name{equation.3
+.2.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.263 
+      ]
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+[19]
+Overfull \hbox (73.99672pt too wide) in paragraph at lines 283--284
+[]\T1/lmr/m/n/10.95 (-20) The rel-a-tive weights cho-sen are $[][] [] []$, whic
+h gives as ab-so-lute weights $[][] [] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+
+ []
+
+)
+Overfull \vbox (13.59999pt too high) has occurred while \output is active []
+
+
+[20]
 \openout2 = `chap-3.aux'.
 
- (chap-3.tex [14
+ (chap-3.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1.
+
+) [21
+
+
+
+]
+\openout2 = `chap-4.aux'.
+
+ (chap-4.tex [22
 
 
 
@@ -1276,7 +1416,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[15]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
@@ -1295,7 +1435,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/discretized-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/discretized-eps-converted-to.pdf, id=412, 374.39874pt x 119.44624pt>
+<figures/discretized-eps-converted-to.pdf, id=535, 374.39874pt x 119.44624pt>
 File: figures/discretized-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/discretized-eps-converted-to.pdf>
 Package pdftex.def Info: figures/discretized-eps-converted-to.pdf  used on inpu
@@ -1315,7 +1455,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--43
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
-[16 <./figures/discretized-eps-converted-to.pdf>]
+[24 <./figures/discretized-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/MS_int.eps>
 (epstopdf)                    date: 2020-04-02 10:16:33
 (epstopdf)                    size: 17328 bytes
@@ -1330,7 +1470,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/MS_int-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/MS_int-eps-converted-to.pdf, id=434, 224.84pt x 102.3825pt>
+<figures/MS_int-eps-converted-to.pdf, id=557, 224.84pt x 102.3825pt>
 File: figures/MS_int-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/MS_int-eps-converted-to.pdf>
 Package pdftex.def Info: figures/MS_int-eps-converted-to.pdf  used on input lin
@@ -1350,7 +1490,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/SS-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/SS-eps-converted-to.pdf, id=435, 224.84pt x 102.3825pt>
+<figures/SS-eps-converted-to.pdf, id=558, 224.84pt x 102.3825pt>
 File: figures/SS-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/SS-eps-converted-to.pdf>
 Package pdftex.def Info: figures/SS-eps-converted-to.pdf  used on input line 67
@@ -1369,18 +1509,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
 Underfull \vbox (badness 1629) has occurred while \output is active []
 
- [17 <./figures/MS_int-eps-converted-to.pdf> <./figures/SS-eps-converted-to.pdf
+ [25 <./figures/MS_int-eps-converted-to.pdf> <./figures/SS-eps-converted-to.pdf
 >]
 Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-<figures/MPC1.PNG, id=462, 660.66824pt x 349.90726pt>
+<figures/MPC1.PNG, id=584, 660.66824pt x 349.90726pt>
 File: figures/MPC1.PNG Graphic file (type png)
 <use figures/MPC1.PNG>
 Package pdftex.def Info: figures/MPC1.PNG  used on input line 85.
 (pdftex.def)             Requested size: 238.80243pt x 126.47372pt.
-<figures/MPC2.PNG, id=465, 649.82774pt x 363.759pt>
+<figures/MPC2.PNG, id=587, 649.82774pt x 363.759pt>
 File: figures/MPC2.PNG Graphic file (type png)
 <use figures/MPC2.PNG>
 Package pdftex.def Info: figures/MPC2.PNG  used on input line 92.
@@ -1389,80 +1529,68 @@ Package pdftex.def Info: figures/MPC2.PNG  used on input line 92.
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
-[18 <./figures/MPC1.PNG> <./figures/MPC2.PNG>]
+[26 <./figures/MPC1.PNG> <./figures/MPC2.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
-) [19]
-\openout2 = `chap-4.aux'.
-
- (chap-4.tex [20
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 6--9
-
- []
-
-) [21]
+) [27]
 \openout2 = `chap-5.aux'.
 
- (chap-5.tex [22
+ (chap-5.tex [28
 
 
 
-]) [23]
+]) [29]
 \openout2 = `chap-6.aux'.
 
- (chap-6.tex [24
+ (chap-6.tex [30
 
 
 
-]) [25]
+]) [31]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex [26
+ (conclusion.tex [32
 
 
 
 ])
-[27] [28
+[33] [34
 
 
-] [29] [30]
+] [35] [36]
 \openout2 = `app-A.aux'.
 
  (app-A.tex
 
-LaTeX Warning: Citation `h2g2' on page 31 undefined on input line 5.
+LaTeX Warning: Citation `h2g2' on page 37 undefined on input line 5.
 
-) [31
+) [37
 
 
 ]
 \openout2 = `app-n.aux'.
 
- (app-n.tex [32
+ (app-n.tex [38
 
 
 
-]) [33] [34
+]) [39] [40
 
 
 ] (masterproef.bbl
 bibitemlist
-[35
+[41
 
 ])
 
 Class memoir Warning: The material used in the headers is too large
 (27.2pt) for the given head height (13.6pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 126.
+(in both cases you will find help in the memoir manual). on input line 125.
 
-[36]
+[42]
 \tf@toc=\write5
 \openout5 = `masterproef.toc'.
 
@@ -1472,35 +1600,35 @@ either increase the head height or redesign the header
 \tf@lot=\write7
 \openout7 = `masterproef.lot'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
  (masterproef.aux (intro.aux) (chap-1.aux) (chap-2.aux) (chap-3.aux)
 (chap-4.aux) (chap-5.aux) (chap-6.aux) (conclusion.aux) (app-A.aux) (app-n.aux)
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 125.
 Package rerunfilecheck Info: File `masterproef.out' has not changed.
-(rerunfilecheck)             Checksum: D84453F85FF0B4FCB246F22019CD42BC;1568.
+(rerunfilecheck)             Checksum: EC0D98A65E8B848FC87CB2531B3CFBB7;1709.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
  ) 
 Here is how much of TeX's memory you used:
- 15136 strings out of 481518
- 240378 string characters out of 2911616
- 867122 words of memory out of 3000000
- 29763 multiletter control sequences out of 15000+200000
- 618708 words of font info for 135 fonts, out of 3000000 for 9000
+ 15212 strings out of 481518
+ 241375 string characters out of 2911616
+ 870641 words of memory out of 3000000
+ 29792 multiletter control sequences out of 15000+200000
+ 619289 words of font info for 142 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,42p,1535b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
-nc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
-hsy.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
-m-mathit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
-/lm/lm-mathex.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/
-dvips/lm/lm-ec.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
+nc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
+enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
+thsy.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/
+lm-mathit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/lm/lm-mathex.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
 /dvips/lm/lm-ts1.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/e
 nc/dvips/base/8r.enc}<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/lm/lmbx10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fo
@@ -1523,9 +1651,9 @@ lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 ublic/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (44 pages, 1099254 bytes).
+Output written on masterproef.pdf (52 pages, 1152887 bytes).
 PDF statistics:
- 665 PDF objects out of 1000 (max. 8388607)
- 150 named destinations out of 1000 (max. 500000)
- 21755 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 787 PDF objects out of 1000 (max. 8388607)
+ 182 named destinations out of 1000 (max. 500000)
+ 21776 words of extra memory for PDF output out of 24883 (max. 10000000)
 

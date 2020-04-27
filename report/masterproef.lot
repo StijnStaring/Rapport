@@ -19,6 +19,7 @@
 \addvspace {10pt}
 \contentsline {table}{\numberline {3.1}{\ignorespaces Used vehicle model parameters.}}{13}{table.3.1}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Overview of normalization factors.}}{19}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces The different weights learned when using three or five observations datasets. Weight number corresponds with feature nummer of section \ref {s:obj}.}}{27}{table.3.3}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

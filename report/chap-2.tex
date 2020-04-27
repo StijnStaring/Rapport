@@ -357,17 +357,54 @@ Convergence is attained after $50$, $51$ and $49$ iterations. From Figure \ref{f
  	\label{fig:conflict}
  \end{figure}
 
-Depending if the previous case in the RPROP algorithm was case 2 and the sign difference between the current and previous gradient, three distinct RPROP cases can be identified with other update methods as discussed in section \ref{s:RPROP}. Inside the conflict test, it is checked if all the signs of the current gradients of the different datasets are checked. If there is a sign difference, this means that for one dataset a feature value is higher than the observed one and the corresponding weight should be increased (negative gradient) and for an other dataset it is the other way around and the corresponding weight should be decreased. (positive gradient). For such a case the conflict test will give rise to a positive conflict value. If there is no conflict there will also be unity in the decision of the RPROP case. After the conflict is solved, the next case will be automatically equal to case 3 because no decision can be made about the increase or decrease of the update value. 
+Depending if the previous case in the RPROP algorithm was case 2 and the sign difference between the current and previous gradient, three distinct RPROP cases can be identified with other update methods as discussed in section \ref{s:RPROP}. Inside the conflict test, it is checked if all the signs of the current gradients of the different datasets are checked. If there is a sign difference, this means that for one dataset a feature value is higher than the observed one and the corresponding weight should be increased (negative gradient) and for an other dataset it is the other way around and the corresponding weight should be decreased. (positive gradient). For such a case the conflict test will give rise to a positive conflict value. If there is no conflict there will also be unity in the decision of the RPROP case. After the conflict is solved, the next case will be automatically equal to case 3 because no decision can be made about the increase or decrease of the update value. The convergence criteria used is aside of the maximum amount of iterations and an accurate match of $10^{-4}$ with the observed features the criteria if there is still improvement possible in a direction that benefits every dataset.\\
+
+The learning algorithm is applied simultaneously to dataset A,B and C and uses as initial guess for the weights the vector $\bigl[ \begin{smallmatrix} 1.0,&1.0,&1.0,&1.0,&1.0\end{smallmatrix}\bigr]$. The algorithm is ended after $17$ iterations with no direction of improvement possible. The observed paths with their initial guesses and learned paths can be seen in Figure \ref{fig:conflict_paths}.
+
  
+ \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[width=1.0\textwidth]{conflict_path.png}
+ 	\caption{Overview of the different observed paths, initial guesses and learned paths.}
+ 	\label{fig:conflict_paths}
+ \end{figure}
+
+The convergence plots are all similar and for dataset A, Figure \ref{fig:conflict_convergence}, gives the convergence of $f_{rel,i}$ for the different features. 
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.15\textwidth]{conflict_convergence.png}
+	\caption{Convergence plot of $f_{rel,i}$ for dataset A.}
+	\label{fig:conflict_convergence}
+\end{figure}
  
+ As is indicated by Figure \ref{fig:conflict_convergence}, the method is clearly converging towards the different sets of observed feature vectors. However it should be noted that despite giving more accurate results for the feature values of the other datasets then when only one dataset A is used to learn the weights, the method is still constricted in its feature matching accuracy due to no available direction of improvement. This effect worsens when more datasets are used because conflicts more rapidly occur. Table \ref{table:conflict_weights} lists the different learned weights and Figure \ref{fig:conflict_comparison} shows the loss of accuracy when more datasets are simultaneously learned.
  
- 
- 
- 
+\begin{table}
+\centering
+\begin{tabular}{@{}llr@{}} 
+  Weight    & 3 Datasets & 5 Datasets\\ \midrule
+  Nr.1      & \hspace{7mm}0.44    & 0.46 \\
+  Nr.2      & \hspace{7mm}1.51    & 1.49 \\
+  Nr.3      & \hspace{7mm}1.67    & 1.59 \\
+  Nr.4      & \hspace{7mm}0.41    & 0.41 \\
+  Nr.5      & \hspace{7mm}0.58    & 0.56 \\ \bottomrule
+\end{tabular}
+\caption{The different weights learned when using three or five observations datasets. Weight number corresponds with feature nummer of section \ref{s:obj}.}
+\label{table:conflict_weights}
+\end{table}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{conflict_accuracy.png}
+	\caption{The average error between the observed and calculated feature values with the learned weights.}
+	\label{fig:conflict_accuracy}
+\end{figure}
+
  
  
   
  \subsection{Averaging method}
+ In this method not all the different observed feature vectors are taken individually into account when updating the weights, but a single averaged observed feature vector is used. 
  This method is based on \cite{Kuderer2015a}.
  
  \subsection{Comparison of methods}

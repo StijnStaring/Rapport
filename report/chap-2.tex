@@ -334,7 +334,7 @@ Convergence is attained after $50$, $51$ and $49$ iterations. From Figure \ref{f
  
  For each different dataset features match exactly but this is not done for the exact same weights because local solutions exist that explain individual datasets. It should be noted that the relative sizes of the learned weights matches the original one except for the feature concerning longitudinal acceleration which don't play a dominant role during a lane change. \textbf{Question: how is this when you do an acceleration maneuver??}\\
  
- Next the influence of the numerical discretization is checked. A better discretization is obtained when a larger amount of optimization points $N$ is chosen which lead to a smaller time discretization $dt$, but comes at the cost of a higher computational load. Figure \ref{fig:N_influence} shows the error on the features discussed in section \ref{s:obj} when using the learned weights based on dataset A for predicting the observations of dataset B. The convergence criteria of the learned weights are set on $f_{rel,i}$ equal to $10^{-1}$.\\
+ Next the influence of the numerical discretization is checked. A better discretization is obtained when a larger amount of optimization points $N$ is chosen which lead to a smaller time discretization $dt$, but comes at the cost of a higher computational load. Figure \ref{fig:N_influence} shows the error on the features discussed in section \ref{s:obj} when using the learned weights based on dataset A for predicting the observations of dataset B. The convergence criteria of the learned weights are set on $f_{rel,i}$ equal to $10^{-1}$. It is concluded that there is no large influence on the amount of optimization points chosen.\\
  
  \begin{figure}[h!]
  	\centering
@@ -345,11 +345,30 @@ Convergence is attained after $50$, $51$ and $49$ iterations. From Figure \ref{f
  
  In order to further validate the learning algorithm, the chosen weights were given as initial guess making use of one dataset in order to check if it would diverge from the ideal global solution. As expected the algorithm converged after the first iteration. Next a guess close to the global solution was tried. The algorithm converged after $41$ iterations and outputted $\bigl[ \begin{smallmatrix} 4.01,&5.29,&6.33,&1.09,&2.12\end{smallmatrix}\bigr]$ and not $\bigl[ \begin{smallmatrix} 4.0,&5.0,&6.0,&1.0,&2.0\end{smallmatrix}\bigr]$ which proofs that a lot of local solutions exist.\\  
  
- The next step taken is to combine different datasets in simultaneous learning instead of sequential learning.
+ From above tests it can be concluded that the local solutions of individual datasets do not match and that the amount of mismatch has only a small dependants on the amount of optimization points. The next step to take is to combine different datasets in simultaneous learning instead of sequential learning in order to try to converge to weights that predict best for multiple datasets. 
  
  \subsection{Conflict method}
+ The first method proposed is the conflict method. Is main idea is to update the weights in the common direction of the gradient seen in equation \ref{eq:new} of the different datasets. If the direction of update according to gradient method is conflicting between different datasets the update of the weight in question is put on hold. The updating will be resumed when the conflict is resolved by updating the other weights. This is possible because the features are not independent of each other. Figure \ref{fig:conflict} shows how the conflict method will be embedded in the basic flow of the learning algorithm.\\
  
+  \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[width=1.25\textwidth]{conflict.png}
+ 	\caption{Flow of the conflict method as part of the basic flow diagram of Figure \ref{fig:basic learning}}
+ 	\label{fig:conflict}
+ \end{figure}
+
+Depending if the previous case in the RPROP algorithm was case 2 and the sign difference between the current and previous gradient, three distinct RPROP cases can be identified with other update methods as discussed in section \ref{s:RPROP}. Inside the conflict test, it is checked if all the signs of the current gradients of the different datasets are checked. If there is a sign difference, this means that for one dataset a feature value is higher than the observed one and the corresponding weight should be increased (negative gradient) and for an other dataset it is the other way around and the corresponding weight should be decreased. (positive gradient). For such a case the conflict test will give rise to a positive conflict value. If there is no conflict there will also be unity in the decision of the RPROP case. After the conflict is solved, the next case will be automatically equal to case 3 because no decision can be made about the increase or decrease of the update value. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
  \subsection{Averaging method}
+ This method is based on \cite{Kuderer2015a}.
  
  \subsection{Comparison of methods}
   

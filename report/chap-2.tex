@@ -305,7 +305,7 @@ In order to determine if the generated data is a local solution of the optimizat
 	\label{fig:result_GD}
 \end{figure}
 
-\section{Ideal data learning results}
+\section{Ideal lane change data learning results}
 This section discusses the results from using the learning algorithm on generated ideal data which is generated making use of the above discussed normalization values in combination with relative chosen weights of $ \bigl[ \begin{smallmatrix} 4,&5,&6,&1,&2\end{smallmatrix}\bigr]$. The first simulation discusses the learning of three datasets that are generated with the same chosen weights. The different datasets are A $(V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m)$, dataset B $(V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:6.94\hspace{1mm}m)$ and dataset C $(V_0:25.00\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m)$. The convergence criteria to stop the learning algorithm displayed in Figure \ref{fig:basic learning} is when the maximum amount of iterations equal to $300$ is reached or if the feature values which use the learned weight match accurately the ones of the observed data according to following formula $f_{rel,i} = \frac{f_{calc,i}}{f_{obs,i}} \leq 10^{-4}$.
 
 \subsection{Sequential learning}
@@ -377,7 +377,7 @@ The convergence plots are all similar and for dataset A, Figure \ref{fig:conflic
 	\label{fig:conflict_convergence}
 \end{figure}
  
- As is indicated by Figure \ref{fig:conflict_convergence}, the method is clearly converging towards the different sets of observed feature vectors. However it should be noted that despite giving more accurate results for the feature values of the other datasets then when only one dataset A is used to learn the weights, the method is still constricted in its feature matching accuracy due to no available direction of improvement. This effect worsens when more datasets are used because conflicts more rapidly occur. Table \ref{table:conflict_weights} lists the different learned weights and Figure \ref{fig:conflict_comparison} shows the loss of accuracy when more datasets are simultaneously learned.
+ As is indicated by Figure \ref{fig:conflict_convergence}, the method is clearly converging towards the different sets of observed feature vectors. However it should be noted that despite giving more accurate results for the feature values of the other datasets then when only one dataset A is used to learn the weights, the method is still constricted in its feature matching accuracy due to no available direction of improvement. This effect worsens when more datasets are used because conflicts more rapidly occur. Table \ref{table:conflict_weights} lists the different learned weights and Figure \ref{fig:conflict_accuracy} shows the loss of accuracy when more datasets are simultaneously learned.
  
 \begin{table}
 \centering
@@ -400,12 +400,12 @@ The convergence plots are all similar and for dataset A, Figure \ref{fig:conflic
 	\label{fig:conflict_accuracy}
 \end{figure}
 
- 
- 
-  
  \subsection{Averaging method}
- In this method not all the different observed feature vectors are taken individually into account when updating the weights, but a single averaged observed feature vector is used. 
- This method is based on \cite{Kuderer2015a}.
+ In this method not all the different observed feature vectors are taken individually into account when updating the weights, but a single averaged observed feature vector is used. This avoids conflicting local solution. The flow of the algorithm is thus similar as shown in Figure \ref{fig:basic learning} but instead of a single dataset an averaged is used. In order to calculate the gradient, the difference between the averaged observed feature vector and the averaged calculated feature vector has to be taken. In order to obtain the averaged calculated feature vector, m times the optimization \ref{opt:basic_opti_w} is called for each specific observed maneuver. Afterwards the individual found feature vector is averaged. With m the amount of observed datasets. This method is based on \cite{Kuderer2015a}.\\
+ 
+ The learning of the three datasets A,B and C is done with as stop criteria the maximum amount of iterations and convergence towards the averaged feature values with an accuracy of $10^{-4}$. The initial guess chosen for the weights is an all one vector. Convergence is reached after $111$ iterations because the desired convergence accuracy is reached. The learned weights are $\bigl[ \begin{smallmatrix} 1.21,&1.53,&1.83,&0.31,&0.61\end{smallmatrix}\bigr]$. 
+ 
+
  
  \subsection{Comparison of methods}
   

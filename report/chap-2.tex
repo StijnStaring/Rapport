@@ -401,8 +401,10 @@ The convergence plots are all similar and for dataset A, Figure \ref{fig:conflic
 \end{figure}
 
  \subsection{Averaging method}
- In this method not all the different observed feature vectors are taken individually into account when updating the weights, but a single averaged observed feature vector is used. This avoids conflicting local solution. The flow of the algorithm is thus similar as shown in Figure \ref{fig:basic learning} but instead of a single dataset an averaged is used. In order to calculate the gradient, the difference between the averaged observed feature vector and the averaged calculated feature vector has to be taken. In order to obtain the averaged calculated feature vector, m times the optimization \ref{opt:basic_opti_w} is called for each specific observed maneuver. Afterwards the individual found feature vector is averaged. With m the amount of observed datasets. This method is based on \cite{Kuderer2015a}.\\
+ In this method not all the different observed feature vectors are taken individually into account when updating the weights, but a single averaged observed feature vector is used. This avoids conflicting local solution. The flow of the algorithm is thus similar as shown in Figure \ref{fig:basic learning} but instead of a single dataset an averaged is used. In order to calculate the gradient, the difference between the averaged observed feature vector and the averaged calculated feature vector has to be taken. In order to obtain the averaged calculated feature vector, m times the optimization \ref{opt:basic_opti_w} is called for each specific observed maneuver. Afterwards the individual found feature vectors are averaged. With m the amount of observed datasets. This method is based on \cite{Kuderer2015a}.\\
  
+% Bespreek de fixed feature approach.
+
  The learning of the three datasets A,B and C is done with as stop criteria the maximum amount of iterations and convergence towards the averaged feature values with an accuracy of $10^{-4}$. The initial guess chosen for the weights is an all one vector. Convergence is reached after $111$ iterations because the desired convergence accuracy is reached. The learned weights are $\bigl[ \begin{smallmatrix} 1.21,&1.53,&1.83,&0.31,&0.61\end{smallmatrix}\bigr]$. 
  
 

@@ -1,0 +1,5 @@
+[?4/?30/?2020 2:20 PM]  Tong, Son (DI SW ECS ENG NVH R&D):  
+Learning optimal control comfort parameters from demonstrations (1)
+Learning comfort objective from demonstration for optimal control ()
+ 
+Learning comfort objective from lane change demonstration for optimal control () 

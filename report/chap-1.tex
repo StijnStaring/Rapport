@@ -151,6 +151,8 @@ Exception on \ref{eq:8}:
 and with $\theta_i^{t+1} = \theta_i^{t} + \Delta \theta^t_i$, $i \in \mathbb{N}_{[1\cdots N]}$ and $t \in \mathbb{N}_[1 \cdots \mathbb{\tau}]$ the amount of iterations. Every time the partial derivative $\pdv{f_i}{\theta_i}^t$ of the corresponding weight $\theta_i^t$ changes its sign, it is assumed that the last update was too big and the local minimum was passed. In \ref{eq:7} the step size is reduced and in order to go back the previous situation the update of the weight is done as \ref{eq:10}. In order to not again decrease the update value when going back to the previous situation, in the next iteration $\pdv{f_i}{\theta_i}^{t-1}$ is set equal to zero.\\
 If the derivative retains its sign, the update-value is slightly increased in order to accelerate convergence in shallow regions." \cite{RPROP} Parameters chosen bij the user are $\Delta_0, \eta^+$ and $\eta^-$. In this thesis following values were chosen: $\Delta_0 = 0.1$, $\eta^+ = 1.2$ and $\eta^- = 0.5$.
 
+\subsection{Optimization principles}
+The optimization tool used is the CasADi software. This section discusses the main optimization principles used under the hood and discusses the IPOPT solver and SQP method. (See Handbook opti and slides CasADi 3 lecture vooral)
 
 
 %--> in main paper they make the assumption of calculating most likely path --> features expected = f(r_exp) instead of sampling as is done in this paper.

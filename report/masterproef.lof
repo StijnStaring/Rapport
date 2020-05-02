@@ -20,23 +20,23 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite {Elbanhawi2015})}}{6}{figure.2.1}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Non-linear vehicle bicycle model (Source: \cite {TongDuySon2019}).}}{11}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Basic flow of the reinforced learning algorithm.}}{14}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Different initial guesses used in \ref {opt:basic_opti_w} to generate data.}}{20}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Different ideal data paths generated with \ref {opt:basic_opti_w}.}}{21}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of initial guesses, learned and observed trajectories.}}{22}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}}}{22}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.}}{23}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}}}{25}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.}}{26}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.}}{26}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces The average error between the observed and calculated feature values with the learned weights.}}{27}{figure.3.11}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Non-linear vehicle bicycle model (Source: \cite {TongDuySon2019}).}}{13}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Basic flow of the reinforced learning algorithm.}}{16}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Different initial guesses used in \ref {opt:basic_opti_w} to generate data.}}{22}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Different ideal data paths generated with \ref {opt:basic_opti_w}.}}{23}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of initial guesses, learned and observed trajectories.}}{24}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}}}{24}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.}}{25}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}}}{27}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.}}{28}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.}}{28}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces The average error between the observed and calculated feature values with the learned weights.}}{29}{figure.3.11}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of different discretization methods.}}{32}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).}}{33}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite {Patrinos2019}).}}{34}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite {Patrinos2019}).}}{34}{figure.5.4}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of different discretization methods.}}{34}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).}}{35}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite {Patrinos2019}).}}{36}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite {Patrinos2019}).}}{36}{figure.5.4}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

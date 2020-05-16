@@ -278,6 +278,8 @@ The solver used to calculate the states and control signals in \ref{opt:basic_op
 Every time that the expected path has to be calculated as is visualised in flow diagram \ref{fig:basic learning}, the optimization \ref{opt:basic_opti_w} is performed with as initial guess the observed maneuver.\\
 
 \subsection{Ideal data generation} \label{s:GD}
+\textbf{Schrijf een deeltje over invloed N en T --> maak een tabel met de testen van 5 mei.}
+
 As mentioned above the term 'ideal data' concerns data that is generated with a non-linear bicycle model and exactly fulfils the assumption that the observations are minimizing an underlying discomfort function. More over the discomfort function is the same as the one used in the learning algorithm and this means that the generated path is a the solution of the objective function discussed in section \ref{s:obj} for weights $\bm{\theta}$ chosen in advance. Because that the observations are exactly representing the comfort function in the learning algorithm and the absence of vehicle model mismatch, weights can be learned that perfectly explain the observations. This is translated in a accurate matching of the feature values discussed in \ref{s:obj}. Because beforehand it is know what the weights should be in \ref{eq:obj}, the ideal data can serve as a validation of the developed learning algorithm.\\
 
 The relative weights chosen are $ \bigl[ \begin{smallmatrix} 4,&5,&6,&1,&2\end{smallmatrix}\bigr]$, which gives as absolute weights  $ \bigl[ \begin{smallmatrix} 549.63, &1.90, &0.53,  &21.43, &0.12\end{smallmatrix}\bigr]$ when the normalization of \ref{s:norm} is taken into account. The objective that is used in \ref{opt:basic_opti_w} and outputs the ideal data is given by \ref{eq:obj_ideal_data}.
@@ -379,24 +381,12 @@ The convergence plots are all similar and for dataset A, Figure \ref{fig:conflic
  
  As is indicated by Figure \ref{fig:conflict_convergence}, the method is clearly converging towards the different sets of observed feature vectors. However it should be noted that despite giving more accurate results for the feature values of the other datasets then when only one dataset A is used to learn the weights, the method is still constricted in its feature matching accuracy due to no available direction of improvement. This effect worsens when more datasets are used because conflicts more rapidly occur. Table \ref{table:conflict_weights} lists the different learned weights and Figure \ref{fig:conflict_accuracy} shows the loss of accuracy when more datasets are simultaneously learned.
  
-\begin{table}
-\centering
-\begin{tabular}{@{}llr@{}} 
-  Weight    & 3 Datasets & 5 Datasets\\ \midrule
-  Nr.1      & \hspace{7mm}0.44    & 0.46 \\
-  Nr.2      & \hspace{7mm}1.51    & 1.49 \\
-  Nr.3      & \hspace{7mm}1.67    & 1.59 \\
-  Nr.4      & \hspace{7mm}0.41    & 0.41 \\
-  Nr.5      & \hspace{7mm}0.58    & 0.56 \\ \bottomrule
-\end{tabular}
-\caption{The different weights learned when using three or five observations datasets. Weight number corresponds with feature nummer of section \ref{s:obj}.}
-\label{table:conflict_weights}
-\end{table}
+ 
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{conflict_accuracy.png}
-	\caption{The average error between the observed and calculated feature values with the learned weights.}
+	\caption{The average error between the observed and calculated feature values with the learned weights when applying the conflict method.}
 	\label{fig:conflict_accuracy}
 \end{figure}
 
@@ -410,10 +400,21 @@ The convergence plots are all similar and for dataset A, Figure \ref{fig:conflic
 
  
  \subsection{Comparison of methods}
-  
- \subsection{Different maneuvers}
- % acceleration maneuver + combining different maneuvers.
+ In this section a comparison is made between the average and conflict method of combining different datasets. 
  
+ \begin{table}[h!]
+ 	\centering
+ 	\begin{tabular}{@{}llr@{}} 
+ 		Weight    & Average & Conflict\\ \midrule
+ 		Nr.2      & \hspace{7mm}0.0    & 0.0 \\
+ 		Nr.4      & \hspace{7mm} 0.0074    & 0.032 \\
+ 		Nr.6      & \hspace{7mm}0.0029    & 0.00045 \\ \bottomrule
+ 	\end{tabular}
+ 	\caption{The error made between the learned and chosen weights for respectively the average and conflict method.}
+ 	\label{table:error_learned_weights_conflict}
+ \end{table}
+
+  , 
  \subsection{Conclusion}
 
 

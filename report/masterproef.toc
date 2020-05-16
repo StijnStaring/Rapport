@@ -33,13 +33,12 @@
 \contentsline {subsection}{\numberline {3.2.2}Objective function}{18}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Normalization factors and initialization}{21}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Ideal data generation}{21}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Ideal lane change data learning results}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Ideal lane change data learning results}{22}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Sequential learning}{23}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Conflict method}{26}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Averaging method}{27}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Comparison of methods}{29}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Different maneuvers}{29}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Conclusion}{29}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.5}Conclusion}{29}{subsection.3.3.5}%
 \contentsline {chapter}{\chapternumberline {4}Enhanced learning approach\\}{31}{chapter.4}%
 \contentsline {chapter}{\chapternumberline {5}Background in optimal control problems\\}{33}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Optimal control problem (OCP)}{33}{subsection.5.0.1}%

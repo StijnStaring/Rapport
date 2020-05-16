@@ -19,7 +19,7 @@
 \addvspace {10pt}
 \contentsline {table}{\numberline {3.1}{\ignorespaces Used vehicle model parameters.}}{15}{table.3.1}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Overview of normalization factors.}}{21}{table.3.2}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces The different weights learned when using three or five observations datasets. Weight number corresponds with feature nummer of section \ref {s:obj}.}}{29}{table.3.3}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces The error made between the learned and chosen weights for respectively the average and conflict method.}}{29}{table.3.3}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

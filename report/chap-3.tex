@@ -148,59 +148,68 @@ While no convergence takes place the weights are updated, making use of the RPRO
 \begin{aligned}
 \min_{\bm{X}(.),\bm{U}(.), T} \quad &  \bm{\theta}^T\bm{F}(\bm{X},\bm{U}, T) \\
 \textrm{s.t.} \quad & \bm{X}^{k+1} = I(\bm{X}^{k}, \bm{U}^{k}) & k = [0,\cdots, N-1]\\
-& \bm{X}^{0}= \bm{X}_{intitial} \\
-& \bm{G}(\bm{X}^{k},\bm{U}^{k}) \geq 0	& k = [0,\cdots, N]\\
-& \bm{H}(\bm{X}^{k},\bm{U}^{k}) = 0	& k = [0,\cdots, N]\\
+& \bm{X}^{0}(1:8)= \bm{X}_{intitial} \\
+& T \leq T_{limit}\\
+& \bm{F}(\bm{X}^{k}) \geq 0	& k = [0,\cdots, N]\\
+& \bm{G}(\bm{U}^{k}) \geq 0	& k = [0,\cdots, N-1]\\
+& \bm{H}(\bm{X}^{k}) = 0	& k = [0,\cdots, N]\\
 & \bm{X}^{k}\in \mathbb{R}^{6x1}  & k = [0,\cdots, N]\\
 & \bm{U}^{k}\in \mathbb{R}^{2x1} \hspace{3 mm} & k = [0,\cdots, N-1]\\
 & T \in \mathbb{R},\hspace{3 mm} N,i,l \in \mathbb{N}
 \end{aligned}
 \end{equation}
 
-Where $\bm{X} \in \mathbb{R}^{6xN+1}$ and $\bm{U}\in \mathbb{R}^{2xN}$ contain respectively the states and controls  \ref{eq:bicycle_model2} during the maneuver, complemented with the time of the maneuver $T$. In order to discretize time, a multiple shooting approach is adopted as is explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and is the same as the amount of control intervals in order to go from the initial state towards the end state. With this a sampling time of $0.025 s$ is obtained as is discussed in section \ref{s:GD_val}.  Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states over time when a certain control is applied for $\Delta T$. The path constraint vector $\bm{G} \in \mathbb{R}^{Lx1}$ demarcate together with the equality constraint vector $\bm{H} \in \mathbb{R}^{Qx1}$ the feasible area of the solutions for $\bm{X}$, $\bm{U}$ and $T$. An overview of $\bm{G}$ and $\bm{H}$ used can be found by equation \ref{eq:G} and \ref{eq:H}.
+Where $\bm{X} \in \mathbb{R}^{10xN+1}$ and $\bm{U}\in \mathbb{R}^{2xN}$ contain respectively the states and controls  \ref{eq:bicycle_model2} during the maneuver, complemented with the time of the maneuver $T$. In order to discretize time, a multiple shooting approach is adopted as is explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and is the same as the amount of control intervals in order to go from the initial state towards the end state. With this a sampling time of $0.025 \hspace{1mm}s$ is obtained as is discussed in section \ref{s:GD_val}.  Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states over time when a certain control is applied for $\Delta T$. The path constraint vectors $\bm{F} \in \mathbb{R}^{L_1x1}$ and $\bm{G} \in \mathbb{R}^{L_2x1}$ demarcate together with the equality constraint vectors $\bm{H} \in \mathbb{R}^{Q_1x1}$ and $\bm{J} \in \mathbb{R}^{Q_2x1}$ the feasible area of the solutions for $\bm{X}$, $\bm{U}$ and $T$. An overview of these constraints is given by equations \ref{eq:F}, \ref{eq:G} and \ref{eq:H}.
 
+\begin{equation}\label{eq:F}
+\bm{F} =
+\begin{Bmatrix}
+-\frac{Width\hspace{1mm}Lane}{2} \leq y^k \leq \frac{3\cdot Width\hspace{1mm}Lane}{2}, & k = [0,\cdots, N] \\
+0 \leq x^k, & k = [0,\cdots, N] \\
+-\frac{\pi\cdot 150}{180 Gs} \leq \psi^k \leq \frac{\pi\cdot 150}{180 Gs}, & k = [0,\cdots, N] 
 
+\end{Bmatrix}
+\end{equation}\\
 
 \begin{equation}\label{eq:G}
 \bm{G} =
 \begin{Bmatrix}
--1 \leq t_r^k \leq 1, & k = [0,\cdots, N-1] \\
--\frac{Width\hspace{1mm}Road}{2} \leq y^k \leq \frac{3\cdot Width\hspace{1mm}Road}{2}, & k = [0,\cdots, N] \\
-x^k \geq 0, & k = [0,\cdots, N] \\
-
+-1 \leq t_r^k \leq 1, & k = [0,\cdots, N-1]
 \end{Bmatrix}
 \end{equation}\\
 
-It should be noted that the physical limits of the vehicle so as maximum accelerations, velocities are not taken into account. This is done because they were not bounding during a comfortable lane change maneuver and thus are not influencing the optimal solution. Ofcourse when the learning is applied in a more general scenario these constraints should be included in order to get a more robust optimization formulation.
+It is not necessary to introduce physical vehicle limits because these are present as soft constraints in the comfort objective $\bm{\theta}^T\bm{F}(\bm{X},\bm{U}, T)$.
 
 \begin{equation}\label{eq:H}
 \bm{H} =
 \begin{Bmatrix}
-y^N = Width\hspace{1mm}Road \\ \vspace{1mm}
+y^N = Width\hspace{1mm}Lane \\ \vspace{1mm}
 vy^N = 0 \\\vspace{1mm}
-ay^N = 0 \\\vspace{1mm}
 \psi^N = 0 \\\vspace{1mm}
 \dot{\psi}^N = 0 \\\vspace{1mm}
-a_{t,y}^N = 0 \\\vspace{1mm}
-j_y^N = 0 \\\vspace{1mm}
-a_{t,y}^0 = 0 \\\vspace{1mm}
-j_y^0 = 0 
+\delta^N = 0 
+
 \end{Bmatrix}
 \end{equation}\\
 
-These constraints displayed in $\bm{H}$ make sure that initial state of the vehicle is just before the start of the lane change and the last state of the vehicle is when the lane change maneuver is completely finished. The initial state $\bm{X}_{intitial}$ as stated by optimization \ref{opt:basic_opti_w} can be seen in \ref{eq:X0}.
+The constraints displayed in $\bm{H}$ make sure that at the end of the lane change the slipangles in the tires and the steerwheelangle are zero. From \ref{eq:bicycle_model_eqmotion} this induces that the lateral velocity and acceleration and yaw acceleration also becomes zero and the lane change is completed. $y^N$ makes sure that the wanted lateral distance is covered. This distance can be calculated from the start position of the vehicle in its lane and the width of the lane in order to end up at the centreline of the desired lane. \\ At the start of the lane change straight driving at constant longitudinal speed is assumed. To obtain this the constraints of \ref{eq:X0} are used. No constraints for the accelerations is needed because this is already defined by the other initial states and the equations \ref{eq:bicycle_model_eqmotion}. In \ref{eq:X0} all initial states are zero excepts for the initial speed $v_{x,start}$ and $t_{r,start}$. The amount of throttle at the start of the lane change is chosen to overcome the aerodynamic drag without accelerating. This is given by $t_r^0 = \frac{(C_{r0}+C_{r1}v_{start}^2)r_w}{T_{max}}$. This means that the parameters that distinguish different lane changes are $v_{x,start}$ and $Width\hspace{1mm}Lane$. This is exploited when generating different ideal lane change datasets. 
 \begin{equation}\label{eq:X0}
 \bm{X}_{initial} =
 \begin{bmatrix}
- 0\\ 
- 0\\
- v_{start}\\
- 0\\
- 0\\
- 0\\
+ x_{start}\\ 
+ y_{start}\\
+ v_{x,start}\\
+ v_{y,start}\\
+ \psi_{start}\\
+ \dot{\psi}_{start}\\
+ t_{r,start}\\
+ \delta_{start}\\
+
 \end{bmatrix}
 \end{equation}\\
 
+
+% discuss time limit is chosen equal to 25 s.
 From this formulation it is clear that when the generation of ideal observation data by solving \ref{opt:basic_opti_w} for a set of manually chosen weights (Section \ref{s:GD}), changing the parameters $v_{start}$ and $Width \hspace{1mm}Road$ will lead to different lane change maneuvers.\\ The initial guess used in \ref{opt:basic_opti_w} for $\bm{X}, \bm{U} \;and\; T$ during the learning process are extracted from the observation. 
 \subsection{Objective function}\label{s:obj}
 

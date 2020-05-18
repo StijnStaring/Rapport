@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  18 MAY 2020 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  18 MAY 2020 21:54
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -1429,63 +1429,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+ []
+
+
+Underfull \vbox (badness 4096) has occurred while \output is active []
 
 
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
 
 LaTeX Warning: Reference `eq:bicycle_model' on page 25 undefined on input line 
-218.
+227.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--219
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
 [25]
 
 LaTeX Warning: Reference `eq:bicycle_model' on page 26 undefined on input line 
-224.
+233.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--231
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--237
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--244
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
 
  []
 
 
-LaTeX Warning: Reference `eq:CC' on page 26 undefined on input line 245.
+Underfull \hbox (badness 10000) in paragraph at lines 250--253
+
+ []
+
+
+LaTeX Warning: Reference `eq:CC' on page 26 undefined on input line 254.
 
 
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
@@ -1495,25 +1500,25 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 4.2.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.262 	\begin{equation}
+l.271 	\begin{equation}
                        
-Underfull \hbox (badness 10000) in paragraph at lines 264--266
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
 
 
-LaTeX Warning: Reference `eq:CC' on page 27 undefined on input line 267.
+LaTeX Warning: Reference `eq:CC' on page 27 undefined on input line 276.
 
 
-LaTeX Warning: Reference `eq:CC' on page 27 undefined on input line 267.
+LaTeX Warning: Reference `eq:CC' on page 27 undefined on input line 276.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
  []
 
@@ -1522,14 +1527,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.289 
+l.298 
       ]
-Underfull \hbox (badness 10000) in paragraph at lines 303--305
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
 
  []
 
@@ -1538,54 +1543,54 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [28]
-Overfull \hbox (73.99672pt too wide) in paragraph at lines 312--313
+Overfull \hbox (73.99672pt too wide) in paragraph at lines 321--322
 []\T1/lmr/m/n/10.95 (-20) The rel-a-tive weights cho-sen are $[][] [] []$, whic
 h gives as ab-so-lute weights $[][] [] []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
-<figures/IG.png, id=653, 720.44156pt x 371.13657pt>
+<figures/IG.png, id=656, 720.44156pt x 371.13657pt>
 File: figures/IG.png Graphic file (type png)
 <use figures/IG.png>
-Package pdftex.def Info: figures/IG.png  used on input line 331.
+Package pdftex.def Info: figures/IG.png  used on input line 340.
 (pdftex.def)             Requested size: 398.0pt x 205.02617pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/result_GD.png, id=656, 680.5425pt x 344.78813pt>
+<figures/result_GD.png, id=659, 680.5425pt x 344.78813pt>
 File: figures/result_GD.png Graphic file (type png)
 <use figures/result_GD.png>
-Package pdftex.def Info: figures/result_GD.png  used on input line 338.
+Package pdftex.def Info: figures/result_GD.png  used on input line 347.
 (pdftex.def)             Requested size: 398.0pt x 201.63972pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 358--360
 
  []
 
 [29]
-<figures/result_seq.png, id=667, 807.7678pt x 417.81094pt>
+<figures/result_seq.png, id=670, 807.7678pt x 417.81094pt>
 File: figures/result_seq.png Graphic file (type png)
 <use figures/result_seq.png>
-Package pdftex.def Info: figures/result_seq.png  used on input line 354.
+Package pdftex.def Info: figures/result_seq.png  used on input line 363.
 (pdftex.def)             Requested size: 398.0pt x 205.86395pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/convergence_seq.png, id=668, 800.23969pt x 394.47375pt>
+<figures/convergence_seq.png, id=671, 800.23969pt x 394.47375pt>
 File: figures/convergence_seq.png Graphic file (type png)
 <use figures/convergence_seq.png>
-Package pdftex.def Info: figures/convergence_seq.png  used on input line 361.
+Package pdftex.def Info: figures/convergence_seq.png  used on input line 370.
 (pdftex.def)             Requested size: 477.59879pt x 235.43408pt.
 
-Overfull \hbox (79.59879pt too wide) in paragraph at lines 361--362
+Overfull \hbox (79.59879pt too wide) in paragraph at lines 370--371
  [][] 
  []
 
@@ -1593,7 +1598,7 @@ Overfull \hbox (79.59879pt too wide) in paragraph at lines 361--362
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
  []
 
@@ -1605,27 +1610,27 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 Underfull \vbox (badness 2726) has occurred while \output is active []
 
  [31 <./figures/result_seq.png> <./figures/convergence_seq.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
-
- []
-
-<figures/N_influence.png, id=688, 369.63094pt x 277.78781pt>
-File: figures/N_influence.png Graphic file (type png)
-<use figures/N_influence.png>
-Package pdftex.def Info: figures/N_influence.png  used on input line 378.
-(pdftex.def)             Requested size: 278.59879pt x 209.37457pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 383--384
+
+ []
+
+<figures/N_influence.png, id=691, 369.63094pt x 277.78781pt>
+File: figures/N_influence.png Graphic file (type png)
+<use figures/N_influence.png>
+Package pdftex.def Info: figures/N_influence.png  used on input line 387.
+(pdftex.def)             Requested size: 278.59879pt x 209.37457pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
@@ -1634,17 +1639,17 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [32 <./figures/N_influence.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
-<figures/conflict.png, id=697, 773.89125pt x 564.1075pt>
+<figures/conflict.png, id=700, 773.89125pt x 564.1075pt>
 File: figures/conflict.png Graphic file (type png)
 <use figures/conflict.png>
-Package pdftex.def Info: figures/conflict.png  used on input line 392.
+Package pdftex.def Info: figures/conflict.png  used on input line 401.
 (pdftex.def)             Requested size: 497.5pt x 362.64578pt.
 
-Overfull \hbox (99.5pt too wide) in paragraph at lines 392--393
+Overfull \hbox (99.5pt too wide) in paragraph at lines 401--402
  [][] 
  []
 
@@ -1652,26 +1657,26 @@ Overfull \hbox (99.5pt too wide) in paragraph at lines 392--393
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
 
-<figures/conflict_path.png, id=702, 724.20563pt x 358.33875pt>
+<figures/conflict_path.png, id=705, 724.20563pt x 358.33875pt>
 File: figures/conflict_path.png Graphic file (type png)
 <use figures/conflict_path.png>
-Package pdftex.def Info: figures/conflict_path.png  used on input line 404.
+Package pdftex.def Info: figures/conflict_path.png  used on input line 413.
 (pdftex.def)             Requested size: 398.0pt x 196.93382pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/conflict_convergence.png, id=704, 789.70032pt x 395.97937pt>
+<figures/conflict_convergence.png, id=707, 789.70032pt x 395.97937pt>
 File: figures/conflict_convergence.png Graphic file (type png)
 <use figures/conflict_convergence.png>
 Package pdftex.def Info: figures/conflict_convergence.png  used on input line 4
-12.
+21.
 (pdftex.def)             Requested size: 457.69757pt x 229.50505pt.
 
-Overfull \hbox (59.69757pt too wide) in paragraph at lines 412--413
+Overfull \hbox (59.69757pt too wide) in paragraph at lines 421--422
  [][] 
  []
 
@@ -1680,13 +1685,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: Reference `table:conflict_weights' on page 33 undefined on input
- line 417.
+ line 426.
 
 [33]
-<figures/conflict_accuracy.png, id=713, 963.6pt x 489.32813pt>
+<figures/conflict_accuracy.png, id=716, 963.6pt x 489.32813pt>
 File: figures/conflict_accuracy.png Graphic file (type png)
 <use figures/conflict_accuracy.png>
-Package pdftex.def Info: figures/conflict_accuracy.png  used on input line 423.
+Package pdftex.def Info: figures/conflict_accuracy.png  used on input line 432.
 
 (pdftex.def)             Requested size: 398.0pt x 202.1042pt.
 
@@ -1694,7 +1699,7 @@ Package pdftex.def Info: figures/conflict_accuracy.png  used on input line 423.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--430
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
 
  []
 
@@ -1803,10 +1808,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
  ) 
 Here is how much of TeX's memory you used:
- 15321 strings out of 481518
- 243385 string characters out of 2911616
- 873928 words of memory out of 3000000
- 29854 multiletter control sequences out of 15000+200000
+ 15323 strings out of 481518
+ 243406 string characters out of 2911616
+ 873982 words of memory out of 3000000
+ 29855 multiletter control sequences out of 15000+200000
  619556 words of font info for 145 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,42p,1535b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1838,9 +1843,9 @@ lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 ublic/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (62 pages, 1740356 bytes).
+Output written on masterproef.pdf (62 pages, 1742864 bytes).
 PDF statistics:
- 928 PDF objects out of 1000 (max. 8388607)
- 214 named destinations out of 1000 (max. 500000)
+ 931 PDF objects out of 1000 (max. 8388607)
+ 215 named destinations out of 1000 (max. 500000)
  21829 words of extra memory for PDF output out of 24883 (max. 10000000)
 

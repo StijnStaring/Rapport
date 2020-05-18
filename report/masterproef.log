@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  9 MAY 2020 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  18 MAY 2020 13:54
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -1784,7 +1784,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
 Here is how much of TeX's memory you used:
  15312 strings out of 481518
  243272 string characters out of 2911616
- 872807 words of memory out of 3000000
+ 872812 words of memory out of 3000000
  29850 multiletter control sequences out of 15000+200000
  619556 words of font info for 145 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1817,7 +1817,7 @@ lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 ublic/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (62 pages, 1736020 bytes).
+Output written on masterproef.pdf (62 pages, 1736021 bytes).
 PDF statistics:
  920 PDF objects out of 1000 (max. 8388607)
  209 named destinations out of 1000 (max. 500000)

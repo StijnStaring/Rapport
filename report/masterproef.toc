@@ -18,45 +18,47 @@
 \contentsline {subsection}{\numberline {1.0.1}Importance of topic}{1}{subsection.1.0.1}%
 \contentsline {subsection}{\numberline {1.0.2}Link with previous studies and problem formulation}{2}{subsection.1.0.2}%
 \contentsline {subsection}{\numberline {1.0.3}Thesis objective}{2}{subsection.1.0.3}%
-\contentsline {chapter}{\chapternumberline {2}State of the art modelling of comfort}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}What are the parameters that define comfort during driving?}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Conclusion}{7}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}Inverse reinforcement learning}{7}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Background on learning algorithm}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}RPROP algorithm}{9}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Optimization principles}{10}{subsection.2.2.3}%
-\contentsline {subsubsection}{Conclusion}{10}{section*.13}%
-\contentsline {chapter}{\chapternumberline {3}Learning from ideal data\\}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Non-linear bicycle model}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Formulation of the algorithm}{15}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Flow of the algorithm}{16}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Objective function}{18}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Normalization factors and initialization}{21}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Ideal data generation}{21}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Ideal lane change data learning results}{22}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Sequential learning}{23}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Conflict method}{26}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Averaging method}{27}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Comparison of methods}{29}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Conclusion}{29}{subsection.3.3.5}%
-\contentsline {chapter}{\chapternumberline {4}Enhanced learning approach\\}{31}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}Background in optimal control problems\\}{33}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Optimal control problem (OCP)}{33}{subsection.5.0.1}%
-\contentsline {subsection}{\numberline {5.0.2}Time discretization}{34}{subsection.5.0.2}%
-\contentsline {subsection}{\numberline {5.0.3}Model predictive control}{36}{subsection.5.0.3}%
+\contentsline {chapter}{\chapternumberline {2}Background in optimal control problems\\}{5}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}Optimal control problem (OCP)}{5}{subsection.2.0.1}%
+\contentsline {subsection}{\numberline {2.0.2}Time discretization}{6}{subsection.2.0.2}%
+\contentsline {subsection}{\numberline {2.0.3}Model predictive control}{8}{subsection.2.0.3}%
+\contentsline {chapter}{\chapternumberline {3}State of the art modelling of comfort}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}What are the parameters that define comfort during driving?}{11}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Conclusion}{13}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Inverse reinforcement learning}{13}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Background on learning algorithm}{14}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}RPROP algorithm}{15}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Optimization principles}{16}{subsection.3.2.3}%
+\contentsline {subsubsection}{Conclusion}{16}{section*.14}%
+\contentsline {chapter}{\chapternumberline {4}Learning from ideal data\\}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Non-linear bicycle model}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Formulation of the algorithm}{22}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Flow of the algorithm}{22}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Objective function}{25}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Normalization factors and initialization}{28}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Ideal data}{28}{subsection.4.2.4}%
+\contentsline {subsubsection}{Generation}{28}{section*.15}%
+\contentsline {subsubsection}{Validation}{29}{section*.16}%
+\contentsline {section}{\numberline {4.3}Ideal lane change data learning results}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Sequential learning}{30}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Conflict method}{33}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Averaging method}{34}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Comparison of methods}{36}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Conclusion}{36}{subsection.4.3.5}%
+\contentsline {chapter}{\chapternumberline {5}Enhanced learning approach\\}{37}{chapter.5}%
 \contentsline {chapter}{\chapternumberline {6}Learning from complex vehicle model}{39}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{39}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Item 1}{39}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{39}{section*.15}%
-\contentsline {subsubsection}{Sub-item 2}{39}{section*.16}%
+\contentsline {subsubsection}{Sub-item 1}{39}{section*.17}%
+\contentsline {subsubsection}{Sub-item 2}{39}{section*.18}%
 \contentsline {subsection}{\numberline {6.1.2}Item 2}{39}{subsection.6.1.2}%
 \contentsline {section}{\numberline {6.2}The Second Topic}{39}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Conclusion}{39}{section.6.3}%
 \contentsline {chapter}{\chapternumberline {7}Validation with expert driver data}{41}{chapter.7}%
 \contentsline {section}{\numberline {7.1}The First Topic of this Chapter}{41}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Item 1}{41}{subsection.7.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{41}{section*.17}%
-\contentsline {subsubsection}{Sub-item 2}{41}{section*.18}%
+\contentsline {subsubsection}{Sub-item 1}{41}{section*.19}%
+\contentsline {subsubsection}{Sub-item 2}{41}{section*.20}%
 \contentsline {subsection}{\numberline {7.1.2}Item 2}{41}{subsection.7.1.2}%
 \contentsline {section}{\numberline {7.2}The Second Topic}{41}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Conclusion}{41}{section.7.3}%
@@ -64,4 +66,4 @@
 \contentsline {appendix}{\chapternumberline {A}The First Appendix}{47}{appendix.A}%
 \contentsline {section}{\numberline {A.1}More Lorem}{47}{section.A.1}%
 \contentsline {appendix}{\chapternumberline {B}The Last Appendix}{49}{appendix.B}%
-\contentsline {chapter}{Bibliography}{51}{appendix*.19}%
+\contentsline {chapter}{Bibliography}{51}{appendix*.21}%

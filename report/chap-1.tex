@@ -1,240 +1,128 @@
-\chapter{State of the art modelling of comfort}
-\label{cha:Literature_study}
+\chapter{Background in optimal control problems\\}
+\label{cha:OCP}
 
-As discussed in the introduction the goal of the thesis is to learn and implement a method to capture personal experience of comfort in autonomous driving. This will be done by using an inverse optimal control approach where the weights are learned from demonstration. To be able to do this it is necessary that a literature study is done about how to define comfort in a vehicle and to gain information about inverse optimal control.\\
-This chapter will give an overview of the literature that is available and will show how the thesis fits in earlier conducted research.
+This chapter gives some background information of the theory behind optimal control (OCP). After a global introduction and the discussion about the time discretization and shooting option, the chapter is being specified into model predictive control (MPC).\\
 
-\section{What are the parameters that define comfort during driving?}
-In the following US patent \cite{Daniel2018} the idea is to assess the amount of comfort by calculating a value for carsickness. This value is calculated by a weighted sum of the sway motion, surge motion and heave motion of the vehicle. These motions are being directly calculated from the lateral acceleration, fore-aft acceleration and the vertical acceleration of the vehicle. \\
+\subsection{Optimal control problem (OCP)}
+An optimal control problem determines the desired inputs and corresponding state trajectories to change the system from an initial state to a desired final state in an optimal way while satisfying some input and state constraints \cite{Mercy2018}.
+
+\begin{equation}
+\label{eq:OCP}
+\begin{aligned}
+\min_{\bm{q},\bm{u}} \quad & \int_{0}^{T}l(\bm{q}(t),\bm{u}(t))dt + E(\bm{q}(T)) \\
+\textrm{s.t.} \quad & \bm{\dot{q}}(t) = \bm{f}(\bm{q}(t), \bm{u}(t))\\
+& \bm{q}(0)= \bm{q}_{0},\hspace{2 mm}\bm{q}(T)= \bm{q}_{T}    \\
+& h(\bm{q}(t),\bm{u}(t)) \geq 0	\\
+& \bm{q}(t)\in Q,\hspace{3 mm} \bm{u}(t)\in U, \hspace{3 mm} t\in [0, T]
+\end{aligned}
+\end{equation}
+
+$\bm{q}$ is called contains all the states of the system and $\bm{u}$ containing the controls. In the context of vehicle control states are often kinematic variables like positions and velocities of the centre of gravity of the vehicle. $\bm{u}$ is containing the controls which are typically steerwheelangle and the amount of throttle which can be directly linked the amount of propulsion force. The objective function $l$ of the optimization problem is integrated over the desired control horizon $T$. The objective function indicates what should be minimized and is a function of the different states and controls. The terminal cost is represented by $E(\bm{q}(T))$ and can be needed to assure certain conditions of the system at the end of the control horizon. $\bm{\dot{q}}(t)$ describes the dynamics of the system by an explicit ordinary differential equation. Furthermore there are also constraints possible on states and inputs, represented by $h$, $Q$ and $U$ respectively. The results that come out of an OCP indicate which states will be visited by the system and which controls have to be applied in order to do this with respect to the constraints on an optimal manner. \cite{Patrinos2019}\\ 
+
+There is a difference between soft and hard constraints. Soft constraints are placed in the objective function $l$. If the constraint is better fulfilled a more optimal solution will be obtained. A hard constraint, represented by $h$ in equation \ref{eq:OCP}, is explicitly put in the constraints and defines the feasible solution set of the optimization \cite{Yankov}.\\
+
+\subsection{Time discretization}\label{s:time_dis}
+
+The optimal control problem (equation \ref{eq:OCP}) is continuous in time which means that it has infinite dimensions. To be able to run the optimization problem on digital systems there is need for discretization. There are several ways to do this which are summarized in Figure \ref{fig:discretization_m}.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{discretized.eps}
+	\caption{Overview of different discretization methods.}
+	\label{fig:discretization_m}
+\end{figure}
+
+Since direct methods are best suited to solve practically relevant OCPs \cite{Mercy2018}, this thesis is following the direct method. To implement the discretization of time when using the Direct method, a time shooting approach can be used.
+
+\subsubsection*{Time shooting}
+
+A shooting approach makes use of a time grid. This means that time will be sampled and on every time instant the optimal control problem is assessed. Constraints will only be not violated on these time instants but no limits are set between different time samples. To bound the system to the constraints a high enough sampling rate is desired. \cite{Mercy2018}
+Two different shooting approaches exist:\\
+\begin{enumerate}
+	\item Multiple shooting (MS)\\
+	During multiple shooting $ns\in \mathbb{N}$ new states and $nc \in \mathbb{N}$ new controls are defined on every new time sample and are taken as optimization variables. Because input changes are only allowed on the time samples this will often lead to a piece wise control input signal. This is indicated by the blue bars in Figure \ref{fig:TS} (left). The red dots in Figure \ref{fig:TS} (left) indicate the condition of the states on the discrete time samples. In order to make the connection $\bm{q}(k+1) = \bm{f}(\bm{q}(k), \bm{u}(k))$ from the previous state to the next, time integration is used. The constraints introduced in this way are called in literature 'path closing constraints' \cite{Gillis2019}. \\
+	
+	\item Single shooting (SS)\\  
+	In the single shooting or sequential approach only the initial state and control points are optimization variables. This is achieved by replacing the state variable by the integration result from the previous state \cite{Gillis2019}. This approach is show in equation \ref{eq:2}. Figure \ref{fig:TS} (right) gives a visualization with the green dots indicating the result of one integration step from the previous state.
+	
+	\begin{equation}\label{eq:2}
+	\begin{aligned}
+	\bm{q}(1) &= \bm{f}(\bm{q}(0), \bm{u}(0))\\
+	\bm{q}(2) &= \bm{f}(\bm{f}(\bm{q}(0), \bm{u}(0)), \bm{u}(1))\\
+	\bm{q}(3) &= \bm{f}(\bm{f}(\bm{f}(\bm{q}(0), \bm{u}(0)), \bm{u}(1)), \bm{u}(2))\\
+	...
+	\end{aligned}
+	\end{equation}
+\end{enumerate}
+%\vspace{1 cm}
+
+\begin{figure}[htp]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{MS_int.eps}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.49\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{SS.eps}
+	\end{minipage}
+	\caption{Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).}
+	\label{fig:TS}
+\end{figure}
+
+In this thesis a multiple shooting approach is used together with the use of a Runge-Kutta integration scheme. Runge-Kutta is an explicit integration scheme which has a higher calculation cost than a standard Euler scheme but is more reliable for non-linear systems and has a higher stability with respect to the chosen time-step \cite{Mercy2018}.  \\ 
+
+Multiple shooting will lead to a larger Hessian of the objective function and a larger Jacobian of the constraints in comparison with the single shooting approach due to the fact that more optimization variables are introduced. But on the other hand, multiple shooting has a sparse Hessian which can be solved very effectively. Single shooting would instead often produce a smaller fully populated Hessian because of the very non-linear way that the states depend on the begin state and the different controls. 
+
+%\clearpage
+\subsection{Model predictive control}
+MPC is already a mature approach in slow changing environments such as a chemical plant, but has more recently made also his breakthrough to the fast dynamic systems due to an increase of computational power and the implementation of new algorithms \cite{Mercy2018}. \\
+
+In order to be able to deal with model-plant mismatch and disturbances, MPC uses in this paper a moving control horizon. The time horizon is divided in discreet steps $T_{s}$ and inputs are calculated over the finite prediction horizon $N\cdot T_{s}$ by solving an OCP. The decision on the amount of samples taken to define the control horizon is based on a trade off between calculation effort and accuracy \cite{TongDuySon2019, Mercy2018}. Figure \ref{fig:MPC1} depicts the solving of the OCP on time sample $t+1$. In Figure \ref{fig:MPC2} it can be seen how only the first control sample of the calculated control signal will be applied to the system and a new OCP is solved. \\
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.48\textwidth]{comfort.PNG}
-	\caption{Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite{Elbanhawi2015})}
-	\label{fig:Comfort}
-\end{figure} 
+	\includegraphics[width=0.6\textwidth]{MPC1.PNG}
+	\caption{Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite{Patrinos2019}).}
+	\label{fig:MPC1}
+\end{figure}
 
-%\begin{wrapfigure}[22]{L}{0.5\textwidth}
-%	\begin{center}
-%		\includegraphics[width=0.48\textwidth]{comfort.PNG}
-%	\end{center}
-%	\caption{Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite{Elbanhawi2015})}
-%	\label{fig:Comfort}
-%\end{wrapfigure}
-In the paper 'Investigating ride comfort measures in autonomous cars' \cite{Elbanhawi2015}, it is explained that due to the introduction of autonomous vehicles there will be an other perception of comfort. Figure \ref{fig:Comfort} indicates in blue the claimed traditional comfort factors and in red the new ones that also have to be taken into account in when driving in autonomous vehicles. Concretely this can be translated into the preference of smooth trajectories and low lateral motions when the roads are assumed to be sufficiently smooth. A hypotheses is that motion sickness will be more prominent in autonomous driving due to the loss of control. Is is also argued that the amount of travel time and the distance to an obstacle are naturally parameters that contribute to a comfortable feeling. \\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{MPC2.PNG}
+	\caption{Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite{Patrinos2019}).}
+	\label{fig:MPC2}
+\end{figure}
 
-In 'Analysis of Driving Style Preference in Automated Driving' \cite{Bellem} three studies are conducted in order to capture the definition of comfortable driving in autonomous vehicles.
-In the first study drivers drove manually with their own driving styles and this data was used in order to look for relevant metrics that could be used in defining distinct driver styles. It was found that these metrics are varying across the maneuver. This is a logical result because not in all maneuvers are all the comfort matrices equally dominant.\\
-The results of this research is that accelerations play a key role in comfort but are not the only factor. \cite{Bellem}\\
-
-\begin{quote}
-	The different comfort metrics found:
-	\begin{itemize}
-		\item lateral and longitudinal acceleration;
-		\item lateral and longitudinal jerk;
-		\item quickness of maneuver;
-		\item headway distance;
-	\end{itemize}
-\end{quote}
-
-Quickness of completing a lane change or an acceleration maneuver could respectively be modelled as: $q_L = \frac{\frac{\int velocity\cdot dt}{Time}}{\Delta distance}$ and $q_A = \frac{\frac{\int acceleration\cdot dt}{Time}}{\Delta velocity}$.\\
-
-Comfortable driving as being assessed in \cite{Bellem} can be summarized as driving with small accelerations and jerk to obtain sufficient smooth trajectories and keeping sufficient headway distance in order to have a feeling of control and safety. These results suggest that when an algorithm to assess comfort is suggested for autonomous vehicles, a notion of the surrounding traffic should be inherently present. It was found that in order of the traffic density the driver is more tolerant towards less smooth driving behaviour e.g. to be able to insert in a busy lane. In this case higher comfort can be attained if the driver has a feeling of a fast responds of the vehicle translating in early peaks of acceleration. Vertical vibrations come not into scope when roads are assumed sufficiently smooth.\\
-
-In a second study the main metrics that were found from study one are varied and combinations are rated by the use of a survey about the amount of comfort. "Out of this it followed that accelerations are playing a key factor." \cite{Bellem} For lane changes it could be concluded that the maneuvers with a small lateral acceleration and early perceivable onset were more comfortable. It is further also hypothesised that the location of the acceleration peaks and the amount of symmetry of the acceleration signal also plays a role when the amount of comfort is rated.\\
-
-The relation between jerks and comfort is also confirmed by \cite{Gianna1996} where it is stated that: "Jerk has been shown to elicit a stronger influence on comfort than acceleration".
-
-
-% In mijn maneuver wordt de kleine waardes van longitudinale snelheid en versnellingen gecompenseerd door de normalisatie waarden. Dus ookal zijn ze klein, krijgen toch een grote impact mee in het berekenen van een optimale oplossing. Daarin tegen kan er wel makkelijker voldaan worden aan het perfect voldoen van de longitudinale parameters in de lane change zonder het algemene resultaat veel te veranderen. De keuzen van de wegingsfactoren worden hierdoor minder significant en sensitiviteit wordt lager. --> als verschillende maneuvers worden gecombineerd zal dit de uniekheid van de gevonden wegingsfactoren opdrijven.
-
-
-\subsection{Conclusion}
-%Zie quotes van de slides!
-In order to find parameters of driving comfort that will further on in the thesis will be used as comfort criteria, a literature study is conducted which is mainly questionnaire based. The results are that in order to be able to assess comfort higher order kinematic variables as accelerations and jerks should be taken into account. These are important variables in order to obtain a smooth vehicle path and to give a continuous and natural feeling when driving. Also should the quickness of the maneuver and the feeling of safety of the driver be taken into account. As quoted by \cite{Turner1999} states that low frequency lateral acceleration are the mean responsible for carsickness. In addition comfort assessment is influenced by the environment because in busier traffic there is a higher tolerance for less smooth trajectories. It was also found that the effect of a fast reaction of vehicle at the start of a maneuver is influencing the amount of comfort perceived in a positive way.
-
-
-\section{Inverse reinforcement learning}
-Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will lead besides also to sub-optimal solutions in comparison when the parameters are learned.  That is why it is chosen in this thesis to derive these parameters by demonstration of a human driver.\\
-
-The goal of the learning algorithm explained in this thesis is to derive the parameters of different linearly combined comfort criteria combined in the costfuntion $J$ that when optimized as best as possible explain the observed data. As the match with the observed  data gets better, the model as suggested by equation \ref{eq:1} is getting closer to the inner comfort model of the individual driver. However it should be noted that the driver is taken unknowingly a lot of comfort criteria into account and they are not always linearly relating. Therefore the suggested comfort cost function consisting of a linear combination of comfort criteria will always be an approximation of the reality. Yet as discussed in \cite{Kuderer2015a} the results suggest that the magnitudes of the quantities that contribute to the comfort of the user are obtained.\\
-
-\begin{equation}\label{eq:1}
-	J = \sum_{j=1}^{N}\theta_j\cdot f_j	
-\end{equation}
-
-%"Inverse optimal control, also known as inverse reinforcement learning, is the problem of recovering an unknown reward function in a Markov decision process from expert demonstrations of the optimal policy." \cite{Levine2012} In contrary what this classic definition, the approach followed by \cite{Kuderer2015a} is not modelling teh
-
-
-In order to create a generative model that create vehicle paths $r_i$ with equivalent kinematic characteristics as the path that was observed $\tilde{r_i}$, a feature-based inverse reinforcement learning is applied. \cite{Kuderer2015a,Abbeel2004} With $i \in [1 ... m]$ and $m$ the amount of observed trajectories. A feature is encoding relevant kinematic properties and the difference between the demonstrated and calculated features says something about the similarity of the kinematic vehicle signals. \\
-
-\subsection{Background on learning algorithm}
-A feature values maps a trajectory onto a scalar and the higher the scalar value the more discomfort is experienced. An example of a that measures the amount of accelerations in a maneuver is given by equation \ref{eq:3}.
-
-\begin{equation}\label{eq:3}
-f:\bm{r}\xrightarrow{}f(\bm{r})=\int_{0}^{T}\ddot{x}(t)^{2}+\ddot{y}(t)^{2} dt
-\end{equation}
-
-The path that that the centre of gravity of the vehicle is following can be represented by: \ref{eq:4}.
-\begin{equation}\label{eq:4}
-\bm{r}:t \xrightarrow{}\bm{r}(t) =  \bigl( \begin{smallmatrix} x(t)\\ y(t) \end{smallmatrix}\bigr)
-\end{equation}
-
-The driver is not a deterministic agent and is modelled by a stochastic distribution: $p(\bm{r}|\bm{\theta})$ For certain weights $\bm{\theta} \in \mathbb{R}^N$ a path $\bm{r}$ is produced as being a sample of a stochastic distribution. The distribution that is chosen for this is the distribution of maximum entropy (equation: \ref{eq:entropy}). \cite{Ziebart2008, Kretzschmar2014}. This describes the data best because it is the distribution that is least biased. \cite{Kuderer2015a} 
-The distribution with the highest entropy represents the given information best since it does not favour any particular outcome besides the observed constraints. \cite{Abbeel2004}
-	
-	
-\begin{equation}\label{eq:entropy}
-	p(\bm{r}|\bm{\theta}) = exp(-\bm{\theta}^T\cdot \bm{F}(\bm{r}))
-\end{equation}
-Equation \ref{eq:entropy} can be interpreted as a linear costfunction $\bm{\theta}^T\bm{F}(\bm{r})$ where agents are exponentially more likely to select trajectories with lower cost. \cite{Kuderer2015a}
-The observed feature vector $\tilde{\bm{F}} \in \mathbb{R}^N$ has on its entries the different feature values $\tilde{f_i}$ with $i \in [1...m]$. The averaged observed feature vector is $\tilde{\bm{F}}_{av} = \frac{1}{m}\sum_{j=1}^{m}\tilde{\bm{F}_j}$.\\
-
-In order to be able to explain the averaged observed feature vector, the weights $\bm{\theta}$ need to be found that match the expected features vector obtained from the distribution $\bm{F}(r_{expected})$ with the averaged observed features vector $\bm{F}_{obs}$. $\bm{r}_{expected}$ defined as $ E(p(\bm{r}|\bm{\theta}))$. To make the expected features vector match the averaged observed features vector, gradient descent method can be used with as gradient $\bm{F}_{obs} - \bm{F}(r_{expected})$. Equation \ref{eq:5} summarizes the gradient descent method with $\alpha$ the step size taken in the direction of descent.
-\begin{equation}\label{eq:5}
-	\bm{\theta}^{k+1} = \bm{\theta}^{k} - \alpha \pdv{\bm{F}}{\bm{\theta}}^k 
-\end{equation}
-
-When $\bm{\theta}_{optimal}$ is found the gradient is minimized and the features vectors will match as closely as possible. "When the feature expectations match, guaranteeing that the learner performs equivalently to the agent's demonstrated behaviour regardless of the actual reward weights the
-agent is attempting to optimize" \cite{Abbeel2004}\\
-
-In order to calculate $\bm{F}(\bm{r}_{expected})$ a Hamiltonian Markov chain
-Monte Carlo stochastic distribution sampling approached is used in \cite{Kretzschmar2014}. In \cite{Kuderer2015a} a simplified method and less calculation demanding approach is proposed where it is assumed that the expected path is the one that is been assessed as the most comfortable by the driver and is thus the path that is minimizing \ref{eq:1} for certain weights. In order to be able to match with the observed data it is hereby assumed that the demonstrations not only are samples of a stochastic distribution but are also generated by optimizing an inner cost function which is similar to \ref{eq:1}. Equation \ref{eq:6} summarizes the approximation proposed by \cite{Kuderer2015a}.
-\newcommand{\argmax}{argmax}
-\newcommand{\argmin}{argmin}
-
-\begin{equation}\label{eq:6}
-	\bm{r}_{expected} = \underset{\bm{r}}{\argmax} \hspace{1mm} p(\bm{r}|\bm{\theta}) = \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})
-\end{equation}
-\begin{equation}\label{eq:new}
-	\pdv{\bm{F}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})
-\end{equation}
-
-
-%\DeclareMathOperator*{\argmin}{argmin}
-It is checked in chapter \ref{cha:Learning_algorithm} if this approach that is assuming that demonstrations are generated by minimizing a cost function also gives acceptable results when the assumption is violated.
-
-\subsection{RPROP algorithm}\label{s:RPROP}
-From \cite{Panos_opti} it is known that not every step size in the opposite direction of the gradient is leading to the convergence towards a minimum. When the step size is too small it will take a long time to convergence. However when it is chosen too big, cycling behaviour between limit points can occur. In order to avoid this kind of unwanted behaviour a line-search method is needed in order to change the step size taken during the course of the algorithm. For this the Resilient backpropagation algorithm (\textbf{RPROP}) \cite{RPROP} is used as it was first proposed by Martin Riedmiller and Heinrich Braun in 1993.\\
-
-The main advantage when using RPROP is that the size of the gradient is not blurring the update value of the weights for the start of the next iteration in the gradient descent optimization method. The update value $\Delta u$ is solely dependent of the sign of the current gradient and the sign of the gradient in the previous iteration. The main equations of the algorithm are given for each by: 
-
-\begin{equation}\label{eq:7}
-	\Delta u^t_i =
-	\begin{Bmatrix}
-		 \eta^+ \cdot \Delta u^{t-1}_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} > 0 \\
-		 \eta^- \cdot \Delta u^{t-1}_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} < 0 \\
-		  \Delta u^{t-1}_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} = 0 \\
-	\end{Bmatrix}
-\end{equation}
-
-When the update value of the weight is determined it is applied in the direction of steepest descent which equals the opposite direction of the current gradient. 
-
-\begin{equation}\label{eq:8}
-\Delta \theta^t_i =
-\begin{Bmatrix}
-	-\Delta u^t_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t > 0 \\
-	+ \Delta u^t_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t < 0 \\
-	0, & else 
-\end{Bmatrix}
-\end{equation}
-Exception on \ref{eq:8}:
-
-\begin{equation}\label{eq:10}
-	\Delta \theta^t_i = -\Delta \theta^{t-1}_i, \hspace{1mm} if \hspace{1mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} < 0
-\end{equation}
-
-\begin{equation}\label{eq:9}
-	0 <\eta^-<1<\eta^+
-\end{equation}
-
-and with $\theta_i^{t+1} = \theta_i^{t} + \Delta \theta^t_i$, $i \in \mathbb{N}_{[1\cdots N]}$ and $t \in \mathbb{N}_[1 \cdots \mathbb{\tau}]$ the amount of iterations. Every time the partial derivative $\pdv{f_i}{\theta_i}^t$ of the corresponding weight $\theta_i^t$ changes its sign, it is assumed that the last update was too big and the local minimum was passed. In \ref{eq:7} the step size is reduced and in order to go back the previous situation the update of the weight is done as \ref{eq:10}. In order to not again decrease the update value when going back to the previous situation, in the next iteration $\pdv{f_i}{\theta_i}^{t-1}$ is set equal to zero.\\
-If the derivative retains its sign, the update-value is slightly increased in order to accelerate convergence in shallow regions." \cite{RPROP} Parameters chosen bij the user are $\Delta_0, \eta^+$ and $\eta^-$. In this thesis following values were chosen: $\Delta_0 = 0.1$, $\eta^+ = 1.2$ and $\eta^- = 0.5$.
-
-\subsection{Optimization principles}
-The optimization tool used is the CasADi software. This section discusses the main optimization principles used under the hood and discusses the IPOPT solver and SQP method. (See Handbook opti and slides CasADi 3 lecture vooral)
-
-
-%--> in main paper they make the assumption of calculating most likely path --> features expected = f(r_exp) instead of sampling as is done in this paper.
-%(Hamiltonian Markov chain Monte Carlo methods = very computation expensive)
-%
-
-
-
-%When the averaged observed feature vector $F$
-%
-%In order to be able to explain the observed trajectory
-%
-% Firstly he is generating observed paths that are a sample of a distribution and secondly he is minimizing its own comfort cost function.
-%
-% 
-%The exponential distribution is giving a higher chance to produce paths that have a low feature value associated  with a high weight factor. This means that the more influence a feature value has on the total amount of comfort (higher weight), how less likely it becomes that the driver will produce a certain path that will trigger a high value of the concerned feature value. 
-%
-%If you maximize the probability you get the most likely expected path for the chosen weights.  This can be translated in the assumption that the driver is most likely to produce a path that will be experienced as comfortable as possible by himself. The assumption that the driver is optimizing its own comfort cost function is an assumption on top of assuming that the observed path is a sample of an exponential distribution with certain weight factors. 
-%
-%The goal of the learning process is to learn the model parameters (weight factors) of the driver from their observed driving style. It is assumed that the driver can be explained by a probability distribution and that it produces paths that minimize a comfort cost function. When the comfort model of the driver is learned, it can be further used in general situations. This is done by implementing the user specific notion of comfort in the motion planning algorithm of a model predictive control planning application.
-%
-%The learned model should produce trajectories that are similar in order of comfort as experienced by the driver. This is a logical consequence because the model is derived from the observed data. The difference between the features of the observed and generated paths quantify the similarity and at convergence of the learning algorithm, the feature values are as close as possible. As close as possible should be taken with a grain of salt though. This can be explained by making a comparison between the curvature and the jerk where curvature is in order of 10^-5 and jerk is in order of 10^2. This means that a difference of 1 has a far more bigger impact on curvature than on jerk and normalization is necessary. Normalization is done by dividing the calculated features by their corresponding observed feature value in order to make it dimensionless.  This means that the optimization should be done without fixing time! The difference in feature values is the driving factor and this will indirect specify also the time of the lane change.
-%
-%Learning a model implies finding the best suitable values of the tunable parameters which are in this case the weight factors. To summarize, the goal of the learning algorithm is to find the weight factors which give the smallest difference between the feature values of the observed path and the feature values of the calculated path, which is the path that minimizes the linear comfort cost function. The calculated path is generated by the minimization of the comfort cost because minimizing the comfort cost function is equal to maximizing the exponential distribution and the resulting path is equal to the most likely generated path for certain weight factors. The most likely generated path is compared with the observed one. With this it is indirectly assumed that the observed paths are generated by a human driver that is minimizing its own unknow comfort cost function. It will be clear from the validation in chapter \ref{} if this assumption holds. From [hoofdrapport] it is assumed that this approximation is suitable in the context of learning individual driving styles on highways.  Two assumptions apply on the human driver. Firstly he is generating observed paths that are a sample of a distribution and secondly he is minimizing its own comfort cost function. It should be noted that in practice instead of using personal data also data form an expert driver can be made available to the user. This to avoid bad autonomous behavior as a result of an inexperienced human driver.
-%
-%
-%Note that the features of the path that are obtained by minimizing the comfort cost function should be possible to converge to the features of the observed path. The driver that is producing the observed path is assumed to maximize its personal comfort when generating the observation data which means that the most personal comfort is attained when the difference between the feature values of the observed and calculated paths are small. (this should be normalized) 
-%
-
-
-\subsubsection{Conclusion}
-A background from literature on the inverse reinforcement learning algorithm used in this thesis was given. First inverse reinforcement learning was explained and how it could help to solve the research question how to learn comfort from observations. Afterwards a more detailed background on the formulation of the specific learning algorithm was given, which was complemented with a discussion on the algorithm used to update the weights being part of the gradient descent method to match expected feature values with observed ones.
 \newpage
+\begin{equation}
+\label{eq:MPC}
+\begin{aligned}
+\min_{\bm{q}(.),\bm{u}(.)} \quad & \sum_{k = 0}^{N-1}l_{k}(\bm{q}_{k},\bm{u}_{k}) + E(\bm{q}_{N}) \\
+\textrm{s.t.} \quad & \bm{q}_{k+1} = \bm{f}(\bm{q}_{k}, \bm{u}_{k}) & k = [0,\cdots, N-1]\\
+& \bm{q}_{0}= \bm{q}_{measured} \\
+& h(\bm{q}_{k},\bm{u}_{k}) \geq 0	& k = [0,\cdots, N-1]\\
+& \bm{q}_{k}\in Q,\hspace{3 mm} \bm{u}_{k}\in U \hspace{3 mm} & k = [0,\cdots, N-1]\\
+& \bm{q}_{N}\in Q_f,\hspace{3 mm} N \in \mathbb{N}
+\end{aligned}
+\end{equation}
 
 
-%\section{bekijk hiervoor de andere approaches - to be read further}
-%
-%\subsection{Machine learning approach}
-%\subsection{paper brecht approach}
 
-%Dan komt de vraag wat is comfort precies? Literatuur studie...
-%Waarnaar kan men kijken als men het over comfort heeft. 
-%Lane change bekeken om comfort te valideren --> zeg dat er geen iso standaarden aanwezig zijn.
-%Hoe wordt een bestuurder gemoddelleerd --> dit wordt gedaan door een kansverdeling.
-%Waarom is entropie nuttig om deze bestuurder te kunnen bekijken? Doe hier meer ondezoek over en verantwoord het gebruik hiervan. Conclusie komt af met comfort parameters die verder worden gebruikt als features.
-%Bij de uitleg van de features en waarom er versnelling en acceleratie wordt gebruikt, basseer ook op paper 7 van hoofdpaper--> geen acces
-%
-%Wat wordt er in de literatuur al gebruikt om comfort te modelleren en geef een overzicht.
-%
-%Leg uit hoe komt aan entropy distribution komt --> kan beroep doen op ref 2 en 20 van het hoofdrapport (both are assuming an exponential distribution) (IMPORTANT) --> literatuur study niet te uitgebreid maken...
-%
-%Check uitgebreide samenvatting van hoofdpaper op oneNote.
-%
-%Dit is de reden voor het gebruik van de maximum entropie distributie: 
-%	To learn observed behavior, we aim to model the distribution
-%	that underlies the empirical sample trajectories.
-%	Following Abbeel and Ng [1], we aim to find a model that
-%	induces distributions that match, in expectation, the feature
-%	values fD of the empirical trajectories D, yielding
-%	Ep(x)[f (x)] = fD =
-%	1
-%	jDj
-%	X
-%	xk2D
-%	f (xk): (1)
-%	In general, however, there is not a unique distribution that
-%	matches the features. Ziebart et al. [24] resolve this ambiguity
-%	by applying the principle of maximum entropy [10], which
-%	states that the distribution with the highest entropy represents
-%	the given information best since it does not favor any
-%	particular outcome besides the observed constraints. (this is the least baised distribution)
-%	Modelling expected featueres by hybrid monte carlo method: https://reader.elsevier.com/reader/sd/pii/037026938791197X?token=71567B7640C402F2FF578E34E3BB7914CA14E4A1A29DE88D9534D96C9305E13DA52D0424FF1475A822FCE784725196D3
-%%	ref: C:\Users\t2vosx\OneDrive\Documenten\Leuven\Thesis\References2\Citations on main %paper\Learning to Predict Trajectories of Cooperatively Navigating Agents.pdf>
-%
-% 	paper: Feature-based prediction of trajectories for socially compliant navigation
-%	which
-%	states that the distribution with the highest entropy represents
-%	the given information best since it does not favor any
-%	particular outcome besides the observed constraints.
-	
-%	• Weet dat exponentiële vorm oplossing is van boven staand optimizatie probleem. zie foto
-%	--> volgt uit FONC --> oplossing moet (non convex) voldoen aan KKT conditions. Er zijn enkel maar equality constraints aanwezig --> primal feasibility en lagrange stationarity moeten voldaan worden --> LS wordt gecontroleerd drm van de Euler - lagrange vergelijking te gebruiken. 
+
+%\begin{equation}\label{eq:3}
+%minimize_{\bm{q}(.),\bm{u}(.)}\sum_{k = 0}^{N-1}l_{k}(\bm{q}_{k},\bm{u}_{k}) + E(\bm{q}_{N})
+%\end{equation}
+%\hspace{42 mm} \textit{subject to:}
+%\[\bm{\dot{q}}_{k+1} = \sum_{k = 0}^{N-1}\bm{f}(\bm{q}_{k}, \bm{u}_{k})\]
+%\[\bm{q}_{0}= \bm{q}_{measured}\]
+%\[h(\bm{q}_{k},\bm{u}_{k}) \geq 0\]
+%\[\bm{q}_{k}\in Q,\hspace{3 mm} \bm{u}_{k}\in U, \hspace{3 mm} N \in \mathbb{N}\]
+
+
+Equation \ref{eq:MPC} is a representation of the solved discrete system OCP during one iteration of the MPC. It is a discretized version of equation \ref{eq:OCP}. The Runge-Kutta integration is embedded in $\bm{f}$. The hard constraints are represented by $h$. It is worth noticing that the constraints can be violated in-between the different time sample points.\\
+
+MPC has no direct feedback loop, but through the iterative way of solving the OCPs it can still deal with model mismatch or a changing environment. The downside of this approach is that it requires a bigger computational load, which makes efficiently written software a necessity. 
 
 
 %%% Local Variables: 

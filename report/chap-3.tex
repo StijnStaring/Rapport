@@ -85,7 +85,7 @@ F_{x,r} = F_{x, f}
 \end{aligned}
 \end{equation}
 
-$R_w$ is the wheel radius and $T_{max}$ a measure for the maximum torque the engine is able to supply. In this way, four wheel drive is assumed and the total torque is equally distributed between front and rear axle (division by 2 in above equations). The coefficient $t_r$ is the normalised wheel torque and can have a value between -1 and 1 (negative for braking).
+$R_w$ is the wheel radius and $T_{max}$ a measure for the maximum torque the engine is able to supply. Because $F_{x,r} = F_{x, f}$ the longitudinal forces that are induced by the engine is equally distributed between front and rear axle (division by 2 in above equations). The coefficient $t_r$ is the normalised amount of throttle that can be applied and has a value between -1 and 1 (negative for braking). In the bicycle model it is assumed that braking behaves the same as giving a negative amount of throttle.
 The lateral tyre forces are calculated based on the tyre slipangles $\alpha_f$ and $\alpha_r$:
 \begin{equation}\label{eq:bicycle_slipangle}
 \begin{aligned}
@@ -100,9 +100,9 @@ F_{y,f} = 2 K_f \alpha_f\\
 F_{y,r} = 2 K_r \alpha_r
 \end{aligned}
 \end{equation}\\
-The use of this linearised lateral tyre model is valid for small lateral accelerations ($a_y <= 4 m/s^2$) and slip angles ($\alpha <= 5^o$) \cite{TongDuySon2019}. It is acceptable to use this approximation model in this thesis as the goal is learn a comfortable and thus smooth manoeuvre e.g lane change. These constraints will also be checked during the section \ref{s:GD_val}.\\
+The use of this linearised lateral tyre model is valid for small lateral accelerations ($a_y <= 4 m/s^2$) and slip angles ($\alpha <= 5^o$) \cite{TongDuySon2019}. It is acceptable to use this approximation model in this thesis as the goal is learn a comfortable and thus smooth lane change manoeuvre. These constraints will also be checked during the section \ref{s:GD_val}.\\
 
-The fixed model parameter used during the simulations are given in table \ref{table:vehicel_model_param}. These correspond to common used vehicle parameters as provide by Siemens Digital Industries Software - NVH R\&D engineering department. The $Gsteerfactor$ approximates linearly the relation between the frontwheelangle and the steeringwheelangle turned by the driver by the relation $\delta = \frac{\delta_s}{Gs}$.  
+The vehicle model parameters used are given in table \ref{table:vehicel_model_param}. These correspond to common used vehicle parameters as provide by Siemens Digital Industries Software - NVH R\&D engineering department. The $Gsteerfactor$ approximates linearly the relation between the frontwheelangle and the steeringwheelangle turned by the driver by the relation $\delta = \frac{\delta_s}{Gs}$.  
 
 \begin{table}[h]
 	\centering
@@ -219,12 +219,13 @@ Another initial guess that speeds up the solving time of the IPOPT solver, is se
 
 
 \subsection{Objective function}\label{s:obj}
-The objective function used in \ref{opt:basic_opti_w} has to contain comfort felt by the driver and is based on the literature study displayed in section \ref{s:comfort_parameters}. The choice made in how to define the different features is important because it sets the fixed framework where the weights serve as parameters that steer the learning process towards a better match with the observations. It can be expected that the linear relation of features given by $\bm{F}(\bm{r})$ will serve as an approximation for the real, more complex comfort objective of a human drive. As is showed in \cite{Kuderer2015a} this linear approximation of features can already capture  the main trends that contribute to an comfortable maneuver experience. As is suggested in \cite{Kuderer2015a} the feature framework that is further discussed in this section, can be validated and adjusted based on an user study. 
+The objective function used in \ref{opt:basic_opti_w} has to contain comfort felt by the driver and is based on the literature study displayed in section \ref{s:comfort_parameters}. The choice made in how to define the different features is important because it sets the fixed framework where the weights serve as parameters that steer the learning process towards a better match with the observations. It can be expected that the linear relation of features given by $\bm{F}(\bm{r})$ will serve as an approximation for the real, more complex comfort objective of a human drive. As is showed in \cite{Kuderer2015a} this linear approximation of features can already capture  the main trends that contribute to an comfortable maneuver experience. As is suggested in \cite{Kuderer2015a} the feature framework that is further discussed in this section, can be validated and adjusted based on an user study in order to better match real driver observations. \\
 
- already predefines how good the match can be with the observed data. 
+When ideal data is used the observations are generated based on a known underlying comfort objective with known weights and feature framework. This permits the validation of the objective learning method discussed in this thesis. The remaining part of this section will discus the feature framework used in this thesis.\\
+
 
 \begin{equation}\label{eq:obj}
-discomfort = \theta_1 \cdot f_1 +\theta_2 \cdot f_2 +\theta_3 \cdot f_3 +\theta_4 \cdot f_4 +\theta_5 \cdot f_5 \\
+discomfort = \theta_1 \cdot f_1 +\theta_2 \cdot f_2 +\theta_3 \cdot f_3 +\theta_4 \cdot f_4 +\theta_5 \cdot f_5 +\theta_6 \cdot f_6 \\
 \end{equation}
 \[	f_i, \theta_i \in \mathbb{R} \hspace{5mm}
 i \in \mathbb{N}\]\\

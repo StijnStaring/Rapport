@@ -94,7 +94,7 @@ In slow changing environments as for example a chemical plant, MPC is already a 
 
 MPC is an approach were optimizations are solved in a loop in order to be able to notice disturbances, changing environments and model-plant mismatches. Therefore it makes use of a moving time horizon\footnote{There are also other implementations e.g. shrinking time horizon, where the prediction time gets smaller every step.}. Every iteration an OCP is solved over the prediction horizon and as result control signals are given as output. Only the first control is applied for one time interval of the finite prediction horizon $N\cdot T_{s}$ as is visualized in Figures \ref{fig:MPC1}and \ref{fig:MPC2}.
 
-The decision on the amount of samples $N$ that are used in the control horizon is based on a trade off between higher accuracy and calculation effort. \cite{TongDuySon2019, Mercy2018}. In Figure \ref{fig:MPC1} the solving of an OCP during one MPC iteration on time sample $t+1$ is depicted. Figure \ref{fig:MPC2} shows than only the first control of the obtained control signal will be applied, which induces the system to come in a different state which will be the new start state and a new OCP will be solved. This will go on until the final desired conditions are met. A single OCP iteration only takes the model of the system into account as is done in a feedforward controller but over the iterations a feedback loop is acquired because of the changing initial state \cite{Patrinos2019}\\
+The decision on the amount of samples $N$ that are used in the control horizon is based on a trade off between higher accuracy and calculation effort. \cite{TongDuySon2019, Mercy2018}. In Figure \ref{fig:MPC1} the solving of an OCP during one MPC iteration on time sample $t+1$ is depicted. Figure \ref{fig:MPC2} shows than only the first control of the obtained control signal will be applied, which induces the system to come in a different state which will be the new start state and a new OCP will be solved. This will go on until the final desired conditions are met. A single OCP iteration only takes the model of the system into account as is done in a feedforward controller but through the iterative way of solving the OCPs, the MPC can still deal with unexpected acquired states due to feedback that is given by each initial state. As stated earlier the downside of this approach is a bigger computational load, which makes efficiently written software a necessity.  \cite{Patrinos2019}\\
 
 \begin{figure}[h!]
 	\centering
@@ -110,11 +110,6 @@ The decision on the amount of samples $N$ that are used in the control horizon i
 	\label{fig:MPC2}
 \end{figure}
 
-\newpage
-
-
-
-
 
 %\begin{equation}\label{eq:3}
 %minimize_{\bm{q}(.),\bm{u}(.)}\sum_{k = 0}^{N-1}l_{k}(\bm{q}_{k},\bm{u}_{k}) + E(\bm{q}_{N})
@@ -126,9 +121,6 @@ The decision on the amount of samples $N$ that are used in the control horizon i
 %\[\bm{q}_{k}\in Q,\hspace{3 mm} \bm{u}_{k}\in U, \hspace{3 mm} N \in \mathbb{N}\]
 
 
-Equation \ref{eq:MPC} is a representation of the solved discrete system OCP during one iteration of the MPC. It is a discretized version of equation \ref{eq:OCP}. The Runge-Kutta integration is embedded in $\bm{f}$. The hard constraints are represented by $h$. It is worth noticing that the constraints can be violated in-between the different time sample points.\\ \cite{Panos_opti}
-
-MPC has no direct feedback loop, but through the iterative way of solving the OCPs it can still deal with model mismatch or a changing environment. The downside of this approach is that it requires a bigger computational load, which makes efficiently written software a necessity. 
 
 
 %%% Local Variables: 

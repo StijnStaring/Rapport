@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  19 MAY 2020 16:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  19 MAY 2020 17:14
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -1253,33 +1253,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-<figures/MPC1.PNG, id=387, 660.66824pt x 349.90726pt>
-File: figures/MPC1.PNG Graphic file (type png)
-<use figures/MPC1.PNG>
-Package pdftex.def Info: figures/MPC1.PNG  used on input line 101.
-(pdftex.def)             Requested size: 238.80243pt x 126.47372pt.
 
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [8 <./figures/MS_int-eps-converted-to.pdf> <./figures/SS-eps-converted-to.pdf>]
-<figures/MPC2.PNG, id=412, 649.82774pt x 363.759pt>
+<figures/MPC1.PNG, id=410, 660.66824pt x 349.90726pt>
+File: figures/MPC1.PNG Graphic file (type png)
+<use figures/MPC1.PNG>
+Package pdftex.def Info: figures/MPC1.PNG  used on input line 101.
+(pdftex.def)             Requested size: 238.80243pt x 126.47372pt.
+<figures/MPC2.PNG, id=414, 649.82774pt x 363.759pt>
 File: figures/MPC2.PNG Graphic file (type png)
 <use figures/MPC2.PNG>
 Package pdftex.def Info: figures/MPC2.PNG  used on input line 108.
 (pdftex.def)             Requested size: 238.80243pt x 133.67844pt.
-[9 <./figures/MPC1.PNG> <./figures/MPC2.PNG>]
-
-LaTeX Warning: Reference `eq:MPC' on page 10 undefined on input line 129.
-
-)
-Overfull \vbox (13.59999pt too high) has occurred while \output is active []
-
-
-[10]
+) [9 <./figures/MPC1.PNG> <./figures/MPC2.PNG>]
 \openout2 = `chap-2.aux'.
 
- (chap-2.tex
+ (chap-2.tex [10
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
@@ -1302,11 +1298,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--29
 
  []
 
-[11
-
-
-
-]
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
@@ -1844,10 +1836,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
  ) 
 Here is how much of TeX's memory you used:
- 15397 strings out of 481518
- 244395 string characters out of 2911616
+ 15396 strings out of 481518
+ 244387 string characters out of 2911616
  874122 words of memory out of 3000000
- 29895 multiletter control sequences out of 15000+200000
+ 29894 multiletter control sequences out of 15000+200000
  638526 words of font info for 171 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,42p,1654b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1880,7 +1872,7 @@ lic/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (64 pages, 1781487 bytes).
+Output written on masterproef.pdf (64 pages, 1780280 bytes).
 PDF statistics:
  968 PDF objects out of 1000 (max. 8388607)
  218 named destinations out of 1000 (max. 500000)

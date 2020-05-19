@@ -47,7 +47,7 @@ Two variants of this model are discussed which are differentiated by the smoothn
 \end{enumerate}
 
 
-$x$ and $y$ in the above formulation are the position of the centre of gravity of the car in the global coordinate system. $\psi$ is the vehicle yaw angle and $\dot{\psi}$ the yaw angular velocity. $v_x$ and $v_y$ are the vehicle velocities in the local vehicle frame. The input vector of \ref{eq:bicycle_model1} consists of the throttle control input $t_r$ and the angle of the front wheel $\delta$. In the more extended bicycle model of \ref{eq:bicycle_model2} throttle and frontwheelangle serve as states. $a_x$ and $a_y$ are the total accelerations of the centre of gravity in the in the local vehicle frame. The inputs in this second formulation are the first order derivatives of throttle and frontwheelangle.\\
+$x$ and $y$ in the above formulation are the position of the centre of gravity of the car in the global coordinate system. $v_x$ and $v_y$ are the vehicle velocities in the local vehicle frame.$\psi$ is the vehicle yaw angle and $\dot{\psi}$ the yaw rate.  The input vector of \ref{eq:bicycle_model1} consists of the throttle control input $t_r$ and the angle of the front wheel $\delta$. In the more extended bicycle model of \ref{eq:bicycle_model2} throttle and frontwheelangle serve as states. $a_x$ and $a_y$ are the total accelerations of the centre of gravity in the local vehicle frame. The inputs in this second formulation are the first order derivatives of throttle and frontwheelangle.\\
 
 The equations of motion derived and checked in literature \cite{TongDuySon2019} are:
 \begin{equation}\label{eq:bicycle_model_eqmotion}
@@ -215,7 +215,9 @@ The time limit constraint in \ref{opt:basic_opti_w} is needed in order to demarc
 In order to solve \ref{opt:basic_opti_w} an initial guess is needed for the longitudinal velocity in order to avoid the emergence of an invalid number. The default initial guess used in the CasADi software is an all zero vector. As can be seen in \ref{eq:bicycle_slipangle} this would give a division by zero. \\
 To further enhance the solving speed of \ref{opt:basic_opti_w} also initial guesses are given for the other vehicle states and additionally the controls. To do this, a feasible solution of the non-linear bicycle model for a lane change is needed. Therefore the initial guesses for $\bm{X}, \bm{U} \;and\; T$ are taken from the observed ideal data. \\
 
-Another initial guess that speeds up the solving time of the IPOPT solver, is setting the initial guess of the lambda multipliers internally equal to the ones found during the previous call of \ref{opt:basic_opti_w} during the loop visualized by figure \ref{fig:basic learning}. 
+Another initial guess that speeds up the solving time of the IPOPT solver, is setting the initial guess of the lambda multipliers internally equal to the ones found during the previous call of \ref{opt:basic_opti_w} during the loop visualized by figure \ref{fig:basic learning}. \\
+
+The time needed by the CPU in order to calculate the expected path for a certain set of weights and thus solving \ref{opt:basic_opti_w} takes around $6.5\hspace{1mm}s$ when an timelimit of $30$ seconds and N equal to $1000$ is used. 
 
 
 \subsection{Objective function}\label{s:obj}
@@ -235,31 +237,37 @@ i \in \mathbb{N}\]\\
 \begin{equation}\label{eq:flong_acc}
 f_{1}:\bm{r}\xrightarrow{}f_1(\bm{r})=\int_{0}^{T}a_{x,total}^{2}(t) dt
 \end{equation}
-Feature one is assessing the amount of discomfort by integrating the total longitudinal acceleration in the local axis fixed to the vehicle as can be seen in Figure \ref{fig:bicycle_model}. The total longitudinal acceleration  $a_{x,total} $ is the sum of the tangential acceleration $ a_{x,tangential}$ and the normal acceleration $a_{x,normal}$. These 2 variables can respectively be linked to the optimization variables regarding the vehicle model of equation \ref{eq:bicycle_model} by $\pdv[2]{v_x}{t}$ and $-v_y\cdot\dot{\psi}$. By including the normal acceleration, the centripetal force and hence the curvature of the path is taken into account. \\ 
+Feature one is assessing the amount of discomfort by integrating the total longitudinal acceleration in the local axis. The local axis are fixed to the centre of gravity of the vehicle as can be seen in Figure \ref{fig:bicycle_model}. The total longitudinal acceleration  $a_{x,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in \ref{eq:bicycle_model_eqmotion}. \\
 
 \textit{Feature 2: lateral acceleration}
 \begin{equation}\label{eq:flat_acc}
 f_{2}:\bm{r}\xrightarrow{}f_2(\bm{r})=\int_{0}^{T}a_{y,total}^{2}(t) dt
 \end{equation}
-Feature two is assessing the amount of discomfort by integrating the total lateral acceleration in the local axis while assuming a straight road. The total lateral acceleration  $a_{y,total} $ is the sum of the tangential acceleration $ a_{y,tangential}$ and the normal acceleration $a_{y,normal}$. These 2 variables can respectively be linked to the optimization variables regarding the vehicle model of equation \ref{eq:bicycle_model} by $\pdv[2]{v_y}{t}$ and $v_x\cdot\dot{\psi}$.\\
+Feature two is assessing the amount of discomfort by integrating the total lateral acceleration in the local axis. The total lateral acceleration  $a_{y,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in \ref{eq:bicycle_model_eqmotion}.\\
 
-\textit{Feature 3: lateral jerk}
+\textit{Feature 3: longitudinal jerk}
+\begin{equation}\label{eq:flong_jerk}
+f_{3}:\bm{r}\xrightarrow{}f_3(\bm{r})=\int_{0}^{T}j_x^{2}(t) dt
+\end{equation}
+Feature three is assessing the amount of comfort by integrating the total change of longitudinal acceleration during the followed path. \\
+
+\textit{Feature 4: lateral jerk}
 \begin{equation}\label{eq:flat_jerk}
-f_{3}:\bm{r}\xrightarrow{}f_3(\bm{r})=\int_{0}^{T}j_y^{2}(t) dt
+f_{4}:\bm{r}\xrightarrow{}f_4(\bm{r})=\int_{0}^{T}j_y^{2}(t) dt
 \end{equation}
-Feature three is assessing the amount of comfort by integrating the total change of acceleration during the followed path. \\
+Feature four is assessing the amount of comfort by integrating the total change of lateral acceleration during the followed path. \\
 
-\textit{Feature 4: desired speed}
+\textit{Feature 5: desired speed}
 \begin{equation}\label{eq:des_speed}
-f_{4}:\bm{r}\xrightarrow{}f_4(\bm{r})=\int_{0}^{T}(v_{des}-v_x)^2 dt
+f_{5}:\bm{r}\xrightarrow{}f_5(\bm{r})=\int_{0}^{T}(v_{des}-v_x)^2 dt
 \end{equation}
-$v_{des}$ is assumed to be a constant value in this paper and set equal to start velocity just before starting the lane change.\\
+$v_{des}$ is assumed to be a constant value and set equal to the start velocity just before the lane change.\\
 
-\textit{Feature 5: desired lane change}
+\textit{Feature 6: desired lane change}
 \begin{equation}\label{eq:des_lane_change}
-f_{5}:\bm{r}\xrightarrow{}f_5(\bm{r})=\int_{0}^{T}(y_{lane\_change}-y)^2 dt
+f_{6}:\bm{r}\xrightarrow{}f_6(\bm{r})=\int_{0}^{T}(y_{lane\_change}-y)^2 dt
 \end{equation}
-$y_{des}$ is a constant and is the desired lateral distance completed after the lane change. If the goal is faster achieved, this is interpreted as comfort for the driver.
+$y_{des}$ is a constant and is the desired lateral distance completed after the lane change. If the vehicle reaches faster its desired lateral displacement this is perceived as a good responds of the vehicle and this is interpreted as comfort for the driver as is discussed in section \ref{s:comfort_parameters:}.
 \\
 
 In order to implement the above defined first and second derivative and integrations in a CasADi optimization environment, discretization with a numerical scheme is needed. The first and second derivative are discretized by means of a central scheme as can be seen in equation \ref{eq:CC}

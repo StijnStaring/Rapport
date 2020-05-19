@@ -49,7 +49,7 @@ Two variants of this model are discussed which are differentiated by the smoothn
 
 $x$ and $y$ in the above formulation are the position of the centre of gravity of the car in the global coordinate system. $v_x$ and $v_y$ are the vehicle velocities in the local vehicle frame.$\psi$ is the vehicle yaw angle and $\dot{\psi}$ the yaw rate.  The input vector of \ref{eq:bicycle_model1} consists of the throttle control input $t_r$ and the angle of the front wheel $\delta$. In the more extended bicycle model of \ref{eq:bicycle_model2} throttle and frontwheelangle serve as states. $a_x$ and $a_y$ are the total accelerations of the centre of gravity in the local vehicle frame. The inputs in this second formulation are the first order derivatives of throttle and frontwheelangle.\\
 
-The equations of motion derived and checked in literature \cite{TongDuySon2019} are:
+The equations of motion derived and checked in literature \cite{TongDuySon2019} are\footnote{Appendix \ref{app:A} shows the fully worked out jerk equations $j_x$ and $j_y$.} :
 \begin{equation}\label{eq:bicycle_model_eqmotion}
 \begin{aligned}
 \dot{x} = v_x cos(\psi) - v_y sin(\psi)\\
@@ -217,7 +217,7 @@ To further enhance the solving speed of \ref{opt:basic_opti_w} also initial gues
 
 Another initial guess that speeds up the solving time of the IPOPT solver, is setting the initial guess of the lambda multipliers internally equal to the ones found during the previous call of \ref{opt:basic_opti_w} during the loop visualized by figure \ref{fig:basic learning}. \\
 
-The time needed by the CPU in order to calculate the expected path for a certain set of weights and thus solving \ref{opt:basic_opti_w} takes around $6.5\hspace{1mm}s$ when an timelimit of $30$ seconds and N equal to $1000$ is used. 
+The time needed by the CPU in order to calculate the expected path for a certain set of weights and thus solving \ref{opt:basic_opti_w} takes around $6.5\hspace{1mm}s$ when an timelimit of $30$ seconds and N equal to $1000$ is chosen. 
 
 
 \subsection{Objective function}\label{s:obj}
@@ -267,22 +267,12 @@ $v_{des}$ is assumed to be a constant value and set equal to the start velocity 
 \begin{equation}\label{eq:des_lane_change}
 f_{6}:\bm{r}\xrightarrow{}f_6(\bm{r})=\int_{0}^{T}(y_{lane\_change}-y)^2 dt
 \end{equation}
-$y_{des}$ is a constant and is the desired lateral distance completed after the lane change. If the vehicle reaches faster its desired lateral displacement this is perceived as a good responds of the vehicle and this is interpreted as comfort for the driver as is discussed in section \ref{s:comfort_parameters:}.
+
+$y_{des}$ is a constant and is the desired lateral distance completed after the lane change. If the vehicle reaches faster its desired lateral displacement this is perceived as a good responds and is interpreted as comfort of the driver as is discussed in section \ref{s:comfort_parameters}.
 \\
 
-In order to implement the above defined first and second derivative and integrations in a CasADi optimization environment, discretization with a numerical scheme is needed. The first and second derivative are discretized by means of a central scheme as can be seen in equation \ref{eq:CC}
 
-
-\begin{subequations}
-	\begin{equation}
-	\pdv{\phi}{t} = \frac{\phi(i+1)-\phi(i-1)}{2\Delta t}
-	\end{equation}
-	\begin{equation}
-	\pdv[2]{\phi}{t} = \frac{\phi(i+1)\phi(i)+\phi(i-1)}{\Delta t^2}
-	\end{equation}
-\end{subequations}
-
-The Crank-Nicolson numerical integration as is displayed in equation \ref{eq:CN} is used in order to obtain the different feature values of feature $i$.
+In order to implement the above defined integrals in the objective function of \ref{opt:basic_opti_w} discretization is needed. For this the Crank-Nicolson numerical integration is used as is shown in \ref{eq:CN} for feature $f_i$. 
 \begin{subequations}\label{eq:CN}
 	\begin{equation}
 	\int_{f_i(t^n)}^{f_i(t^{n+1})}df_i=\int_{t^n}^{t^{n+1}} I(t) \cdot dt	
@@ -292,7 +282,7 @@ The Crank-Nicolson numerical integration as is displayed in equation \ref{eq:CN}
 	\end{equation}
 \end{subequations}\\
 
-The objectives seen in equation \ref{eq:CC}, that consists out of a set of comfort features models the amount of discomfort experienced during a maneuver by mapping 2D kinematic signals onto a scalar feature values. By finding the driver specific weights in \ref{eq:CC} it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a maneuver.  As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of save driving by the autonomous vehicle contributes to the amount of comfort that will be experienced during driving. Because this thesis is focussing on the development and validation of a reinforcement learning algorithm, the environment is not taken into account. However this can easily be done if data of the state of other vehicles is available by modelling the distances between different vehicles by equation \ref{eq:comfort_feature} as suggested in \cite{Kuderer2015a}. 
+The objectives described by equation \ref{eq:obj}, that consists out of a set of comfort features that model the amount of discomfort experienced during a maneuver by mapping kinematic signals onto scalar feature values by the means of integration. By finding the driver specific weights $\bm{\theta}$ in \ref{eq:obj} it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a maneuver for a specific driver. As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of save driving of an autonomous vehicle contributes to the amount of comfort that is experienced during driving. Because this thesis is focussing on the development and validation of a reinforcement learning algorithm, the environment is not taken into account. However this can be done if data of the state of other vehicles is available by modelling the distances between different vehicles by equation \ref{eq:comfort_feature} as suggested in \cite{Kuderer2015a}. 
 
 \begin{equation}\label{eq:comfort_feature}
 f_d= \sum_{k = 1}^{L}\int_{0}^{T}\frac{1}{(x_{o,k}(t)-x)^2+(y_{o,k}(t)-y)^2}\cdot dt
@@ -354,6 +344,8 @@ In order to determine if the generated data is a local solution of the optimizat
 
 %bespreek N verschil, Tlimit --> sampling times en het gebruik van het bicycle model --> slipangle low enough en lateral acceleration low enough. 
 
+
+% Beschrijf hier die keuze tussen de numerieke approach en de analytische. Wat is het verschil in calculation time?
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{IG.png}
@@ -555,7 +547,27 @@ The convergence plots are all similar and for dataset A, Figure \ref{fig:conflic
 %  \label{tab:ok}
 %\end{table}
 
+%In order to implement the above defined first and second derivative and integrations in a CasADi optimization environment, discretization with a numerical scheme is needed. The first and second derivative are discretized by means of a central scheme as can be seen in equation \ref{eq:CC}
 
+
+%\begin{subequations}
+%	\begin{equation}
+%	\pdv{\phi}{t} = \frac{\phi(i+1)-\phi(i-1)}{2\Delta t}
+%	\end{equation}
+%	\begin{equation}
+%	\pdv[2]{\phi}{t} = \frac{\phi(i+1)\phi(i)+\phi(i-1)}{\Delta t^2}
+%	\end{equation}
+%\end{subequations}
+%
+%The Crank-Nicolson numerical integration as is displayed in equation \ref{eq:CN} is used in order to obtain the different feature values of feature $i$.
+%\begin{subequations}\label{eq:CN}
+%	\begin{equation}
+%	\int_{f_i(t^n)}^{f_i(t^{n+1})}df_i=\int_{t^n}^{t^{n+1}} I(t) \cdot dt	
+%	\end{equation}
+%	\begin{equation}
+%	f_i^{n+1} -f_i^{n} = \frac{1}{2}\frac{I(t^{n+1})+I(t^n)}{\Delta t}
+%	\end{equation}
+%\end{subequations}\\
 
 
 %%% Local Variables: 

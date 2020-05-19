@@ -1,10 +1,26 @@
-\chapter{The First Appendix}
+\chapter{Jerk equations of the non-linear bicycle model}
 \label{app:A}
-Appendices hold useful data which is not essential to understand the work
-done in the master's thesis. An example is a (program) source.
-An appendix can also have sections as well as figures and references\cite{h2g2}.
+%Appendices hold useful data which is not essential to understand the work
+%done in the master's thesis. An example is a (program) source.
+%An appendix can also have sections as well as figures and references\cite{h2g2}.
 
-\section{More Lorem}
+In this section the jerk equations that were derived from the non-linear bicycle model and used in the analytical learning algorithm are displayed.
+\section{Equations}
+
+\begin{multline*}
+j_{x,t} = \frac{1}{M}\cdot (-sin\delta t_r c \dot{\delta}+ cos \delta\dot{t_r}c 
++ cos\delta 2 K_{y,f}arctan(\frac{v_y+\omega a}{v_x})\dot{\delta}\\ 
++ sin \delta 2 K_{y,f} \frac{v_x a_{t,y} + v_x \dot{\omega}a - a_{t,x}v_y -a_{t,x}\omega a}{v_x^2 +v_y^2 + 2v_y \omega a + \omega ^2 a^2 }
+-cos \delta 2 K_{y,f}\delta \dot{\delta}\\
+- sin\delta 2 K_{y,f} \dot{\delta} + \dot{t_r}c - c_{r1}2v_x a_{t,x})
+\end{multline*}
+
+\begin{multline*}
+j_{y,t} = \frac{1}{M}(cos\delta t_r c \dot{\delta} + sin \delta \dot{t_r}c + sin\delta 2 K_{y,f}arctan(\frac{v_y+\omega a}{v_x})\dot{\delta}\\
+-cos \delta 2 K_{y,f}\frac{v_x a_{t,y} + v_x \dot{\omega}a - a_{t,x}v_y -a_{t,x}\omega a}{v_x^2 +v_y^2 + 2v_y \omega a + \omega ^2 a^2 } - sin \delta 2 K_{y,f}\delta \dot{\delta}\\
+ + cos\delta 2 K_{y,f}\dot{\delta} -2 K_{y,r} \frac{v_x a_{t,y} -v_x \dot{\omega}b - a_{t,x}v_y +a_{t,x}\omega b}{v_x^2 +v_y^2 - 2v_y \omega b + \omega ^2 a^2 })
+\end{multline*}
+
 
 
 %\subsection{Lorem 15--17}

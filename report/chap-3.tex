@@ -126,7 +126,7 @@ The vehicle model parameters used are given in table \ref{table:vehicel_model_pa
 	\label{table:vehicel_model_param}
 \end{table}
 \newpage
-\section{Formulation of the algorithm}
+\section{Formulation of the algorithm} \label{s:learning_alg}
 The goal of the learning algorithm is to learn the weights $\bm{\theta}$ in the pre-defined comfort objective function: $\bm{\theta}^T\bm{F}(\bm{r})$. The features that are the entries of the feature vector $\bm{F}(\bm{r})$ capture a notion of comfort felled by the driver. Based on the literature study conducted in Chapter \ref{cha:Literature_study} and paper \cite{Kuderer2015a}, the amount of discomfort can be modelled by the features discussed in \ref{s:obj} during timespan $T$ of the maneuver. The scenario of a lane change on a highway is chosen. The time horizon where over the minimization of the comfort objective is itself also an optimization variable  $T$. The simulations done in this thesis were performed on a notebook provided by Siemens with Intel Core i7-7920HQ CPU @ 3.10GHz and 32 GB of RAM memory.\\
 
 
@@ -217,6 +217,8 @@ To further enhance the solving speed of \ref{opt:basic_opti_w} also initial gues
 
 Another initial guess that speeds up the solving time of the IPOPT solver, is setting the initial guess of the lambda multipliers internally equal to the ones found during the previous call of \ref{opt:basic_opti_w} during the loop visualized by figure \ref{fig:basic learning}. \\
 
+The solver used to calculate the states and control signals in \ref{opt:basic_opti_w} is the interior point solver IPOPT which is an open source solver. The idea behind it is to smoothing the KKT conditions and transform it to a smooth root finding problem. \cite{Panos_opti} Because IPOPT is a interior boundary method, a feasible initial guess is needed. Every time that the expected path has to be calculated as is visualised in flow diagram \ref{fig:basic learning}, the optimization \ref{opt:basic_opti_w} is performed with as initial guess the observed maneuver.\\
+
 The time needed by the CPU in order to calculate the expected path for a certain set of weights and thus solving \ref{opt:basic_opti_w} takes around $6.5\hspace{1mm}s$ when an timelimit of $30$ seconds and N equal to $1000$ is chosen. 
 
 
@@ -278,54 +280,53 @@ In order to implement the above defined integrals in the objective function of \
 	\int_{f_i(t^n)}^{f_i(t^{n+1})}df_i=\int_{t^n}^{t^{n+1}} I(t) \cdot dt	
 	\end{equation}
 	\begin{equation}
-	f_i^{n+1} -f_i^{n} = \frac{1}{2}\frac{I(t^{n+1})+I(t^n)}{\Delta t}
+	f_i^{n+1} -f_i^{n} = \frac{1}{2}\frac{I(t^{n+1})+I(t^n)}{\Delta T}
 	\end{equation}
 \end{subequations}\\
 
-The objectives described by equation \ref{eq:obj}, that consists out of a set of comfort features that model the amount of discomfort experienced during a maneuver by mapping kinematic signals onto scalar feature values by the means of integration. By finding the driver specific weights $\bm{\theta}$ in \ref{eq:obj} it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a maneuver for a specific driver. As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of save driving of an autonomous vehicle contributes to the amount of comfort that is experienced during driving. Because this thesis is focussing on the development and validation of a reinforcement learning algorithm, the environment is not taken into account. However this can be done if data of the state of other vehicles is available by modelling the distances between different vehicles by equation \ref{eq:comfort_feature} as suggested in \cite{Kuderer2015a}. 
+To summarize the objectives described by equation \ref{eq:obj} consists out of a set of comfort features that model the amount of discomfort experienced during a maneuver. This is achieved by mapping kinematic signals onto scalar feature values through integration. By finding the driver specific weights $\bm{\theta}$ in \ref{eq:obj} it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a lane change for a specific driver. As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of save driving of an autonomous vehicle contributes to the amount of comfort that is experienced during driving. A perception of save driving comprises next to smooth behaviour also distances between other road agents. However features that consider the environment are not taken into account in \ref{eq:obj} but this can be done if data of the position of other vehicles during the maneuver is available. Paper \cite{Kuderer2015a} gives some suggestions showed by equations \ref{eq:comfort_feature} and  \ref{eq:lane_d}.  
 
 \begin{equation}\label{eq:comfort_feature}
 f_d= \sum_{k = 1}^{L}\int_{0}^{T}\frac{1}{(x_{o,k}(t)-x)^2+(y_{o,k}(t)-y)^2}\cdot dt
 \end{equation}
 \[L \in \mathbb{N}\]
 
-With $[x_o,y_o]_k$ the position of a different vehicle and $L$ the total amount of vehicles in the nearby area.\\
+With $[x_o,y_o]_k$ the position of the closest point of a different vehicle and $L$ the total amount of vehicles in the nearby area.\\
 
-Not only the bird's eye view distance between two different vehicles plays a role, but also the following distance of the vehicle in front in the same lane is important. This can be modelled as suggested by \cite{Kuderer2015a} by:  
+Not only the bird's eye view distance between two different vehicles plays a role, but also the following distance of vehicle in the same lane is important. This can be modelled as suggested by \cite{Kuderer2015a}:  
 
 \begin{equation}\label{eq:lane_d}
 f_d= \int_{0}^{T} max(0,\hat{d}-d(t))\cdot dt
 \end{equation}
 
-In equation \ref{eq:lane_d}, $\hat{d}$ is the desired distance and $d(t)$ is the distance between the vehicle in front in the current lane.\\
+
+The desired following distance $\hat{d}$ can be calculated based on the stopping distance of the vehicle when driving on a certain longitudinal velocity. \\
+
+An other assumption that is not discussed in this thesis is the time limit to finish a maneuver. In a real life application however this limit often influences the maneuver. After the weights are identified, the most comfortable path in a limited time span can be planned for a specific driver. 
+
+\subsubsection{Normalization factors} \label{s:norm}
+In order to reduce the effect of order of size given by the units in the objective discussed in section \ref{s:obj}, a normalization of the features is used. The kinematic signals of an example lane change are produced and the same features that are used in the objective function are calculated from it. These will be the normalization factors. Then the objective function is divided by the corresponding normalization factor which means that a feature that inherently gives a small feature value, will be divided by a small value and the other way around, an inherently large feature value will be divided by a large value. Table \ref{table:norm} gives an overview of the lane change normalization factors used in this chapter. 
 
 
-An other assumption that not is discussed in this thesis is the time limit to finish a maneuver. In a real life application however this limit often influence the maneuver. After the weights are identified, the most comfortable path in a limited time span can be calculated for a specific driver. If no time limit serves as bottleneck, the time of the maneuver can be included as optimization variable and long and smooth lane changes are planned. 
-
-\subsection{Normalization factors and initialization} \label{s:norm}
-In order to nullify the effect of order of size given by the units in the objective discussed in section \ref{s:obj}, a normalization of the features is used. The kinematic signals of an example lane change are produced and the same features that are used in the objective function are calculated from it. These will be the normalization factors. Then the objective function is divided by the corresponding normalization factor which means that a feature that inherently gives a small feature values, will be divided by a small value and the other way around, an inherently large feature value will be divided by a large value. In this thesis the example lane change is produced as is described in section \ref{s:GD} with weights equal to $ \bigl[ \begin{smallmatrix} 4,&5,&6,&1,&2\end{smallmatrix}\bigr]$ and corresponding to the objective function of section \ref{s:obj} and making use of normalization factors and an initial guess provided by data of a lane change that was available at Siemens. Table \ref{table:norm} gives an overview of the lane change normalization factors used in this chapter. 
-
+%$ \bigl[ \begin{smallmatrix} 4,&5,&6,&1,&2\end{smallmatrix}\bigr]$
 \begin{table}[h!]\label{table:norm}
   \centering
   \begin{tabular}{@{}lr@{}} 
     Normalization factor    & Value\\ \midrule
     Nr.1      & 0.0073\\
     Nr.2          & 2.64\\
-    Nr.3       & 11.28\\
-    Nr.4       & 0.047\\
-    Nr.5  & 17.14\\ \bottomrule
+    Nr.3 	   & 0.0073\\
+    Nr.4       & 11.28\\
+    Nr.5       & 0.047\\
+    Nr.6  & 17.14\\ \bottomrule
   \end{tabular}
   \caption{Overview of  normalization factors.}
 \end{table}
 
-The solver used to calculate the states and control signals in \ref{opt:basic_opti_w} is the interior point solver IPOPT which is open source code. The idea behind the solver is to smoothing the KKT conditions and transform it to a smooth root finding problem. \cite{Panos_opti} Because IPOPT is a interior boundary method, a feasible initial guess is needed.\\
-Every time that the expected path has to be calculated as is visualised in flow diagram \ref{fig:basic learning}, the optimization \ref{opt:basic_opti_w} is performed with as initial guess the observed maneuver.\\
 
-\subsection{Ideal data} \label{s:GD}
-\subsubsection{Generation}
-\textbf{Schrijf een deeltje over invloed N en T --> maak een tabel met de testen van 5 mei.}
-
-As mentioned above the term 'ideal data' concerns data that is generated with a non-linear bicycle model and exactly fulfils the assumption that the observations are minimizing an underlying discomfort function. More over the discomfort function is the same as the one used in the learning algorithm and this means that the generated path is a the solution of the objective function discussed in section \ref{s:obj} for weights $\bm{\theta}$ chosen in advance. Because that the observations are exactly representing the comfort function in the learning algorithm and the absence of vehicle model mismatch, weights can be learned that perfectly explain the observations. This is translated in a accurate matching of the feature values discussed in \ref{s:obj}. Because beforehand it is know what the weights should be in \ref{eq:obj}, the ideal data can serve as a validation of the developed learning algorithm.\\
+\section{Ideal data} \label{s:GD}
+\subsection{Generation}
+As mentioned above the term 'ideal data' concerns data that is generated with a non-linear bicycle model and exactly fulfils the assumption that the observations are minimizing an underlying comfort objective. More over the discomfort objective is the same as the one used in the learning algorithm which means that the generated path is a solution of the objective function discussed in section \ref{s:obj} for weights $\bm{\theta}$ known in advance. Because that the observations are using the same feature frame as the learning algorithm and the absence of vehicle model mismatch, weights can be learned that accurately explain the observations. This is translated in a accurate matching of the feature values discussed in \ref{s:obj}. Because beforehand it is know what the weights should be in \ref{eq:obj}, the ideal data can serve as a validation of the learning algorithm discussed in section \ref{s:learning_alg}.\\
 
 The relative weights chosen are $ \bigl[ \begin{smallmatrix} 4,&5,&6,&1,&2\end{smallmatrix}\bigr]$, which gives as absolute weights  $ \bigl[ \begin{smallmatrix} 549.63, &1.90, &0.53,  &21.43, &0.12\end{smallmatrix}\bigr]$ when the normalization of \ref{s:norm} is taken into account. The objective that is used in \ref{opt:basic_opti_w} and outputs the ideal data is given by \ref{eq:obj_ideal_data}.
 
@@ -346,6 +347,8 @@ In order to determine if the generated data is a local solution of the optimizat
 
 
 % Beschrijf hier die keuze tussen de numerieke approach en de analytische. Wat is het verschil in calculation time?
+\textbf{Schrijf een deeltje over invloed N en T --> maak een tabel met de testen van 5 mei.}
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{IG.png}

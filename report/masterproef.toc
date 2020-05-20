@@ -36,17 +36,17 @@
 \contentsline {section}{\numberline {4.2}Formulation of the algorithm}{22}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Flow of the algorithm}{22}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Objective function}{26}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Normalization factors and initialization}{29}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Ideal data}{29}{subsection.4.2.4}%
-\contentsline {subsubsection}{Generation}{29}{section*.15}%
+\contentsline {subsubsection}{Normalization factors}{29}{section*.15}%
+\contentsline {section}{\numberline {4.3}Ideal data}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Generation}{29}{subsection.4.3.1}%
 \contentsline {subsubsection}{Validation}{30}{section*.16}%
-\contentsline {section}{\numberline {4.3}Ideal lane change data learning results}{30}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Sequential learning}{32}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Conflict method}{34}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Averaging method}{37}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Comparison of methods}{37}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Conclusion}{37}{subsection.4.3.5}%
-\contentsline {chapter}{\chapternumberline {5}Enhanced learning approach\\}{39}{chapter.5}%
+\contentsline {section}{\numberline {4.4}Ideal lane change data learning results}{30}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Sequential learning}{31}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Conflict method}{34}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Averaging method}{35}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{37}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Conclusion}{37}{subsection.4.4.5}%
+\contentsline {chapter}{\chapternumberline {5}Enhanced weight update\\}{39}{chapter.5}%
 \contentsline {chapter}{\chapternumberline {6}Learning from complex vehicle model}{41}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{41}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Item 1}{41}{subsection.6.1.1}%

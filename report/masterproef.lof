@@ -30,8 +30,8 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Different initial guesses used in \ref {opt:basic_opti_w} to generate data.}}{31}{figure.4.3}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Different ideal data paths generated with \ref {opt:basic_opti_w}.}}{31}{figure.4.4}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Overview of initial guesses, learned and observed trajectories.}}{32}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}}}{33}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.}}{34}{figure.4.7}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}}}{32}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.}}{33}{figure.4.7}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}}}{35}{figure.4.8}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.}}{36}{figure.4.9}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.}}{36}{figure.4.10}%

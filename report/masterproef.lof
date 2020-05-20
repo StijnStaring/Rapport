@@ -15,27 +15,29 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Concept visualization of autonomous driving. (source: \cite {AV})}}{1}{figure.1.1}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Example lane change as used as input in the inverse optimal control algorithm.}}{3}{figure.1.2}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Concept visualization of autonomous driving. (source: \cite {AV})\relax }}{1}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Example lane change as used as input in the inverse optimal control algorithm.\relax }}{3}{figure.caption.14}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of different discretization methods.}}{6}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).}}{8}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite {Patrinos2019}).}}{9}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite {Patrinos2019}).}}{9}{figure.2.4}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of different discretization methods.\relax }}{6}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).\relax }}{8}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite {Patrinos2019}).\relax }}{9}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite {Patrinos2019}).\relax }}{9}{figure.caption.19}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite {Elbanhawi2015})}}{12}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite {Elbanhawi2015})\relax }}{12}{figure.caption.20}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear vehicle bicycle model (Source: \cite {TongDuySon2019}).}}{19}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Basic flow of the reinforced learning algorithm.}}{23}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Different initial guesses used in \ref {opt:basic_opti_w} to generate data.}}{31}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Different ideal data paths generated with \ref {opt:basic_opti_w}.}}{31}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Overview of initial guesses, learned and observed trajectories.}}{32}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}}}{32}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.}}{33}{figure.4.7}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}}}{35}{figure.4.8}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.}}{36}{figure.4.9}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.}}{36}{figure.4.10}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces The average error between the observed and calculated feature values with the learned weights when applying the conflict method.}}{37}{figure.4.11}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear vehicle bicycle model (Source: \cite {TongDuySon2019}).\relax }}{19}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Basic flow of the reinforced learning algorithm.\relax }}{23}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{32}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Slipangle during lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.(bleu:front,red:rear)\relax }}{33}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces A comparison between the numerical jerk (left) based on \ref {eq:diff} and \ref {eq:bicycle_model1} and the analytical jerk (right) based on appendix \ref {app:A} and \ref {eq:bicycle_model2}. \relax }}{33}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Overview of initial guesses, learned and observed trajectories.\relax }}{35}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}\relax }}{35}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.\relax }}{36}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{37}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.\relax }}{38}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.\relax }}{39}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces The average error between the observed and calculated feature values with the learned weights when applying the conflict method.\relax }}{39}{figure.caption.46}%
+\addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

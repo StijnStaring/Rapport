@@ -35,6 +35,10 @@
 \usepackage{booktabs}
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{amsthm}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage[demo]{graphicx}
+
 %%%%%%%
 % Om wat tekst te genereren wordt hier het lipsum pakket gebruikt.
 % Bij een echte masterproef heb je dit natuurlijk nooit nodig!
@@ -83,16 +87,18 @@
 \begin{flushleft}
   \renewcommand{\arraystretch}{1.1}
   \begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
-    LoG   & Laplacian-of-Gaussian \\
+    MS   & Multiple shooting  \\
+    Gs   & Gsteeringfactor  \\
   \end{tabularx}
 \end{flushleft}
 \section*{Symbols}
 \begin{flushleft}
   \renewcommand{\arraystretch}{1.1}
   \begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
-    42    & ``The Answer to the Ultimate Question of Life, the Universe,
-            and Everything'' according to \cite{h2g2} \\
-    $c$   & Speed of light \\
+    N    &  The number of control actions performed during the optimization \ref{opt:basic_opti_w}. \\
+    $V_0$ & Longitudinal speed at the start of the lane change.\\
+    $L$   & Lateral distance travelled at the end of the lane change.
+    
     
   \end{tabularx}
 \end{flushleft}
@@ -114,7 +120,8 @@
 \appendix
 \include{app-A}
 % ... en zo verder tot
-\include{app-n}
+\include{app-B}
+\include{app-C}
 
 \backmatter
 % Na de bijlagen plaatst men nog de bibliografie.

@@ -48,31 +48,32 @@
 \contentsline {subsubsection}{Feature values}{34}{section*.38}%
 \contentsline {subsubsection}{Conclusion}{34}{section*.39}%
 \contentsline {section}{\numberline {4.4}Ideal lane change data learning results}{34}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Sequential learning}{34}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Conflict method}{37}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Averaging method}{38}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{40}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Conclusion}{40}{subsection.4.4.5}%
-\contentsline {chapter}{\chapternumberline {5}Learning from complex vehicle model}{41}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The First Topic of this Chapter}{41}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Item 1}{41}{subsection.5.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{41}{section*.48}%
-\contentsline {subsubsection}{Sub-item 2}{41}{section*.49}%
-\contentsline {subsection}{\numberline {5.1.2}Item 2}{41}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}The Second Topic}{41}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Conclusion}{41}{section.5.3}%
-\contentsline {chapter}{\chapternumberline {6}Validation with expert driver data}{43}{chapter.6}%
-\contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{43}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Item 1}{43}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{43}{section*.50}%
-\contentsline {subsubsection}{Sub-item 2}{43}{section*.51}%
-\contentsline {subsection}{\numberline {6.1.2}Item 2}{43}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}The Second Topic}{43}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{43}{section.6.3}%
-\contentsline {chapter}{\chapternumberline {7}Enhanced weight update\\}{45}{chapter.7}%
-\contentsline {chapter}{\chapternumberline {8}Conclusion}{47}{chapter.8}%
-\contentsline {appendix}{\chapternumberline {A}Jerk equations of the non-linear bicycle model}{51}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Equations}{51}{section.A.1}%
-\contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{53}{appendix.B}%
-\contentsline {appendix}{\chapternumberline {C}Results of the averaging learning algorithm}{55}{appendix.C}%
-\contentsline {chapter}{Bibliography}{57}{appendix*.52}%
+\contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{35}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Sequential learning}{35}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Conflict method}{37}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Averaging method}{40}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Comparison of methods}{40}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.6}Conclusion}{40}{subsection.4.4.6}%
+\contentsline {chapter}{\chapternumberline {5}Learning from complex vehicle model}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}The First Topic of this Chapter}{43}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Item 1}{43}{subsection.5.1.1}%
+\contentsline {subsubsection}{Sub-item 1}{43}{section*.48}%
+\contentsline {subsubsection}{Sub-item 2}{43}{section*.49}%
+\contentsline {subsection}{\numberline {5.1.2}Item 2}{43}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}The Second Topic}{43}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Conclusion}{43}{section.5.3}%
+\contentsline {chapter}{\chapternumberline {6}Validation with expert driver data}{45}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{45}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Item 1}{45}{subsection.6.1.1}%
+\contentsline {subsubsection}{Sub-item 1}{45}{section*.50}%
+\contentsline {subsubsection}{Sub-item 2}{45}{section*.51}%
+\contentsline {subsection}{\numberline {6.1.2}Item 2}{45}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}The Second Topic}{45}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{45}{section.6.3}%
+\contentsline {chapter}{\chapternumberline {7}Enhanced weight update\\}{47}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {8}Conclusion}{49}{chapter.8}%
+\contentsline {appendix}{\chapternumberline {A}Jerk equations of the non-linear bicycle model}{53}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Equations}{53}{section.A.1}%
+\contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{55}{appendix.B}%
+\contentsline {appendix}{\chapternumberline {C}Results of the averaging learning algorithm}{57}{appendix.C}%
+\contentsline {chapter}{Bibliography}{59}{appendix*.52}%

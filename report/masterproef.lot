@@ -23,7 +23,7 @@
 \contentsline {table}{\numberline {4.3}{\ignorespaces This table shows the retrieved feature values using different initial guesses in \ref {opt:basic_opti_w}.\relax }}{31}{table.caption.28}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces This table shows the retrieved feature values using different time limits in \ref {opt:basic_opti_w}.\relax }}{31}{table.caption.30}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces This table shows the retrieved feature values using different amount of control point N in \ref {opt:basic_opti_w}.\relax }}{32}{table.caption.32}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces The error made between the learned and chosen weights for respectively the average and conflict method.\relax }}{40}{table.caption.47}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces The error made between the learned and chosen weights for respectively the average and conflict method.\relax }}{41}{table.caption.47}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

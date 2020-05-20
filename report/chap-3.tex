@@ -461,10 +461,20 @@ An other interesting thing to note about the ideal data generated features is th
 \subsubsection{Conclusion}
 From the above results it the influence of the choice of taking the time limit constraint equal to $30 \hspace{1mm}s$ and the amount of control points equal to $1000$ further on in this thesis, has been validated. Next it is shown that it is justified to use a linearised tire model. Afterwards an numerical and analytical formulation to model the total accelerations and jerk is discussed. Finally the resulting feature values of the ideal data are shortly look into. 
 
-
-\section{Ideal lane change data learning results} \label{s:ID_results}
 \textbf{write something about small longitudinal features and resulting bad weight learning.}
-This section discusses the results from using the learning algorithm on generated ideal data which is generated making use of the above discussed normalization values in combination with relative chosen weights of $ \bigl[ \begin{smallmatrix} 4,&5,&6,&1,&2\end{smallmatrix}\bigr]$. The first simulation discusses the learning of three datasets that are generated with the same chosen weights. The different datasets are A $(V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m)$, dataset B $(V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:6.94\hspace{1mm}m)$ and dataset C $(V_0:25.00\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m)$. The convergence criteria to stop the learning algorithm displayed in Figure \ref{fig:basic learning} is when the maximum amount of iterations equal to $300$ is reached or if the feature values which use the learned weight match accurately the ones of the observed data according to following formula $f_{rel,i} = \frac{f_{calc,i}}{f_{obs,i}} \leq 10^{-4}$.
+\section{Ideal lane change data learning results} \label{s:ID_results}
+In this section the results of the learning algorithm which makes use of ideal data is discussed. The first result discussed concerns the learning of a single dataset with $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$. It is known beforehand that the weights used to generate the data are  $\bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$ and the initial guess of the weights is chosen as an all one vector. The convergence criteria to stop the learning algorithm displayed in Figure \ref{fig:basic learning} is when the maximum amount of iterations equal to $300$ is reached or if the feature values which use the learned weight match accurately the ones of the observed data according to following formula $f_{rel,i} = \frac{f_{calc,i}}{f_{obs,i}} \leq 10^{-3}$. The generated data features that are supposed to be matched, can be seen in table \ref{tab:GD_local_test}. Convergence is reached when the three lateral features that dominantly define the lane change are accurately fitted for a certain set of weights.\\
+
+\subsection{Single dataset learning}
+The resulting weights found after $28$ iterations are $\bigl[ \begin{smallmatrix} 14.469,&5.000,&3.045,&5.977,&3.689,&1.998\end{smallmatrix}\bigr]$ in which the weight concerning the lateral acceleration is taken as reference in order to compare the learned weights with the chosen ones. $\bm{f_{rel}}$ at the end of the learning process is given by $\bigl[ \begin{smallmatrix} 0.9907,&0.9995,&1.0037,&1.0006,&0.9941,&1.0001\end{smallmatrix}\bigr]$. When the algorithm is run for $121$ iterations
+
+
+
+
+
+
+
+%This section discusses the results from using the learning algorithm on generated ideal data which is generated making use of the above discussed normalization values in combination with relative chosen weights of $ \bigl[ \begin{smallmatrix} 4,&5,&6,&1,&2\end{smallmatrix}\bigr]$. The first simulation discusses the learning of three datasets that are generated with the same chosen weights. The different datasets are A $(V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m)$, dataset B $(V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:6.94\hspace{1mm}m)$ and dataset C $(V_0:25.00\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m)$. 
 
 \subsection{Sequential learning}
 In this section dataset A is learned followed by dataset B and as last dataset C.

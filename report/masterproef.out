@@ -13,15 +13,15 @@
 \BOOKMARK [1][-]{section.4.2}{Formulation of the algorithm}{chapter.4}% 13
 \BOOKMARK [1][-]{section.4.3}{Ideal data}{chapter.4}% 14
 \BOOKMARK [1][-]{section.4.4}{Ideal lane change data learning results}{chapter.4}% 15
-\BOOKMARK [0][-]{chapter.5}{Enhanced weight update}{}% 16
-\BOOKMARK [0][-]{chapter.6}{Learning from complex vehicle model}{}% 17
-\BOOKMARK [1][-]{section.6.1}{The First Topic of this Chapter}{chapter.6}% 18
-\BOOKMARK [1][-]{section.6.2}{The Second Topic}{chapter.6}% 19
-\BOOKMARK [1][-]{section.6.3}{Conclusion}{chapter.6}% 20
-\BOOKMARK [0][-]{chapter.7}{Validation with expert driver data}{}% 21
-\BOOKMARK [1][-]{section.7.1}{The First Topic of this Chapter}{chapter.7}% 22
-\BOOKMARK [1][-]{section.7.2}{The Second Topic}{chapter.7}% 23
-\BOOKMARK [1][-]{section.7.3}{Conclusion}{chapter.7}% 24
+\BOOKMARK [0][-]{chapter.5}{Learning from complex vehicle model}{}% 16
+\BOOKMARK [1][-]{section.5.1}{The First Topic of this Chapter}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.2}{The Second Topic}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.3}{Conclusion}{chapter.5}% 19
+\BOOKMARK [0][-]{chapter.6}{Validation with expert driver data}{}% 20
+\BOOKMARK [1][-]{section.6.1}{The First Topic of this Chapter}{chapter.6}% 21
+\BOOKMARK [1][-]{section.6.2}{The Second Topic}{chapter.6}% 22
+\BOOKMARK [1][-]{section.6.3}{Conclusion}{chapter.6}% 23
+\BOOKMARK [0][-]{chapter.7}{Enhanced weight update}{}% 24
 \BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 25
 \BOOKMARK [0][-]{appendix.A}{Jerk equations of the non-linear bicycle model}{}% 26
 \BOOKMARK [1][-]{section.A.1}{Equations}{appendix.A}% 27

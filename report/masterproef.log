@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  20 MAY 2020 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  20 MAY 2020 10:54
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -856,7 +856,11 @@ Package lipsum Warning: \setlipsumdefault on line 43
 (lipsum)                \SetLipsumDefault .
 
 (masterproef.aux (intro.aux) (chap-1.aux) (chap-2.aux) (chap-3.aux) (chap-4.aux
-) (chap-5.aux) (chap-6.aux) (conclusion.aux) (app-A.aux) (app-n.aux))
+) (chap-5.aux) (chap-6.aux
+
+LaTeX Warning: Label `cha:Enhanced learning approach' multiply defined.
+
+) (conclusion.aux) (app-A.aux) (app-n.aux))
 \openout1 = `masterproef.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
@@ -970,7 +974,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `kulemtfpf' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<logokuleng.pdf, id=119, 159.33528pt x 85.358pt>
+<logokuleng.pdf, id=107, 159.33528pt x 85.358pt>
 File: logokuleng.pdf Graphic file (type pdf)
 <use logokuleng.pdf>
 Package pdftex.def Info: logokuleng.pdf  used on input line 47.
@@ -1065,10 +1069,10 @@ Overfull \hbox (0.1675pt too wide) detected at line 16
  \T1/lmr/bx/n/10.95 viii
  []
 
-[2
+) [2
 
 
-])
+]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1100,7 +1104,7 @@ niverse, and Everything''
 \openout2 = `intro.aux'.
 
  (intro.tex
-<figures/AV.png, id=287, 1204.5pt x 903.375pt>
+<figures/AV.png, id=273, 1204.5pt x 903.375pt>
 File: figures/AV.png Graphic file (type png)
 <use figures/AV.png>
 Package pdftex.def Info: figures/AV.png  used on input line 9.
@@ -1130,7 +1134,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
  []
 
 [2]
-<figures/lane_change.PNG, id=313, 384.2355pt x 120.32954pt>
+<figures/lane_change.PNG, id=299, 384.2355pt x 120.32954pt>
 File: figures/lane_change.PNG Graphic file (type png)
 <use figures/lane_change.PNG>
 Package pdftex.def Info: figures/lane_change.PNG  used on input line 27.
@@ -1181,7 +1185,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/discretized-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/discretized-eps-converted-to.pdf, id=344, 374.39874pt x 119.44624pt>
+<figures/discretized-eps-converted-to.pdf, id=330, 374.39874pt x 119.44624pt>
 File: figures/discretized-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/discretized-eps-converted-to.pdf>
 Package pdftex.def Info: figures/discretized-eps-converted-to.pdf  used on inpu
@@ -1221,7 +1225,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/MS_int-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/MS_int-eps-converted-to.pdf, id=371, 224.84pt x 102.3825pt>
+<figures/MS_int-eps-converted-to.pdf, id=357, 224.84pt x 102.3825pt>
 File: figures/MS_int-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/MS_int-eps-converted-to.pdf>
 Package pdftex.def Info: figures/MS_int-eps-converted-to.pdf  used on input lin
@@ -1241,7 +1245,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/SS-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/SS-eps-converted-to.pdf, id=372, 224.84pt x 102.3825pt>
+<figures/SS-eps-converted-to.pdf, id=358, 224.84pt x 102.3825pt>
 File: figures/SS-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/SS-eps-converted-to.pdf>
 Package pdftex.def Info: figures/SS-eps-converted-to.pdf  used on input line 82
@@ -1271,12 +1275,12 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [8 <./figures/MS_int-eps-converted-to.pdf> <./figures/SS-eps-converted-to.pdf>]
-<figures/MPC1.PNG, id=415, 660.66824pt x 349.90726pt>
+<figures/MPC1.PNG, id=401, 660.66824pt x 349.90726pt>
 File: figures/MPC1.PNG Graphic file (type png)
 <use figures/MPC1.PNG>
 Package pdftex.def Info: figures/MPC1.PNG  used on input line 101.
 (pdftex.def)             Requested size: 238.80243pt x 126.47372pt.
-<figures/MPC2.PNG, id=419, 649.82774pt x 363.759pt>
+<figures/MPC2.PNG, id=405, 649.82774pt x 363.759pt>
 File: figures/MPC2.PNG Graphic file (type png)
 <use figures/MPC2.PNG>
 Package pdftex.def Info: figures/MPC2.PNG  used on input line 108.
@@ -1293,7 +1297,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<figures/comfort.PNG, id=434, 378.81525pt x 387.849pt>
+<figures/comfort.PNG, id=420, 378.81525pt x 387.849pt>
 File: figures/comfort.PNG Graphic file (type png)
 <use figures/comfort.PNG>
 Package pdftex.def Info: figures/comfort.PNG  used on input line 12.
@@ -1378,7 +1382,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-<figures/Bicycle_model_paper.png, id=537, 623.32875pt x 307.1475pt>
+<figures/Bicycle_model_paper.png, id=523, 623.32875pt x 307.1475pt>
 File: figures/Bicycle_model_paper.png Graphic file (type png)
 <use figures/Bicycle_model_paper.png>
 Package pdftex.def Info: figures/Bicycle_model_paper.png  used on input line 15
@@ -1411,7 +1415,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-<figures/basic_learning.png, id=579, 533.995pt x 242.9075pt>
+<figures/basic_learning.png, id=565, 533.995pt x 242.9075pt>
 File: figures/basic_learning.png Graphic file (type png)
 <use figures/basic_learning.png>
 Package pdftex.def Info: figures/basic_learning.png  used on input line 138.
@@ -1559,7 +1563,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
-<figures/IG.png, id=696, 720.44156pt x 371.13657pt>
+<figures/IG.png, id=682, 720.44156pt x 371.13657pt>
 File: figures/IG.png Graphic file (type png)
 <use figures/IG.png>
 Package pdftex.def Info: figures/IG.png  used on input line 354.
@@ -1567,7 +1571,7 @@ Package pdftex.def Info: figures/IG.png  used on input line 354.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/result_GD.png, id=699, 680.5425pt x 344.78813pt>
+<figures/result_GD.png, id=685, 680.5425pt x 344.78813pt>
 File: figures/result_GD.png Graphic file (type png)
 <use figures/result_GD.png>
 Package pdftex.def Info: figures/result_GD.png  used on input line 361.
@@ -1585,7 +1589,7 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [30]
-<figures/result_seq.png, id=710, 807.7678pt x 417.81094pt>
+<figures/result_seq.png, id=696, 807.7678pt x 417.81094pt>
 File: figures/result_seq.png Graphic file (type png)
 <use figures/result_seq.png>
 Package pdftex.def Info: figures/result_seq.png  used on input line 377.
@@ -1594,7 +1598,7 @@ Package pdftex.def Info: figures/result_seq.png  used on input line 377.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/convergence_seq.png, id=711, 800.23969pt x 394.47375pt>
+<figures/convergence_seq.png, id=697, 800.23969pt x 394.47375pt>
 File: figures/convergence_seq.png Graphic file (type png)
 <use figures/convergence_seq.png>
 Package pdftex.def Info: figures/convergence_seq.png  used on input line 384.
@@ -1634,7 +1638,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
-<figures/N_influence.png, id=731, 369.63094pt x 277.78781pt>
+<figures/N_influence.png, id=717, 369.63094pt x 277.78781pt>
 File: figures/N_influence.png Graphic file (type png)
 <use figures/N_influence.png>
 Package pdftex.def Info: figures/N_influence.png  used on input line 401.
@@ -1649,7 +1653,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
-<figures/conflict.png, id=741, 773.89125pt x 564.1075pt>
+<figures/conflict.png, id=727, 773.89125pt x 564.1075pt>
 File: figures/conflict.png Graphic file (type png)
 <use figures/conflict.png>
 Package pdftex.def Info: figures/conflict.png  used on input line 415.
@@ -1667,7 +1671,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 420--421
 
  []
 
-<figures/conflict_path.png, id=746, 724.20563pt x 358.33875pt>
+<figures/conflict_path.png, id=732, 724.20563pt x 358.33875pt>
 File: figures/conflict_path.png Graphic file (type png)
 <use figures/conflict_path.png>
 Package pdftex.def Info: figures/conflict_path.png  used on input line 427.
@@ -1675,7 +1679,7 @@ Package pdftex.def Info: figures/conflict_path.png  used on input line 427.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/conflict_convergence.png, id=748, 789.70032pt x 395.97937pt>
+<figures/conflict_convergence.png, id=734, 789.70032pt x 395.97937pt>
 File: figures/conflict_convergence.png Graphic file (type png)
 <use figures/conflict_convergence.png>
 Package pdftex.def Info: figures/conflict_convergence.png  used on input line 4
@@ -1698,7 +1702,7 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [34]
-<figures/conflict_accuracy.png, id=756, 963.6pt x 489.32813pt>
+<figures/conflict_accuracy.png, id=742, 963.6pt x 489.32813pt>
 File: figures/conflict_accuracy.png Graphic file (type png)
 <use figures/conflict_accuracy.png>
 Package pdftex.def Info: figures/conflict_accuracy.png  used on input line 446.
@@ -1728,15 +1732,11 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 1.
-
-) [39]
+]) [39]
 \openout2 = `chap-5.aux'.
 
- (chap-5.tex [40
+ (chap-5.tex
+[40
 
 
 
@@ -1747,15 +1747,19 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 
-]) [43]
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1.
+
+) [43]
 \openout2 = `conclusion.aux'.
 
  (conclusion.tex [44
 
 
 
-])
-[45] [46
+]) [45] [46
 
 
 ] [47] [48]
@@ -1767,15 +1771,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 \openout2 = `app-n.aux'.
 
- (app-n.tex [50
+ (app-n.tex
+[50
 
 
 
 ]) [51] [52
 
 
-]
-(masterproef.bbl
+] (masterproef.bbl
 bibitemlist
 [53
 
@@ -1803,55 +1807,67 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
-Package rerunfilecheck Info: File `masterproef.out' has not changed.
-(rerunfilecheck)             Checksum: 17A9265391D3402C57F0BD3A8A5FB604;1876.
 
+
+Package rerunfilecheck Warning: File `masterproef.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `masterproef.out':
+(rerunfilecheck)             Before: EB63CF9574FE8251674F5A3F9475253C;1665
+(rerunfilecheck)             After:  8C7223E071CB837ABD55A1F1D3B1DE17;1876.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
- 15459 strings out of 481518
- 245230 string characters out of 2911616
- 875571 words of memory out of 3000000
- 29950 multiletter control sequences out of 15000+200000
+ 15457 strings out of 481518
+ 245203 string characters out of 2911616
+ 875548 words of memory out of 3000000
+ 29947 multiletter control sequences out of 15000+200000
  638609 words of font info for 172 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,42p,1654b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
-nc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
-hit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
-m-mathsy.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
-/lm/lm-ec.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
-s/lm/lm-mathex.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-ts1.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/base/8r.enc}<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmbx10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmbx12.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/t2vosx/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/t2vosx/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/t2vosx/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/t2vosx/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/t2vosx/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/Users/t2vosx/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/t2vo
-sx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/
-t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Use
-rs/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/
-Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><
-C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.
-pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
-sy10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-lm/lmsy6.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (64 pages, 1787852 bytes).
+pdfTeX warning (dest): name{appendix*.19} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
+}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+mathsy.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/l
+m/lm-ec.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+lm/lm-mathex.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/d
+vips/lm/lm-ts1.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
+/dvips/base/8r.enc}<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmbx10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/lm/lmbx12.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/t2vosx/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/t2vosx/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/t2vosx/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/t2vosx/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/Users/t2vosx/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/t2vosx
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/t2
+vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users
+/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Us
+ers/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:
+/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pf
+b><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy
+10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm
+/lmsy6.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on masterproef.pdf (64 pages, 1786757 bytes).
 PDF statistics:
- 987 PDF objects out of 1000 (max. 8388607)
- 219 named destinations out of 1000 (max. 500000)
- 27469 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 977 PDF objects out of 1000 (max. 8388607)
+ 220 named destinations out of 1000 (max. 500000)
+ 27445 words of extra memory for PDF output out of 29859 (max. 10000000)
 

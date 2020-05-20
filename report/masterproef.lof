@@ -33,10 +33,10 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Overview of initial guesses, learned and observed trajectories.\relax }}{35}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}\relax }}{35}{figure.caption.41}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.\relax }}{36}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{37}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.\relax }}{38}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{38}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.\relax }}{39}{figure.caption.44}%
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.\relax }}{39}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces The average error between the observed and calculated feature values with the learned weights when applying the conflict method.\relax }}{39}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces The average error between the observed and calculated feature values with the learned weights when applying the conflict method.\relax }}{40}{figure.caption.46}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

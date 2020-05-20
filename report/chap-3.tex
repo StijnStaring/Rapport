@@ -219,7 +219,7 @@ Another initial guess that speeds up the solving time of the IPOPT solver, is se
 
 The solver used to calculate the states and control signals in \ref{opt:basic_opti_w} is the interior point solver IPOPT which is an open source solver. The idea behind it is to smoothing the KKT conditions and transform it to a smooth root finding problem. \cite{Panos_opti} Because IPOPT is a interior boundary method, a feasible initial guess is needed. Every time that the expected path has to be calculated as is visualised in flow diagram \ref{fig:basic learning}, the optimization \ref{opt:basic_opti_w} is performed with as initial guess the observed maneuver.\\
 
-The time needed by the CPU in order to calculate the expected path for a certain set of weights and thus solving \ref{opt:basic_opti_w} takes around $6.5\hspace{1mm}s$ when an timelimit of $30$ seconds and N equal to $1000$ is chosen. 
+The time needed by the CPU in order to calculate the expected path for a certain set of weights and thus solving \ref{opt:basic_opti_w} takes around $5\hspace{1mm}s$ (python implementation) when a timelimit of $30$ seconds and N equal to $1000$ is chosen. 
 
 
 \subsection{Objective function}\label{s:obj}
@@ -450,19 +450,16 @@ In order to validate the two approaches the generated lateral jerk signals are c
 	\caption{A comparison between the numerical jerk (left) based on \ref{eq:diff} and \ref{eq:bicycle_model1} and the analytical jerk (right) based on appendix \ref{app:A} and \ref{eq:bicycle_model2}. }
 \end{figure}
 
-It is clear that the analytical formulation (right figure)  of the jerk gives more smooth results and less high peaks which is also seen in the more complex vehicle that is discussed in chapter \ref{cha:Tracking_MPC}. Therefore the analytical formulation approaches better reality.
+It is clear that the analytical formulation (right figure)  of the jerk gives more smooth results and less high peaks which is also seen in the more complex vehicle that is discussed in chapter \ref{cha:Tracking_MPC}. Therefore the analytical formulation approaches reality better. An other way to see this is that the analytical formulation contains more information about the vehicle, because the numerical equation of \ref{eq:diff} are approximations of the equations shown in appendix \ref{app:A}. 
 
 \subsubsection{Feature values}
 % Steeds dezelfde als enkel horizontale init speed verandert --> zelfde gewichten zullen geleerd worden aangezien enkel de lateral featues bijdragen. 
-%
-As will be further pointed out in \ref{s:ID_results}, only the third, fourth and sixth feature really matter during a lane change. This is an expected result because the kinematic signals in the longitudinal direction show small values during a lane change. It can therefore be expected that the learning of weights concerning longitudinal features will be less useful. 
+In the above tables it can be seen that the first, third and fifth features concerning longitudinal behaviour of the vehicle are very small. This means that during a lane change these features have a low influence. It can be expected that for the values with an order of size in computer accuracy, it becomes hard to accurately learn weights that generate feature values that match with these small values. This will be further discussed in \ref{label}.\\% A suggested solution for this is the use of different features or an different maneuver. Scaling in the calculation of the gradient doesn't help. RPROP update is independent of the order of size of the gradient. 
+
+An other interesting thing to note about the ideal data generated features is that when the initial speed of the lane change is varied and the desired lateral displacement stays the same ($3.47m$ or $6.97m$), because of the small longitudinal features values the data features found are quasi identical.
 
 \subsubsection{Conclusion}
-From the above results it is shown that it is valid to use a linearised tire model. Also the influence of the choice of taking the time limit constraint equal to $30 \hspace{1mm}s$ and the amount of control points equal to $1000$ further on in this thesis, has been validated. 
-
-
-% Beschrijf hier die keuze tussen de numerieke approach en de analytische. Wat is het verschil in calculation time?
-%\textbf{Schrijf een deeltje over invloed N en T --> maak een tabel met de testen van 5 mei.}
+From the above results it the influence of the choice of taking the time limit constraint equal to $30 \hspace{1mm}s$ and the amount of control points equal to $1000$ further on in this thesis, has been validated. Next it is shown that it is justified to use a linearised tire model. Afterwards an numerical and analytical formulation to model the total accelerations and jerk is discussed. Finally the resulting feature values of the ideal data are shortly look into. 
 
 
 \section{Ideal lane change data learning results} \label{s:ID_results}
@@ -513,7 +510,7 @@ Convergence is attained after $50$, $51$ and $49$ iterations. From Figure \ref{f
  
   \begin{figure}[h!]
  	\centering
- 	\includegraphics[width=1.25\textwidth]{conflict.png}
+ 	\includegraphics[width=1.1\textwidth]{conflict.png}
  	\caption{Flow of the conflict method as part of the basic flow diagram of Figure \ref{fig:basic learning}}
  	\label{fig:conflict}
  \end{figure}

@@ -463,52 +463,66 @@ From the above results it the influence of the choice of taking the time limit c
 
 \textbf{write something about small longitudinal features and resulting bad weight learning.}
 \section{Ideal lane change data learning results} \label{s:ID_results}
-In this section the results of the learning algorithm which makes use of ideal data is discussed. The first result discussed concerns the learning of a single dataset with $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$. It is known beforehand that the weights used to generate the data are  $\bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$ and the initial guess of the weights is chosen as an all one vector. The convergence criteria to stop the learning algorithm displayed in Figure \ref{fig:basic learning} is when the maximum amount of iterations equal to $300$ is reached or if the feature values which use the learned weight match accurately the ones of the observed data according to following formula $f_{rel,i} = \frac{f_{calc,i}}{f_{obs,i}} \leq 10^{-3}$. The generated data features that are supposed to be matched in section \ref{s:SDL}, can be seen in table \ref{tab:GD_local_test}. Convergence is reached when the three lateral features, that dominantly define the lane change, are accurately fitted for a certain set of weights.\\
+In this section the results of the learning algorithm which makes use of ideal data is discussed. The first result discussed concerns the learning of a single dataset with $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$. It is known beforehand that the weights used to generate the data are  $\bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$\footnote{The features complying with the chosen weights are $\bigl[ \begin{smallmatrix} f_{ax},&f_{ay},&f_{jx},&f_{jy},&f_{diff vx},&f_{diff y}\end{smallmatrix}\bigr]$.} and the initial guess of the weights is chosen as an all one vector. The convergence criteria to stop the learning algorithm displayed in Figure \ref{fig:basic learning} is when the maximum amount of iterations equal to $300$ is reached or if the feature values which use the learned weight match accurately the ones of the observed data according to following formula $f_{rel,i} = \frac{f_{calc,i}}{f_{obs,i}} \leq 10^{-3}$. The generated data features that are supposed to be matched in section \ref{s:SDL}, can be seen in table \ref{tab:GD_local_test}. Convergence is reached when the three lateral features, that dominantly define the lane change, are accurately fitted for a certain set of weights.\\
 
 In reality one observation demonstrated doesn't capture perfectly the preference of the human driver. In order to do so, learning of multiple datasets is needed. Therefore the conflict and averaging method are discussed. Afterwards a comparison is made and follows a conclusion.
 
 \subsection{Single dataset learning}\label{s:SDL}
 The resulting weights found after $28$ iterations are $\bigl[ \begin{smallmatrix} 14.469,&5.000,&3.045,&5.977,&3.689,&1.998\end{smallmatrix}\bigr]$ in which the weight concerning the lateral acceleration is taken as reference in order to compare the learned weights with the chosen ones. $\bm{f_{rel}}$ at the end of the learning process is given by $\bigl[ \begin{smallmatrix} 0.9907,&0.9995,&1.0037,&1.0006,&0.9941,&1.0001\end{smallmatrix}\bigr]$. When the algorithm is manually set to run for $121$ iterations following weights are learned $\bigl[ \begin{smallmatrix} 10.021,&5.000,&2.179,&5.998,&2.538,&2.002\end{smallmatrix}\bigr]$ which lay closer to the chosen ones.  $\bm{f_{rel}}$ is given by $\bigl[ \begin{smallmatrix} 1.0004460,&1.0000014,&0.99762746,&1.00000585,&0.98924983,&0.99999986\end{smallmatrix}\bigr]$ and a clear difference between the lateral weights that have an increased learning accuracy and the longitudinal weights that seem to be constraint in their accuracy, can be seen. As already suggested in section \ref{s:fv_val} this is because of the small size of the feature values of the longitudinal direction which come in the range of computer accuracy during the optimization of \ref{opt:basic_opti_w}. Not very accurate learned longitudinal feature will have a negligible influence on the overall behaviour of the planned path of the lane change and as can be seen, a range of weights will give a match of the longitudinal feature values around $10^-2$. It is good to notice that just scaling of the feature values in the calculation of the gradient will not help because the RPROP algorithm operates only based on the sign of the gradient. In order to learn the longitudinal weights of the human driver accurately, a maneuver should be considered were these features will be more prominent e.g. an acceleration maneuver. Because the interest in the longitudinal weights during a lane change is marginal this is not further discussed during this thesis.\\          
 
+%It can be concluded that fitting of the features gives a good reproduction of the individual state and control signals.\\
 
-\subsection{Sequential learning}
-In this section dataset A is learned followed by dataset B and as last dataset C.
-As initial guess of the weights $\bigl[ \begin{smallmatrix} 1.0,&1.0,&1.0,&1.0,&1.0\end{smallmatrix}\bigr]$ is used.  The resulting paths can be seen in Figure \ref{fig:result_seq} and Figure \ref{fig:convergence_seq} gives the convergence of $f_{rel,i}$ towards one.\\
+\subsection{Averaging method}
+In order to simultaneously learn from multiple datasets the averaging method is proposed. \cite{Kuderer2015a} The flow of the algorithm is similar as shown in Figure \ref{fig:basic learning} and the convergence criteria stays the same as for single dataset learning, but instead of inputting an observed feature vector based on a single dataset, an averaged one over multiple datasets is used.
+To calculate the gradient, the difference between the averaged observed feature vector and the averaged calculated feature vector has is taken. In order to obtain the averaged calculated feature vector, m times the optimization \ref{opt:basic_opti_w} is called for each observed maneuver with varying initial speeds and desired lateral displacement. Afterwards the individual found feature vectors are averaged. m is the amount of combined datasets.\\
+ 
+ % Bespreek de fixed feature approach.
 
-\begin{figure}[h!]
+The datasets chosen to perform the learning algorithm on are $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$, $V_0:25.00\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$ and $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:6.94\hspace{1mm}m$. The resulting weighs and average $\bm{f_{rel}}$ found after $25$ iterations are respectively $\bigl[ \begin{smallmatrix} 14.459,&5.000,&3.204,&5.984,&3.720,&2.000\end{smallmatrix}\bigr]$ and $\bigl[ \begin{smallmatrix} 0.9981,&0.9996,&0.9829,&1.0000,&0.9946,&1.0001\end{smallmatrix}\bigr]$. The $\bm{f_{rel}}$ of the individual datasets can be seen in table \ref{tab:in_av}.
+ 
+\begin{table}[h!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{result_seq.png}
-	\caption{Overview of initial guesses, learned and observed trajectories.} 
-	\label{fig:result_seq}
-\end{figure}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=1.2\textwidth]{convergence_seq.png}
-	\caption{Convergence of the features with learned weights towards the observed features according to section \ref{s:obj}}
-	\label{fig:convergence_seq}
-\end{figure}
-
-Convergence is attained after $50$, $51$ and $49$ iterations. From Figure \ref{fig:result_seq} it is clear that when features accurately match as visualized in Figure \ref{fig:convergence_seq}, the observed path is accurately reconstructed when using ideal observations. It can be concluded that fitting of the features gives a good reproduction of the individual state and control signals. Furthermore convergence is fast obtained because the amount of iterations stays limited and simulation time is under 5 minutes per dataset.\\
-
- An interesting result however is that the corresponding features are not found back. The learned weights are respectively $\bigl[ \begin{smallmatrix} 0.45  ,&1.44 ,&1.68 ,&0.39,&0.60\end{smallmatrix}\bigr]$, 
- 
- $\bigl[ \begin{smallmatrix} 0.45  ,&1.48 ,&1.71 ,&0.35,&0.59\end{smallmatrix}\bigr]$ and $\bigl[ \begin{smallmatrix} 0.63  ,&1.43 ,&1.69 ,&0.37,&0.60\end{smallmatrix}\bigr]$. This is visualized in Figure \ref{fig:convergence_seq} by the small jump when switched to a different dataset. Figure \ref{fig:result_seq} shows in orange the first initial guess and in green the learned solution which matches the observed one in blue. The other generated paths start from a close but not perfect initial guess.\\
- 
- For each different dataset features match exactly but this is not done for the exact same weights because local solutions exist that explain individual datasets. It should be noted that the relative sizes of the learned weights matches the original one except for the feature concerning longitudinal acceleration which don't play a dominant role during a lane change. \textbf{Question: how is this when you do an acceleration maneuver??}\\
- 
- Next the influence of the numerical discretization is checked. A better discretization is obtained when a larger amount of optimization points $N$ is chosen which lead to a smaller time discretization $dt$, but comes at the cost of a higher computational load. Figure \ref{fig:N_influence} shows the error on the features discussed in section \ref{s:obj} when using the learned weights based on dataset A for predicting the observations of dataset B. The convergence criteria of the learned weights are set on $f_{rel,i}$ equal to $10^{-1}$. It is concluded that there is no large influence on the amount of optimization points chosen.\\
- 
+	\begin{tabular}{@{}llllr@{}} \toprule
+		$\bm{f_{rel}}$    & V22.22 - L3.47 & V22.22 - L3.47 & V25.00 - L3.47\\ \midrule
+		Nr.1       		  &1.0000        & 0.9973 	    & 1.0064 		\\
+		Nr.2              & 1.0002       & 0.9992       & 1.0001       \\
+		Nr.3              & 0.9860       & 0.9816       & 0.9983       \\
+		Nr.4              & 1.0012       & 0.9995       & 1.0010       \\
+		Nr.5              & 0.9972       & 0.9948       & 0.9902       \\
+		Nr.6              & 0.9999       & 1.0002       & 0.9999       \\ \bottomrule
+	\end{tabular}
+	\caption{This table shows the $\bm{f_{rel}}$ for each individual dataset at convergence.}
+	\label{tab:in_av}
+\end{table} 
+Figure \ref{fig:3D_learned_path} shows the three initial guesses of the paths that make use of an all one weight vector in red, purple and brawn. The finally learned paths can be seen in pink, grey and yellow. These paths lay exactly on the observed ones. From this it can be concluded that matching of feature values which are scalars, give a good representation for also a good matching of the 2D kinematic vehicle signals. The rest of the kinematic signals from the non-linear bicycle model can be seen in Appendix \ref{app:C}. 
  \begin{figure}[h!]
- 	\centering
- 	\includegraphics[width=0.7\textwidth]{N_influence.png}
- 	\caption{Different error made when using a different amount of optimization points in \ref{opt:basic_opti_w}.}
- 	\label{fig:N_influence}
- \end{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{3D_LP.png}
+	\caption{Observed, initial and learned paths for 3 different observed lane changes generated with common underlying weights.}
+	\label{fig:3D_learned_path}
+\end{figure}
  
- In order to further validate the learning algorithm, the chosen weights were given as initial guess making use of one dataset in order to check if it would diverge from the ideal global solution. As expected the algorithm converged after the first iteration. Next a guess close to the global solution was tried. The algorithm converged after $41$ iterations and outputted $\bigl[ \begin{smallmatrix} 4.01,&5.29,&6.33,&1.09,&2.12\end{smallmatrix}\bigr]$ and not $\bigl[ \begin{smallmatrix} 4.0,&5.0,&6.0,&1.0,&2.0\end{smallmatrix}\bigr]$ which proofs that a lot of local solutions exist.\\  
+The progress towards convergence over the iterations is showed by Figure \ref{fig:3D_conv}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{3D_conv.png}
+	\caption{The evolvement of the average $\bm{f_{rel}}$ over the learning iterations.}
+	\label{fig:3D_conv}
+\end{figure}
+
+Figure \ref{fig:3D_w} gives a view of how the learned weights change over the iterations for the different features. The weights in these graphs likewise a solution of \ref{opt:basic_opti_w} as the ones discussed earlier, but differ in a scaling factor $\frac{5.0}{\theta_2}$. During the learning process the degree of freedom of the just appointed scaling factor can be removed by fixing the second weight equal to $5.0$. Convergence is reached after ... iterations and following weights are outputted ... . It takes the algorithm longer to find equivalent weights. ?? klopt dit nog steeds??
  
- From above tests it can be concluded that the local solutions of individual datasets do not match and that the amount of mismatch has only a small dependants on the amount of optimization points. The next step to take is to combine different datasets in simultaneous learning instead of sequential learning in order to try to converge to weights that predict best for multiple datasets. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{3D_w.png}
+	\caption{The different outputted weights over the learning iterations.}
+	\label{fig:3D_w}
+\end{figure}
+
+
+
+
  
  \subsection{Conflict method}
  The first method proposed is the conflict method. Is main idea is to update the weights in the common direction of the gradient seen in equation \ref{eq:new} of the different datasets. If the direction of update according to gradient method is conflicting between different datasets the update of the weight in question is put on hold. The updating will be resumed when the conflict is resolved by updating the other weights. This is possible because the features are not independent of each other. Figure \ref{fig:conflict} shows how the conflict method will be embedded in the basic flow of the learning algorithm.\\
@@ -551,12 +565,7 @@ The convergence plots are all similar and for dataset A, Figure \ref{fig:conflic
 	\label{fig:conflict_accuracy}
 \end{figure}
 
- \subsection{Averaging method}
- In this method not all the different observed feature vectors are taken individually into account when updating the weights, but a single averaged observed feature vector is used. This avoids conflicting local solution. The flow of the algorithm is thus similar as shown in Figure \ref{fig:basic learning} but instead of a single dataset an averaged is used. In order to calculate the gradient, the difference between the averaged observed feature vector and the averaged calculated feature vector has to be taken. In order to obtain the averaged calculated feature vector, m times the optimization \ref{opt:basic_opti_w} is called for each specific observed maneuver. Afterwards the individual found feature vectors are averaged. With m the amount of observed datasets. This method is based on \cite{Kuderer2015a}.\\
  
-% Bespreek de fixed feature approach.
-
- The learning of the three datasets A,B and C is done with as stop criteria the maximum amount of iterations and convergence towards the averaged feature values with an accuracy of $10^{-4}$. The initial guess chosen for the weights is an all one vector. Convergence is reached after $111$ iterations because the desired convergence accuracy is reached. The learned weights are $\bigl[ \begin{smallmatrix} 1.21,&1.53,&1.83,&0.31,&0.61\end{smallmatrix}\bigr]$. 
  
 
  

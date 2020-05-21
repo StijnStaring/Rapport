@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  21 MAY 2020 10:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  21 MAY 2020 13:32
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -1114,16 +1114,20 @@ Package microtype Info: Character `029' is missing
 ] [5
 
 
-] (masterproef.lof) (masterproef.lot [6
+] (masterproef.lof) (masterproef.lot
+Underfull \vbox (badness 3260) has occurred while \output is active []
+
+ [6
 
 
-]) [7] [8
+])
+[7] [8
 
 ]
 \openout2 = `intro.aux'.
 
  (intro.tex
-<figures/AV.png, id=319, 1204.5pt x 903.375pt>
+<figures/AV.png, id=318, 1204.5pt x 903.375pt>
 File: figures/AV.png Graphic file (type png)
 <use figures/AV.png>
 Package pdftex.def Info: figures/AV.png  used on input line 9.
@@ -1153,7 +1157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
  []
 
 [2]
-<figures/lane_change.PNG, id=345, 384.2355pt x 120.32954pt>
+<figures/lane_change.PNG, id=344, 384.2355pt x 120.32954pt>
 File: figures/lane_change.PNG Graphic file (type png)
 <use figures/lane_change.PNG>
 Package pdftex.def Info: figures/lane_change.PNG  used on input line 27.
@@ -1204,7 +1208,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/discretized-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/discretized-eps-converted-to.pdf, id=374, 374.39874pt x 119.44624pt>
+<figures/discretized-eps-converted-to.pdf, id=372, 374.39874pt x 119.44624pt>
 File: figures/discretized-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/discretized-eps-converted-to.pdf>
 Package pdftex.def Info: figures/discretized-eps-converted-to.pdf  used on inpu
@@ -1244,7 +1248,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/MS_int-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/MS_int-eps-converted-to.pdf, id=401, 224.84pt x 102.3825pt>
+<figures/MS_int-eps-converted-to.pdf, id=399, 224.84pt x 102.3825pt>
 File: figures/MS_int-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/MS_int-eps-converted-to.pdf>
 Package pdftex.def Info: figures/MS_int-eps-converted-to.pdf  used on input lin
@@ -1264,7 +1268,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/SS-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/SS-eps-converted-to.pdf, id=402, 224.84pt x 102.3825pt>
+<figures/SS-eps-converted-to.pdf, id=400, 224.84pt x 102.3825pt>
 File: figures/SS-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/SS-eps-converted-to.pdf>
 Package pdftex.def Info: figures/SS-eps-converted-to.pdf  used on input line 82
@@ -1294,12 +1298,12 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [8 <./figures/MS_int-eps-converted-to.pdf> <./figures/SS-eps-converted-to.pdf>]
-<figures/MPC1.PNG, id=445, 660.66824pt x 349.90726pt>
+<figures/MPC1.PNG, id=443, 660.66824pt x 349.90726pt>
 File: figures/MPC1.PNG Graphic file (type png)
 <use figures/MPC1.PNG>
 Package pdftex.def Info: figures/MPC1.PNG  used on input line 101.
 (pdftex.def)             Requested size: 238.80243pt x 126.47372pt.
-<figures/MPC2.PNG, id=449, 649.82774pt x 363.759pt>
+<figures/MPC2.PNG, id=447, 649.82774pt x 363.759pt>
 File: figures/MPC2.PNG Graphic file (type png)
 <use figures/MPC2.PNG>
 Package pdftex.def Info: figures/MPC2.PNG  used on input line 108.
@@ -1316,7 +1320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<figures/comfort.PNG, id=464, 378.81525pt x 387.849pt>
+<figures/comfort.PNG, id=462, 378.81525pt x 387.849pt>
 File: figures/comfort.PNG Graphic file (type png)
 <use figures/comfort.PNG>
 Package pdftex.def Info: figures/comfort.PNG  used on input line 12.
@@ -1401,7 +1405,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-<figures/Bicycle_model_paper.png, id=567, 623.32875pt x 307.1475pt>
+<figures/Bicycle_model_paper.png, id=565, 623.32875pt x 307.1475pt>
 File: figures/Bicycle_model_paper.png Graphic file (type png)
 <use figures/Bicycle_model_paper.png>
 Package pdftex.def Info: figures/Bicycle_model_paper.png  used on input line 15
@@ -1437,7 +1441,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-<figures/basic_learning.png, id=607, 533.995pt x 242.9075pt>
+<figures/basic_learning.png, id=605, 533.995pt x 242.9075pt>
 File: figures/basic_learning.png Graphic file (type png)
 <use figures/basic_learning.png>
 Package pdftex.def Info: figures/basic_learning.png  used on input line 138.
@@ -1612,12 +1616,12 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [31]
-<figures/lat_acc.png, id=756, 1445.4pt x 704.6325pt>
+<figures/lat_acc.png, id=755, 1445.4pt x 704.6325pt>
 File: figures/lat_acc.png Graphic file (type png)
 <use figures/lat_acc.png>
 Package pdftex.def Info: figures/lat_acc.png  used on input line 410.
 (pdftex.def)             Requested size: 398.0pt x 194.0272pt.
-<figures/slipangle.png, id=757, 1445.4pt x 704.6325pt>
+<figures/slipangle.png, id=756, 1445.4pt x 704.6325pt>
 File: figures/slipangle.png Graphic file (type png)
 <use figures/slipangle.png>
 Package pdftex.def Info: figures/slipangle.png  used on input line 417.
@@ -1631,12 +1635,12 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [32 <./figures/lat_acc.png (PNG copy)>]
-<figures/jerk_num.png, id=769, 363.60844pt x 290.58563pt>
+<figures/jerk_num.png, id=768, 363.60844pt x 290.58563pt>
 File: figures/jerk_num.png Graphic file (type png)
 <use figures/jerk_num.png>
 Package pdftex.def Info: figures/jerk_num.png  used on input line 440.
 (pdftex.def)             Requested size: 179.09879pt x 143.1331pt.
-<figures/jerk_ana.png, id=770, 361.35pt x 289.08pt>
+<figures/jerk_ana.png, id=769, 361.35pt x 289.08pt>
 File: figures/jerk_ana.png Graphic file (type png)
 <use figures/jerk_ana.png>
 Package pdftex.def Info: figures/jerk_ana.png  used on input line 446.
@@ -1672,43 +1676,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 471--472
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--481
-
- []
-
-<figures/result_seq.png, id=803, 807.7678pt x 417.81094pt>
-File: figures/result_seq.png Graphic file (type png)
-<use figures/result_seq.png>
-Package pdftex.def Info: figures/result_seq.png  used on input line 484.
-(pdftex.def)             Requested size: 398.0pt x 205.86395pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/convergence_seq.png, id=804, 800.23969pt x 394.47375pt>
-File: figures/convergence_seq.png Graphic file (type png)
-<use figures/convergence_seq.png>
-Package pdftex.def Info: figures/convergence_seq.png  used on input line 491.
-(pdftex.def)             Requested size: 477.59879pt x 235.43408pt.
-
-Overfull \hbox (79.59879pt too wide) in paragraph at lines 491--492
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+<figures/3D_LP.png, id=814, 2409.0pt x 1204.5pt>
+File: figures/3D_LP.png Graphic file (type png)
+<use figures/3D_LP.png>
+Package pdftex.def Info: figures/3D_LP.png  used on input line 500.
+(pdftex.def)             Requested size: 398.0pt x 198.99123pt.
+<figures/3D_conv.png, id=816, 2409.0pt x 1204.5pt>
+File: figures/3D_conv.png Graphic file (type png)
+<use figures/3D_conv.png>
+Package pdftex.def Info: figures/3D_conv.png  used on input line 509.
+(pdftex.def)             Requested size: 398.0pt x 198.99123pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/3D_w.png, id=820, 2409.0pt x 1204.5pt>
+File: figures/3D_w.png Graphic file (type png)
+<use figures/3D_w.png>
+Package pdftex.def Info: figures/3D_w.png  used on input line 518.
+(pdftex.def)             Requested size: 398.0pt x 198.99123pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
 
  []
 
@@ -1716,42 +1712,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--503
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
-[36 <./figures/result_seq.png> <./figures/convergence_seq.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
-
- []
-
-<figures/N_influence.png, id=822, 369.63094pt x 277.78781pt>
-File: figures/N_influence.png Graphic file (type png)
-<use figures/N_influence.png>
-Package pdftex.def Info: figures/N_influence.png  used on input line 508.
-(pdftex.def)             Requested size: 278.59879pt x 209.37457pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 513--514
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 518--519
-
- []
-
-
-Underfull \vbox (badness 1565) has occurred while \output is active []
-
- [37 <./figures/N_influence.png>]
-<figures/conflict.png, id=831, 773.89125pt x 564.1075pt>
+[36 <./figures/3D_LP.png (PNG copy)>]
+<figures/conflict.png, id=829, 773.89125pt x 564.1075pt>
 File: figures/conflict.png Graphic file (type png)
 <use figures/conflict.png>
-Package pdftex.def Info: figures/conflict.png  used on input line 522.
+Package pdftex.def Info: figures/conflict.png  used on input line 530.
 (pdftex.def)             Requested size: 437.80243pt x 319.12589pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 522--523
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 530--531
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 527--528
+[37 <./figures/3D_conv.png (PNG copy)> <./figures/3D_w.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 535--536
 
  []
 
@@ -1760,72 +1733,56 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [38 <./figures/conflict.png>]
-<figures/conflict_path.png, id=842, 724.20563pt x 358.33875pt>
+<figures/conflict_path.png, id=844, 724.20563pt x 358.33875pt>
 File: figures/conflict_path.png Graphic file (type png)
 <use figures/conflict_path.png>
-Package pdftex.def Info: figures/conflict_path.png  used on input line 534.
+Package pdftex.def Info: figures/conflict_path.png  used on input line 542.
 (pdftex.def)             Requested size: 398.0pt x 196.93382pt.
-<figures/conflict_convergence.png, id=844, 789.70032pt x 395.97937pt>
+<figures/conflict_convergence.png, id=846, 789.70032pt x 395.97937pt>
 File: figures/conflict_convergence.png Graphic file (type png)
 <use figures/conflict_convergence.png>
 Package pdftex.def Info: figures/conflict_convergence.png  used on input line 5
-42.
+50.
 (pdftex.def)             Requested size: 457.69757pt x 229.50505pt.
 
-Overfull \hbox (59.69757pt too wide) in paragraph at lines 542--543
+Overfull \hbox (59.69757pt too wide) in paragraph at lines 550--551
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 LaTeX Warning: Reference `table:conflict_weights' on page 39 undefined on input
- line 547.
+ line 555.
 
-<figures/conflict_accuracy.png, id=847, 963.6pt x 489.32813pt>
+[39 <./figures/conflict_path.png> <./figures/conflict_convergence.png>]
+<figures/conflict_accuracy.png, id=856, 963.6pt x 489.32813pt>
 File: figures/conflict_accuracy.png Graphic file (type png)
 <use figures/conflict_accuracy.png>
-Package pdftex.def Info: figures/conflict_accuracy.png  used on input line 553.
+Package pdftex.def Info: figures/conflict_accuracy.png  used on input line 561.
 
 (pdftex.def)             Requested size: 398.0pt x 202.1042pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39 <./figures/conflict_path.png>]
-Underfull \vbox (badness 1622) has occurred while \output is active []
-
-
+)
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
-[40 <./figures/conflict_convergence.png> <./figures/conflict_accuracy.png>])
-[41]
+[40 <./figures/conflict_accuracy.png>]
 \openout2 = `chap-4.aux'.
 
- (chap-4.tex [42
+ (chap-4.tex) [41
 
 
 
-]) [43]
+]
 \openout2 = `chap-5.aux'.
 
- (chap-5.tex [44
+ (chap-5.tex [42
 
 
 
-]) [45]
+])
+[43]
 \openout2 = `chap-6.aux'.
 
- (chap-6.tex [46
+ (chap-6.tex [44
 
 
 
@@ -1834,43 +1791,43 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [47]
+) [45]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex [48
+ (conclusion.tex [46
 
 
 
-]) [49] [50
+]) [47] [48
 
 
-] [51] [52]
+] [49] [50]
 \openout2 = `app-A.aux'.
 
- (app-A.tex) [53
+ (app-A.tex) [51
 
 
 ]
 \openout2 = `app-B.aux'.
 
  (app-B.tex
-[54
+[52
 
 
 
-]) [55]
+]) [53]
 \openout2 = `app-C.aux'.
 
- (app-C.tex [56
+ (app-C.tex [54
 
 
 
-]) [57] [58
+]) [55] [56
 
 
 ] (masterproef.bbl
 bibitemlist
-[59
+[57
 
 ])
 
@@ -1879,7 +1836,7 @@ Class memoir Warning: The material used in the headers is too large
 either increase the head height or redesign the header
 (in both cases you will find help in the memoir manual). on input line 133.
 
-[60]
+[58]
 \tf@toc=\write5
 \openout5 = `masterproef.toc'.
 
@@ -1897,7 +1854,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
 Package rerunfilecheck Info: File `masterproef.out' has not changed.
-(rerunfilecheck)             Checksum: D33B19BECE78C150478FFB1D2CD53E65;1975.
+(rerunfilecheck)             Checksum: 1A7D1AFDD4CC03AB7A63FCE39B6B7DA2;1981.
 
 
 LaTeX Warning: There were undefined references.
@@ -1905,13 +1862,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
  ) 
 Here is how much of TeX's memory you used:
- 16634 strings out of 481518
- 266972 string characters out of 2911616
- 890919 words of memory out of 3000000
- 31076 multiletter control sequences out of 15000+200000
- 638970 words of font info for 177 fonts, out of 3000000 for 9000
+ 16637 strings out of 481518
+ 266881 string characters out of 2911616
+ 891085 words of memory out of 3000000
+ 31077 multiletter control sequences out of 15000+200000
+ 639053 words of font info for 178 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,12n,47p,2050b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,15n,47p,2050b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
 nc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
 hit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
@@ -1925,26 +1882,28 @@ nts/type1/public/lm/lmbx12.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/t2vosx/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/t2vosx/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/t2vosx/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/t2vosx/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/t2vosx/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/Users/t2vosx/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/t2vo
-sx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/
-t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Use
-rs/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/
-Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><
-C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.
-pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
-sy10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-lm/lmsy6.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (70 pages, 1853592 bytes).
+rograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/t2vosx/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/t2vosx/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/t2vosx/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/Users/t2vosx
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/
+t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Us
+ers/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:
+/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb>
+<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.p
+fb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr
+9.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/
+lmri10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmsy10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/lm/lmsy6.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on masterproef.pdf (68 pages, 2061186 bytes).
 PDF statistics:
- 1090 PDF objects out of 1200 (max. 8388607)
+ 1086 PDF objects out of 1200 (max. 8388607)
  241 named destinations out of 1000 (max. 500000)
  27487 words of extra memory for PDF output out of 29859 (max. 10000000)
 

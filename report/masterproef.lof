@@ -30,12 +30,12 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{32}{figure.caption.34}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Slipangle during lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.(bleu:front,red:rear)\relax }}{33}{figure.caption.35}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces A comparison between the numerical jerk (left) based on \ref {eq:diff} and \ref {eq:bicycle_model1} and the analytical jerk (right) based on appendix \ref {app:A} and \ref {eq:bicycle_model2}. \relax }}{33}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Overview of initial guesses, learned and observed trajectories.\relax }}{35}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Overview of initial guesses, learned and observed trajectories.\relax }}{36}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Convergence of the features with learned weights towards the observed features according to section \ref {s:obj}\relax }}{36}{figure.caption.41}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Different error made when using a different amount of optimization points in \ref {opt:basic_opti_w}.\relax }}{37}{figure.caption.42}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{38}{figure.caption.43}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Overview of the different observed paths, initial guesses and learned paths.\relax }}{39}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.\relax }}{39}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Convergence plot of $f_{rel,i}$ for dataset A.\relax }}{40}{figure.caption.45}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces The average error between the observed and calculated feature values with the learned weights when applying the conflict method.\relax }}{40}{figure.caption.46}%
 \addvspace {10pt}
 \addvspace {10pt}

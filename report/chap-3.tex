@@ -511,7 +511,7 @@ The progress towards convergence over the iterations is showed by Figure \ref{fi
 	\label{fig:3D_conv}
 \end{figure}
 
-Figure \ref{fig:3D_w} gives a view of how the learned weights change over the iterations for the different features. The weights in these graphs likewise a solution of \ref{opt:basic_opti_w} as the ones discussed earlier, but differ in a scaling factor $\frac{5.0}{\theta_2}$. During the learning process the degree of freedom of the just appointed scaling factor can be removed by fixing the second weight equal to $5.0$. Convergence is reached after ... iterations and following weights are outputted ... . It takes the algorithm longer to find equivalent weights. ?? klopt dit nog steeds??
+Figure \ref{fig:3D_w} gives a view of how the learned weights change over the iterations for the different features. The weights in these graphs likewise a solution of \ref{opt:basic_opti_w} as the ones discussed earlier, but differ in a scaling factor $\frac{5.0}{\theta_2}$. During the learning process the degree of freedom of the just appointed scaling factor can be removed by fixing the second weight equal to $5.000$. Convergence is reached after $59$ iterations and following weights are outputted $\bigl[ \begin{smallmatrix} 15.143,&5.000,&3.222,&6.016,&3.880,&2.007\end{smallmatrix}\bigr]$. It takes the algorithm longer to find equivalent weights because of the lost of the ability of the RPROP algorithm to vary all the weights. Therefore the scaling degree of freedom is retained during the rest of this thesis. 
  
 \begin{figure}[h!]
 	\centering
@@ -520,12 +520,8 @@ Figure \ref{fig:3D_w} gives a view of how the learned weights change over the it
 	\label{fig:3D_w}
 \end{figure}
 
-
-
-
- 
- \subsection{Conflict method}
- The first method proposed is the conflict method. Is main idea is to update the weights in the common direction of the gradient seen in equation \ref{eq:new} of the different datasets. If the direction of update according to gradient method is conflicting between different datasets the update of the weight in question is put on hold. The updating will be resumed when the conflict is resolved by updating the other weights. This is possible because the features are not independent of each other. Figure \ref{fig:conflict} shows how the conflict method will be embedded in the basic flow of the learning algorithm.\\
+\subsection{Conflict method}
+ The second method proposed is the conflict method. Its main idea is to increase or decrease the weights if the gradient, as given by \ref{eq:new}, of the different individual datasets point all in the same direction. If there are individual gradients with conflicting signs, the update direction is ambiguity and the weights is not updated.  direction of update according to gradient method is conflicting between different datasets the update of the concerning weight is put on hold. The updating will be resumed when the conflict is resolved by updating the other weights. This is possible because the features are not independent of each other. Figure \ref{fig:conflict} shows how the conflict method will be embedded in the basic flow of the learning algorithm.\\
  
   \begin{figure}[h!]
  	\centering

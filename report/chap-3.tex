@@ -131,7 +131,7 @@ The goal of the learning algorithm is to learn the weights $\bm{\theta}$ in the 
 
 
 \subsection{Flow of the algorithm}
-The goal of the learning algorithm is to output weights that when applied in the objective $\bm{\theta}^T\bm{F}(\bm{r})$, generate feature vector  $\bm{F(\bm{r})}$ that are the best possible fit with the observed feature vector. Without a vehicle mismatch a match of feature values will directly induce a good match of the kinematic signals as is extensively discussed in section \ref{s:ID_results}. This means that similarity between the observed path and the one that follows from minimizing the objective $\bm{\theta}^T\bm{F}(\bm{r})$ for chosen weights, is quantified by the difference between the feature values of the observed path and the obtained one. The flow of a single data set learning algorithm can be seen in Figure \ref{fig:basic learning}. The path that is expected to be produced by the driver is the path that is felt the most comfortable and equals $\bm{r}_{expected} =  \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})$
+The goal of the learning algorithm is to output weights that when applied in the objective $\bm{\theta}^T\bm{F}(\bm{r})$, generate feature vector  $\bm{F(\bm{r})}$ that are the best possible fit with the observed feature vector. Without a vehicle mismatch a match of feature values will directly induce a good match of the kinematic signals as is extensively discussed in section \ref{s:ID_results}. This means that similarity between the observed path and the one that follows from minimizing the objective $\bm{\theta}^T\bm{F}(\bm{r})$ for chosen weights, is quantified by the difference between the feature values of the observed path and the obtained one. The flow of a single data set learning algorithm can be seen in Figure \ref{fig:basic learning}. The path that is expected to be produced by the driver is the path that is felt the most comfortable and equals $\bm{r}_{expected} =  \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})$\\
 
 \begin{figure}[h!]
 	\centering
@@ -472,7 +472,7 @@ The resulting weights found after $28$ iterations are $\bigl[ \begin{smallmatrix
 
 %It can be concluded that fitting of the features gives a good reproduction of the individual state and control signals.\\
 
-\subsection{Averaging method}
+\subsection{Averaging method}\label{s:averaging_method}
 In order to simultaneously learn from multiple datasets the averaging method is proposed. \cite{Kuderer2015a} The flow of the algorithm is similar as shown in Figure \ref{fig:basic learning} and the convergence criteria stays the same as for single dataset learning, but instead of inputting an observed feature vector based on a single dataset, an averaged one over multiple datasets is used.
 To calculate the gradient, the difference between the averaged observed feature vector and the averaged calculated feature vector has is taken. In order to obtain the averaged calculated feature vector, m times the optimization \ref{opt:basic_opti_w} is called for each observed maneuver with varying initial speeds and desired lateral displacement. Afterwards the individual found feature vectors are averaged. m is the amount of combined datasets.\\
  
@@ -483,7 +483,7 @@ The datasets chosen to perform the learning algorithm on are $V_0:22.22\hspace{1
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{@{}llllr@{}} \toprule
-		$\bm{f_{rel}}$    & V22.22 - L3.47 & V22.22 - L3.47 & V25.00 - L3.47\\ \midrule
+		$\bm{f_{rel}}$    & V22.22 - L3.47 & V22.22 - L6.94 & V25.00 - L3.47\\ \midrule
 		Nr.1       		  &1.0000        & 0.9973 	    & 1.0064 		\\
 		Nr.2              & 1.0002       & 0.9992       & 1.0001       \\
 		Nr.3              & 0.9860       & 0.9816       & 0.9983       \\
@@ -491,7 +491,7 @@ The datasets chosen to perform the learning algorithm on are $V_0:22.22\hspace{1
 		Nr.5              & 0.9972       & 0.9948       & 0.9902       \\
 		Nr.6              & 0.9999       & 1.0002       & 0.9999       \\ \bottomrule
 	\end{tabular}
-	\caption{This table shows the $\bm{f_{rel}}$ for each individual dataset at convergence.}
+	\caption{This table shows the $\bm{f_{rel}}$ for each individual dataset at convergence using the average method.}
 	\label{tab:in_av}
 \end{table} 
 Figure \ref{fig:3D_learned_path} shows the three initial guesses of the paths that make use of an all one weight vector in red, purple and brawn. The finally learned paths can be seen in pink, grey and yellow. These paths lay exactly on the observed ones. From this it can be concluded that matching of feature values which are scalars, give a good representation for also a good matching of the 2D kinematic vehicle signals. The rest of the kinematic signals from the non-linear bicycle model can be seen in Appendix \ref{app:C}. 
@@ -521,7 +521,7 @@ Figure \ref{fig:3D_w} gives a view of how the learned weights change over the it
 \end{figure}
 
 \subsection{Conflict method}
- The second method proposed is the conflict method. Its main idea is to increase or decrease the weights if the gradient, as given by \ref{eq:new}, of the different individual datasets point all in the same direction. If there are individual gradients with conflicting signs, the update direction is ambiguity and the weights is not updated.  direction of update according to gradient method is conflicting between different datasets the update of the concerning weight is put on hold. The updating will be resumed when the conflict is resolved by updating the other weights. This is possible because the features are not independent of each other. Figure \ref{fig:conflict} shows how the conflict method will be embedded in the basic flow of the learning algorithm.\\
+ The second method proposed is the conflict method. Its main idea is to increase or decrease the weights if the gradient, as given by \ref{eq:new}, of the different individual datasets point all in the same direction. If there are individual gradients with conflicting signs, the update direction is ambiguity and the concerning weight is not updated. The updating will be resumed when the conflict is resolved by updating the other weights. Resolving conflicts is possible because the features are not independent of each other. Figure \ref{fig:conflict} shows how the conflict check is integrated together with the RPROP algorithm in the 'update weights' box in the basic learning flow of Figure \ref{fig:basic learning}. The bleu boxes serve as output ports.\\
  
   \begin{figure}[h!]
  	\centering
@@ -530,39 +530,46 @@ Figure \ref{fig:3D_w} gives a view of how the learned weights change over the it
  	\label{fig:conflict}
  \end{figure}
 
-Depending if the previous case in the RPROP algorithm was case 2 and the sign difference between the current and previous gradient, three distinct RPROP cases can be identified with other update methods as discussed in section \ref{s:RPROP}. Inside the conflict test, it is checked if all the signs of the current gradients of the different datasets are checked. If there is a sign difference, this means that for one dataset a feature value is higher than the observed one and the corresponding weight should be increased (negative gradient) and for an other dataset it is the other way around and the corresponding weight should be decreased. (positive gradient). For such a case the conflict test will give rise to a positive conflict value. If there is no conflict there will also be unity in the decision of the RPROP case. After the conflict is solved, the next case will be automatically equal to case 3 because no decision can be made about the increase or decrease of the update value. The convergence criteria used is aside of the maximum amount of iterations and an accurate match of $10^{-4}$ with the observed features the criteria if there is still improvement possible in a direction that benefits every dataset.\\
+Depending if the previous case was RPROP case 2 and the sign difference between the current and previous gradient, three distinct RPROP cases can be identified which outputs the new update value, delta weights and the exception value as discussed in section \ref{s:RPROP}. Inside the conflict test, it is checked if all the signs of the current gradients are consistent. This boils down to verifying on which entry in the different gradients there is a sign difference. If there is a sign difference, this means that for one dataset the learned feature value is higher than the observed one and the corresponding weight should be increased (negative gradient) and for at least one other dataset, the corresponding weight should be decreased. (positive gradient) according to \ref{eq:5} and \ref{eq:new}. For such a case the conflict test will give rise to a positive conflict value. If there is no conflict there will also be unity in the decision of the RPROP case. After the conflict is solved, the next case will be automatically equal to case 3 because no decision can be made about the increase or decrease of the update value. The convergence criteria used stays the same as discussed in \ref{s:averaging_method} but now an additional criteria is added that there should still be improvement possible. This means that it should be possible to update a weight in a direction that benefits every dataset.\\
 
-The learning algorithm is applied simultaneously to dataset A,B and C and uses as initial guess for the weights the vector $\bigl[ \begin{smallmatrix} 1.0,&1.0,&1.0,&1.0,&1.0\end{smallmatrix}\bigr]$. The algorithm is ended after $17$ iterations with no direction of improvement possible. The observed paths with their initial guesses and learned paths can be seen in Figure \ref{fig:conflict_paths}.
+The learning algorithm is applied on the same three datasets as discussed in section \ref{s:averaging_method} and uses as initial guess of the weights an all one vector. The resulting weighs found after $32$ iterations are  $\bigl[ \begin{smallmatrix} 14.283,&5.000,&3.114,&5.979,&3.645,&2.000\end{smallmatrix}\bigr]$. The learning algorithm stopped because no update of the weights could be done without ambiguity. The $\bm{f_{rel}}$ of the individual datasets can be seen in table \ref{tab:in_conflict}. Figure \ref{fig:3D_conv_conflict} shows the convergence of the $\bm{f_{rel}}$ vector of dataset $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$. The individual convergence plots are similar for the different datasets.
 
- 
- \begin{figure}[h!]
- 	\centering
- 	\includegraphics[width=1.0\textwidth]{conflict_path.png}
- 	\caption{Overview of the different observed paths, initial guesses and learned paths.}
- 	\label{fig:conflict_paths}
- \end{figure}
-
-The convergence plots are all similar and for dataset A, Figure \ref{fig:conflict_convergence}, gives the convergence of $f_{rel,i}$ for the different features. 
- \begin{figure}[h!]
+\begin{table}[h!]
 	\centering
-	\includegraphics[width=1.15\textwidth]{conflict_convergence.png}
-	\caption{Convergence plot of $f_{rel,i}$ for dataset A.}
-	\label{fig:conflict_convergence}
-\end{figure}
- 
- As is indicated by Figure \ref{fig:conflict_convergence}, the method is clearly converging towards the different sets of observed feature vectors. However it should be noted that despite giving more accurate results for the feature values of the other datasets then when only one dataset A is used to learn the weights, the method is still constricted in its feature matching accuracy due to no available direction of improvement. This effect worsens when more datasets are used because conflicts more rapidly occur. Table \ref{table:conflict_weights} lists the different learned weights and Figure \ref{fig:conflict_accuracy} shows the loss of accuracy when more datasets are simultaneously learned.
- 
- 
+	\begin{tabular}{@{}llllr@{}} \toprule
+		$\bm{f_{rel}}$    & V22.22 - L3.47 & V22.22 - L6.94 & V25.00 - L3.47\\ \midrule
+		Nr.1       		  &0.9939       & 0.9913 	    & 1.0003 		\\
+		Nr.2              & 1.0003       & 0.9993       & 1.0002       \\
+		Nr.3              & 0.9911       & 0.9868       & 1.0032      \\
+		Nr.4              & 1.0016       & 0.9999       & 1.0014       \\
+		Nr.5              & 1.0009       & 0.9985       & 0.9941       \\
+		Nr.6              & 0.9998       & 1.0001       & 0.9998       \\ \bottomrule
+	\end{tabular}
+	\caption{This table shows the $\bm{f_{rel}}$ for each individual dataset at convergence using the conflict method.}
+	\label{tab:in_conflict}
+\end{table} 
+
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{conflict_accuracy.png}
-	\caption{The average error between the observed and calculated feature values with the learned weights when applying the conflict method.}
-	\label{fig:conflict_accuracy}
+	\includegraphics[width=1.0\textwidth]{3D_conv_conflict.png}
+	\caption{The evolvement of $\bm{f_{rel}}$ of dataset  $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$ over the learning iterations.}
+	\label{fig:3D_conv_conflict}
 \end{figure}
 
+As can be seen in table \ref{tab:in_conflict} and Figure \ref{fig:3D_conv_conflict} the conflict method is capable to give an adequate convergence towards the observed features. In appendix \ref{app:D} more results of the conflict method are displayed.\\
+The algorithm was stopped because no improvement could be realized anymore. It could be hypothesized that if no ideal data is used where the human driver is less consistent in producing observations that resemble its underlying weights, the algorithm is stopped even earlier. This will naturally constrict the algorithm in its feature matching accuracy due to no available direction of improvement. This can already be seen when more datasets are used in the conflict method e.g. 7 datasets. The algorithm stops then at $25$ iterations because it reached earlier a point of no possible improvement anymore. The learned weights for 7 datasets are $\bigl[ \begin{smallmatrix} 14.785,&5.000,&3.223,&5.968,&3.770,&2.000\end{smallmatrix}\bigr]$. Figure \ref{fig:acc_conflict} gives the averaged error of each individual $\bm{f_{rel,i}}$ vector made with respect to convergence to one, on the three important lateral features. The three important lateral features shown in Figure \ref{fig:acc_conflict} are respectively lateral total acceleration, lateral jerk and lateral distance displaced. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.1\textwidth]{acc_conflict.png}
+	\caption{The averaged error of each individual $\bm{f_{rel,i}}$ vector made with respect to convergence to one, on the three important lateral features. (3 datasets: blue, 7 datasets: orange)}
+	\label{fig:acc_conflict}
+\end{figure}
+
+Figure \ref{fig:acc_conflict} shows that the prematurely stop of the learning with 7 datasets in comparison with 3 datasets gives an slightly higher error on the match of feature values of the individual datasets.   
  
- 
+
 
  
  \subsection{Comparison of methods}

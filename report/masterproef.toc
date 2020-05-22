@@ -51,8 +51,8 @@
 \contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{35}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Averaging method}{35}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Conflict method}{38}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{39}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Conclusion}{40}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{41}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Conclusion}{41}{subsection.4.4.5}%
 \contentsline {chapter}{\chapternumberline {5}Learning from complex vehicle model}{43}{chapter.5}%
 \contentsline {section}{\numberline {5.1}The First Topic of this Chapter}{43}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Item 1}{43}{subsection.5.1.1}%
@@ -75,4 +75,5 @@
 \contentsline {section}{\numberline {A.1}Equations}{53}{section.A.1}%
 \contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{55}{appendix.B}%
 \contentsline {appendix}{\chapternumberline {C}Results from the averaging learning on 3 datasets}{57}{appendix.C}%
-\contentsline {chapter}{Bibliography}{59}{appendix*.53}%
+\contentsline {appendix}{\chapternumberline {D}Results from the conflict learning on 3 datasets}{59}{appendix.D}%
+\contentsline {chapter}{Bibliography}{61}{appendix*.53}%

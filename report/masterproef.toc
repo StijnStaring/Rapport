@@ -40,18 +40,18 @@
 \contentsline {section}{\numberline {4.3}Ideal data}{29}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Generation}{29}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Validation}{30}{subsection.4.3.2}%
-\contentsline {subsubsection}{Initial guess}{30}{section*.27}%
-\contentsline {subsubsection}{Time limit}{30}{section*.29}%
-\contentsline {subsubsection}{Amount of optimization points}{31}{section*.31}%
-\contentsline {subsubsection}{Linear tire model}{31}{section*.33}%
-\contentsline {subsubsection}{Numerical vs Analytical approach}{32}{section*.36}%
-\contentsline {subsubsection}{Feature values}{34}{section*.38}%
+\contentsline {subsubsection}{Numerical vs Analytical formulation}{30}{section*.27}%
+\contentsline {subsubsection}{Initial guess}{31}{section*.29}%
+\contentsline {subsubsection}{Time limit}{31}{section*.31}%
+\contentsline {subsubsection}{Amount of optimization points}{32}{section*.33}%
+\contentsline {subsubsection}{Linear tire model}{32}{section*.35}%
+\contentsline {subsubsection}{Feature values}{33}{section*.38}%
 \contentsline {subsubsection}{Conclusion}{34}{section*.39}%
 \contentsline {section}{\numberline {4.4}Ideal lane change data learning results}{34}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{35}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Averaging method}{35}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Conflict method}{38}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{41}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.3}Conflict method}{37}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{40}{subsection.4.4.4}%
 \contentsline {section}{\numberline {4.5}Conclusion}{41}{section.4.5}%
 \contentsline {chapter}{\chapternumberline {5}Learning from complex vehicle model}{43}{chapter.5}%
 \contentsline {section}{\numberline {5.1}The First Topic of this Chapter}{43}{section.5.1}%
@@ -77,5 +77,5 @@
 \contentsline {section}{\numberline {B.1}Time limit}{55}{section.B.1}%
 \contentsline {section}{\numberline {B.2}Amount of optimization points}{60}{section.B.2}%
 \contentsline {appendix}{\chapternumberline {C}Results from the averaging learning on 3 datasets}{65}{appendix.C}%
-\contentsline {appendix}{\chapternumberline {D}Results from the conflict learning on 3 datasets}{75}{appendix.D}%
+\contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{75}{appendix.D}%
 \contentsline {chapter}{Bibliography}{77}{appendix*.91}%

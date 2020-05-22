@@ -38,15 +38,17 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features.(3 datasets: blue, 7 datasets: orange)\relax }}{41}{figure.caption.47}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)\relax }}{41}{figure.caption.48}%
 \addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throtttle, braking and steerwheelangle.\relax }}{44}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The 15 dof amesim model with as inputs the amount of throtttle, braking and steerwheelangle.\relax }}{44}{figure.caption.50}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {C.1}{\ignorespaces \relax }}{71}{figure.caption.86}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces \relax }}{71}{figure.caption.87}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces \relax }}{72}{figure.caption.88}%
-\contentsline {figure}{\numberline {C.4}{\ignorespaces \relax }}{72}{figure.caption.89}%
-\contentsline {figure}{\numberline {C.5}{\ignorespaces \relax }}{73}{figure.caption.90}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces \relax }}{71}{figure.caption.88}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces \relax }}{71}{figure.caption.89}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces \relax }}{72}{figure.caption.90}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces \relax }}{72}{figure.caption.91}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces \relax }}{73}{figure.caption.92}%
 \addvspace {10pt}

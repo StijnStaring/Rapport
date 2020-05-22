@@ -13,19 +13,22 @@
 \BOOKMARK [1][-]{section.4.2}{Formulation of the algorithm}{chapter.4}% 13
 \BOOKMARK [1][-]{section.4.3}{Ideal data}{chapter.4}% 14
 \BOOKMARK [1][-]{section.4.4}{Ideal lane change data learning results}{chapter.4}% 15
-\BOOKMARK [0][-]{chapter.5}{Learning from complex vehicle model}{}% 16
-\BOOKMARK [1][-]{section.5.1}{The First Topic of this Chapter}{chapter.5}% 17
-\BOOKMARK [1][-]{section.5.2}{The Second Topic}{chapter.5}% 18
-\BOOKMARK [1][-]{section.5.3}{Conclusion}{chapter.5}% 19
-\BOOKMARK [0][-]{chapter.6}{Validation with expert driver data}{}% 20
-\BOOKMARK [1][-]{section.6.1}{The First Topic of this Chapter}{chapter.6}% 21
-\BOOKMARK [1][-]{section.6.2}{The Second Topic}{chapter.6}% 22
-\BOOKMARK [1][-]{section.6.3}{Conclusion}{chapter.6}% 23
-\BOOKMARK [0][-]{chapter.7}{Enhanced weight update}{}% 24
-\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 25
-\BOOKMARK [0][-]{appendix.A}{Jerk equations of the non-linear bicycle model}{}% 26
-\BOOKMARK [1][-]{section.A.1}{Equations}{appendix.A}% 27
-\BOOKMARK [0][-]{appendix.B}{Results of the ideal data validation}{}% 28
-\BOOKMARK [0][-]{appendix.C}{Results from the averaging learning on 3 datasets}{}% 29
-\BOOKMARK [0][-]{appendix.D}{Results from the conflict learning on 3 datasets}{}% 30
-\BOOKMARK [0][-]{appendix*.53}{Bibliography}{}% 31
+\BOOKMARK [1][-]{section.4.5}{Conclusion}{chapter.4}% 16
+\BOOKMARK [0][-]{chapter.5}{Learning from complex vehicle model}{}% 17
+\BOOKMARK [1][-]{section.5.1}{The First Topic of this Chapter}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.2}{The Second Topic}{chapter.5}% 19
+\BOOKMARK [1][-]{section.5.3}{Conclusion}{chapter.5}% 20
+\BOOKMARK [0][-]{chapter.6}{Validation with expert driver data}{}% 21
+\BOOKMARK [1][-]{section.6.1}{The First Topic of this Chapter}{chapter.6}% 22
+\BOOKMARK [1][-]{section.6.2}{The Second Topic}{chapter.6}% 23
+\BOOKMARK [1][-]{section.6.3}{Conclusion}{chapter.6}% 24
+\BOOKMARK [0][-]{chapter.7}{Enhanced weight update}{}% 25
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 26
+\BOOKMARK [0][-]{appendix.A}{Jerk equations of the non-linear bicycle model}{}% 27
+\BOOKMARK [1][-]{section.A.1}{Equations}{appendix.A}% 28
+\BOOKMARK [0][-]{appendix.B}{Results of the ideal data validation}{}% 29
+\BOOKMARK [1][-]{section.B.1}{Time limit}{appendix.B}% 30
+\BOOKMARK [1][-]{section.B.2}{Amount of optimization points}{appendix.B}% 31
+\BOOKMARK [0][-]{appendix.C}{Results from the averaging learning on 3 datasets}{}% 32
+\BOOKMARK [0][-]{appendix.D}{Results from the conflict learning on 3 datasets}{}% 33
+\BOOKMARK [0][-]{appendix*.91}{Bibliography}{}% 34

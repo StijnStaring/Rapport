@@ -148,7 +148,7 @@ While no convergence takes place the weights are updated, making use of the RPRO
 \begin{aligned}
 \min_{\bm{X}(.),\bm{U}(.), T} \quad &  \bm{\theta}^T\bm{F}(\bm{X},\bm{U}, T) \\
 \textrm{s.t.} \quad & \bm{X}^{k+1} = I(\bm{X}^{k}, \bm{U}^{k}) & k = [0,\cdots, N-1]\\
-& \bm{X}^{0}(1:8)= \bm{X}_{intitial} \\
+& \bm{X}^{0}[1:8]= \bm{X}_{intitial} \\
 & T \leq T_{limit}\\
 & \bm{F}(\bm{X}^{k}) \geq 0	& k = [0,\cdots, N]\\
 & \bm{H}(\bm{X}^{k}) = 0	& k = [0,\cdots, N]\\
@@ -315,7 +315,6 @@ In order to reduce the effect of order of size given by the units in the objecti
   \end{tabular}
 	\label{table:norm}
   \caption{Overview of  normalization factors.}
-  
 \end{table}
 
 

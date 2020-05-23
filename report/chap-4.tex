@@ -76,30 +76,55 @@ v_{start}-1 \leq v_x^k \leq v_{start}+1, & k = [0,\cdots, N_{MPC}]
 \end{Bmatrix}
 \end{equation}\
 
-The error function that serves as the objective of the OCP is given by the following equation.
-
-%\label{eq:obj_mpc}
+The error function that serves as the objective of the OCP is given by the following equation. The weights that gave the best tracking results can be seen in table \ref{tab:weights}.
 
 \begin{multline*} 
-objective=W_1(\bm{x}-\bm{ref}_x)^T(\bm{x}-\bm{ref}_x)+W_2(\bm{y}-\bm{ref}_y)^T(\bm{y}-\bm{ref}_y)\\
-+W_3(\bm{v}_x-\bm{ref}_{v_x})^T(\bm{v}_x-\bm{ref}_{v_x})+W_4(\bm{v}_y-\bm{ref}_{v_y})^T(\bm{v}_y-\bm{ref}_{v_y})\\+W_5(\bm{\psi}-\bm{ref}_{\psi})^T(\bm{\psi}-\bm{ref}_\psi)
-+W_6(\bm{\dot{\psi}}-\bm{ref}_{\dot{\psi}})^T(\bm{\dot{\psi}}-\bm{ref}_{\dot{\psi}})\\ + W_7\dot{\bm{t}}_r^T\dot{\bm{t}}_r+W_8\dot{\bm{\delta}}_s^T\dot{\bm{\delta}}_s + W_9\dot{\bm{a}}_x^T\dot{\bm{a}}_x
+objective=W_1(\bm{x}[2:end]-\bm{ref}_x)^T(\bm{x}[2:end]-\bm{ref}_x)+W_2(\bm{y}[2:end]-\bm{ref}_y)^T(\bm{y}[2:end]-\bm{ref}_y)\\
++W_3(\bm{v}_x[2:end]-\bm{ref}_{v_x})^T(\bm{v}_x[2:end]-\bm{ref}_{v_x})+W_4(\bm{v}_y[2:end]-\bm{ref}_{v_y})^T(\bm{v}_y[2:end]-\bm{ref}_{v_y})\\+W_5(\bm{\psi}[2:end]-\bm{ref}_{\psi})^T(\bm{\psi}[2:end]-\bm{ref}_\psi)
++W_6(\bm{\dot{\psi}}[2:end]-\bm{ref}_{\dot{\psi}})^T(\bm{\dot{\psi}}[2:end]-\bm{ref}_{\dot{\psi}})\\ + W_7\dot{\bm{t}}_r^T\dot{\bm{t}}_r+W_8\dot{\bm{\delta}}_s^T\dot{\bm{\delta}}_s + W_9\dot{\bm{a}}_x^T\dot{\bm{a}}_x
 \end{multline*}
 
+\[\bm{x},\bm{y},\bm{v}_x,\bm{v}_y,\bm{\psi},\dot{\bm{\psi}},\bm{a}_x \in \mathbb{R}^{(N_{MPC}+1)x1} \hspace{10mm}\bm{ref}_{i},\dot{\bm{t}}_r,\dot{\bm{\delta}}_s \in \mathbb{R}^{N_{MPC}x1}\]
 
 
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{}lr@{}} 
+		Weight    & Value\\ \midrule
+		W1      & 10\\
+		W2          & 10\\
+		W3 	   & 30\\
+		W4       & 1.0\\
+		W5       & 100\\
+		W6       & 1.0\\
+		W7       & 5.0\\
+		W8       & 0.01\\
+		W9  & 0.01\\ \bottomrule
+	\end{tabular}
+	\caption{Overview of the weights used in the objective of \ref{opt:tracking}.}
+	\label{tab:weights}
+\end{table}
 
+The ultimate weights displayed were attained by trail and error but there is an intuitive explanation on why these states were used and which order of magnitude the weights were given.\\
+It was first tried to focus mostly on path tracking in order to see how the other states would differ when the amesim model drove almost exactly the same path as the non-linear vehicle and therefore $x(t),y(t)$ and $\psi(t)$ were included. They define the orientation of the vehicle. Nervous input behaviour was noticed and in order to smooth the input they were given a small weight. This in order assure still good tracking behaviour. It was observed that this strategy resulted in a good tracking of the important signals for the learning algorithm: $y(t), a_y(t)$ and $j_y(t)$. As will be explained in \ref{s:tracking_results} at the start of the maneuver the Amesim model made a deceleration. In order to  give the model time to stabilize before the start of the maneuver, a straight driving part of $15\hspace{1mm}s$ and $2.5\hspace{1mm}s$ were respectively added before and after the reference lane change maneuver. To faster remove the oscillation in the longitudinal direction of the vehicle, $v_x$ and $a_x$ were included in the objective.\\
 
+The initial guess given to first solve the OCP is only needed for $v_x$. This is because otherwise an invalid value would emerges in the calculation of the slipangle according to equation \ref{eq:bicycle_slipangle}. When the OCP is defined and implemented in CasADi as described above, the opti environment is saved as a function that can be called during the running of the MPC. In order to speed up the implementation there is switched to a SQP method using an active-set QP solver instead of IPOPT that was used in \ref{opt:basic_opti_w}. "Interior point methods (like IPOPT) are generally robust at finding a minimizer, but the barrier parameter will make the algorithm walk away from a perfect initial guess, only to come back after a while." \cite{Gillis2019} A hot starting was implemented by feeding the solution of a previous MPC iteration as initial guess for the optimization variables and the lambda multipliers. Because of this it was logical to switch the solver and solving method. Together with the straight driving parts, a simulation of $40\hspace{1mm}s$ is performed and one iteration of the MPC takes around $0.15\hspace{1mm}s$. The main time consumed to calculate the solution is mainly the loading time needed for the different simulation components.\\
 
+With the OCP defined, it can be included in a MPC formulation. Every MPC iteration the current state is outputted by the Amesim model and the reference which are implemented as parameters the optimization \ref{opt:tracking}. The Amesim model is evaluated at a sampling rate of $T_s$ and the optimization \ref{opt:tracking} outputting controls is called at a rate of $T_{MPC} = 0.1$.\footnote{It can be noted that the reference comes at a sampling rate $T_{pl}$ of $0.025\hspace{1mm}s$ which is taken into account during the reference update.}  In order to connect the tracking MPC with the Amesim model using different sampling times, the Simulink model of Figure \ref{fig:simulink_model} was build. 
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.1\textwidth]{simulink_model.PNG}
+	\caption{This figure shows hows the tracking MPC is connected with the Amesim model using different sampling times. (red: $T_s: 0.01\hspace{1mm}s$ and green: $T_{MPC}:0.1\hspace{1mm}s$)}	
+	\label{fig:simulink_model}
+\end{figure}
 
-
-
-
+The three inputs to the Amesim model (largest block) are $\delta_s$, $t_r$ and $braking$ but the control outputs of \ref{opt:tracking} give $\dot{t}_r$ and $\dot{\delta_s}$. Therefore 'Forward Euler integration' was introduced using for $0.1\hspace{1mm}s$ the control outputs in order to calculate every $0.01\hspace{1mm}s$ the inputs for the Amesim model. Moreover the throttle of the bicycle model can theoretically become positive and negative. These two states were separated and feeded to the Amesim model as throttling or braking. 
 
 
 \subsection{Tracking results}
-
+\label{s:tracking_results}
+In this section the 
 
 
 

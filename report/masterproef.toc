@@ -54,18 +54,18 @@
 \contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{40}{subsection.4.4.4}%
 \contentsline {section}{\numberline {4.5}Conclusion}{41}{section.4.5}%
 \contentsline {chapter}{\chapternumberline {5}Learning from complex vehicle model}{43}{chapter.5}%
-\contentsline {section}{\numberline {5.1}The First Topic of this Chapter}{43}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Item 1}{43}{subsection.5.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{43}{section*.51}%
-\contentsline {subsubsection}{Sub-item 2}{43}{section*.52}%
-\contentsline {subsection}{\numberline {5.1.2}Item 2}{43}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}The Second Topic}{43}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Conclusion}{43}{section.5.3}%
+\contentsline {section}{\numberline {5.1}The First Topic of this Chapter}{44}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Item 1}{44}{subsection.5.1.1}%
+\contentsline {subsubsection}{Sub-item 1}{44}{section*.50}%
+\contentsline {subsubsection}{Sub-item 2}{44}{section*.51}%
+\contentsline {subsection}{\numberline {5.1.2}Item 2}{44}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}The Second Topic}{44}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Conclusion}{44}{section.5.3}%
 \contentsline {chapter}{\chapternumberline {6}Validation with expert driver data}{45}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{45}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Item 1}{45}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{45}{section*.53}%
-\contentsline {subsubsection}{Sub-item 2}{45}{section*.54}%
+\contentsline {subsubsection}{Sub-item 1}{45}{section*.52}%
+\contentsline {subsubsection}{Sub-item 2}{45}{section*.53}%
 \contentsline {subsection}{\numberline {6.1.2}Item 2}{45}{subsection.6.1.2}%
 \contentsline {section}{\numberline {6.2}The Second Topic}{45}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Conclusion}{45}{section.6.3}%
@@ -76,6 +76,6 @@
 \contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{55}{appendix.B}%
 \contentsline {section}{\numberline {B.1}Time limit}{55}{section.B.1}%
 \contentsline {section}{\numberline {B.2}Amount of optimization points}{60}{section.B.2}%
-\contentsline {appendix}{\chapternumberline {C}Results from the averaging learning on 3 datasets}{65}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 datasets}{65}{appendix.C}%
 \contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{75}{appendix.D}%
-\contentsline {chapter}{Bibliography}{77}{appendix*.93}%
+\contentsline {chapter}{Bibliography}{77}{appendix*.92}%

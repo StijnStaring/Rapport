@@ -89,20 +89,25 @@
   \begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
     MS   & Multiple shooting  \\
     Gs   & Gsteeringfactor  \\
+    OCP  & Optimal control problem\\
+    MPC  & Model predictive control\\
+    ODE  & Ordinary differential equation
   \end{tabularx}
 \end{flushleft}
 \section*{Symbols}
 \begin{flushleft}
   \renewcommand{\arraystretch}{1.1}
   \begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
-    N    &  The number of control actions performed during the optimization \ref{opt:basic_opti_w}. \\
+    $N$    &  The number of control actions performed during the optimization \ref{opt:basic_opti_w}. \\
+    $N_{MPC}$ & amount of control points in the control horizon of \ref{opt:tracking}.\\
     $V_{start}$ & Longitudinal speed at the start of the lane change.\\
     $V_{des}$ & Desired longitudinal speed during a lane change. Taken as $V_{start}$ during this thesis.\\
    $y_{des}$   & Desired lateral distance travelled at the end of the lane change.\\
     $\bm{\theta}$ & Weights that have to be learned in the objective function \ref{eq:obj}.\\
     $\bm{f}_{obs}$ & Feature vector calculated from the observed data according to \ref{s:obj}.\\
     $\bm{f}_{learned}$ & Feature vector as calculated according to \ref{s:obj} from the lane change following out solving \ref{opt:basic_opti_w}.\\
-    $\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.
+    $\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
+    $\bm{r}$ & The 2D path followed during the lane change maneuver.   
     
      
     
@@ -125,10 +130,10 @@
 \appendixpage*          % indien gewenst
 \appendix
 \include{app-A}
-% ... en zo verder tot
 \include{app-B}
 \include{app-C}
 \include{app-D}
+\include{app-E}
 
 \backmatter
 % Na de bijlagen plaatst men nog de bibliografie.

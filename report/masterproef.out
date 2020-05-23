@@ -15,8 +15,8 @@
 \BOOKMARK [1][-]{section.4.4}{Ideal lane change data learning results}{chapter.4}% 15
 \BOOKMARK [1][-]{section.4.5}{Conclusion}{chapter.4}% 16
 \BOOKMARK [0][-]{chapter.5}{Learning from complex vehicle model}{}% 17
-\BOOKMARK [1][-]{section.5.1}{The First Topic of this Chapter}{chapter.5}% 18
-\BOOKMARK [1][-]{section.5.2}{The Second Topic}{chapter.5}% 19
+\BOOKMARK [1][-]{section.5.1}{Tracking MPC}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.2}{Learning results with the Amesim model}{chapter.5}% 19
 \BOOKMARK [1][-]{section.5.3}{Conclusion}{chapter.5}% 20
 \BOOKMARK [0][-]{chapter.6}{Validation with expert driver data}{}% 21
 \BOOKMARK [1][-]{section.6.1}{The First Topic of this Chapter}{chapter.6}% 22
@@ -31,4 +31,5 @@
 \BOOKMARK [1][-]{section.B.2}{Amount of optimization points}{appendix.B}% 31
 \BOOKMARK [0][-]{appendix.C}{Results of the averaging learning on 3 datasets}{}% 32
 \BOOKMARK [0][-]{appendix.D}{Accuracy results of the tracking MPC}{}% 33
-\BOOKMARK [0][-]{appendix*.92}{Bibliography}{}% 34
+\BOOKMARK [0][-]{appendix.E}{Results of learning with the 15 dof Amesim model}{}% 34
+\BOOKMARK [0][-]{appendix*.92}{Bibliography}{}% 35

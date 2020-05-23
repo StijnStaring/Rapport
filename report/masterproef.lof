@@ -38,17 +38,19 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features.(3 datasets: blue, 7 datasets: orange)\relax }}{41}{figure.caption.47}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)\relax }}{41}{figure.caption.48}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throtttle, braking and steerwheelangle.\relax }}{43}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steerwheelangle.\relax }}{43}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The flow of learning with the Amesim model.\relax }}{44}{figure.caption.50}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {C.1}{\ignorespaces This figure shows the amount of throttle and the angle of the front wheel of the bicycle model during the lane change maneuvers.\relax }}{68}{figure.caption.82}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces The convergence of $\bm {f}_{rel}$ towards one during the learning iterations.\relax }}{71}{figure.caption.87}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces The gradient $\pdv {\bm {F}}{\bm {\theta }}$ estimated by $\bm {F}_{obs} - \bm {F}(\bm {r}_{expected})$ towards zero during the different learning iterations. \relax }}{71}{figure.caption.88}%
-\contentsline {figure}{\numberline {C.4}{\ignorespaces The learned weights during the different learning iterations.\relax }}{72}{figure.caption.89}%
-\contentsline {figure}{\numberline {C.5}{\ignorespaces The difference of $\bm {\theta }$ with respect to one used in the previous iteration. \relax }}{72}{figure.caption.90}%
-\contentsline {figure}{\numberline {C.6}{\ignorespaces This figure shows which case of the three available in the RPROP algorithm is chosen during the learning iterations.\relax }}{73}{figure.caption.91}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces This figure shows the amount of throttle and the angle of the front wheel of the bicycle model during the lane change maneuvers.\relax }}{70}{figure.caption.82}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces The convergence of $\bm {f}_{rel}$ towards one during the learning iterations.\relax }}{73}{figure.caption.87}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces The gradient $\pdv {\bm {F}}{\bm {\theta }}$ estimated by $\bm {F}_{obs} - \bm {F}(\bm {r}_{expected})$ towards zero during the different learning iterations. \relax }}{73}{figure.caption.88}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces The learned weights during the different learning iterations.\relax }}{74}{figure.caption.89}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces The difference of $\bm {\theta }$ with respect to one used in the previous iteration. \relax }}{74}{figure.caption.90}%
+\contentsline {figure}{\numberline {C.6}{\ignorespaces This figure shows which case of the three available in the RPROP algorithm is chosen during the learning iterations.\relax }}{75}{figure.caption.91}%
+\addvspace {10pt}
 \addvspace {10pt}

@@ -142,7 +142,7 @@ The goal of the learning algorithm is to output weights that when applied in the
 
 The learning is started by guessing a set of weights e.g. all equal to one. Equation \ref{eq:6} is minimized in order to generate an expected path for these weights. From this calculated path, features for the observation and the calculated path from optimization \ref{eq:6},further addressed as learned features, can be retrieved by using the definition of the features discussed in \ref{s:obj}.From this the relative features $f_{rel,i}$ are calculated by dividing the learned features by the observed features. A perfect match is acquired when the division equals one and the learning algorithm is terminated. The tolerance on convergence towards one, is chosen during this chapter equal to $10^{-3}$.  
 
-While no convergence takes place the weights are updated, making use of the RPROP algorithm explained in Chapter \ref{cha:Literature_study}. In order to apply the RPROP method only the sign of the gradient is used which means that the size of the gradient is decoupled from the update value of the weights. The gradient is given by $\pdv{\bm{F}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$  and the update of the weight is achieved by applying the gradient method according to $\bm{\theta}^{k+1} = \bm{\theta}^{k} - |\Delta \theta^{k}|sign( \pdv{\bm{F}}{\bm{\theta}}^k )$ where $\Delta \theta^{k}$ is calculated according section \ref{s:RPROP}. If follows that the weight $\theta_i$ is decreased if $f_{obs,i}>f_{i}(\bm{r_{exptected}})$ and increased when $f_{obs,i}<f_{i}(\bm{r}_{exptected})$. the new weights can be used in the minimization of the comfort objective for a set of weights given by \ref{eq:6}. Next a more detailed description of how this is done is given by \ref{opt:basic_opti_w} which uses as vehicle model \ref{eq:bicycle_model2}. \\
+While no convergence takes place the weights are updated, making use of the RPROP algorithm explained in Chapter \ref{cha:Literature_study}. In order to apply the RPROP method only the sign of the gradient is used which means that the size of the gradient is decoupled from the update value of the weights. The estimate of the gradient is given by $\pdv{\bm{F}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$  and the update of the weight is achieved by applying the gradient method according to $\bm{\theta}^{k+1} = \bm{\theta}^{k} - |\Delta \theta^{k}|sign( \pdv{\bm{F}}{\bm{\theta}}^k )$ where $\Delta \theta^{k}$ is calculated according section \ref{s:RPROP}. If follows that the weight $\theta_i$ is decreased if $f_{obs,i}>f_{i}(\bm{r_{exptected}})$ and increased when $f_{obs,i}<f_{i}(\bm{r}_{exptected})$. the new weights can be used in the minimization of the comfort objective for a set of weights given by \ref{eq:6}. Next a more detailed description of how this is done is given by \ref{opt:basic_opti_w} which uses as vehicle model \ref{eq:bicycle_model2}. \\
 
 \begin{equation}\label{opt:basic_opti_w}
 \begin{aligned}
@@ -153,9 +153,9 @@ While no convergence takes place the weights are updated, making use of the RPRO
 & \bm{F}(\bm{X}^{k}) \geq 0	& k = [0,\cdots, N]\\
 & \bm{G}(\bm{U}^{k}) \geq 0	& k = [0,\cdots, N-1]\\
 & \bm{H}(\bm{X}^{k}) = 0	& k = [0,\cdots, N]\\
-& \bm{X}^{k}\in \mathbb{R}^{6x1}  & k = [0,\cdots, N]\\
+& \bm{X}^{k}\in \mathbb{R}^{10x1}  & k = [0,\cdots, N]\\
 & \bm{U}^{k}\in \mathbb{R}^{2x1} \hspace{3 mm} & k = [0,\cdots, N-1]\\
-& T \in \mathbb{R},\hspace{3 mm} N,i,l \in \mathbb{N}
+& T \in \mathbb{R},\hspace{3 mm} N \in \mathbb{N}
 \end{aligned}
 \end{equation}
 
@@ -169,7 +169,7 @@ Where $\bm{X} \in \mathbb{R}^{10xN+1}$ and $\bm{U}\in \mathbb{R}^{2xN}$ contain 
 -\frac{\pi\cdot 150}{180 Gs} \leq \psi^k \leq \frac{\pi\cdot 150}{180 Gs}, & k = [0,\cdots, N] 
 
 \end{Bmatrix}
-\end{equation}\\
+\end{equation}
 
 \begin{equation}\label{eq:G}
 \bm{G} =
@@ -333,7 +333,7 @@ As mentioned above the term 'ideal data' concerns data that is generated with a 
 
 The relative weights $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$ chosen are $ \bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$, which gives as absolute weights  $ \bigl[ \begin{smallmatrix} 549.75, &1.90, &137.44  ,&0.53,  &21.43, &0.12\end{smallmatrix}\bigr]$ when the normalization of \ref{s:norm} is taken into account. The objective that is used in \ref{opt:basic_opti_w} and outputs the ideal data is given by \ref{eq:obj_ideal_data}. 
 \begin{equation}\label{eq:obj_ideal_data}
-discomfort = \frac{4}{0.0073} \cdot f_1 +\frac{5}{2.64} \cdot f_2 +\frac{6}{11.28} \cdot f_3 +\frac{1}{0.047} \cdot f_4 +\frac{2}{17.14} \cdot f_5 \\
+\frac{4}{0.0073} \cdot f_1 +\frac{5}{2.64} \cdot f_2 +\frac{1}{0.0073} \cdot f_3 +\frac{6}{11.28} \cdot f_4 +\frac{1}{0.047} \cdot f_5 +\frac{2}{17.14} \cdot f_6 
 \end{equation}
 \[	f_i \in \mathbb{R}, \hspace{1mm}
 i \in \mathbb{N}\]\\
@@ -589,7 +589,7 @@ Because the averaging method gives slightly more accurate feature matching furth
 
  
  \section{Conclusion}
-In this chapter the implementation of learning of ideal data was analysed. Data is considered ideal because it is produced with the same vehicle model as is used during the learning loop which calls the optimization \ref{opt:basic_opti_w}. During this chapter first the non-linear bicycle model was discussed and its used parameters are presented in table \ref{table:vehicel_model_param}. Next a step by step building up of the learning algorithm is shown. It is displayed how the ideal data is generated and validated. Out of this it followed that the choice of number of control points was set on $1000$ and the time limit on $30 \hspace{1mm}s$. Afterwards the learning results were discussed and the conflict and averaging method were compared. It was concluded that for a lane change maneuver it is only important to learn the lateral weights accurately in order to explain the observed data. Feature matching was also accomplished for the longitudinal features but there was a boundary on the accuracy due to the small longitudinal feature values during a lane change. Because the conflict method gives for the same amount of datasets a slightly larger error on the ability to match feature values and because of the hypothesis that this method will behave worse when used with real driver data, the averaging method is chosen to be further used in this thesis. 
+In this chapter the implementation of learning of ideal data was analysed. Data is considered ideal because it is produced with the same vehicle model as is used during the learning loop which calls the optimization \ref{opt:basic_opti_w}. During this chapter first the non-linear bicycle model was discussed and its used parameters are presented in table \ref{table:vehicel_model_param}. Next a step by step building up of the learning algorithm is shown. It is displayed how the ideal data is generated and validated. Out of this it followed that the choice of number of control points was set on $1000$ and the time limit on $30 \hspace{1mm}s$. Afterwards the learning results were discussed and the conflict and averaging method were compared. It was concluded that for a lane change maneuver it is only important to learn the lateral weights accurately in order to explain the observed data. Feature matching was also accomplished for the longitudinal features but there was a boundary on the accuracy due to the small longitudinal feature values during a lane change. Because the conflict method gives for the same amount of datasets a slightly larger error on the ability to match feature values and because of the hypothesis that this method will behave worse when used with real driver data, the averaging method is chosen to be further used in this thesis. The estimate of the gradient $\pdv{\bm{F}}{\bm{\theta}}$ by $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ was found adequate in order to match the learned and observed feature values.
 
 
 %Dit is gemachtigd omdat men hier de omgeving wil scannen voor een feasible pad --> dit wordt trager gedaan dan de tracking.(tracking zal gebruik maken van een meer complex model) Path planning ligt focus vooral op de omgeving.

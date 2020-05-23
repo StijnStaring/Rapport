@@ -59,22 +59,22 @@
 \contentsline {subsection}{\numberline {5.1.2}Tracking results}{48}{subsection.5.1.2}%
 \contentsline {section}{\numberline {5.2}Learning results with the Amesim model}{48}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Conclusion}{48}{section.5.3}%
-\contentsline {chapter}{\chapternumberline {6}Validation with expert driver data}{49}{chapter.6}%
-\contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{49}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Item 1}{49}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{49}{section*.54}%
-\contentsline {subsubsection}{Sub-item 2}{49}{section*.55}%
-\contentsline {subsection}{\numberline {6.1.2}Item 2}{49}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}The Second Topic}{49}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{49}{section.6.3}%
-\contentsline {chapter}{\chapternumberline {7}Enhanced weight update\\}{51}{chapter.7}%
-\contentsline {chapter}{\chapternumberline {8}Conclusion}{53}{chapter.8}%
-\contentsline {appendix}{\chapternumberline {A}Jerk equations of the non-linear bicycle model}{57}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Equations}{57}{section.A.1}%
-\contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{59}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Time limit}{59}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Amount of optimization points}{64}{section.B.2}%
-\contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 datasets}{69}{appendix.C}%
-\contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{79}{appendix.D}%
-\contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{81}{appendix.E}%
-\contentsline {chapter}{Bibliography}{83}{appendix*.94}%
+\contentsline {chapter}{\chapternumberline {6}Validation with expert driver data}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{51}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Item 1}{51}{subsection.6.1.1}%
+\contentsline {subsubsection}{Sub-item 1}{51}{section*.55}%
+\contentsline {subsubsection}{Sub-item 2}{51}{section*.56}%
+\contentsline {subsection}{\numberline {6.1.2}Item 2}{51}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}The Second Topic}{51}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{51}{section.6.3}%
+\contentsline {chapter}{\chapternumberline {7}Enhanced weight update\\}{53}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {8}Conclusion}{55}{chapter.8}%
+\contentsline {appendix}{\chapternumberline {A}Jerk equations of the non-linear bicycle model}{59}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Equations}{59}{section.A.1}%
+\contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{61}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Time limit}{61}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Amount of optimization points}{66}{section.B.2}%
+\contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 datasets}{71}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{81}{appendix.D}%
+\contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{83}{appendix.E}%
+\contentsline {chapter}{Bibliography}{85}{appendix*.95}%

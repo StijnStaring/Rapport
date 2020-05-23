@@ -107,10 +107,10 @@
     $\bm{f}_{obs}$ & Feature vector calculated from the observed data according to \ref{s:obj}.\\
     $\bm{f}_{learned}$ & Feature vector as calculated according to \ref{s:obj} from the lane change following out solving \ref{opt:basic_opti_w}.\\
     $\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
-    $\bm{r}$ & The 2D path followed during the lane change maneuver.   
-    
-     
-    
+    $\bm{r}$ & The 2D path followed during the lane change maneuver.\\
+    $t_r$ & The amount of throttle given.\\
+    $\delta$ & The angle of the front wheel of the bicycle model.\\
+    $\delta_{s} $ & The steerwheelangle, related to $\delta$ by $G_s$ according to $\delta = \frac{\delta_s}{G_s}$.
   \end{tabularx}
 \end{flushleft}
 

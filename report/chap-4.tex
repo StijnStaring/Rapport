@@ -64,30 +64,30 @@ The first time that the OCP is solved and the current state is not yet outputted
 \end{aligned}
 \end{equation}
 
+The path constraints shown in \ref{eq:F_MPC} are at first sight not necessary but contribute by decreasing the feasible solution space for the solver in \ref{opt:tracking}. It is checked that these constraints are not binding, which means that the found solution is reachable even if the constraints were removed. 
+
 \begin{equation}\label{eq:F_MPC}
 \bm{F} =
 \begin{Bmatrix}
 -\frac{Width\hspace{1mm}Lane}{2} \leq y^k \leq \frac{3\cdot Width\hspace{1mm}Lane}{2}, & k = [0,\cdots, N_{MPC}] \\
 0 \leq x^k, & k = [0,\cdots, N_{MPC}] \\
--\frac{\pi\cdot 150}{180 Gs} \leq \psi^k \leq \frac{\pi\cdot 150}{180 Gs}, & k = [0,\cdots, N_{MPC}] 
-
+-\frac{\pi\cdot 5}{180} \leq \psi^k \leq \frac{\pi\cdot 5}{180}, & k = [0,\cdots, N_{MPC}] \\
+v_{start}-1 \leq v_x^k \leq v_{start}+1, & k = [0,\cdots, N_{MPC}]
 \end{Bmatrix}
 \end{equation}\
-The path constraints shown in \ref{eq:F_MPC} are at first sight not necessary but contributes by decreasing the feasible solution space for the solver in \ref{opt:tracking}. It is checked that these constraints are not binding, which means that the found solution is reachable even if the constraints were removed. 
 
-\begin{multline*} \label{eq:obj_mpc}
-objective = 
+The error function that serves as the objective of the OCP is given by the following equation.
 
+%\label{eq:obj_mpc}
 
-
-
-
-
-
-
+\begin{multline*} 
+objective=W_1(\bm{x}-\bm{ref}_x)^T(\bm{x}-\bm{ref}_x)+W_2(\bm{y}-\bm{ref}_y)^T(\bm{y}-\bm{ref}_y)\\
++W_3(\bm{v}_x-\bm{ref}_{v_x})^T(\bm{v}_x-\bm{ref}_{v_x})+W_4(\bm{v}_y-\bm{ref}_{v_y})^T(\bm{v}_y-\bm{ref}_{v_y})\\+W_5(\bm{\psi}-\bm{ref}_{\psi})^T(\bm{\psi}-\bm{ref}_\psi)
++W_6(\bm{\dot{\psi}}-\bm{ref}_{\dot{\psi}})^T(\bm{\dot{\psi}}-\bm{ref}_{\dot{\psi}})\\ + W_7\dot{\bm{t}}_r^T\dot{\bm{t}}_r+W_8\dot{\bm{\delta}}_s^T\dot{\bm{\delta}}_s + W_9\dot{\bm{a}}_x^T\dot{\bm{a}}_x
 \end{multline*}
 
- 
+
+
 
 
 

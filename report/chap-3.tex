@@ -151,7 +151,6 @@ While no convergence takes place the weights are updated, making use of the RPRO
 & \bm{X}^{0}(1:8)= \bm{X}_{intitial} \\
 & T \leq T_{limit}\\
 & \bm{F}(\bm{X}^{k}) \geq 0	& k = [0,\cdots, N]\\
-& \bm{G}(\bm{U}^{k}) \geq 0	& k = [0,\cdots, N-1]\\
 & \bm{H}(\bm{X}^{k}) = 0	& k = [0,\cdots, N]\\
 & \bm{X}^{k}\in \mathbb{R}^{10x1}  & k = [0,\cdots, N]\\
 & \bm{U}^{k}\in \mathbb{R}^{2x1} \hspace{3 mm} & k = [0,\cdots, N-1]\\
@@ -159,24 +158,18 @@ While no convergence takes place the weights are updated, making use of the RPRO
 \end{aligned}
 \end{equation}
 
-Where $\bm{X} \in \mathbb{R}^{10xN+1}$ and $\bm{U}\in \mathbb{R}^{2xN}$ contain respectively the states and controls  \ref{eq:bicycle_model2} during the maneuver, complemented with the time of the maneuver $T$. In order to discretize time, a multiple shooting approach is adopted as is explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and is the same as the amount of control intervals in order to go from the initial state towards the end state. With this a sampling time of $0.025 \hspace{1mm}s$ is obtained as is discussed in section \ref{s:GD_val}.  Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states over time when a certain control is applied for $\Delta T$. Here the equations of motion \ref{eq:bicycle_model_eqmotion} are inputted in the optimization because to perform the integration, derivatives of the vehicle states are used. The time discretization used is can be categorized as a direct method and a multiple shooting approach is used which means that at every time instance a new set of state optimization variables is introduced as is explained in section \ref{s:time_dis}. The path constraint vectors $\bm{F} \in \mathbb{R}^{L_1x1}$ and $\bm{G} \in \mathbb{R}^{L_2x1}$ demarcate together with the equality constraint vectors $\bm{H} \in \mathbb{R}^{Q_1x1}$ and $\bm{J} \in \mathbb{R}^{Q_2x1}$ the feasible area of the solutions for $\bm{X}$, $\bm{U}$ and $T$. An overview of these constraints is given by equations \ref{eq:F}, \ref{eq:G} and \ref{eq:H}.
+Where $\bm{X} \in \mathbb{R}^{10xN+1}$ and $\bm{U}\in \mathbb{R}^{2xN}$ contain respectively the states and controls  \ref{eq:bicycle_model2} during the maneuver, complemented with the time of the maneuver $T$. In order to discretize time, a multiple shooting approach is adopted as is explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and is the same as the amount of control intervals in order to go from the initial state towards the end state. With this a sampling time of $0.025 \hspace{1mm}s$ is obtained as is discussed in section \ref{s:GD_val}.  Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states over time when a certain control is applied for $\Delta T$. Here the equations of motion \ref{eq:bicycle_model_eqmotion} are inputted in the optimization because to perform the integration, derivatives of the vehicle states are used. The time discretization used is can be categorized as a direct method and a multiple shooting approach is used which means that at every time instance a new set of state optimization variables is introduced as is explained in section \ref{s:time_dis}. The path constraint vectors $\bm{F}$ demarcates together with the equality constraint vector $\bm{H}$ the feasible area of the solutions for $\bm{X}$, $\bm{U}$. An overview of these constraints is given by equations \ref{eq:F} and \ref{eq:H}.
 
 \begin{equation}\label{eq:F}
 \bm{F} =
 \begin{Bmatrix}
 -\frac{Width\hspace{1mm}Lane}{2} \leq y^k \leq \frac{3\cdot Width\hspace{1mm}Lane}{2}, & k = [0,\cdots, N] \\
 0 \leq x^k, & k = [0,\cdots, N] \\
--\frac{\pi\cdot 150}{180 Gs} \leq \psi^k \leq \frac{\pi\cdot 150}{180 Gs}, & k = [0,\cdots, N] 
+-\frac{\pi\cdot 150}{180 Gs} \leq \delta^k \leq \frac{\pi\cdot 150}{180 Gs}, & k = [0,\cdots, N] \\
+-1 \leq t_r^k \leq 1, & k = [0,\cdots, N]
 
 \end{Bmatrix}
 \end{equation}
-
-\begin{equation}\label{eq:G}
-\bm{G} =
-\begin{Bmatrix}
--1 \leq t_r^k \leq 1, & k = [0,\cdots, N-1]
-\end{Bmatrix}
-\end{equation}\\
 
 It is not necessary to introduce physical vehicle limits because these are present as soft constraints in the comfort objective $\bm{\theta}^T\bm{F}(\bm{X},\bm{U}, T)$.
 

@@ -219,7 +219,7 @@ The weights found for the three different simulations are presented in table \re
 
 Out of table \ref{tab:complex_learning_weights} and \ref{tab:complex_frel} it follows that the lateral chosen weights are found back and an accurate match of the lateral features is achieved. It is observed that also the longitudinal weights will come closer to their chosen value and give a better match of the longitudinal feature values, when more observed lane changes are included in the learning.\\
 
-Figure \ref{fig:complex_path} presents the observed paths, the initial solution when the weight vector is chosen equal to an all-one vector and the learned solution when $2$ datasets are used. Figure \ref{fig:complex_path_error} shows the error made between the observed and learned path which has order of size of $10^{-4}$.
+Figure \ref{fig:complex_path} presents the observed paths, the initial solution when the weight vector is chosen equal to an all-one vector and the learned solution when $2$ datasets are used. Figure \ref{fig:complex_path_error} shows the error made between the observed and learned path which has order of size of $10^{-4}$. All the resulting kinematic signals are displayed in Appendix \ref{app:E}.
 
 \begin{figure}[h!]
 	\centering
@@ -231,14 +231,19 @@ Figure \ref{fig:complex_path} presents the observed paths, the initial solution 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.1\textwidth]{error learned path.PNG}
-	\caption{This Figure shows the observed paths, the initial solution retrieved with as weights an all one vector and the learned solution.}	
+	\caption{This Figure shows the error made between the observed and learned paths.}	
 	\label{fig:complex_path}
 \end{figure}
 
-Figure \ref{fig:complex_convergence} shows the convergence of $\bm{f}_{rel}$ towards one during the learning iterations. 
+Figure \ref{fig:complex_convergence} shows the convergence of $\bm{f}_{rel}$ towards one during the learning iterations. Except for the longitudinal jerk (feature $3$) all the feature values converge towards the observed ones.
 
-
-
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.1\textwidth]{12frel.PNG}
+	\caption{This Figure shows $\bm{f}_{rel}$ during the learning iterations.}	
+	\label{fig:complex_convergence}
+\end{figure}
+\newpage
 From all the retrieved $\bm{f}_{rel}$ of table \ref{tab:complex_frel} and in Figure \ref{fig:complex_convergence} the feature value for the longitudinal jerk (Nr. $3$), jumps out for its bad feature matching behaviour. (only $0.4867$ when three datasets are used) A reason for this is as discussed in \ref{s:tracking_results} bad quality of the jerk data which contributes to a worse learning.The figure of the jerk during the lane change can be seen in Figure \ref{fig:complex_jerk}. At time zero the longitudinal behaviour is still not fully stabilized and at second $5$ the lane change starts.
 
 \begin{figure}[h!]

@@ -1,6 +1,6 @@
 \chapter{Results of the averaging learning on 3 datasets}
 \label{app:C}
-The figures shown in this appendix serve as a completion on the figures that were presented in the discussion of section \ref{s:averaging_method}. It concerns the results of the learning algorithm that learns from three ideal datasets. First the resulting kinematic signals of the bicycle model during the different lane changes are shown. It should be noted that Figure \ref{fig:app_delta} shows the angle of the front wheel of the bicycle model. In order to obtain the steerwheelangle, this relation is linearised by the factor $Gs = 16.96$ which means that $\delta_{SWA} = Gs\cdot\delta_{front}$. Further Figure \ref{fig:app_conv} displays the convergence during the learning process and plots $\bm{f}_{rel}$ over the iterations. Figure \ref{fig:app_grad} shows the absolute difference between the learned and observed features. In Figure\ref{fig:app_weights} the learning of the weights towards the final ones are presented. Figure \ref{fig:app_update} gives the difference of current weight with respect to the previous one and as last Figure \ref{fig:app_multigrad} shows which of the three RPROP cases that is used in order to update a certain weight. 
+The figures shown in this appendix serve as a completion on the figures that were presented in the discussion of section \ref{s:averaging_method}. It concerns the results of the learning algorithm that learns from three ideal datasets. First the resulting kinematic signals of the bicycle model during the different lane changes are shown. It should be noted that Figure \ref{fig:app_delta} and \ref{fig:app_delta_dot} show the angle of the front wheel of the bicycle model. In order to obtain the steerwheelangle, this relation is linearised by the factor $Gs = 16.96$ which means that $\delta_{SWA} = Gs\cdot\delta_{front}$. Further Figure \ref{fig:app_conv} displays the convergence during the learning process and plots $\bm{f}_{rel}$ over the iterations. Figure \ref{fig:app_grad} shows the absolute difference between the learned and observed features. In Figure\ref{fig:app_weights} the learning of the weights towards the final ones are presented. Figure \ref{fig:app_update} gives the difference of current weight with respect to the previous one and as last Figure \ref{fig:app_multigrad} shows which of the three RPROP cases that is used in order to update a certain weight. 
 
  
 \begin{figure}[h!]
@@ -73,9 +73,9 @@ The figures shown in this appendix serve as a completion on the figures that wer
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{11l.png}
-	\label{fig:lat_acc_val}
+	\caption{This figure shows the amount of first derivative of throttle and the first derivative of the angle of the front wheel of the bicycle model is given as input during the lane change maneuvers.}
+	\label{fig:app_delta_dot}
 \end{figure}
-
 
 
 \begin{figure}[h!]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  24 MAY 2020 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  24 MAY 2020 16:39
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -1207,11 +1207,7 @@ Package microtype Info: Character `029' is missing
 ] (masterproef.lof [6
 
 
-]) (masterproef.lot
-Underfull \vbox (badness 1270) has occurred while \output is active []
-
- [7])
-[8]
+]) (masterproef.lot [7]) [8]
 Overfull \hbox (1.21292pt too wide) in paragraph at lines 114--114
 []|$\OML/lmm/b/it/10.95 f[]$| 
  []
@@ -1224,7 +1220,7 @@ Overfull \hbox (1.21292pt too wide) in paragraph at lines 114--114
 \openout2 = `intro.aux'.
 
  (intro.tex
-<figures/AV.png, id=426, 1204.5pt x 903.375pt>
+<figures/AV.png, id=432, 1204.5pt x 903.375pt>
 File: figures/AV.png Graphic file (type png)
 <use figures/AV.png>
 Package pdftex.def Info: figures/AV.png  used on input line 9.
@@ -1253,7 +1249,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
  []
 
 [2]
-<figures/lane_change.PNG, id=453, 384.2355pt x 120.32954pt>
+<figures/lane_change.PNG, id=459, 384.2355pt x 120.32954pt>
 File: figures/lane_change.PNG Graphic file (type png)
 <use figures/lane_change.PNG>
 Package pdftex.def Info: figures/lane_change.PNG  used on input line 27.
@@ -1304,7 +1300,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/discretized-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/discretized-eps-converted-to.pdf, id=478, 374.39874pt x 119.44624pt>
+<figures/discretized-eps-converted-to.pdf, id=484, 374.39874pt x 119.44624pt>
 File: figures/discretized-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/discretized-eps-converted-to.pdf>
 Package pdftex.def Info: figures/discretized-eps-converted-to.pdf  used on inpu
@@ -1344,7 +1340,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/MS_int-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/MS_int-eps-converted-to.pdf, id=505, 224.84pt x 102.3825pt>
+<figures/MS_int-eps-converted-to.pdf, id=511, 224.84pt x 102.3825pt>
 File: figures/MS_int-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/MS_int-eps-converted-to.pdf>
 Package pdftex.def Info: figures/MS_int-eps-converted-to.pdf  used on input lin
@@ -1364,7 +1360,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figures/SS-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/SS-eps-converted-to.pdf, id=506, 224.84pt x 102.3825pt>
+<figures/SS-eps-converted-to.pdf, id=512, 224.84pt x 102.3825pt>
 File: figures/SS-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/SS-eps-converted-to.pdf>
 Package pdftex.def Info: figures/SS-eps-converted-to.pdf  used on input line 82
@@ -1394,12 +1390,12 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [8 <./figures/MS_int-eps-converted-to.pdf> <./figures/SS-eps-converted-to.pdf>]
-<figures/MPC1.PNG, id=549, 660.66824pt x 349.90726pt>
+<figures/MPC1.PNG, id=555, 660.66824pt x 349.90726pt>
 File: figures/MPC1.PNG Graphic file (type png)
 <use figures/MPC1.PNG>
 Package pdftex.def Info: figures/MPC1.PNG  used on input line 102.
 (pdftex.def)             Requested size: 238.80243pt x 126.47372pt.
-<figures/MPC2.PNG, id=553, 649.82774pt x 363.759pt>
+<figures/MPC2.PNG, id=559, 649.82774pt x 363.759pt>
 File: figures/MPC2.PNG Graphic file (type png)
 <use figures/MPC2.PNG>
 Package pdftex.def Info: figures/MPC2.PNG  used on input line 109.
@@ -1416,7 +1412,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<figures/comfort.PNG, id=567, 378.81525pt x 387.849pt>
+<figures/comfort.PNG, id=573, 378.81525pt x 387.849pt>
 File: figures/comfort.PNG Graphic file (type png)
 <use figures/comfort.PNG>
 Package pdftex.def Info: figures/comfort.PNG  used on input line 12.
@@ -1496,21 +1492,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-<figures/Bicycle_model_paper.png, id=670, 623.32875pt x 307.1475pt>
+<figures/Bicycle_model_paper.png, id=675, 623.32875pt x 307.1475pt>
 File: figures/Bicycle_model_paper.png Graphic file (type png)
 <use figures/Bicycle_model_paper.png>
-Package pdftex.def Info: figures/Bicycle_model_paper.png  used on input line 15
+Package pdftex.def Info: figures/Bicycle_model_paper.png  used on input line 11
 .
 (pdftex.def)             Requested size: 199.0pt x 98.05956pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+ [19 <./figures/Bicycle_model_paper.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 77--79
 
  []
@@ -1519,7 +1515,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--79
 Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
-[20 <./figures/Bicycle_model_paper.png>]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
@@ -1537,7 +1533,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-<figures/basic_learning.png, id=710, 533.995pt x 242.9075pt>
+<figures/basic_learning.png, id=716, 533.995pt x 242.9075pt>
 File: figures/basic_learning.png Graphic file (type png)
 <use figures/basic_learning.png>
 Package pdftex.def Info: figures/basic_learning.png  used on input line 138.
@@ -1682,12 +1678,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
-<figures/jerk_num.png, id=828, 363.60844pt x 290.58563pt>
+<figures/jerk_num.png, id=834, 363.60844pt x 290.58563pt>
 File: figures/jerk_num.png Graphic file (type png)
 <use figures/jerk_num.png>
 Package pdftex.def Info: figures/jerk_num.png  used on input line 356.
 (pdftex.def)             Requested size: 179.09879pt x 143.1331pt.
-<figures/jerk_ana.png, id=829, 361.35pt x 289.08pt>
+<figures/jerk_ana.png, id=835, 361.35pt x 289.08pt>
 File: figures/jerk_ana.png Graphic file (type png)
 <use figures/jerk_ana.png>
 Package pdftex.def Info: figures/jerk_ana.png  used on input line 362.
@@ -1720,12 +1716,12 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [32]
-<figures/lat_acc.png, id=883, 1445.4pt x 704.6325pt>
+<figures/lat_acc.png, id=889, 1445.4pt x 704.6325pt>
 File: figures/lat_acc.png Graphic file (type png)
 <use figures/lat_acc.png>
 Package pdftex.def Info: figures/lat_acc.png  used on input line 438.
 (pdftex.def)             Requested size: 398.0pt x 194.0272pt.
-<figures/slipangle.png, id=884, 1445.4pt x 704.6325pt>
+<figures/slipangle.png, id=890, 1445.4pt x 704.6325pt>
 File: figures/slipangle.png Graphic file (type png)
 <use figures/slipangle.png>
 Package pdftex.def Info: figures/slipangle.png  used on input line 445.
@@ -1768,7 +1764,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 473--475
  []
 
 [35]
-<figures/3D_LP.png, id=919, 2409.0pt x 1204.5pt>
+<figures/3D_LP.png, id=925, 2409.0pt x 1204.5pt>
 File: figures/3D_LP.png Graphic file (type png)
 <use figures/3D_LP.png>
 Package pdftex.def Info: figures/3D_LP.png  used on input line 497.
@@ -1777,7 +1773,7 @@ Package pdftex.def Info: figures/3D_LP.png  used on input line 497.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/3D_conv.png, id=921, 2409.0pt x 1204.5pt>
+<figures/3D_conv.png, id=927, 2409.0pt x 1204.5pt>
 File: figures/3D_conv.png Graphic file (type png)
 <use figures/3D_conv.png>
 Package pdftex.def Info: figures/3D_conv.png  used on input line 506.
@@ -1790,7 +1786,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
-<figures/3D_w.png, id=924, 2409.0pt x 1204.5pt>
+<figures/3D_w.png, id=930, 2409.0pt x 1204.5pt>
 File: figures/3D_w.png Graphic file (type png)
 <use figures/3D_w.png>
 Package pdftex.def Info: figures/3D_w.png  used on input line 516.
@@ -1808,7 +1804,7 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [36]
-<figures/conflict.png, id=933, 687.56876pt x 453.695pt>
+<figures/conflict.png, id=939, 687.56876pt x 453.695pt>
 File: figures/conflict.png Graphic file (type png)
 <use figures/conflict.png>
 Package pdftex.def Info: figures/conflict.png  used on input line 526.
@@ -1834,7 +1830,7 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 
 
 [38 <./figures/3D_w.png (PNG copy)> <./figures/conflict.png>]
-<figures/3D_conv_conflict.png, id=953, 1399.8699pt x 742.2129pt>
+<figures/3D_conv_conflict.png, id=959, 1399.8699pt x 742.2129pt>
 File: figures/3D_conv_conflict.png Graphic file (type png)
 <use figures/3D_conv_conflict.png>
 Package pdftex.def Info: figures/3D_conv_conflict.png  used on input line 553.
@@ -1844,7 +1840,7 @@ Package pdftex.def Info: figures/3D_conv_conflict.png  used on input line 553.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [39]
-<figures/acc_conflict.png, id=964, 1387.584pt x 669.9429pt>
+<figures/acc_conflict.png, id=970, 1387.584pt x 669.9429pt>
 File: figures/acc_conflict.png Graphic file (type png)
 <use figures/acc_conflict.png>
 Package pdftex.def Info: figures/acc_conflict.png  used on input line 563.
@@ -1857,7 +1853,7 @@ Overfull \hbox (39.80243pt too wide) in paragraph at lines 563--564
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/acc_comp.png, id=967, 1387.584pt x 669.9429pt>
+<figures/acc_comp.png, id=973, 1387.584pt x 669.9429pt>
 File: figures/acc_comp.png Graphic file (type png)
 <use figures/acc_comp.png>
 Package pdftex.def Info: figures/acc_comp.png  used on input line 575.
@@ -1878,7 +1874,7 @@ Overfull \vbox (13.59999pt too high) has occurred while \output is active []
 \openout2 = `chap-4.aux'.
 
  (chap-4.tex
-<figures/Amesim.PNG, id=987, 688.37175pt x 426.393pt>
+<figures/Amesim.PNG, id=993, 688.37175pt x 426.393pt>
 File: figures/Amesim.PNG Graphic file (type png)
 <use figures/Amesim.PNG>
 Package pdftex.def Info: figures/Amesim.PNG  used on input line 10.
@@ -1891,7 +1887,7 @@ Underfull \vbox (badness 4084) has occurred while \output is active []
 
 
  <./figures/Amesim.PNG>]
-<figures/complex_learning_diagram.PNG, id=998, 783.92876pt x 297.11pt>
+<figures/complex_learning_diagram.PNG, id=1004, 783.92876pt x 297.11pt>
 File: figures/complex_learning_diagram.PNG Graphic file (type png)
 <use figures/complex_learning_diagram.PNG>
 Package pdftex.def Info: figures/complex_learning_diagram.PNG  used on input li
@@ -1968,7 +1964,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
-<figures/simulink_model.PNG, id=1041, 1067.78925pt x 413.1435pt>
+<figures/simulink_model.PNG, id=1047, 1067.78925pt x 413.1435pt>
 File: figures/simulink_model.PNG Graphic file (type png)
 <use figures/simulink_model.PNG>
 Package pdftex.def Info: figures/simulink_model.PNG  used on input line 119.
@@ -1982,7 +1978,7 @@ Overfull \hbox (39.80243pt too wide) in paragraph at lines 119--120
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [47]
-<figures/2xy_N50_TMPC 0.1_Tf40.PNG, id=1050, 1445.4pt x 704.6325pt>
+<figures/2xy_N50_TMPC 0.1_Tf40.PNG, id=1056, 1445.4pt x 704.6325pt>
 File: figures/2xy_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/2xy_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/2xy_N50_TMPC 0.1_Tf40.PNG  used on input line 
@@ -2002,7 +1998,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--141
  []
 
 [48 <./figures/simulink_model.PNG>]
-<figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG, id=1063, 584.1825pt x 698.61p
+<figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG, id=1069, 584.1825pt x 698.61p
 t>
 File: figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG Graphic file (type png)
 <use figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG>
@@ -2025,17 +2021,69 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [51] [52]
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+[51]
+
+LaTeX Warning: Reference `fig:complex_path_error' on page 52 undefined on input
+ line 222.
+
+<figures/2path_N1000IT28.PNG, id=1099, 1445.4pt x 704.6325pt>
+File: figures/2path_N1000IT28.PNG Graphic file (type png)
+<use figures/2path_N1000IT28.PNG>
+Package pdftex.def Info: figures/2path_N1000IT28.PNG  used on input line 226.
+(pdftex.def)             Requested size: 437.80243pt x 213.42348pt.
+
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 226--227
+ [][] 
+ []
+
+<figures/error learned path.PNG, id=1100, 1445.4pt x 704.6325pt>
+File: figures/error learned path.PNG Graphic file (type png)
+<use figures/error learned path.PNG>
+Package pdftex.def Info: figures/error learned path.PNG  used on input line 233
+.
+(pdftex.def)             Requested size: 437.80243pt x 213.42348pt.
+
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 233--234
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/7JX_JY_N1000IT28.PNG, id=1104, 1445.4pt x 704.6325pt>
+File: figures/7JX_JY_N1000IT28.PNG Graphic file (type png)
+<use figures/7JX_JY_N1000IT28.PNG>
+Package pdftex.def Info: figures/7JX_JY_N1000IT28.PNG  used on input line 253.
+(pdftex.def)             Requested size: 437.80243pt x 213.42348pt.
+
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 253--254
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
+Underfull \vbox (badness 3623) has occurred while \output is active []
+
+ [52 <./figures/2path_N1000IT28.PNG (PNG copy)>] [53 <./figures/error learned p
+ath.PNG (PNG copy)> <./figures/7JX_JY_N1000IT28.PNG (PNG copy)>]
 \openout2 = `chap-5.aux'.
 
- (chap-5.tex) [53
+ (chap-5.tex [54
 
 
 
-]
+]) [55]
 \openout2 = `chap-6.aux'.
 
- (chap-6.tex [54
+
+(chap-6.tex [56
 
 
 
@@ -2044,37 +2092,37 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 1.
 
-) [55]
+) [57]
 \openout2 = `conclusion.aux'.
 
- (conclusion.tex [56
+ (conclusion.tex [58
 
 
 
-]) [57] [58
+]) [59] [60
 
 
-] [59] [60]
+] [61] [62]
 \openout2 = `app-A.aux'.
 
- (app-A.tex) [61
+ (app-A.tex) [63
 
 
 ]
 \openout2 = `app-B.aux'.
 
  (app-B.tex
-[62
+[64
 
 
 
 ]
-<figures/1t.png, id=1141, 722.7pt x 286.1892pt>
+<figures/1t.png, id=1165, 722.7pt x 286.1892pt>
 File: figures/1t.png Graphic file (type png)
 <use figures/1t.png>
 Package pdftex.def Info: figures/1t.png  used on input line 11.
 (pdftex.def)             Requested size: 398.0pt x 157.60977pt.
-<figures/2t.png, id=1142, 462.528pt x 344.0052pt>
+<figures/2t.png, id=1166, 462.528pt x 344.0052pt>
 File: figures/2t.png Graphic file (type png)
 <use figures/2t.png>
 Package pdftex.def Info: figures/2t.png  used on input line 18.
@@ -2083,7 +2131,7 @@ Package pdftex.def Info: figures/2t.png  used on input line 18.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/3t.png, id=1143, 722.7pt x 286.1892pt>
+<figures/3t.png, id=1167, 722.7pt x 286.1892pt>
 File: figures/3t.png Graphic file (type png)
 <use figures/3t.png>
 Package pdftex.def Info: figures/3t.png  used on input line 24.
@@ -2091,7 +2139,7 @@ Package pdftex.def Info: figures/3t.png  used on input line 24.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/4t.png, id=1144, 722.7pt x 286.1892pt>
+<figures/4t.png, id=1168, 722.7pt x 286.1892pt>
 File: figures/4t.png Graphic file (type png)
 <use figures/4t.png>
 Package pdftex.def Info: figures/4t.png  used on input line 31.
@@ -2099,7 +2147,7 @@ Package pdftex.def Info: figures/4t.png  used on input line 31.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/5t.png, id=1145, 722.7pt x 286.1892pt>
+<figures/5t.png, id=1169, 722.7pt x 286.1892pt>
 File: figures/5t.png Graphic file (type png)
 <use figures/5t.png>
 Package pdftex.def Info: figures/5t.png  used on input line 38.
@@ -2107,7 +2155,7 @@ Package pdftex.def Info: figures/5t.png  used on input line 38.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/6t.png, id=1146, 722.7pt x 286.1892pt>
+<figures/6t.png, id=1170, 722.7pt x 286.1892pt>
 File: figures/6t.png Graphic file (type png)
 <use figures/6t.png>
 Package pdftex.def Info: figures/6t.png  used on input line 45.
@@ -2115,7 +2163,7 @@ Package pdftex.def Info: figures/6t.png  used on input line 45.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/7t.png, id=1147, 722.7pt x 286.1892pt>
+<figures/7t.png, id=1171, 722.7pt x 286.1892pt>
 File: figures/7t.png Graphic file (type png)
 <use figures/7t.png>
 Package pdftex.def Info: figures/7t.png  used on input line 52.
@@ -2123,7 +2171,7 @@ Package pdftex.def Info: figures/7t.png  used on input line 52.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/8t.png, id=1148, 1387.584pt x 669.9429pt>
+<figures/8t.png, id=1172, 1387.584pt x 669.9429pt>
 File: figures/8t.png Graphic file (type png)
 <use figures/8t.png>
 Package pdftex.def Info: figures/8t.png  used on input line 59.
@@ -2131,7 +2179,7 @@ Package pdftex.def Info: figures/8t.png  used on input line 59.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/9t.png, id=1149, 722.7pt x 286.1892pt>
+<figures/9t.png, id=1173, 722.7pt x 286.1892pt>
 File: figures/9t.png Graphic file (type png)
 <use figures/9t.png>
 Package pdftex.def Info: figures/9t.png  used on input line 66.
@@ -2139,7 +2187,7 @@ Package pdftex.def Info: figures/9t.png  used on input line 66.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/10t.png, id=1150, 722.7pt x 286.1892pt>
+<figures/10t.png, id=1174, 722.7pt x 286.1892pt>
 File: figures/10t.png Graphic file (type png)
 <use figures/10t.png>
 Package pdftex.def Info: figures/10t.png  used on input line 73.
@@ -2147,7 +2195,7 @@ Package pdftex.def Info: figures/10t.png  used on input line 73.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/11t.png, id=1151, 722.7pt x 286.1892pt>
+<figures/11t.png, id=1175, 722.7pt x 286.1892pt>
 File: figures/11t.png Graphic file (type png)
 <use figures/11t.png>
 Package pdftex.def Info: figures/11t.png  used on input line 80.
@@ -2155,20 +2203,20 @@ Package pdftex.def Info: figures/11t.png  used on input line 80.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[63 <./figures/1t.png>] [64 <./figures/2t.png> <./figures/3t.png> <./figures/4t
-.png>] [65 <./figures/5t.png> <./figures/6t.png> <./figures/7t.png>] [66 <./fig
-ures/8t.png> <./figures/9t.png> <./figures/10t.png>] [67 <./figures/11t.png>]
-<figures/1.png, id=1195, 722.7pt x 286.1892pt>
+[65 <./figures/1t.png>] [66 <./figures/2t.png> <./figures/3t.png> <./figures/4t
+.png>] [67 <./figures/5t.png> <./figures/6t.png> <./figures/7t.png>] [68 <./fig
+ures/8t.png> <./figures/9t.png> <./figures/10t.png>] [69 <./figures/11t.png>]
+<figures/1.png, id=1219, 722.7pt x 286.1892pt>
 File: figures/1.png Graphic file (type png)
 <use figures/1.png>
 Package pdftex.def Info: figures/1.png  used on input line 91.
 (pdftex.def)             Requested size: 398.0pt x 157.60977pt.
-<figures/2.png, id=1196, 462.528pt x 344.0052pt>
+<figures/2.png, id=1220, 462.528pt x 344.0052pt>
 File: figures/2.png Graphic file (type png)
 <use figures/2.png>
 Package pdftex.def Info: figures/2.png  used on input line 98.
 (pdftex.def)             Requested size: 318.40121pt x 236.82318pt.
-<figures/3.png, id=1197, 722.7pt x 286.1892pt>
+<figures/3.png, id=1221, 722.7pt x 286.1892pt>
 File: figures/3.png Graphic file (type png)
 <use figures/3.png>
 Package pdftex.def Info: figures/3.png  used on input line 104.
@@ -2177,7 +2225,7 @@ Package pdftex.def Info: figures/3.png  used on input line 104.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/4.png, id=1198, 722.7pt x 286.1892pt>
+<figures/4.png, id=1222, 722.7pt x 286.1892pt>
 File: figures/4.png Graphic file (type png)
 <use figures/4.png>
 Package pdftex.def Info: figures/4.png  used on input line 111.
@@ -2185,7 +2233,7 @@ Package pdftex.def Info: figures/4.png  used on input line 111.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/5.png, id=1199, 722.7pt x 286.1892pt>
+<figures/5.png, id=1223, 722.7pt x 286.1892pt>
 File: figures/5.png Graphic file (type png)
 <use figures/5.png>
 Package pdftex.def Info: figures/5.png  used on input line 118.
@@ -2193,7 +2241,7 @@ Package pdftex.def Info: figures/5.png  used on input line 118.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/6.png, id=1200, 722.7pt x 286.1892pt>
+<figures/6.png, id=1224, 722.7pt x 286.1892pt>
 File: figures/6.png Graphic file (type png)
 <use figures/6.png>
 Package pdftex.def Info: figures/6.png  used on input line 125.
@@ -2201,7 +2249,7 @@ Package pdftex.def Info: figures/6.png  used on input line 125.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/7.png, id=1201, 722.7pt x 286.1892pt>
+<figures/7.png, id=1225, 722.7pt x 286.1892pt>
 File: figures/7.png Graphic file (type png)
 <use figures/7.png>
 Package pdftex.def Info: figures/7.png  used on input line 132.
@@ -2209,7 +2257,7 @@ Package pdftex.def Info: figures/7.png  used on input line 132.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/8.png, id=1202, 722.7pt x 286.1892pt>
+<figures/8.png, id=1226, 722.7pt x 286.1892pt>
 File: figures/8.png Graphic file (type png)
 <use figures/8.png>
 Package pdftex.def Info: figures/8.png  used on input line 139.
@@ -2217,7 +2265,7 @@ Package pdftex.def Info: figures/8.png  used on input line 139.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/9.png, id=1203, 722.7pt x 286.1892pt>
+<figures/9.png, id=1227, 722.7pt x 286.1892pt>
 File: figures/9.png Graphic file (type png)
 <use figures/9.png>
 Package pdftex.def Info: figures/9.png  used on input line 146.
@@ -2225,7 +2273,7 @@ Package pdftex.def Info: figures/9.png  used on input line 146.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/10.png, id=1204, 722.7pt x 286.1892pt>
+<figures/10.png, id=1228, 722.7pt x 286.1892pt>
 File: figures/10.png Graphic file (type png)
 <use figures/10.png>
 Package pdftex.def Info: figures/10.png  used on input line 153.
@@ -2233,7 +2281,7 @@ Package pdftex.def Info: figures/10.png  used on input line 153.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/11.png, id=1205, 722.7pt x 286.1892pt>
+<figures/11.png, id=1229, 722.7pt x 286.1892pt>
 File: figures/11.png Graphic file (type png)
 <use figures/11.png>
 Package pdftex.def Info: figures/11.png  used on input line 160.
@@ -2241,25 +2289,25 @@ Package pdftex.def Info: figures/11.png  used on input line 160.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [68
+) [70
 
- <./figures/1.png> <./figures/2.png>] [69 <./figures/3.png> <./figures/4.png> <
-./figures/5.png>] [70 <./figures/6.png> <./figures/7.png> <./figures/8.png>] [7
-1 <./figures/9.png> <./figures/10.png> <./figures/11.png>]
+ <./figures/1.png> <./figures/2.png>] [71 <./figures/3.png> <./figures/4.png> <
+./figures/5.png>] [72 <./figures/6.png> <./figures/7.png> <./figures/8.png>] [7
+3 <./figures/9.png> <./figures/10.png> <./figures/11.png>]
 \openout2 = `app-C.aux'.
 
  (app-C.tex
-[72
+[74
 
 
 
 ]
-<figures/1l.png, id=1255, 2409.0pt x 1204.5pt>
+<figures/1l.png, id=1280, 2409.0pt x 1204.5pt>
 File: figures/1l.png Graphic file (type png)
 <use figures/1l.png>
 Package pdftex.def Info: figures/1l.png  used on input line 7.
 (pdftex.def)             Requested size: 398.0pt x 198.99123pt.
-<figures/2l.png, id=1256, 2409.0pt x 1204.5pt>
+<figures/2l.png, id=1281, 2409.0pt x 1204.5pt>
 File: figures/2l.png Graphic file (type png)
 <use figures/2l.png>
 Package pdftex.def Info: figures/2l.png  used on input line 12.
@@ -2268,7 +2316,7 @@ Package pdftex.def Info: figures/2l.png  used on input line 12.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/3l.png, id=1257, 2409.0pt x 1204.5pt>
+<figures/3l.png, id=1282, 2409.0pt x 1204.5pt>
 File: figures/3l.png Graphic file (type png)
 <use figures/3l.png>
 Package pdftex.def Info: figures/3l.png  used on input line 18.
@@ -2276,7 +2324,7 @@ Package pdftex.def Info: figures/3l.png  used on input line 18.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/4l.png, id=1258, 2409.0pt x 1204.5pt>
+<figures/4l.png, id=1283, 2409.0pt x 1204.5pt>
 File: figures/4l.png Graphic file (type png)
 <use figures/4l.png>
 Package pdftex.def Info: figures/4l.png  used on input line 25.
@@ -2284,7 +2332,7 @@ Package pdftex.def Info: figures/4l.png  used on input line 25.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/5l.png, id=1259, 2409.0pt x 1204.5pt>
+<figures/5l.png, id=1284, 2409.0pt x 1204.5pt>
 File: figures/5l.png Graphic file (type png)
 <use figures/5l.png>
 Package pdftex.def Info: figures/5l.png  used on input line 32.
@@ -2292,7 +2340,7 @@ Package pdftex.def Info: figures/5l.png  used on input line 32.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/6l.png, id=1260, 2409.0pt x 1204.5pt>
+<figures/6l.png, id=1285, 2409.0pt x 1204.5pt>
 File: figures/6l.png Graphic file (type png)
 <use figures/6l.png>
 Package pdftex.def Info: figures/6l.png  used on input line 39.
@@ -2300,7 +2348,7 @@ Package pdftex.def Info: figures/6l.png  used on input line 39.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/7l.png, id=1261, 2409.0pt x 1204.5pt>
+<figures/7l.png, id=1286, 2409.0pt x 1204.5pt>
 File: figures/7l.png Graphic file (type png)
 <use figures/7l.png>
 Package pdftex.def Info: figures/7l.png  used on input line 46.
@@ -2308,7 +2356,7 @@ Package pdftex.def Info: figures/7l.png  used on input line 46.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/8l.png, id=1262, 2409.0pt x 1204.5pt>
+<figures/8l.png, id=1287, 2409.0pt x 1204.5pt>
 File: figures/8l.png Graphic file (type png)
 <use figures/8l.png>
 Package pdftex.def Info: figures/8l.png  used on input line 54.
@@ -2316,7 +2364,7 @@ Package pdftex.def Info: figures/8l.png  used on input line 54.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/9l.png, id=1263, 2409.0pt x 1204.5pt>
+<figures/9l.png, id=1288, 2409.0pt x 1204.5pt>
 File: figures/9l.png Graphic file (type png)
 <use figures/9l.png>
 Package pdftex.def Info: figures/9l.png  used on input line 61.
@@ -2324,7 +2372,7 @@ Package pdftex.def Info: figures/9l.png  used on input line 61.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/10l.png, id=1264, 2409.0pt x 1204.5pt>
+<figures/10l.png, id=1289, 2409.0pt x 1204.5pt>
 File: figures/10l.png Graphic file (type png)
 <use figures/10l.png>
 Package pdftex.def Info: figures/10l.png  used on input line 68.
@@ -2332,7 +2380,7 @@ Package pdftex.def Info: figures/10l.png  used on input line 68.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/11l.png, id=1265, 2409.0pt x 1204.5pt>
+<figures/11l.png, id=1290, 2409.0pt x 1204.5pt>
 File: figures/11l.png Graphic file (type png)
 <use figures/11l.png>
 Package pdftex.def Info: figures/11l.png  used on input line 75.
@@ -2340,7 +2388,7 @@ Package pdftex.def Info: figures/11l.png  used on input line 75.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/12l.png, id=1266, 2409.0pt x 1204.5pt>
+<figures/12l.png, id=1291, 2409.0pt x 1204.5pt>
 File: figures/12l.png Graphic file (type png)
 <use figures/12l.png>
 Package pdftex.def Info: figures/12l.png  used on input line 83.
@@ -2348,7 +2396,7 @@ Package pdftex.def Info: figures/12l.png  used on input line 83.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/13l.png, id=1267, 2409.0pt x 1204.5pt>
+<figures/13l.png, id=1292, 2409.0pt x 1204.5pt>
 File: figures/13l.png Graphic file (type png)
 <use figures/13l.png>
 Package pdftex.def Info: figures/13l.png  used on input line 91.
@@ -2356,7 +2404,7 @@ Package pdftex.def Info: figures/13l.png  used on input line 91.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/14l.png, id=1268, 2409.0pt x 1204.5pt>
+<figures/14l.png, id=1293, 2409.0pt x 1204.5pt>
 File: figures/14l.png Graphic file (type png)
 <use figures/14l.png>
 Package pdftex.def Info: figures/14l.png  used on input line 98.
@@ -2364,7 +2412,7 @@ Package pdftex.def Info: figures/14l.png  used on input line 98.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/15l.png, id=1269, 2409.0pt x 1204.5pt>
+<figures/15l.png, id=1294, 2409.0pt x 1204.5pt>
 File: figures/15l.png Graphic file (type png)
 <use figures/15l.png>
 Package pdftex.def Info: figures/15l.png  used on input line 107.
@@ -2372,7 +2420,7 @@ Package pdftex.def Info: figures/15l.png  used on input line 107.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/16l.png, id=1270, 2409.0pt x 1204.5pt>
+<figures/16l.png, id=1295, 2409.0pt x 1204.5pt>
 File: figures/16l.png Graphic file (type png)
 <use figures/16l.png>
 Package pdftex.def Info: figures/16l.png  used on input line 115.
@@ -2380,22 +2428,22 @@ Package pdftex.def Info: figures/16l.png  used on input line 115.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [73 <./figures/1l.png (PNG copy)>] [74 <./figures/2l.png (PNG copy)> <./figur
-es/3l.png (PNG copy)>] [75 <./figures/4l.png (PNG copy)> <./figures/5l.png (PNG
- copy)>] [76 <./figures/6l.png (PNG copy)> <./figures/7l.png (PNG copy)>]
-[77 <./figures/8l.png (PNG copy)> <./figures/9l.png (PNG copy)>] [78 <./figures
-/10l.png (PNG copy)> <./figures/11l.png (PNG copy)>] [79 <./figures/12l.png (PN
-G copy)> <./figures/13l.png (PNG copy)>] [80 <./figures/14l.png (PNG copy)> <./
-figures/15l.png (PNG copy)>] [81 <./figures/16l.png (PNG copy)>]
+) [75 <./figures/1l.png (PNG copy)>] [76 <./figures/2l.png (PNG copy)> <./figur
+es/3l.png (PNG copy)>] [77 <./figures/4l.png (PNG copy)> <./figures/5l.png (PNG
+ copy)>] [78 <./figures/6l.png (PNG copy)> <./figures/7l.png (PNG copy)>]
+[79 <./figures/8l.png (PNG copy)> <./figures/9l.png (PNG copy)>] [80 <./figures
+/10l.png (PNG copy)> <./figures/11l.png (PNG copy)>] [81 <./figures/12l.png (PN
+G copy)> <./figures/13l.png (PNG copy)>] [82 <./figures/14l.png (PNG copy)> <./
+figures/15l.png (PNG copy)>] [83 <./figures/16l.png (PNG copy)>]
 \openout2 = `app-D.aux'.
 
  (app-D.tex
-[82
+[84
 
 
 
 ]
-<figures/1path_N50_TMPC C0.1_Tf40.PNG, id=1325, 1445.4pt x 704.6325pt>
+<figures/1path_N50_TMPC C0.1_Tf40.PNG, id=1349, 1445.4pt x 704.6325pt>
 File: figures/1path_N50_TMPC C0.1_Tf40.PNG Graphic file (type png)
 <use figures/1path_N50_TMPC C0.1_Tf40.PNG>
 Package pdftex.def Info: figures/1path_N50_TMPC C0.1_Tf40.PNG  used on input li
@@ -2419,7 +2467,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 13--14
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/3vxy_N50_TMPC 0.1_Tf40.PNG, id=1326, 1445.4pt x 704.6325pt>
+<figures/3vxy_N50_TMPC 0.1_Tf40.PNG, id=1350, 1445.4pt x 704.6325pt>
 File: figures/3vxy_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/3vxy_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/3vxy_N50_TMPC 0.1_Tf40.PNG  used on input line
@@ -2433,7 +2481,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 18--19
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/6atot_N50_TMPC 0.1_Tf40.PNG, id=1327, 1431.84938pt x 705.38531pt>
+<figures/6atot_N50_TMPC 0.1_Tf40.PNG, id=1351, 1431.84938pt x 705.38531pt>
 File: figures/6atot_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/6atot_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/6atot_N50_TMPC 0.1_Tf40.PNG  used on input lin
@@ -2447,7 +2495,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 24--25
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/5ax_N50_TMPC 0.1_Tf40.PNG, id=1328, 1445.4pt x 704.6325pt>
+<figures/5ax_N50_TMPC 0.1_Tf40.PNG, id=1352, 1445.4pt x 704.6325pt>
 File: figures/5ax_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/5ax_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/5ax_N50_TMPC 0.1_Tf40.PNG  used on input line 
@@ -2461,7 +2509,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 30--31
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/4ay_N50_TMPC 0.1_Tf40.PNG, id=1329, 1445.4pt x 704.6325pt>
+<figures/4ay_N50_TMPC 0.1_Tf40.PNG, id=1353, 1445.4pt x 704.6325pt>
 File: figures/4ay_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/4ay_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/4ay_N50_TMPC 0.1_Tf40.PNG  used on input line 
@@ -2475,7 +2523,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 35--36
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/7psi_N50_TMPC 0.1_Tf40.PNG, id=1330, 1445.4pt x 704.6325pt>
+<figures/7psi_N50_TMPC 0.1_Tf40.PNG, id=1354, 1445.4pt x 704.6325pt>
 File: figures/7psi_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/7psi_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/7psi_N50_TMPC 0.1_Tf40.PNG  used on input line
@@ -2489,7 +2537,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 40--41
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/8tr&delta_N50_TMPC 0.1_Tf40.PNG, id=1331, 1445.4pt x 704.6325pt>
+<figures/8tr&delta_N50_TMPC 0.1_Tf40.PNG, id=1355, 1445.4pt x 704.6325pt>
 File: figures/8tr&delta_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/8tr&delta_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/8tr&delta_N50_TMPC 0.1_Tf40.PNG  used on input
@@ -2503,7 +2551,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 45--46
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/9jerks_N50_TMPC 0.1_Tf40.PNG, id=1332, 1445.4pt x 704.6325pt>
+<figures/9jerks_N50_TMPC 0.1_Tf40.PNG, id=1356, 1445.4pt x 704.6325pt>
 File: figures/9jerks_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/9jerks_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/9jerks_N50_TMPC 0.1_Tf40.PNG  used on input li
@@ -2517,7 +2565,7 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 50--51
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/14tr_dot&delta_dot_N50_TMPC 0.1_Tf40.PNG, id=1333, 1445.4pt x 704.6325
+<figures/14tr_dot&delta_dot_N50_TMPC 0.1_Tf40.PNG, id=1357, 1445.4pt x 704.6325
 pt>
 File: figures/14tr_dot&delta_dot_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/14tr_dot&delta_dot_N50_TMPC 0.1_Tf40.PNG>
@@ -2532,25 +2580,25 @@ Overfull \hbox (59.69757pt too wide) in paragraph at lines 55--56
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [83 <./figures/1path_N50_TMPC C0.1_Tf40.PNG (PNG copy)>] [84 <./figures/3vxy_
-N50_TMPC 0.1_Tf40.PNG (PNG copy)>] [85 <./figures/6atot_N50_TMPC 0.1_Tf40.PNG (
-PNG copy)> <./figures/5ax_N50_TMPC 0.1_Tf40.PNG (PNG copy)>] [86 <./figures/4ay
+) [85 <./figures/1path_N50_TMPC C0.1_Tf40.PNG (PNG copy)>] [86 <./figures/3vxy_
+N50_TMPC 0.1_Tf40.PNG (PNG copy)>] [87 <./figures/6atot_N50_TMPC 0.1_Tf40.PNG (
+PNG copy)> <./figures/5ax_N50_TMPC 0.1_Tf40.PNG (PNG copy)>] [88 <./figures/4ay
 _N50_TMPC 0.1_Tf40.PNG (PNG copy)> <./figures/7psi_N50_TMPC 0.1_Tf40.PNG (PNG c
-opy)>] [87 <./figures/8tr&delta_N50_TMPC 0.1_Tf40.PNG (PNG copy)> <./figures/9j
-erks_N50_TMPC 0.1_Tf40.PNG (PNG copy)>] [88 <./figures/14tr_dot&delta_dot_N50_T
+opy)>] [89 <./figures/8tr&delta_N50_TMPC 0.1_Tf40.PNG (PNG copy)> <./figures/9j
+erks_N50_TMPC 0.1_Tf40.PNG (PNG copy)>] [90 <./figures/14tr_dot&delta_dot_N50_T
 MPC 0.1_Tf40.PNG (PNG copy)>]
 \openout2 = `app-E.aux'.
 
- (app-E.tex) [89
+ (app-E.tex) [91
 
 
 
-] [90
+] [92
 
 
 ] (masterproef.bbl
 bibitemlist
-[91
+[93
 
 ])
 
@@ -2559,7 +2607,7 @@ Class memoir Warning: The material used in the headers is too large
 either increase the head height or redesign the header
 (in both cases you will find help in the memoir manual). on input line 145.
 
-[92]
+[94]
 \tf@toc=\write5
 \openout5 = `masterproef.toc'.
 
@@ -2576,9 +2624,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
 (app-C.aux) (app-D.aux) (app-E.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
-Package rerunfilecheck Info: File `masterproef.out' has not changed.
-(rerunfilecheck)             Checksum: 8A829FD3DC428E294383E07EE4742EC2;2333.
 
+
+Package rerunfilecheck Warning: File `masterproef.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `masterproef.out':
+(rerunfilecheck)             Before: 6418FAECEA7FD2C823EFE9536127BD80;2333
+(rerunfilecheck)             After:  6E33CD2CB2C4BD4B35F37852BDE6CF10;2333.
 
 LaTeX Warning: There were undefined references.
 
@@ -2588,47 +2642,50 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
  ) 
 Here is how much of TeX's memory you used:
- 17123 strings out of 481518
- 275755 string characters out of 2911616
- 903745 words of memory out of 3000000
- 31378 multiletter control sequences out of 15000+200000
- 639821 words of font info for 187 fonts, out of 3000000 for 9000
+ 17152 strings out of 481518
+ 276437 string characters out of 2911616
+ 904359 words of memory out of 3000000
+ 31396 multiletter control sequences out of 15000+200000
+ 639904 words of font info for 188 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,12n,50p,2097b,590s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
-nc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mat
-hit.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/l
-m-mathsy.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips
-/lm/lm-ec.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
-s/lm/lm-mathex.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-ts1.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/e
-nc/dvips/base/8r.enc}<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmbx10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmbx12.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/t2vosx/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/t2vosx/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/t2vosx/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/t2vosx/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/t2vosx/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/t2vosx/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/Users/t2vosx
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/
-t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Us
-ers/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:
-/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb>
-<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr9.p
-fb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr
-i10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
-m/lmsy10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmsy6.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (104 pages, 6650765 bytes).
+pdfTeX warning (dest): name{appendix*.112} has been referenced but does not e
+xist, replaced by a fixed one
+
+{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
+}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+mathsy.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/l
+m/lm-ec.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+lm/lm-mathex.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/d
+vips/lm/lm-ts1.enc}{C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
+/dvips/base/8r.enc}<C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmbx10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/lm/lmbx12.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/t2vosx/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/t2vosx/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/t2vosx/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/t2vosx/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/t2vosx/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/Users/t2vosx/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/t2
+vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/User
+s/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/U
+sers/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C
+:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb
+><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri1
+0.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/
+lmsy10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmsy6.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmtt10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on masterproef.pdf (106 pages, 6869257 bytes).
 PDF statistics:
- 1542 PDF objects out of 1728 (max. 8388607)
- 342 named destinations out of 1000 (max. 500000)
- 27787 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1568 PDF objects out of 1728 (max. 8388607)
+ 348 named destinations out of 1000 (max. 500000)
+ 27802 words of extra memory for PDF output out of 29859 (max. 10000000)
 

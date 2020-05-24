@@ -6,16 +6,16 @@ explained in chapter \ref{cha:Literature_study}. The use of ideal data is assume
 
 First the non-linear bicycle model with the used parameters is explained. There is chosen for a bicycle model because this can model the dynamics sufficiently during a comfortable lane change maneuver and the calculation cost stays affordable. The model makes abstraction of suspension dynamics i.d. neglects rolling and pitching and the distribution of mass is fixed during driving. \cite{Yankov}  Further on, the concrete used algorithm is discussed. After that a detailed discussion is given about the simulations done. It is worth noting that the learning process discussed, concerns an offline optimization which allows for higher calculations loads because of the absence of binding real time constraints.
 
-
-\section{Non-linear bicycle model}\label{sec:Vehicle_models}
-The free body diagram of the non-linear bicycle model can be seen in figure \ref{fig:bicycle_model}.
-
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Bicycle_model_paper.png}
 	\caption{Non-linear vehicle bicycle model (Source: \cite{TongDuySon2019}).}
 	\label{fig:bicycle_model}
 \end{figure}
+\section{Non-linear bicycle model}\label{sec:Vehicle_models}
+The free body diagram of the non-linear bicycle model can be seen in figure \ref{fig:bicycle_model}.
+
+
 
 Two variants of this model are discussed which are differentiated by the smoothness of the controls that can be received. 
 \begin{enumerate}

@@ -62,8 +62,8 @@
 \contentsline {chapter}{\chapternumberline {6}Validation with expert driver data}{53}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{53}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Item 1}{53}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{53}{section*.58}%
-\contentsline {subsubsection}{Sub-item 2}{53}{section*.59}%
+\contentsline {subsubsection}{Sub-item 1}{53}{section*.60}%
+\contentsline {subsubsection}{Sub-item 2}{53}{section*.61}%
 \contentsline {subsection}{\numberline {6.1.2}Item 2}{53}{subsection.6.1.2}%
 \contentsline {section}{\numberline {6.2}The Second Topic}{53}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Conclusion}{53}{section.6.3}%
@@ -77,4 +77,4 @@
 \contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 datasets}{73}{appendix.C}%
 \contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{83}{appendix.D}%
 \contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{89}{appendix.E}%
-\contentsline {chapter}{Bibliography}{91}{appendix*.108}%
+\contentsline {chapter}{Bibliography}{91}{appendix*.110}%

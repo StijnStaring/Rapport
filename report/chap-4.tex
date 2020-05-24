@@ -153,7 +153,8 @@ To be able to generate adequately smooth jerk signals, it was necessary to inclu
 Diagram \ref{fig:complex_learning} shows in blue the observed path that is generated out of \ref{opt:basic_opti_w} with known weights whereafter the path based on a bicycle model is tracked by a tracking MPC to get the kinematic signals of the $15$ dof Amesim model. From this $\bm{F}^*(\bm{r})$ is calculated which stays constant during whole the learning process.\\
 
 The learning loop shown in red in diagram \ref{fig:complex_learning} starts at the lane change planner, where \ref{opt:basic_opti_w} is called with as initial guess of the weights an all one vector. After the planned path that was outputted by the planner, is tracked and the feature vector $\bm{F}(\bm{r})$ is calculated, it is checked if the two feature vectors match in the convergence block. If this is not the case, the difference of the features is taken as an estimate for $\pdv{\bm{F}}{\bm{\theta}}$ and used in the RPROP algorithm in order to generate a new planned path by calling \ref{opt:basic_opti_w}. The first $10 \hspace{1mm}s$ of the tracked Amesim signal is removed.\\
-Three simulations are conducted with respectively one, two and three datasets. Table \ref{tab:datasets_overview} shows which longitudinal speed is driven at the begin of the lane change ($V_{0}$) and the lateral displacement of the driver $(L)$. As is noted before in Chapter $\ref{cha:Learning_algorithm}$, if only the start speed is varied, the lateral feature values stay the same and the longitudinal features stay very small, which means that these datasets are seen as almost the same when learning. When the lateral desired displacement is varied, this gives a clear difference in the lateral feature values.\footnote{In the calculation of the feature values the $5 \hspace{1mm}s$ straight driving before the lane change is included. This contributes to bigger number six feature values.} 
+Three simulations are conducted with respectively one, two and three datasets. Table \ref{tab:datasets_overview} shows which longitudinal speed is driven at the begin of the lane change ($V_{0}$) and the lateral displacement of the driver $(L)$. As is noted before in Chapter $\ref{cha:Learning_algorithm}$, if only the start speed is varied, the lateral feature values stay the same and the longitudinal features stay very small, which means that these datasets are seen as almost the same when learning. When the lateral desired displacement is varied, this gives a clear difference in the lateral feature values. An overview of the different features of the individual datasets is given in table \ref{tab:indi_features}. \footnote{In the calculation of the feature values the $5 \hspace{1mm}s$ straight driving before the lane change is included. This contributes to bigger number six feature values.} 
+
 
 
 \begin{table}[h!]
@@ -167,7 +168,6 @@ Three simulations are conducted with respectively one, two and three datasets. T
 	\caption{This table shows which lane changes were used during the three different simulations.}
 	\label{tab:datasets_overview}
 \end{table} 
-
 
 
 \begin{table}[h!]
@@ -185,8 +185,41 @@ Three simulations are conducted with respectively one, two and three datasets. T
 	\label{tab:indi_features}
 \end{table} 
 
+The weights found for the three different simulations are presented in table \ref{tab:complex_learning_weights} and the $\bm{f}_{rel}$ values are given in table \ref{tab:complex_frel}.  $\bm{f}_{rel}$ displays the matching of the averaged learned feature values with the observed one. Convergence was for the three simulations reached after 28 iterations. The convergence criteria used is matching of the lateral features (2,4,6) with a tolerance of $10^{-3}$.
 
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{}llllr@{}} \toprule
+		\textbf{Weight}   & 1 Dataset    & 2 Datasets     & 3 Datasets\\ \midrule
+		Nr.1       		  &33.4230       & 5.2294       & 3.9036		\\
+		Nr.2              & 5.0000         & 5.0000          & 5.0000       \\
+		Nr.3              & 2.8662e-06     & 1.0636      & 1.9803      \\
+		Nr.4              & 6.0018           & 6.0018            &   6.0018     \\
+		Nr.5              & 4.4445     & 1.2705      & 1.1869       \\
+		Nr.6              & 2.0011        & 2.0011         & 2.0011      \\ \bottomrule
+	\end{tabular}
+	\caption{This table shows the weights learned for the different simulations that start from an all one vector and uses as chosen weights $\bigl[ \begin{smallmatrix} 4.0,&5.0,&1.0,&6.0,&1.0,&2.0\end{smallmatrix}\bigr]$.}
+	\label{tab:complex_learning_weights}
+\end{table}
 
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{}llllr@{}} \toprule
+		$\bm{f}_{rel}$   & 1 Dataset    & 2 Datasets     & 3 Datasets\\ \midrule
+		Nr.1       		  &1.1315        & 1.0097       & 0.9643		\\
+		Nr.2              & 1.0000         & 1.0002     & 1.0003       \\
+		Nr.3              & 0.2865     & 0.4496     	& 0.4867      \\
+		Nr.4              & 1.0000           & 1.0002   &   1.0002     \\
+		Nr.5              & 1.0718     & 1.0030         & 0.9937       \\
+		Nr.6              & 1.0000        & 1.0000      & 1.0000     \\ \bottomrule
+	\end{tabular}
+	\caption{This table shows the final values of $\bm{f}_{rel}$.}
+	\label{tab:complex_frel}
+\end{table}
+
+Out of 
+                                    
+                    
 
 
 

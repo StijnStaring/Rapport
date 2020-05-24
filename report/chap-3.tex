@@ -152,13 +152,13 @@ While no convergence takes place the weights are updated, making use of the RPRO
 & T \leq T_{limit}\\
 & \bm{F}(\bm{X}^{k}) \geq 0	& k = [0,\cdots, N]\\
 & \bm{H}(\bm{X}^{k}) = 0	& k = [0,\cdots, N]\\
-& \bm{X}^{k}\in \mathbb{R}^{10x1}  & k = [0,\cdots, N]\\
-& \bm{U}^{k}\in \mathbb{R}^{2x1} \hspace{3 mm} & k = [0,\cdots, N-1]\\
+& \bm{X}^{k}\in \mathbb{R}^{10\times 1}  & k = [0,\cdots, N]\\
+& \bm{U}^{k}\in \mathbb{R}^{2\times 1} \hspace{3 mm} & k = [0,\cdots, N-1]\\
 & T \in \mathbb{R},\hspace{3 mm} N \in \mathbb{N}
 \end{aligned}
 \end{equation}
 
-Where $\bm{X} \in \mathbb{R}^{10xN+1}$ and $\bm{U}\in \mathbb{R}^{2xN}$ contain respectively the states and controls  \ref{eq:bicycle_model2} during the maneuver, complemented with the time of the maneuver $T$. In order to discretize time, a multiple shooting approach is adopted as is explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and is the same as the amount of control intervals in order to go from the initial state towards the end state. With this a sampling time of $0.025 \hspace{1mm}s$ is obtained as is discussed in section \ref{s:GD_val}.  Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states over time when a certain control is applied for $\Delta T$. Here the equations of motion \ref{eq:bicycle_model_eqmotion} are inputted in the optimization because to perform the integration, derivatives of the vehicle states are used. The time discretization used is can be categorized as a direct method and a multiple shooting approach is used which means that at every time instance a new set of state optimization variables is introduced as is explained in section \ref{s:time_dis}. The path constraint vectors $\bm{F}$ demarcates together with the equality constraint vector $\bm{H}$ the feasible area of the solutions for $\bm{X}$, $\bm{U}$. An overview of these constraints is given by equations \ref{eq:F} and \ref{eq:H}.
+Where $\bm{X} \in \mathbb{R}^{10\times N+1}$ and $\bm{U}\in \mathbb{R}^{2\times N}$ contain respectively the states and controls  \ref{eq:bicycle_model2} during the maneuver, complemented with the time of the maneuver $T$. In order to discretize time, a multiple shooting approach is adopted as is explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and is the same as the amount of control intervals in order to go from the initial state towards the end state. With this a sampling time of $0.025 \hspace{1mm}s$ is obtained as is discussed in section \ref{s:GD_val}.  Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states over time when a certain control is applied for $\Delta T$. Here the equations of motion \ref{eq:bicycle_model_eqmotion} are inputted in the optimization because to perform the integration, derivatives of the vehicle states are used. The time discretization used is can be categorized as a direct method and a multiple shooting approach is used which means that at every time instance a new set of state optimization variables is introduced as is explained in section \ref{s:time_dis}. The path constraint vectors $\bm{F}$ demarcates together with the equality constraint vector $\bm{H}$ the feasible area of the solutions for $\bm{X}$, $\bm{U}$. An overview of these constraints is given by equations \ref{eq:F} and \ref{eq:H}.
 
 \begin{equation}\label{eq:F}
 \bm{F} =
@@ -375,7 +375,7 @@ To determine if the generated data is a local solution of the optimization of \r
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{@{}llr@{}} \toprule
-		Feature Value    & V0:22.22 - L3.47 & V0:25.00 - L6.94\\ \midrule
+		\textbf{Feature Value}     & V0:22.22 - L3.47 & V0:25.00 - L6.94\\ \midrule
 		Nr.1       & 6.83e-8   & 6.83e-8 \\
 		Nr.2       & 0.37        & 0.37  \\
 		Nr.3       & 1.77e-7     & 1.77e-7 \\
@@ -393,7 +393,7 @@ In order to check the dependency of the generated data on the chosen $T_{limit}$
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{@{}llllr@{}} \toprule
-		Feature Value    & 20 s  & 50 s      & 100 s\\ \midrule
+		\textbf{Feature Value}    & 20 s  & 50 s      & 100 s\\ \midrule
 		Nr.1       & 3.66e-8     & 1.13e-7   & 2.04e-7\\
 		Nr.2       & 0.37        & 0.38      & 0.38\\
 		Nr.3       & 1.13e-7     & 3.98e-7   & 1.56e-6 \\
@@ -417,7 +417,7 @@ The test carried out to investigate the dependence of resulting features values 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{@{}llllr@{}} \toprule
-		Feature Value    & 500  & 1000      & 1500 s\\ \midrule
+		\textbf{Feature Value}    & 500  & 1000      & 1500 s\\ \midrule
 		Nr.1       & 9.42e-8     & 6.63e-8   & 6.45e-8\\
 		Nr.2       & 0.38        & 0.37      & 0.37\\
 		Nr.3       & 5.61e-7     & 1.77e-7   & 1.11e-7 \\
@@ -480,7 +480,7 @@ The datasets chosen to perform the learning algorithm on are $V_0:22.22\hspace{1
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{@{}llllr@{}} \toprule
-		$\bm{f}_{rel}$    & V022.22 - L3.47 & V022.22 - L6.94 & V025.00 - L3.47\\ \midrule
+		\textbf{Feature}    & V022.22 - L3.47 & V022.22 - L6.94 & V025.00 - L3.47\\ \midrule
 		Nr.1       		  &1.0000        & 0.9973 	    & 1.0064 		\\
 		Nr.2              & 1.0002       & 0.9992       & 1.0001       \\
 		Nr.3              & 0.9860       & 0.9816       & 0.9983       \\

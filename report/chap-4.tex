@@ -13,7 +13,7 @@ Because the non-linear bicycle model makes abstraction of dynamics that are appl
 \end{figure}
 
 The Amesim model serves as a black box and no direct dynamic equations are available 
-to include in \ref{opt:basic_opti_w} as was done with the non-linear bicycle model \ref{eq:bicycle_model_eqmotion}. Therefore a path is planned with the simpler non-linear bicycle model and afterwards a model predictive control tracking algorithm is applied on the Amesim model in order to follow the reference. The working principles of a MPC is discussed in \ref{s:MPC_e}. Diagram \ref{fig:complex_learning} shows the flow of handlings that is done during learning with the Amesim model.
+to include in \ref{opt:basic_opti_w} as was done with the non-linear bicycle model \ref{eq:bicycle_model_eqmotion}. Therefore a path is planned with the simpler non-linear bicycle model and afterwards a model predictive control tracking algorithm is applied on the Amesim model in order to follow its reference. The working principles of a MPC is discussed in \ref{s:MPC_e}. Diagram \ref{fig:complex_learning} shows the flow of handlings that is done during learning with the Amesim model.
 
 \begin{figure}[h!]
 	\centering
@@ -23,6 +23,8 @@ to include in \ref{opt:basic_opti_w} as was done with the non-linear bicycle mod
 \end{figure}
 
 As is described in Diagram \ref{fig:complex_learning} the feature vector $\bm{F}(\bm{r})$ is also calculated based on the Amesim model and used in the convergence block to calculate the estimation of the gradient by $\pdv{\bm{F}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$. The reason for this is to avoid to integrate the vehicle mismatch between the non-linear bicycle model and the Amesim model into the learned path. This concretely means that it otherwise is possible that even when the learning algorithm is capable to match the feature vectors $\bm{F}(\bm{r})$ and  $\bm{F}^*(\bm{r})$, coming form two different vehicle models, the learned kinematic signals of the bicycle model will not represent the observations accurate enough. In order to check this, table \ref{tab:comparinson_models} \footnote{Note that the feature values of the bicycle model are slightly different values than the ones in table \ref{tab:GD_local_test}. This is because in the previous table the time limit was set on $30 \hspace{1mm}s$ and here time limit is $30 \hspace{1mm}s$. This is done to have a better useable time discretization of $0.025\hspace{1mm}s$ to input to the Amesim model.} shows the difference of feature values for a lane change $V_0:22.22\hspace{1mm}\frac{m}{s},\hspace{1mm} L:3.47\hspace{1mm}m$ generated with the non-linear bicycle model and afterwards tracked with the Amesim model.\\
+
+\newpage
 
 \begin{table}[h!]
 	\centering
@@ -41,7 +43,7 @@ As is described in Diagram \ref{fig:complex_learning} the feature vector $\bm{F}
 
 As can be seen the features of the reference produced by the bicycle model are almost the same as the ones that are retrieved from the Amesim model during the application of the tracking MPC. However not all kinematic signals give an accurate match as is described in Appendix \ref{app:D} and further discussed in section \ref{s:tracking_mpc}. 
 
-This chapter also gives an answer on the question if the estimate of the gradient $\pdv{\bm{F}}{\bm{\theta}}$ by $ \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ is still sufficient in order to match the learned and observed feature values in section \ref{s:complex_learning_results}.\\
+This chapter also gives an answer on the question if the estimate of the gradient $\pdv{\bm{F}}{\bm{\theta}}$ by $ \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ is still sufficient in order to match the learned and observed feature values in section \ref{s:complex_learning_results}.
 
 \section{Tracking MPC} 
 \label{s:tracking_mpc}
@@ -58,8 +60,8 @@ The first time that the OCP is solved and the current state is not yet outputted
 \textrm{s.t.} \quad & \bm{X}^{k+1} = I(\bm{X}^{k}, \bm{U}^{k}) & k = [0,\cdots, N_{MPC}-1]\\
 & \bm{X}^{0} = \bm{X}_{intitial} \\
 & \bm{F}(\bm{X}^{k}) \geq 0	& k = [0,\cdots, N_{MPC}]\\
-& \bm{X}^{k}\in \mathbb{R}^{10x1}  & k = [0,\cdots, N_{MPC}]\\
-& \bm{U}^{k}\in \mathbb{R}^{2x1} \hspace{3 mm} & k = [0,\cdots, N_{MPC}-1]\\
+& \bm{X}^{k}\in \mathbb{R}^{10\times 1}  & k = [0,\cdots, N_{MPC}]\\
+& \bm{U}^{k}\in \mathbb{R}^{2\times 1} \hspace{3 mm} & k = [0,\cdots, N_{MPC}-1]\\
 &  N_{MPC} \in \mathbb{N}
 \end{aligned}
 \end{equation}
@@ -84,7 +86,7 @@ objective=W_1(\bm{x}[2:end]-\bm{ref}_x)^T(\bm{x}[2:end]-\bm{ref}_x)+W_2(\bm{y}[2
 +W_6(\bm{\dot{\psi}}[2:end]-\bm{ref}_{\dot{\psi}})^T(\bm{\dot{\psi}}[2:end]-\bm{ref}_{\dot{\psi}})\\ + W_7\dot{\bm{t}}_r^T\dot{\bm{t}}_r+W_8\dot{\bm{\delta}}_s^T\dot{\bm{\delta}}_s + W_9\dot{\bm{a}}_x^T\dot{\bm{a}}_x
 \end{multline*}
 
-\[\bm{x},\bm{y},\bm{v}_x,\bm{v}_y,\bm{\psi},\dot{\bm{\psi}},\bm{a}_x \in \mathbb{R}^{(N_{MPC}+1)x1} \hspace{10mm}\bm{ref}_{i},\dot{\bm{t}}_r,\dot{\bm{\delta}}_s \in \mathbb{R}^{N_{MPC}x1}\]
+\[\bm{x},\bm{y},\bm{v}_x,\bm{v}_y,\bm{\psi},\dot{\bm{\psi}},\bm{a}_x \in \mathbb{R}^{(N_{MPC}+1)\times1} \hspace{10mm}\bm{ref}_{i},\dot{\bm{t}}_r,\dot{\bm{\delta}}_s \in \mathbb{R}^{N_{MPC}\times1}\]
 
 
 \begin{table}[h!]
@@ -106,7 +108,7 @@ objective=W_1(\bm{x}[2:end]-\bm{ref}_x)^T(\bm{x}[2:end]-\bm{ref}_x)+W_2(\bm{y}[2
 \end{table}
 
 The ultimate weights displayed were attained by trail and error but there is an intuitive explanation on why these states were used and which order of magnitude the weights were given.\\
-It was first tried to focus mostly on path tracking in order to see how the other states would differ when the amesim model drove almost exactly the same path as the non-linear vehicle and therefore $x(t),y(t)$ and $\psi(t)$ were included. They define the orientation of the vehicle. Nervous input behaviour was noticed and in order to smooth the input they were given a small weight. This in order assure still good tracking behaviour. It was observed that this strategy resulted in a good tracking of the important signals for the learning algorithm: $y(t), a_y(t)$ and $j_y(t)$. As will be explained in \ref{s:tracking_results} at the start of the maneuver the Amesim model made a deceleration. In order to  give the model time to stabilize before the start of the maneuver, a straight driving part of $15\hspace{1mm}s$ and $2.5\hspace{1mm}s$ were respectively added before and after the reference lane change maneuver. To faster remove the oscillation in the longitudinal direction of the vehicle, $v_x$ and $a_x$ were included in the objective.\\
+It was first tried to focus mostly on path tracking in order to see how the other states would differ when the Amesim model drove almost exactly the same path as the non-linear vehicle and therefore $x(t),y(t)$ and $\psi(t)$ were included. They define the orientation of the vehicle. Nervous input behaviour was noticed and in order to smooth the input they were given a small weight. This in order assure still good tracking behaviour. It was observed that this strategy resulted in a good tracking of the important signals for the learning algorithm: $y(t), a_y(t)$ and $j_y(t)$. As will be explained in \ref{s:tracking_results} at the start of the maneuver the Amesim model made a deceleration. In order to  give the model time to stabilize before the start of the maneuver, a straight driving part of $15\hspace{1mm}s$ and $2.5\hspace{1mm}s$ were respectively added before and after the reference lane change maneuver. To faster remove the oscillation in the longitudinal direction of the vehicle, $v_x$ and $a_x$ were included in the objective.\\
 
 The initial guess given to first solve the OCP is only needed for $v_x$. This is because otherwise an invalid value would emerges in the calculation of the slipangle according to equation \ref{eq:bicycle_slipangle}. When the OCP is defined and implemented in CasADi as described above, the opti environment is saved as a function that can be called during the running of the MPC. In order to speed up the implementation there is switched to a SQP method using an active-set QP solver instead of IPOPT that was used in \ref{opt:basic_opti_w}. "Interior point methods (like IPOPT) are generally robust at finding a minimizer, but the barrier parameter will make the algorithm walk away from a perfect initial guess, only to come back after a while." \cite{Gillis2019} A hot starting was implemented by feeding the solution of a previous MPC iteration as initial guess for the optimization variables and the lambda multipliers. Because of this it was logical to switch the solver and solving method. Together with the straight driving parts, a simulation of $40\hspace{1mm}s$ is performed and one iteration of the MPC takes around $0.15\hspace{1mm}s$. The main time consumed to calculate the solution is mainly the loading time needed for the different simulation components.\\
 
@@ -122,8 +124,9 @@ With the OCP defined, it can be included in a MPC formulation. Every MPC iterati
 The three inputs to the Amesim model (largest block) are $\delta_s$, $t_r$ and $braking$ but the control outputs of \ref{opt:tracking} give $\dot{t}_r$ and $\dot{\delta_s}$. Therefore 'Forward Euler integration' was introduced using for $0.1\hspace{1mm}s$ the control outputs in order to calculate every $0.01\hspace{1mm}s$ the inputs for the Amesim model. Moreover the throttle of the bicycle model can theoretically become positive and negative. These two states were separated and feeded to the Amesim model as throttling or braking. 
 
 
-\subsection{Tracking results}
+\subsection{Tracking results} 
 \label{s:tracking_results}
+
 In this section the results of the tracking MPC are displayed. For a full overview of the results, reference is made to Appendix \ref{app:D}. Figure \ref{fig:xy_mpc} shows that the tracking of the path (blue) of the reference (red) is done with an accuracy of $10^{-3}$. 
 
 \begin{figure}[h!]
@@ -133,23 +136,66 @@ In this section the results of the tracking MPC are displayed. For a full overvi
 	\label{fig:xy_mpc}
 \end{figure}
 
+During the analysing of the results it was concluded that the important signals were followed sufficiently well in order to use the MPC for learning in a configuration as is shown by Figure \ref{fig:complex_learning}. However there were also differences seen between the reference and the followed trajectory. This justifies the reasoning that not all states have to be included in the error function of \ref{opt:tracking}, because tracking all states accurate will give worse results due to inherent vehicle model mismatch. Firstly the Amesim model needs a bigger steerwheelangle than was predicted by the reference. Also the amount of throttle needed to drive forward at a constant speed is slightly different because of the more complete way of aerodynamic resistance modelled by the Amesim model in comparison to equation \ref{eq:bicycle_Fdrag}.\\
+Another interesting observation was that the lateral jerk and first derivative of the steerwheelangle display less high peaks than the reference model. If very closely zoomed in on the longitudinal jerk around $15\hspace{1mm}s$ which coincides with the start of the lane change and $22\hspace{1mm}s$, which is more at the end, nervous behaviour of the longitudinal jerk is witnessed. Around $15\hspace{1mm}s$ also a bump in the reference of the throttle can be seen because that is the point that straight driving at constant speeds ends and the reference is from that point produced by solving \ref{opt:basic_opti_w}. The influence on $v_x$ and $a_x$ is however marginal. Further it is good to note that the jerks don't come directly from the Amesim model but the signal is post-processed by numerical differentiation. \\
 
+To be able to generate adequately smooth jerk signals, it was necessary to include smooth enough inputs of throttle and steerwheelangle. Figure \ref{fig:old_inputs} shows the cycling of the jerk that is obtained when not the first derivative of throttle and steerwheelangle is applied as input to the Amesim model. That the jerk signal is dependent on the first derivative of the throttle and steeringwheelangle is a logical result, because also in the analytical jerk equations of the non-linear bicycle model (appendix \ref{app:A}) these variables were included.\footnote{For this result no straight driving reference path is added. The lane change start directly at $time = 0.0$.}
 
-
-
-
-
-
-
-
-
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG}
+	\caption{This figure shows the obtained oscillating signals for the jerk when a piecewise signal of $\delta_s$ and $t_r$ is applied.}	
+	\label{fig:old_inputs}
+\end{figure}
 
 \section{Learning results with the Amesim model}
 \label{s:complex_learning_results}
-
 Diagram \ref{fig:complex_learning} shows in blue the observed path that is generated out of \ref{opt:basic_opti_w} with known weights whereafter the path based on a bicycle model is tracked by a tracking MPC to get the kinematic signals of the $15$ dof Amesim model. From this $\bm{F}^*(\bm{r})$ is calculated which stays constant during whole the learning process.\\
 
-The learning loop shown in red in diagram \ref{fig:complex_learning} start at the lane change planner, where \ref{opt:basic_opti_w} is called with as initial guess of the weights an all one vector. After the planned path that was outputted by the planner is tracked and the feature vector $\bm{F}(\bm{r})$ is calculated, it is checked if the two feature vectors match in the convergence block. If not the difference of the features is taken as an estimate for $\pdv{\bm{F}}{\bm{\theta}}$ and used in the RPROP algorithm in order to generate a new planned path by calling \ref{opt:basic_opti_w}.
+The learning loop shown in red in diagram \ref{fig:complex_learning} starts at the lane change planner, where \ref{opt:basic_opti_w} is called with as initial guess of the weights an all one vector. After the planned path that was outputted by the planner, is tracked and the feature vector $\bm{F}(\bm{r})$ is calculated, it is checked if the two feature vectors match in the convergence block. If this is not the case, the difference of the features is taken as an estimate for $\pdv{\bm{F}}{\bm{\theta}}$ and used in the RPROP algorithm in order to generate a new planned path by calling \ref{opt:basic_opti_w}. The first $10 \hspace{1mm}s$ of the tracked Amesim signal is removed.\\
+Three simulations are conducted with respectively one, two and three datasets. Table \ref{tab:datasets_overview} shows which longitudinal speed is driven at the begin of the lane change ($V_{0}$) and the lateral displacement of the driver $(L)$. As is noted before in Chapter $\ref{cha:Learning_algorithm}$, if only the start speed is varied, the lateral feature values stay the same and the longitudinal features stay very small, which means that these datasets are seen as almost the same when learning. When the lateral desired displacement is varied, this gives a clear difference in the lateral feature values.\footnote{In the calculation of the feature values the $5 \hspace{1mm}s$ straight driving before the lane change is included. This contributes to bigger number six feature values.} 
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{}llllr@{}} \toprule
+		1 Dataset    & 2 Datasets & 3 Datasets\\ \midrule
+     $V0:22.22 - L:3.47$  & $V0:22.22 - L:3.47$    & $V0:22.22 - L:3.47$ 		\\
+           			 & $V0:25.00 - L:6.94$      & $V0:25.00 - L:6.94$      \\
+	        		 &        & $V0:27.78 - L:3.47$      \\ \bottomrule
+	\end{tabular}
+	\caption{This table shows which lane changes were used during the three different simulations.}
+	\label{tab:datasets_overview}
+\end{table} 
+
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{}llllr@{}} \toprule
+	\textbf{Feature Value}     & V022.22 - L3.47 & V025.00 - L6.94 & V027.78 - L3.47\\ \midrule
+		Nr.1       		  &5.18e-07       & 5.97e-06  & 4.01e-07 		\\
+		Nr.2              & 0.38       & 1.51       & 0.38       \\
+		Nr.3              & 12.29e-05  & 7.23e-05      & 5.37e-06      \\
+		Nr.4              & 0.51       & 2.09       &   0.52    \\
+		Nr.5              & 9.50e-06       & 7.08e-05       & 3.71e-05       \\
+		Nr.6              & 91.25      & 364.97       & 91.25       \\ \bottomrule
+	\end{tabular}
+	\caption{This table shows the different features for the individual datasets used during simulation.}
+	\label{tab:indi_features}
+\end{table} 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Conclusion}

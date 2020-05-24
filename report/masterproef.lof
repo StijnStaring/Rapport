@@ -40,11 +40,11 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steerwheelangle.\relax }}{43}{figure.caption.49}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces The flow of learning with the Amesim model.\relax }}{44}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces This figure shows hows the tracking MPC is connected with the Amesim model using different sampling times. (red: $T_s: 0.01\hspace {1mm}s$ and green: $T_{MPC}:0.1\hspace {1mm}s$)\relax }}{48}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces This figure shows the tracking result of the reference (red) by the Amesim model (blue).\relax }}{49}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces This figure shows hows the tracking MPC is connected with the Amesim model using different sampling times. (red: $T_s: 0.01\hspace {1mm}s$ and green: $T_{MPC}:0.1\hspace {1mm}s$)\relax }}{47}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces This figure shows the tracking result of the reference (red) by the Amesim model (blue).\relax }}{48}{figure.caption.54}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces This figure shows the obtained oscillating signals for the jerk when a piecewise signal of $\delta _s$ and $t_r$ is applied.\relax }}{50}{figure.caption.55}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces This Figure shows the observed paths, the initial solution retrieved with as weights an all one vector and the learned solution.\relax }}{52}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces This Figure shows the error made between the observed and learned paths.\relax }}{53}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces This Figure shows the error made between the observed and learned paths.\relax }}{52}{figure.caption.61}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces This Figure shows $\bm {f}_{rel}$ during the learning iterations.\relax }}{53}{figure.caption.62}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces This Figure shows the observed jerk signals, the initial solution retrieved with as weights an all one vector and the learned solution.\relax }}{54}{figure.caption.63}%
 \addvspace {10pt}

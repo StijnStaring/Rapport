@@ -1,11 +1,11 @@
 \chapter{Background in optimal control problems}
 \label{cha:OCP}
 
-This chapter gives some background information of the theory behind optimal control (OCP). After a global introduction and the discussion about the time discretization and shooting option, the chapter is giving an introduction into model predictive control (MPC).
+This chapter gives some background information on the theory behind optimal control problems (OCP). After a global introduction and a discussion about discretization and time shooting options, this chapter introduces the concept of model predictive control (MPC).
 
 \section{Optimal control problem (OCP)}
 \label{Optimal control problem (OCP)}
-"An optimal control problem determines the desired inputs and corresponding state trajectories to change the system from an initial state to a desired final state in an optimal way while satisfying some input and state constraints." \cite{Mercy2018}.
+"An optimal control problem determines the desired inputs and corresponding state trajectories to change the system from an initial state to a desired final state in an optimal way while satisfying input and state constraints." \cite{Mercy2018}.
 
 \begin{equation}
 \label{eq:OCP}
@@ -17,16 +17,16 @@ This chapter gives some background information of the theory behind optimal cont
 \end{aligned}
 \end{equation}
 
-$\bm{q}$ is called the state vector and contains all the states of the system. $\bm{u}$ is the control vector containing the controls. In theory the amount of states of an system can be infinite, but in order to sufficiently model a system only a good chosen set of states is needed to sufficiently describe the system. In vehicle control in order to describe the driving behaviour often kinematic variables like positions and velocities of the centre of gravity of the vehicle are chosen together with the yaw angle. This fully describes the position of a vehicle in a 2D plane. Typical controls $\bm{u}$ are steerwheelangle and the amount of throttle which can be directly linked the amount of propulsion force. Also higher order controls are possible.\\
-The objective function $l$ of the optimization problem \ref{eq:OCP} is integrating over the desired control horizon $T$. In the objective function it is indicated what should be minimized and it is in function of the different states and controls. $E(\bm{q}(T))$ describes the terminal cost and the value of the integrated objective is reduced when the system comes closer to a predefined final state at the end of the control horizon.
-The dynamics of the system are modelled by an explicit ordinary differential equation $\bm{\dot{q}}(t) = \bm{f}(\bm{q}(t), \bm{u}(t))$ and the evolution of the vehicle states during the control horizon are retrieved by integration of this ODE.
-$Q$ and $U$ represent the constraints that can be put on respectively the optimization variables. It is worth noting that the control horizon time $T$ by itself can also be an optimization variable. What comes out of an OCP indicates what states will be visited by the system and which controls have to be applied in order to optimize the associated objective function with respect to predefined constraints. \cite{Panos_opti}\\ 
+$\bm{q}$ is called the state vector and contains all the states of the system. $\bm{u}$ is the control vector containing the controls. In theory the amount of states of a system can be infinite, but in order to sufficiently model a system only a well chosen set of states is needed in order to sufficiently describe the system. Typical controls $\bm{u}$ for a vehicle are steerwheelangle and the amount of throttle which can be directly linked the amount of propulsion force. Also higher order controls are possible.\\
+The objective function $l$ of the optimization problem \ref{eq:OCP} is integrating over the desired control horizon $T$. In the objective function it is indicated what should be minimized and this is in function of the different states and controls. $E(\bm{q}(T))$ describes the terminal cost and the objective is reduced when the system comes closer to a predefined final state at the end of the control horizon.
+The dynamics of the system are modelled by an explicit ordinary differential equation $\bm{\dot{q}}(t) = \bm{f}(\bm{q}(t), \bm{u}(t))$ and the evolution of the vehicle states are retrieved by integrating this ODE during the control horizon.
+$Q$ and $U$ represent the feasible sets from where the solutions of the optimization variables can be taken. It is worth noting that the control horizon time $T$ itself can be an optimization variable. What comes out of an OCP indicates what states will be visited by the system and which controls have to be applied in order to optimize the associated objective function with respect to predefined constraints. \cite{Panos_opti}\\ 
 
-There is a difference between soft and hard constraints. A hard constraint directly demarcates the feasible solution areas $\bm{q}(t)\in Q,\hspace{3 mm} \bm{u}(t)\in U$. A soft constraint is added in the objective function $l$ and will contribute to a more optimal solution when it is better fulfilled. Also when a soft constraint is not met this can be an optimal solution which is not the case for a hard constraint. \cite{Yankov} \\
+There is a difference between soft and hard constraints. A hard constraint directly demarcates the feasible solution spaces $\bm{q}(t)\in Q,\hspace{3 mm} \bm{u}(t)\in U$. A soft constraint is added in the objective function $l$ and will contribute to a more optimal solution when it is better fulfilled. Also when a soft constraint is not met this can be an optimal solution which is not the case for a hard constraint. \cite{Yankov} \\
 
-\subsection{Time discretization}\label{s:time_dis}
-
-The optimal control problem \ref{eq:OCP} is continuous in time. This means that it has infinite dimensions, but to be able to run the optimization problem on digital systems there is need for discretization. There are several ways to do this which are summarized in Figure \ref{fig:discretization_m}.\cite{Gillis2019}
+\subsection{Time discretization}
+\label{s:time_dis}
+The optimal control problem \ref{eq:OCP} is continuous in time. This means that it has infinite dimensions, but to be able to run the optimization problem on digital systems there is need for discretization. Several ways to do this are availabe and summarized in Figure \ref{fig:discretization_m}.\cite{Gillis2019}
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{discretized.eps}
@@ -34,22 +34,22 @@ The optimal control problem \ref{eq:OCP} is continuous in time. This means that 
 	\label{fig:discretization_m}
 \end{figure}
 
-"Since direct methods are best suited to solve practically relevant OCPs" \cite{Mercy2018}, this thesis is following the direct method. To implement the discretization of time when using the Direct method, a time shooting approach is used.
+Since direct methods are best suited to solve practically relevant OCPs \cite{Mercy2018}, this thesis is following the direct method. To implement the discretization of time when using the Direct method, a time shooting approach is used.
 
 \subsection{Time shooting}
-A shooting approach makes use of a time grid. Time will be sampled and on every time instant the optimal control problem is assessed. On these discrete points constraints will not violated but there are no limits on the amount of violation between the different time samples. In order to reduce the amount of constraint violation the sampling rate should be taken high enough, while bearing in mind the extra optimization variables introduced and therefore calculation load. An other approach to take constraint violation between different sample points into account, is using spline based optimization formulations. \cite{Mercy2018}\\
+A shooting approach makes use of a time grid. Time will be sampled and on every time instant the optimal control problem is assessed. On these discrete points constraints will not violated, but there are no limits on the amount of violation between the different time samples. In order to reduce the amount of constraint violation the sampling rate should be taken high enough, while bearing in mind the extra optimization variables introduced and therefore calculation load. An other approach to take constraint violation into account, is making use of spline based optimization formulations. \cite{Mercy2018}\\
 
 Two different shooting approaches exist:\\
 \begin{enumerate}
 	\item Multiple shooting (MS)\\
-	During multiple shooting every new time sample $ns\in \mathbb{N}$ new states and controls are introduced and taken as optimization variables.
-	Input changes are only allowed on the different time discrete time instances which leads to a piece wise control input signal. The blue bars indicate in Figure \ref{fig:TS} (left) indicate the control value $U_i$ that is applied to the system.  The red dots are system states that are defined as optimization variables and are not constant during a time interval $\Delta T$. In order to make the connection between states at time $t_i$ and $t_{i+1}$, discrete time integration is used according to $\bm{q}(k+1) = \bm{f}(\bm{q}(k), \bm{u}(k))$. These connections are put as constraints in the discretized optimization formulation of \ref{eq:OCP} and are called in literature 'path closing constraints' \cite{Gillis2019}. \\ Equation \ref{eq:OCP_dis} shows \ref{eq:OCP} when discretized with the multiple shooting approach. 
+	During multiple shooting every new time sample new states and controls are introduced and taken as optimization variables.
+	Control changes are only allowed on the different discrete time instances which leads to a piece wise control signal. The blue bars in Figure \ref{fig:TS} (left) indicate the control value $U_i$ that is applied to the system.  The red dots are system states that are defined as optimization variables and are not constant during a time interval $\Delta T$. In order to make the connection between states at time $t_i$ and $t_{i+1}$, time integration is used according to $\bm{q}(k+1) = \bm{F}(\bm{q}(k), \bm{u}(k))$. These connections are put as constraints in the optimization \ref{eq:OCP_dis} and are called in literature 'path closing constraints' \cite{Gillis2019}. \\ Equation \ref{eq:OCP_dis} presented the discretized version of \ref{eq:OCP} when using the multiple shooting approach. 
 
 	\begin{equation}
 	\label{eq:OCP_dis}
 	\begin{aligned}
 	\min_{\bm{q}(.),\bm{u}(.)} \quad & \sum_{k = 0}^{N-1}l_{k}(\bm{q}_{k},\bm{u}_{k}) + E(\bm{q}_{N}) \\
-	\textrm{s.t.} \quad & \bm{q}_{k+1} = \bm{f}(\bm{q}_{k}, \bm{u}_{k}) & k = [0,\cdots, N-1]\\
+	\textrm{s.t.} \quad & \bm{q}_{k+1} = \bm{F}(\bm{q}_{k}, \bm{u}_{k}) & k = [0,\cdots, N-1]\\
 	& \bm{q}_{0}= \bm{q}_{measured} \\
 	& \bm{q}_{k}\in Q,\hspace{3 mm} & k = [0,\cdots, N]\\
 	& \bm{u}_{k}\in U \hspace{3 mm} & k = [0,\cdots, N-1]\\
@@ -62,9 +62,9 @@ Two different shooting approaches exist:\\
 	
 	\begin{equation}\label{eq:2}
 	\begin{aligned}
-	\bm{q}^1 &= \bm{f}(\bm{q}^0, \bm{u}^0)\\
-	\bm{q}^2 &= \bm{f}(\bm{f}(\bm{q}^0, \bm{u}^0), \bm{u}^1)\\
-	\bm{q}^3 &= \bm{f}(\bm{f}(\bm{f}(\bm{q}^0, \bm{u}^0), \bm{u}^1), \bm{u}^2)\\
+	\bm{q}^1 &= \bm{F}(\bm{q}^0, \bm{u}^0)\\
+	\bm{q}^2 &= \bm{F}(\bm{F}(\bm{q}^0, \bm{u}^0), \bm{u}^1)\\
+	\bm{q}^3 &= \bm{F}(\bm{F}(\bm{F}(\bm{q}^0, \bm{u}^0), \bm{u}^1), \bm{u}^2)\\
 	...
 	\end{aligned}
 	\end{equation}

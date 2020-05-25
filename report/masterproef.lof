@@ -16,7 +16,7 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Concept visualization of autonomous driving. (source: \cite {AV})\relax }}{1}{figure.caption.13}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Example lane change as used as input in the inverse optimal control algorithm.\relax }}{3}{figure.caption.14}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Example of a lane change which is the investigated maneuver in this thesis.\relax }}{3}{figure.caption.14}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of different discretization methods.\relax }}{6}{figure.caption.15}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting, right: single shooting).\relax }}{8}{figure.caption.16}%

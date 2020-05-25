@@ -1,11 +1,11 @@
 \chapter{State of the art modelling of comfort}
 \label{cha:Literature_study}
+As discussed in the introduction, the goal of this thesis is to implement a method to capture personal experience of comfort during driving. This will be done by using an inverse optimal control approach where the weights are learned from demonstration. To be able to do this, it is necessary that a literature study is done about how comfort is defined and to gain information about inverse optimal control.\\
+This chapter will give a compact overview of the literature that is available and will show how the thesis fits in earlier conducted research.
 
-As discussed in the introduction the goal of the thesis is to learn and implement a method to capture personal experience of comfort in autonomous driving. This will be done by using an inverse optimal control approach where the weights are learned from demonstration. To be able to do this it is necessary that a literature study is done about how to define comfort in a vehicle and to gain information about inverse optimal control.\\
-This chapter will give an overview of the literature that is available and will show how the thesis fits in earlier conducted research.
-
-\section{What are the parameters that define comfort during driving?}\label{s:comfort_parameters}
-In the following US patent \cite{Daniel2018} the idea is to assess the amount of comfort by calculating a value for carsickness. This value is calculated by a weighted sum of the sway motion, surge motion and heave motion of the vehicle. These motions are being directly calculated from the lateral acceleration, fore-aft acceleration and the vertical acceleration of the vehicle. \\
+\section{What is comfort during driving?}
+\label{s:comfort_parameters}
+In the following US patent \cite{Daniel2018} the idea is to assess the amount of comfort by calculating a value for carsickness. This value is calculated by a weighted sum of sway motion, surge motion and heave motion of the vehicle. These motions are being directly calculated from the lateral acceleration, fore-aft acceleration and the vertical acceleration of the vehicle. \\
 
 \begin{figure}[h!]
 	\centering
@@ -21,43 +21,37 @@ In the following US patent \cite{Daniel2018} the idea is to assess the amount of
 %	\caption{Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite{Elbanhawi2015})}
 %	\label{fig:Comfort}
 %\end{wrapfigure}
-In the paper 'Investigating ride comfort measures in autonomous cars' \cite{Elbanhawi2015}, it is explained that due to the introduction of autonomous vehicles there will be an other perception of comfort. Figure \ref{fig:Comfort} indicates in blue the claimed traditional comfort factors and in red the new ones that also have to be taken into account in when driving in autonomous vehicles. Concretely this can be translated into the preference of smooth trajectories and low lateral motions when the roads are assumed to be sufficiently smooth. A hypotheses is that motion sickness will be more prominent in autonomous driving due to the loss of control. Is is also argued that the amount of travel time and the distance to an obstacle are naturally parameters that contribute to a comfortable feeling. \\
+In the paper 'Investigating ride comfort measures in autonomous cars' \cite{Elbanhawi2015}, it is explained that due to the introduction of autonomous vehicles there will be an other perception of comfort. Figure \ref{fig:Comfort} indicates in blue the claimed traditional comfort factors and in red the new ones that additionally have to be taken into account when driving in autonomous vehicles. Concretely this can be translated into the preference of smooth trajectories and low lateral motions when the roads are assumed to be sufficiently smooth. A hypotheses taken, is that motion sickness will be more prominent in autonomous driving due to the loss of control. Is is also argued that the distance to an obstacle are logically parameters that contribute to a comfortable feeling.\\
 
-In 'Analysis of Driving Style Preference in Automated Driving' \cite{Bellem} three studies are conducted in order to capture the definition of comfortable driving in autonomous vehicles.
-In the first study drivers drove manually with their own driving styles and this data was used in order to look for relevant metrics that could be used in defining distinct driver styles. It was found that these metrics are varying across the maneuver. This is a logical result because not in all maneuvers are all the comfort matrices equally dominant.\\
-The results of this research is that accelerations play a key role in comfort but are not the only factor. \cite{Bellem}\\
+In 'Analysis of Driving Style Preference in Automated Driving' \cite{Bellem} three studies were completed in order to capture the definition of comfortable driving in autonomous vehicles.\\
+During the first study, human drivers drove manually with their own driving styles a set of maneuvers and in this data, there was sought after relevant metrics that could be used in defining comfortable driving. The results of this research was that accelerations play a key role in comfort but are not the only factor. \cite{Bellem}\\
 
 \begin{quote}
-	The different comfort metrics found:
+	The different comfort metrics found were:
 	\begin{itemize}
-		\item lateral and longitudinal acceleration;
+		\item longitudinal acceleration;
 		\item lateral and longitudinal jerk;
-		\item quickness of maneuver;
+		\item quickness of the maneuver;
 		\item headway distance;
 	\end{itemize}
 \end{quote}
 
-Quickness of completing a lane change or an acceleration maneuver could respectively be modelled as: $q_L = \frac{\frac{\int velocity\cdot dt}{Time}}{\Delta distance}$ and $q_A = \frac{\frac{\int acceleration\cdot dt}{Time}}{\Delta velocity}$.\\
+Quickness of the maneuver indicates that it is received as comfortable when the vehicle gives a good response and reaches the desired lateral displacement faster.
+Additionally comfortable driving as assessed in \cite{Bellem}, can be summarized as  sufficiently smooth trajectories and keeping enough headway distance in order to have a feeling of control and safety. These results suggest that when an algorithm is evaluating comfort, a notion of the surrounding traffic should be present. It was found when the traffic density on the road is higher, the driver is more tolerant towards less smooth driving behaviour e.g. to be able to insert in a busy lane. In this case higher comfort can be attained if the driver has the feeling of a fast response of the vehicle, translating in early peaks of acceleration. Vertical vibrations come not in the scope when roads are assumed sufficiently smooth.\\
 
-Comfortable driving as being assessed in \cite{Bellem} can be summarized as driving with small accelerations and jerk to obtain sufficient smooth trajectories and keeping sufficient headway distance in order to have a feeling of control and safety. These results suggest that when an algorithm to assess comfort is suggested for autonomous vehicles, a notion of the surrounding traffic should be inherently present. It was found that in order of the traffic density the driver is more tolerant towards less smooth driving behaviour e.g. to be able to insert in a busy lane. In this case higher comfort can be attained if the driver has a feeling of a fast responds of the vehicle translating in early peaks of acceleration. Vertical vibrations come not into scope when roads are assumed sufficiently smooth.\\
+In a second study the main metrics that were found from study one are varied and combinations are rated by the use of a survey about the amount of comfort retrieved. "Out of this it followed that accelerations are again playing a key factor." \cite{Bellem} For lane changes it could be concluded that maneuvers with a small lateral acceleration and early perceivable onset were more comfortable.\\
 
-In a second study the main metrics that were found from study one are varied and combinations are rated by the use of a survey about the amount of comfort. "Out of this it followed that accelerations are playing a key factor." \cite{Bellem} For lane changes it could be concluded that the maneuvers with a small lateral acceleration and early perceivable onset were more comfortable. It is further also hypothesised that the location of the acceleration peaks and the amount of symmetry of the acceleration signal also plays a role when the amount of comfort is rated.\\
-
-The relation between jerks and comfort is also confirmed by \cite{Gianna1996} where it is stated that: "Jerk has been shown to elicit a stronger influence on comfort than acceleration".
+That also jerk plays an important role in the attained amount of comfort, is confirmed by \cite{Gianna1996} where it is stated that: "Jerk has been shown to elicit a stronger influence on comfort than acceleration".
 
 
 % In mijn maneuver wordt de kleine waardes van longitudinale snelheid en versnellingen gecompenseerd door de normalisatie waarden. Dus ookal zijn ze klein, krijgen toch een grote impact mee in het berekenen van een optimale oplossing. Daarin tegen kan er wel makkelijker voldaan worden aan het perfect voldoen van de longitudinale parameters in de lane change zonder het algemene resultaat veel te veranderen. De keuzen van de wegingsfactoren worden hierdoor minder significant en sensitiviteit wordt lager. --> als verschillende maneuvers worden gecombineerd zal dit de uniekheid van de gevonden wegingsfactoren opdrijven.
 
-
-\subsection{Conclusion}
 %Zie quotes van de slides!
-In order to find parameters of driving comfort that will further on in the thesis will be used as comfort criteria, a literature study is conducted which is mainly questionnaire based. The results are that in order to be able to assess comfort higher order kinematic variables as accelerations and jerks should be taken into account. These are important variables in order to obtain a smooth vehicle path and to give a continuous and natural feeling when driving. Also should the quickness of the maneuver and the feeling of safety of the driver be taken into account. As quoted by \cite{Turner1999} states that low frequency lateral acceleration are the mean responsible for carsickness. In addition comfort assessment is influenced by the environment because in busier traffic there is a higher tolerance for less smooth trajectories. It was also found that the effect of a fast reaction of vehicle at the start of a maneuver is influencing the amount of comfort perceived in a positive way.
-
 
 \section{Inverse reinforcement learning}
-Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will lead besides also to sub-optimal solutions in comparison when the parameters are learned.  That is why it is chosen in this thesis to derive these parameters by demonstration of a human driver.\\
+Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will besides lead  to sub-optimal solutions in comparison with from data learned parameters.\\
 
-The goal of the learning algorithm explained in this thesis is to derive the parameters of different linearly combined comfort criteria combined in the costfuntion $J$ that when optimized as best as possible explain the observed data. As the match with the observed  data gets better, the model as suggested by equation \ref{eq:1} is getting closer to the inner comfort model of the individual driver. However it should be noted that the driver is taken unknowingly a lot of comfort criteria into account and they are not always linearly relating. Therefore the suggested comfort cost function consisting of a linear combination of comfort criteria will always be an approximation of the reality. Yet as discussed in \cite{Kuderer2015a} the results suggest that the magnitudes of the quantities that contribute to the comfort of the user are obtained.\\
+The goal of the learning algorithm explained in this thesis is to derive the parameters $\theta_j$ of different linearly combined comfort criteria combined in the cost function $J$. When the parameters are learned, the objective function $J$ will as best as possible explain the observed data. As the match with the observed data gets better during learning, it is assumed that $J$ is getting closer to the inner comfort function of the individual driver. However, it should be noted that the driver takes unknowingly a lot of comfort criteria into account and they are not all linearly relating as is suggested by \ref{eq:1}. Therefore the comfort cost function in \ref{eq:1}, will always be an approximation of reality. Although as discussed in \cite{Kuderer2015a}, it is possible to capture the magnitude of the quantities that contribute to the comfort of the users.\\
 
 \begin{equation}\label{eq:1}
 	J = \sum_{j=1}^{N}\theta_j\cdot f_j	
@@ -65,11 +59,10 @@ The goal of the learning algorithm explained in this thesis is to derive the par
 
 %"Inverse optimal control, also known as inverse reinforcement learning, is the problem of recovering an unknown reward function in a Markov decision process from expert demonstrations of the optimal policy." \cite{Levine2012} In contrary what this classic definition, the approach followed by \cite{Kuderer2015a} is not modelling teh
 
+In order to create a generative model that creates vehicle paths $\bm{r}_i$ with equivalent kinematic characteristics as the path that was observed $\tilde{\bm{r}_i}$, a feature-based inverse reinforcement learning is applied. \cite{Kuderer2015a,Abbeel2004} With $i \in [1 ... m]$ and $m$ the amount of observed trajectories. A feature is encoding relevant kinematic properties onto a scalar value and the difference between the demonstrated and calculated features give a clear indication about the similarity of the kinematic signals i.e. velocity, acceleration and jerk. \\
 
-In order to create a generative model that create vehicle paths $r_i$ with equivalent kinematic characteristics as the path that was observed $\tilde{r_i}$, a feature-based inverse reinforcement learning is applied. \cite{Kuderer2015a,Abbeel2004} With $i \in [1 ... m]$ and $m$ the amount of observed trajectories. A feature is encoding relevant kinematic properties and the difference between the demonstrated and calculated features gives a clear indication about the similarity of the kinematic vehicle signals. \\
-
-\subsection{Background on learning algorithm}
-A feature values maps a trajectory onto a scalar and the higher the scalar value the more discomfort is experienced. An example of a that measures the amount of accelerations in a maneuver is given by equation \ref{eq:3}.
+\subsection{Background on feature-based learning}
+A feature value maps a trajectory onto a scalar and encapsulates a comfort criteria. The higher the scalar value the more discomfort is experienced by the driver. An example of a that measures the amount of accelerations in a maneuver is given by equation \ref{eq:3}.
 
 \begin{equation}\label{eq:3}
 f:\bm{r}\xrightarrow{}f(\bm{r})=\int_{0}^{T}\ddot{x}(t)^{2}+\ddot{y}(t)^{2} dt
@@ -184,6 +177,8 @@ The optimization tool used is the CasADi software. This section discusses the ma
 
 
 \section{Conclusion}
+In order to find parameters of driving comfort that will be used as comfort criteria, a literature study was conducted which was mainly questionnaire based. The results were that in order to be able to evaluate comfort, higher order kinematic variables like accelerations and jerks must be considered. These variables are important to acquire  a smooth vehicle path and to give a continuous and natural feeling when driving. Also should the quickness of the maneuver and the feeling of safety be taken into account. As quote by \cite{Turner1999}, low frequency lateral acceleration is the mean responsible for carsickness which can be used as representative for comfort. In addition comfort is naturally be influenced by the environment of the vehicle. It was found that when more traffic is present, a higher tolerance for less smooth trajectories is granted. Finally it was found that the effect of a fast reaction of vehicle at the start of a maneuver is influencing the amount of comfort perceived in a positive way.\\
+
 A background from literature on the inverse reinforcement learning algorithm used in this thesis was given. First inverse reinforcement learning was explained and how it could help to solve the research question how to learn comfort from observations. Afterwards a more detailed background on the formulation of the specific learning algorithm was given, which was complemented with a discussion on the algorithm used to update the weights being part of the gradient descent method to match expected feature values with observed ones.
 \newpage
 

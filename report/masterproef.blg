@@ -5,13 +5,14 @@ A level-1 auxiliary file: chap-2.aux
 A level-1 auxiliary file: chap-3.aux
 A level-1 auxiliary file: chap-4.aux
 A level-1 auxiliary file: chap-5.aux
-A level-1 auxiliary file: chap-6.aux
 A level-1 auxiliary file: conclusion.aux
 A level-1 auxiliary file: app-A.aux
-A level-1 auxiliary file: app-n.aux
+A level-1 auxiliary file: app-B.aux
+A level-1 auxiliary file: app-C.aux
+A level-1 auxiliary file: app-D.aux
+A level-1 auxiliary file: app-E.aux
 The style file: abbrv.bst
 Database file #1: Thesis_ref.bib
-Warning--I didn't find a database entry for "h2g2"
 Name 1 in "{Brian D. Ziebart, Andrew Maas, J.Andrew Bagnell}, and Anind K. Dey" has a comma at the end for entry Ziebart2008
 while executing---line 1049 of file abbrv.bst
 Warning--empty school in Bellem

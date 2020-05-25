@@ -1,9 +1,10 @@
 \chapter{Background in optimal control problems\\}
 \label{cha:OCP}
 
-This chapter gives some background information of the theory behind optimal control (OCP). After a global introduction and the discussion about the time discretization and shooting option, the chapter is giving an introduction into model predictive control (MPC).\\
+This chapter gives some background information of the theory behind optimal control (OCP). After a global introduction and the discussion about the time discretization and shooting option, the chapter is giving an introduction into model predictive control (MPC).
 
-\subsection{Optimal control problem (OCP)}
+\section{Optimal control problem (OCP)}
+\label{Optimal control problem (OCP)}
 "An optimal control problem determines the desired inputs and corresponding state trajectories to change the system from an initial state to a desired final state in an optimal way while satisfying some input and state constraints." \cite{Mercy2018}.
 
 \begin{equation}
@@ -35,7 +36,7 @@ The optimal control problem \ref{eq:OCP} is continuous in time. This means that 
 
 "Since direct methods are best suited to solve practically relevant OCPs" \cite{Mercy2018}, this thesis is following the direct method. To implement the discretization of time when using the Direct method, a time shooting approach is used.
 
-\subsubsection{Time shooting}
+\subsection{Time shooting}
 A shooting approach makes use of a time grid. Time will be sampled and on every time instant the optimal control problem is assessed. On these discrete points constraints will not violated but there are no limits on the amount of violation between the different time samples. In order to reduce the amount of constraint violation the sampling rate should be taken high enough, while bearing in mind the extra optimization variables introduced and therefore calculation load. An other approach to take constraint violation between different sample points into account, is using spline based optimization formulations. \cite{Mercy2018}\\
 
 Two different shooting approaches exist:\\
@@ -89,7 +90,7 @@ In this thesis a multiple shooting approach is used together with the use of a R
 
 The difference between the two shooting approaches is that 'Multiple shooting'(MS) will lead to a larger Hessian of the objective and a larger Jacobian of the constraints. The reason for this is the introduction of more optimization variables. The advantage of MS is then again that these matrices are more sparse because a certain state is only dependent on the previous one and a control input which means they can be used in calculations more efficiently. In single shooting every state depends on the begin state and different controls which gives smaller, more populated matrices which are more calculation expensive. \cite{Gillis2019}
 
-\subsection{Model predictive control}
+\section{Model predictive control}
 \label{s:MPC_e}
 In slow changing environments as for example a chemical plant, MPC is already a mature approach. More recently this technology also made its introduction in controlling systems with higher dynamics e.g. vehicle control due to an increase of computational power and the use of more efficiently algorithms. \cite{Mercy2018}. In the next section a short introduction of the formulation is made. \\
 

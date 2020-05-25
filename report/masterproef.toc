@@ -19,10 +19,10 @@
 \contentsline {subsection}{\numberline {1.0.2}Link with previous studies and problem formulation}{2}{subsection.1.0.2}%
 \contentsline {subsection}{\numberline {1.0.3}Thesis objective}{2}{subsection.1.0.3}%
 \contentsline {chapter}{\chapternumberline {2}Background in optimal control problems\\}{5}{chapter.2}%
-\contentsline {subsection}{\numberline {2.0.1}Optimal control problem (OCP)}{5}{subsection.2.0.1}%
-\contentsline {subsection}{\numberline {2.0.2}Time discretization}{6}{subsection.2.0.2}%
-\contentsline {subsubsection}{Time shooting}{6}{section*.16}%
-\contentsline {subsection}{\numberline {2.0.3}Model predictive control}{8}{subsection.2.0.3}%
+\contentsline {section}{\numberline {2.1}Optimal control problem (OCP)}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Time discretization}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Time shooting}{6}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Model predictive control}{8}{section.2.2}%
 \contentsline {chapter}{\chapternumberline {3}State of the art modelling of comfort}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}What are the parameters that define comfort during driving?}{11}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Conclusion}{13}{subsection.3.1.1}%
@@ -30,23 +30,23 @@
 \contentsline {subsection}{\numberline {3.2.1}Background on learning algorithm}{14}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}RPROP algorithm}{15}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Optimization principles}{16}{subsection.3.2.3}%
-\contentsline {subsubsection}{Conclusion}{16}{section*.21}%
+\contentsline {subsubsection}{Conclusion}{16}{section*.20}%
 \contentsline {chapter}{\chapternumberline {4}Learning from ideal data\\}{19}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Non-linear bicycle model}{20}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Formulation of the algorithm}{22}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Flow of the algorithm}{22}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Objective function}{26}{subsection.4.2.2}%
-\contentsline {subsubsection}{Normalization factors}{29}{section*.25}%
+\contentsline {subsubsection}{Normalization factors}{29}{section*.24}%
 \contentsline {section}{\numberline {4.3}Ideal data}{29}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Generation}{29}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Validation}{30}{subsection.4.3.2}%
-\contentsline {subsubsection}{Numerical vs Analytical formulation}{30}{section*.27}%
-\contentsline {subsubsection}{Initial guess}{31}{section*.29}%
-\contentsline {subsubsection}{Time limit}{31}{section*.31}%
-\contentsline {subsubsection}{Amount of optimization points}{32}{section*.33}%
-\contentsline {subsubsection}{Linear tire model}{33}{section*.35}%
-\contentsline {subsubsection}{Feature values}{33}{section*.38}%
-\contentsline {subsubsection}{Conclusion}{34}{section*.39}%
+\contentsline {subsubsection}{Numerical vs Analytical formulation}{30}{section*.26}%
+\contentsline {subsubsection}{Initial guess}{31}{section*.28}%
+\contentsline {subsubsection}{Time limit}{31}{section*.30}%
+\contentsline {subsubsection}{Amount of optimization points}{32}{section*.32}%
+\contentsline {subsubsection}{Linear tire model}{33}{section*.34}%
+\contentsline {subsubsection}{Feature values}{33}{section*.37}%
+\contentsline {subsubsection}{Conclusion}{34}{section*.38}%
 \contentsline {section}{\numberline {4.4}Ideal lane change data learning results}{34}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{35}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Averaging method}{35}{subsection.4.4.2}%
@@ -68,4 +68,4 @@
 \contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 datasets}{71}{appendix.C}%
 \contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{81}{appendix.D}%
 \contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{87}{appendix.E}%
-\contentsline {chapter}{Bibliography}{97}{appendix*.128}%
+\contentsline {chapter}{Bibliography}{97}{appendix*.127}%

@@ -66,7 +66,7 @@ The goal of the learning algorithm explained in this thesis is to derive the par
 %"Inverse optimal control, also known as inverse reinforcement learning, is the problem of recovering an unknown reward function in a Markov decision process from expert demonstrations of the optimal policy." \cite{Levine2012} In contrary what this classic definition, the approach followed by \cite{Kuderer2015a} is not modelling teh
 
 
-In order to create a generative model that create vehicle paths $r_i$ with equivalent kinematic characteristics as the path that was observed $\tilde{r_i}$, a feature-based inverse reinforcement learning is applied. \cite{Kuderer2015a,Abbeel2004} With $i \in [1 ... m]$ and $m$ the amount of observed trajectories. A feature is encoding relevant kinematic properties and the difference between the demonstrated and calculated features says something about the similarity of the kinematic vehicle signals. \\
+In order to create a generative model that create vehicle paths $r_i$ with equivalent kinematic characteristics as the path that was observed $\tilde{r_i}$, a feature-based inverse reinforcement learning is applied. \cite{Kuderer2015a,Abbeel2004} With $i \in [1 ... m]$ and $m$ the amount of observed trajectories. A feature is encoding relevant kinematic properties and the difference between the demonstrated and calculated features gives a clear indication about the similarity of the kinematic vehicle signals. \\
 
 \subsection{Background on learning algorithm}
 A feature values maps a trajectory onto a scalar and the higher the scalar value the more discomfort is experienced. An example of a that measures the amount of accelerations in a maneuver is given by equation \ref{eq:3}.

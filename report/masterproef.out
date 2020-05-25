@@ -5,26 +5,28 @@
 \BOOKMARK [0][-]{chapter*.10}{List of Abbreviations and Symbols}{}% 5
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 6
 \BOOKMARK [0][-]{chapter.2}{Background in optimal control problems}{}% 7
-\BOOKMARK [0][-]{chapter.3}{State of the art modelling of comfort}{}% 8
-\BOOKMARK [1][-]{section.3.1}{What are the parameters that define comfort during driving?}{chapter.3}% 9
-\BOOKMARK [1][-]{section.3.2}{Inverse reinforcement learning}{chapter.3}% 10
-\BOOKMARK [0][-]{chapter.4}{Learning from ideal data}{}% 11
-\BOOKMARK [1][-]{section.4.1}{Non-linear bicycle model}{chapter.4}% 12
-\BOOKMARK [1][-]{section.4.2}{Formulation of the algorithm}{chapter.4}% 13
-\BOOKMARK [1][-]{section.4.3}{Ideal data}{chapter.4}% 14
-\BOOKMARK [1][-]{section.4.4}{Ideal lane change data learning results}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.5}{Conclusion}{chapter.4}% 16
-\BOOKMARK [0][-]{chapter.5}{Learning from complex vehicle model}{}% 17
-\BOOKMARK [1][-]{section.5.1}{Tracking MPC}{chapter.5}% 18
-\BOOKMARK [1][-]{section.5.2}{Learning results with the Amesim model}{chapter.5}% 19
-\BOOKMARK [1][-]{section.5.3}{Conclusion}{chapter.5}% 20
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 21
-\BOOKMARK [0][-]{appendix.A}{Jerk equations of the non-linear bicycle model}{}% 22
-\BOOKMARK [1][-]{section.A.1}{Equations}{appendix.A}% 23
-\BOOKMARK [0][-]{appendix.B}{Results of the ideal data validation}{}% 24
-\BOOKMARK [1][-]{section.B.1}{Time limit}{appendix.B}% 25
-\BOOKMARK [1][-]{section.B.2}{Amount of optimization points}{appendix.B}% 26
-\BOOKMARK [0][-]{appendix.C}{Results of the averaging learning on 3 datasets}{}% 27
-\BOOKMARK [0][-]{appendix.D}{Accuracy results of the tracking MPC}{}% 28
-\BOOKMARK [0][-]{appendix.E}{Results of learning with the 15 dof Amesim model}{}% 29
-\BOOKMARK [0][-]{appendix*.128}{Bibliography}{}% 30
+\BOOKMARK [1][-]{section.2.1}{Optimal control problem \(OCP\)}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Model predictive control}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{State of the art modelling of comfort}{}% 10
+\BOOKMARK [1][-]{section.3.1}{What are the parameters that define comfort during driving?}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{Inverse reinforcement learning}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Learning from ideal data}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Non-linear bicycle model}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{Formulation of the algorithm}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{Ideal data}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.4}{Ideal lane change data learning results}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.5}{Conclusion}{chapter.4}% 18
+\BOOKMARK [0][-]{chapter.5}{Learning from complex vehicle model}{}% 19
+\BOOKMARK [1][-]{section.5.1}{Tracking MPC}{chapter.5}% 20
+\BOOKMARK [1][-]{section.5.2}{Learning results with the Amesim model}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.3}{Conclusion}{chapter.5}% 22
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 23
+\BOOKMARK [0][-]{appendix.A}{Jerk equations of the non-linear bicycle model}{}% 24
+\BOOKMARK [1][-]{section.A.1}{Equations}{appendix.A}% 25
+\BOOKMARK [0][-]{appendix.B}{Results of the ideal data validation}{}% 26
+\BOOKMARK [1][-]{section.B.1}{Time limit}{appendix.B}% 27
+\BOOKMARK [1][-]{section.B.2}{Amount of optimization points}{appendix.B}% 28
+\BOOKMARK [0][-]{appendix.C}{Results of the averaging learning on 3 datasets}{}% 29
+\BOOKMARK [0][-]{appendix.D}{Accuracy results of the tracking MPC}{}% 30
+\BOOKMARK [0][-]{appendix.E}{Results of learning with the 15 dof Amesim model}{}% 31
+\BOOKMARK [0][-]{appendix*.127}{Bibliography}{}% 32

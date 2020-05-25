@@ -99,19 +99,19 @@
   \renewcommand{\arraystretch}{1.1}
   \begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
   		& Vectors are printed in bold. \\
-    $N$    &  The number of control actions performed during the optimization \ref{opt:basic_opti_w}. \\
+    $N$    &  The number of control actions performed during optimization \ref{opt:basic_opti_w}. \\
     $N_{MPC}$ & amount of control points in the control horizon of \ref{opt:tracking}.\\
     $V_{start}$ & Longitudinal speed at the start of the lane change.\\
-    $V_{des}$ & Desired longitudinal speed during a lane change. Taken as $V_{start}$ during this thesis.\\
+    $V_{des}$ & Desired longitudinal speed during a lane change. Taken equal to $V_{start}$ during this thesis.\\
    $y_{des}$   & Desired lateral distance travelled at the end of the lane change.\\
-    $\bm{\theta}$ & Weights that have to be learned in the objective function \ref{eq:obj}.\\
-    $\bm{f}_{obs}$ & Feature vector calculated from the observed data according to \ref{s:obj}.\\
-    $\bm{f}_{learned}$ & Feature vector as calculated according to \ref{s:obj} from the lane change following out solving \ref{opt:basic_opti_w}.\\
+    $\bm{\theta}$ & Weights that are learned in the objective function \ref{eq:obj}.\\
+    $\bm{f}_{obs}$ & Feature vector calculated from observed lane changes according to \ref{s:obj}.\\
+    $\bm{f}_{learned}$ & Feature vector as calculated according to \ref{s:obj} from the lane change following out of solving \ref{opt:basic_opti_w}.\\
     $\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
     $\bm{r}$ & The 2D path followed during the lane change maneuver.\\
-    $t_r$ & The amount of throttle given.\\
-    $\delta$ & The angle of the front wheel of the bicycle model.\\
-    $\delta_{s} $ & The steerwheelangle, related to $\delta$ by $G_s$ according to $\delta = \frac{\delta_s}{G_s}$.
+    $t_r$ & Amount of throttle given.\\
+    $\delta$ & Angle of the front wheel of the bicycle model.\\
+    $\delta_{s} $ & The steerwheelangle, related to $\delta$ by $G_s$ according to $\delta_s = Gs \cdot\delta$.
   \end{tabularx}
 \end{flushleft}
 
@@ -123,7 +123,7 @@
 \include{chap-2}
 \include{chap-3}
 \include{chap-4}
-%\include{chap-5}
+\include{chap-5}
 %\include{chap-6}
 \include{conclusion}
 

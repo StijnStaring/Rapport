@@ -19,51 +19,52 @@
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Example lane change as used as input in the inverse optimal control algorithm.\relax }}{3}{figure.caption.14}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of different discretization methods.\relax }}{6}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting; right: single shooting).\relax }}{8}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Schematic view of the time shooting approaches (left: multiple shooting, right: single shooting).\relax }}{8}{figure.caption.16}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Visualization of the optimal control problem solved in one iteration of the MPC (Source: \cite {Patrinos2019}).\relax }}{9}{figure.caption.17}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Visualization of the application of the first step of the calculated control signal during one iteration of the MPC (Source:\cite {Patrinos2019}).\relax }}{9}{figure.caption.18}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of comfort parameters in autonomous vehicle with old parameters (blue) and new ones (red).(Source: \cite {Elbanhawi2015})\relax }}{12}{figure.caption.19}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear vehicle bicycle model (Source: \cite {TongDuySon2019}).\relax }}{19}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Basic flow of the reinforced learning algorithm.\relax }}{23}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A comparison between the numerical jerk (left) based on \ref {eq:diff} and \ref {eq:bicycle_model1} and the analytical jerk (right) based on appendix \ref {app:A} and \ref {eq:bicycle_model2}. \relax }}{31}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{33}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Slipangle during lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.(bleu:front,red:rear)\relax }}{34}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Observed, initial and learned paths for 3 different observed lane changes generated with common underlying weights.\relax }}{37}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces The evolvement of the average $\bm {f}_{rel}$ over the learning iterations.\relax }}{37}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces The different outputted weights over the learning iterations.\relax }}{38}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{39}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces The evolvement of $\bm {f}_{rel}$ of dataset $V_0:22.22\hspace {1mm}\frac {m}{s},\hspace {1mm} L:3.47\hspace {1mm}m$ over the learning iterations.\relax }}{40}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features.(3 datasets: blue, 7 datasets: orange)\relax }}{41}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)\relax }}{41}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear vehicle bicycle model (Source: \cite {TongDuySon2019}).\relax }}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Basic flow of the reinforced learning algorithm.\relax }}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A comparison between the numerical jerk (left) based on \ref {eq:diff} and \ref {eq:bicycle_model1} and the analytical jerk (right) based on appendix \ref {app:A} and \ref {eq:bicycle_model2}. \relax }}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{33}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Slipangle during lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.(bleu:front,red:rear)\relax }}{34}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Observed, initial and learned paths for 3 different observed lane changes generated with common underlying weights.\relax }}{37}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces The evolvement of the average $\bm {f}_{rel}$ over the learning iterations.\relax }}{37}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The different outputted weights over the learning iterations.\relax }}{38}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{39}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces The evolvement of $\bm {f}_{rel}$ of dataset $V_0:22.22\hspace {1mm}\frac {m}{s},\hspace {1mm} L:3.47\hspace {1mm}m$ over the learning iterations.\relax }}{40}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features.(3 datasets: blue, 7 datasets: orange)\relax }}{41}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)\relax }}{41}{figure.caption.46}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steerwheelangle.\relax }}{43}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The flow of learning with the Amesim model.\relax }}{44}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces This figure shows hows the tracking MPC is connected with the Amesim model using different sampling times. (red: $T_s: 0.01\hspace {1mm}s$ and green: $T_{MPC}:0.1\hspace {1mm}s$)\relax }}{47}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces This figure shows the tracking result of the reference (red) by the Amesim model (blue).\relax }}{48}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces This figure shows the obtained oscillating signals for the jerk when a piecewise signal of $\delta _s$ and $t_r$ is applied.\relax }}{50}{figure.caption.54}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces This Figure shows the observed paths, the initial solution retrieved with as weights an all one vector and the learned solution.\relax }}{52}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces This Figure shows the error made between the observed and learned paths.\relax }}{52}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces This Figure shows $\bm {f}_{rel}$ during the learning iterations.\relax }}{53}{figure.caption.61}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces This Figure shows the observed jerk signals, the initial solution retrieved with as weights an all one vector and the learned solution.\relax }}{54}{figure.caption.62}%
-\addvspace {10pt}
-\addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steerwheelangle.\relax }}{43}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The flow of learning with the Amesim model.\relax }}{44}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces This figure shows hows the tracking MPC is connected with the Amesim model using different sampling times. (red: $T_s: 0.01\hspace {1mm}s$ and green: $T_{MPC}:0.1\hspace {1mm}s$)\relax }}{47}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces This figure shows the tracking result of the reference (red) by the Amesim model (blue).\relax }}{48}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces This figure shows the obtained oscillating signals for the jerk when a piecewise signal of $\delta _s$ and $t_r$ is applied.\relax }}{50}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces This Figure shows the observed paths, the initial solution retrieved with as weights an all one vector and the learned solution.\relax }}{52}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces This Figure shows the error made between the observed and learned paths.\relax }}{52}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces This Figure shows $\bm {f}_{rel}$ during the learning iterations.\relax }}{53}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces This Figure shows the observed jerk signals, the initial solution retrieved with as weights an all one vector and the learned solution.\relax }}{54}{figure.caption.61}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {C.1}{\ignorespaces This figure shows the amount of throttle and the angle of the front wheel of the bicycle model during the lane change maneuvers.\relax }}{74}{figure.caption.91}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces This figure shows the amount of first derivative of throttle and the first derivative of the angle of the front wheel of the bicycle model is given as input during the lane change maneuvers.\relax }}{76}{figure.caption.95}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces The convergence of $\bm {f}_{rel}$ towards one during the learning iterations.\relax }}{77}{figure.caption.96}%
-\contentsline {figure}{\numberline {C.4}{\ignorespaces The gradient $\pdv {\bm {F}}{\bm {\theta }}$ estimated by $\bm {F}_{obs} - \bm {F}(\bm {r}_{expected})$ towards zero during the different learning iterations. \relax }}{77}{figure.caption.97}%
-\contentsline {figure}{\numberline {C.5}{\ignorespaces The learned weights during the different learning iterations.\relax }}{78}{figure.caption.98}%
-\contentsline {figure}{\numberline {C.6}{\ignorespaces The difference of $\bm {\theta }$ with respect to one used in the previous iteration. \relax }}{78}{figure.caption.99}%
-\contentsline {figure}{\numberline {C.7}{\ignorespaces This figure shows which case of the three available in the RPROP algorithm is chosen during the learning iterations.\relax }}{79}{figure.caption.100}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {E.1}{\ignorespaces This figure shows the amount of throttle and the angle of the front wheel of the bicycle model during the lane change maneuvers.\relax }}{92}{figure.caption.120}%
-\contentsline {figure}{\numberline {E.2}{\ignorespaces This figure shows the amount of first derivative of throttle and the first derivative of the angle of the front wheel of the bicycle model is given as input during the lane change maneuvers.\relax }}{93}{figure.caption.121}%
-\contentsline {figure}{\numberline {E.3}{\ignorespaces The convergence of $\bm {f}_{rel}$ towards one during the learning iterations.\relax }}{93}{figure.caption.122}%
-\contentsline {figure}{\numberline {E.4}{\ignorespaces The gradient $\pdv {\bm {F}}{\bm {\theta }}$ estimated by $\bm {F}_{obs} - \bm {F}(\bm {r}_{expected})$ towards zero during the different learning iterations. \relax }}{94}{figure.caption.123}%
-\contentsline {figure}{\numberline {E.5}{\ignorespaces The learned weights during the different learning iterations.\relax }}{94}{figure.caption.124}%
-\contentsline {figure}{\numberline {E.6}{\ignorespaces The difference of $\bm {\theta }$ with respect to one used in the previous iteration. \relax }}{95}{figure.caption.125}%
-\contentsline {figure}{\numberline {E.7}{\ignorespaces This figure shows which case of the three available in the RPROP algorithm is chosen during the learning iterations.\relax }}{95}{figure.caption.126}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces This figure shows the amount of throttle and the angle of the front wheel of the bicycle model during the lane change maneuvers.\relax }}{76}{figure.caption.92}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces This figure shows the amount of first derivative of throttle and the first derivative of the angle of the front wheel of the bicycle model is given as input during the lane change maneuvers.\relax }}{78}{figure.caption.96}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces The convergence of $\bm {f}_{rel}$ towards one during the learning iterations.\relax }}{79}{figure.caption.97}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces The gradient $\pdv {\bm {F}}{\bm {\theta }}$ estimated by $\bm {F}_{obs} - \bm {F}(\bm {r}_{expected})$ towards zero during the different learning iterations. \relax }}{79}{figure.caption.98}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces The learned weights during the different learning iterations.\relax }}{80}{figure.caption.99}%
+\contentsline {figure}{\numberline {C.6}{\ignorespaces The difference of $\bm {\theta }$ with respect to one used in the previous iteration. \relax }}{80}{figure.caption.100}%
+\contentsline {figure}{\numberline {C.7}{\ignorespaces This figure shows which case of the three available in the RPROP algorithm is chosen during the learning iterations.\relax }}{81}{figure.caption.101}%
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces This figure shows the amount of throttle and the angle of the front wheel of the bicycle model during the lane change maneuvers.\relax }}{94}{figure.caption.121}%
+\contentsline {figure}{\numberline {E.2}{\ignorespaces This figure shows the amount of first derivative of throttle and the first derivative of the angle of the front wheel of the bicycle model is given as input during the lane change maneuvers.\relax }}{95}{figure.caption.122}%
+\contentsline {figure}{\numberline {E.3}{\ignorespaces The convergence of $\bm {f}_{rel}$ towards one during the learning iterations.\relax }}{95}{figure.caption.123}%
+\contentsline {figure}{\numberline {E.4}{\ignorespaces The gradient $\pdv {\bm {F}}{\bm {\theta }}$ estimated by $\bm {F}_{obs} - \bm {F}(\bm {r}_{expected})$ towards zero during the different learning iterations. \relax }}{96}{figure.caption.124}%
+\contentsline {figure}{\numberline {E.5}{\ignorespaces The learned weights during the different learning iterations.\relax }}{96}{figure.caption.125}%
+\contentsline {figure}{\numberline {E.6}{\ignorespaces The difference of $\bm {\theta }$ with respect to one used in the previous iteration. \relax }}{97}{figure.caption.126}%
+\contentsline {figure}{\numberline {E.7}{\ignorespaces This figure shows which case of the three available in the RPROP algorithm is chosen during the learning iterations.\relax }}{97}{figure.caption.127}%

@@ -27,9 +27,8 @@
 \contentsline {chapter}{\chapternumberline {3}State of the art modelling of comfort}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}What is comfort during driving?}{11}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Inverse reinforcement learning}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Background on learning algorithm}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.1}Feature based reinforcement learning}{13}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}RPROP algorithm}{15}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Optimization principles}{16}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Conclusion}{16}{section.3.3}%
 \contentsline {chapter}{\chapternumberline {4}Learning from ideal data}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Non-linear bicycle model}{18}{section.4.1}%

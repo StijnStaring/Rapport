@@ -102,18 +102,31 @@
   		& Vectors are printed in bold. \\
     $N$    &  The number of control actions performed during optimization \ref{opt:basic_opti_w}. \\
     $N_{MPC}$ & amount of control points in the control horizon of \ref{opt:tracking}.\\
+    $m$ & Amount of observed lane changes.\\
+    $Z$ & Amount of features.\\
+    $\bm{F(\bm{r})}$ & Feature vector $\in \mathbb{R}^{Z\times 1}$ with on its entries the different feature values for path $bm{r}$.\\
+    $\bm{\tilde{F}(\bm{r})}$ & Observed feature vector $\in \mathbb{R}^{Z\times 1}$ with on its entries the different feature values for path $bm{r}$.\\
     $V_{start}$ & Longitudinal speed at the start of the lane change.\\
     $V_{des}$ & Desired longitudinal speed during a lane change. Taken equal to $V_{start}$ during this thesis.\\
    $y_{des}$   & Desired lateral distance travelled at the end of the lane change.\\
     $\bm{\theta}$ & Weights that are learned in the objective function \ref{eq:obj}.\\
     $\bm{f}_{obs}$ & Feature vector calculated from observed lane changes according to \ref{s:obj}.\\
     $\bm{f}_{learned}$ & Feature vector as calculated according to \ref{s:obj} from the lane change following out of solving \ref{opt:basic_opti_w}.\\
-    $\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
-    $\bm{r}$ & The 2D path followed during the lane change maneuver.\\
-    $t_r$ & Amount of throttle given.\\
-    $\delta$ & Angle of the front wheel of the bicycle model.\\
-    $\delta_{s} $ & The steerwheelangle, related to $\delta$ by $G_s$ according to $\delta_s = Gs \cdot\delta$.
-  \end{tabularx}
+    $\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.
+
+    
+	\end{tabularx}
+\end{flushleft}
+
+\begin{flushleft}
+	\renewcommand{\arraystretch}{1.1}
+	\begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
+		$\bm{r}$ & The 2D path followed during the lane change maneuver.\\
+		$t_r$ & Amount of throttle given.\\
+		$\delta$ & Angle of the front wheel of the bicycle model.\\
+		$\delta_{s} $ & The steerwheelangle, related to $\delta$ by $G_s$ according to $\delta_s = Gs \cdot\delta$.  \\
+		$\Delta u$ & Update value used in the RPROP algorithm.
+	\end{tabularx}
 \end{flushleft}
 
 % Nu begint de eigenlijke tekst

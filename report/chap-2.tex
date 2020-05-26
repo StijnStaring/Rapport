@@ -54,7 +54,7 @@ Because every human has its own driving style it is a cumbersome task to tune th
 The goal of the learning algorithm explained in this thesis is to derive the parameters $\theta_j$ of different linearly combined comfort criteria $f_j$ combined in the cost function $J$. When the parameters are learned, the objective function $J$ will as best as possible explain the observed data. As the match with the observed data gets better during learning, it is assumed that $J$ is getting closer to the inner comfort function of the individual driver. However, it should be noted that the driver takes unknowingly a lot of comfort criteria into account and they are not all linearly relating as is suggested by \ref{eq:1}. Therefore the comfort cost function in \ref{eq:1}, will always be an approximation of reality. Although as discussed in \cite{Kuderer2015a}, it is possible to capture the magnitude of the quantities that contribute to the comfort of the users.\\
 
 \begin{equation}\label{eq:1}
-	J = \sum_{j=1}^{N}\theta_j\cdot f_j	
+	J = \sum_{j=1}^{Z}\theta_j\cdot f_j	
 \end{equation}
 
 %"Inverse optimal control, also known as inverse reinforcement learning, is the problem of recovering an unknown reward function in a Markov decision process from expert demonstrations of the optimal policy." \cite{Levine2012} In contrary what this classic definition, the approach followed by \cite{Kuderer2015a} is not modelling teh
@@ -65,31 +65,32 @@ In order to create a generative model that creates vehicle paths $\bm{r}_i$ with
 A feature value maps a trajectory onto a scalar and encapsulates a comfort criteria. The higher the scalar value the more discomfort is experienced by the driver. An example is given by \ref{eq:3} that measures the amount of accelerations in a maneuver.
 
 \begin{equation}\label{eq:3}
-f:\bm{r}\xrightarrow{}f(\bm{r})=\int_{0}^{T}\ddot{x}(t)^{2}+\ddot{y}(t)^{2} dt
+f_j:\bm{r}\xrightarrow{}f_j(\bm{r})=\int_{0}^{T}\ddot{x}(t)^{2}+\ddot{y}(t)^{2} dt
 \end{equation}
 
-The path that that the centre of gravity of the vehicle is following can be represented by: \ref{eq:4}.
+The path that the centre of gravity of the vehicle is following can be represented by: \ref{eq:4}.
 \begin{equation}\label{eq:4}
 \bm{r}:t \xrightarrow{}\bm{r}(t) =  \bigl( \begin{smallmatrix} x(t)\\ y(t) \end{smallmatrix}\bigr)
 \end{equation}
 
 The human driver is not a deterministic agent and is modelled by a stochastic distribution $p(\bm{r}|\bm{\theta})$. For certain weights $\bm{\theta} \in \mathbb{R}^Z$ a path $\bm{r}$ is produced as being a sample of a stochastic distribution. The distribution that is chosen for this is the distribution of maximum entropy (equation: \ref{eq:entropy}). \cite{Ziebart2008, Kretzschmar2014}. 
-The distribution with the highest entropy represents the given information best since it does not favour any particular outcome besides the observed constraints and so it is least biases. \cite{Abbeel2004,Kuderer2015a}
-	
+The distribution with the highest entropy represents the given information best since it does not favour any particular outcome besides the observed constraints. \cite{Abbeel2004}
 	
 \begin{equation}\label{eq:entropy}
 	p(\bm{r}|\bm{\theta}) = exp(-\bm{\theta}^T\cdot \bm{F}(\bm{r}))
 \end{equation}
-Equation \ref{eq:entropy} can be interpreted as a linear cost function $\bm{\theta}^T\bm{F}(\bm{r})$ where agents are exponentially more likely to select trajectories with lower cost. \cite{Kuderer2015a}
-The observed feature vector $\tilde{\bm{F}} \in \mathbb{R}^Z$ has on its entries the different feature values $\tilde{f_i}$ with $i \in [1...m]$. The averaged observed feature vector is $\tilde{\bm{F}}_{av} = \frac{1}{m}\sum_{j=1}^{m}\tilde{\bm{F}_j}$.\\
+Equation \ref{eq:entropy} can be interpreted as a cost function $\bm{\theta}^T\bm{F}(\bm{r})$ where agents are exponentially more likely to select trajectories with lower cost. \cite{Kuderer2015a}
+The observed feature vector $\tilde{\bm{F}} \in \mathbb{R}^Z$ has on its entries the different feature values $\tilde{f_j}$. 
 
-In order to explain the averaged observed feature vector, the weights $\bm{\theta}$ need to be found that match the expected features vector $\bm{F}(\bm{r}_{expected})$ with the averaged observed features vector $\bm{F}_{obs}$. $\bm{r}_{expected}$ is defined as $ E(p(\bm{r}|\bm{\theta}))$. To go towards a match with the observed feature vector, gradient descent method can be used with an estimation of the gradient $\bm{F}_{obs} - \bm{F}(r_{expected})$. \cite{Ziebart2008, Kretzschmar2014} Equation \ref{eq:5} summarizes the gradient descent method with $\alpha$ the step size taken in the direction of descent.
+%The averaged observed feature vector is $\tilde{\bm{F}}_{av} = \frac{1}{m}\sum_{j=1}^{m}\tilde{\bm{F}_j}$.\\
+
+In order to explain the observed feature vector, the weights $\bm{\theta}$ need to be found that match the expected features vector $\bm{F}(\bm{r}_{expected})$ with $\tilde{\bm{F}}$. $\bm{r}_{expected}$ is defined as $ E(p(\bm{r}|\bm{\theta}))$. To go towards a match with the observed feature vector, a gradient descent method can be used with an estimation of the gradient $\pdv{\bm{F}_{diff}}{\bm{\theta}}$ by $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ and with $\bm{F}_{diff}$ the difference between the feature vectors. \cite{Ziebart2008, Kretzschmar2014}. Only the sign of the gradient is used which will be explained in \ref{s:RPROP} and there are two directions for every weight update: increase or decrease. Therefore an intuitive explanation exist for using $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ as estimation for the gradient. The weight is increased when the expected feature are higher than the observed one, which means that the associated comfort feature will be punished more severely during the generation of $\bm{r}_{expected}$ in the next iterate. Consequently, the weight will be decreased when the observed feature is higher than the expected one. Equation \ref{eq:5} summarizes the gradient descent method with $\alpha$ the step size taken in the direction of descent.
 \begin{equation}\label{eq:5}
-	\bm{\theta}^{k+1} = \bm{\theta}^{k} - \alpha \pdv{\bm{F}}{\bm{\theta}}^k 
+	\bm{\theta}^{k+1} = \bm{\theta}^{k} - \alpha \pdv{\bm{F}_{diff}}{\bm{\theta}}^k 
 \end{equation}
 
 When $\bm{\theta}_{optimal}$ is found the gradient is minimized and the feature vectors will match as closely as possible. But the problem remains how to retrieve $\bm{F}(\bm{r}_{expected})$. In order to calculate $\bm{F}(\bm{r}_{expected})$ a Hamiltonian Markov chain
-Monte Carlo stochastic distribution sampling method was used in \cite{Kretzschmar2014}. In \cite{Kuderer2015a} a simplified and less calculation demanding approach is proposed, where it is assumed that the expected path is also the one that is been assessed as the most comfortable by the human driver. The path that is perceived as the most comfortable can be estimated by minimizing \ref{eq:1} for certain weights. Equation \ref{eq:6} summarizes the approximation proposed by \cite{Kuderer2015a}.
+Monte Carlo stochastic distribution sampling method was used in \cite{Kretzschmar2014}. In \cite{Kuderer2015a} a simplified and less calculation demanding approach is proposed, where it is assumed that the expected path is also the one that is been assessed as the most comfortable by the human driver. The path that is perceived as the most comfortable can be estimated by minimizing \ref{eq:1} for certain weights. Equation \ref{eq:6} summarizes the method proposed by \cite{Kuderer2015a}.
 \newcommand{\argmax}{argmax}
 \newcommand{\argmin}{argmin}
 \begin{subequations}
@@ -98,7 +99,7 @@ Monte Carlo stochastic distribution sampling method was used in \cite{Kretzschma
 	\bm{r}_{expected} = \underset{\bm{r}}{\argmax} \hspace{1mm} p(\bm{r}|\bm{\theta}) = \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})
 \end{equation}
 \begin{equation}\label{eq:new}
-	\pdv{\bm{F}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})
+	\pdv{\bm{F}_{diff}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})
 \end{equation}
 \end{subequations}
 
@@ -173,7 +174,7 @@ If the derivative retains its sign, the update-value is slightly increased in or
 \section{Conclusion}
 In order to find parameters of driving comfort that will be used as comfort criteria, a literature study was conducted which was mainly questionnaire based. The results were that in order to be able to evaluate comfort, higher order kinematic variables like accelerations and jerks must be considered. These variables are important to acquire a smooth vehicle path and to give a continuous and natural feeling when driving. Also should the quickness of the maneuver and the feeling of driving save be taken into account.  Therefore comfort is naturally be influenced by the environment of the vehicle. It was found that when more traffic is present, a higher tolerance for less smooth trajectories is granted. Finally it was found that the goal of the maneuver was more rapid completed this influenced the amount of comfort in a positive way.\\
 
-In the second part the concept of inverse reinforcement learning was clarified and it was explained that it is the process of identifying the unknown objective of the human driver. Next there has been looked into feature based learning and a practical method was found in order to retrieve $\bm{\theta_{optimal}}$ making use of gradient descent. Next the RPROP algorithm was introduced that will be used to update the weights being part of the gradient descent method in order to match expected feature values with the observed ones.
+In the second part the concept of inverse reinforcement learning was clarified and it was explained that it is the process of identifying the unknown objective of the human driver. Next there has been looked into feature based learning and a practical method was found in order to retrieve $\bm{\theta}_{opti}$ making use of gradient descent. Next the RPROP algorithm was introduced that will be used to update the weights being part of the gradient descent method in order to match expected feature values with the observed ones.
 
 \newpage
 

@@ -133,7 +133,15 @@ The goal of the learning algorithm is to learn the weights $\bm{\theta}$ in the 
 
 
 \subsection{Flow of the algorithm}
-The goal of the learning algorithm is to output weights that when applied in the objective $\bm{\theta}^T\bm{F}(\bm{r})$, generate feature vector  $\bm{F(\bm{r})}$ that are the best possible fit with the observed feature vector. Without a vehicle mismatch a match of feature values will directly induce a good match of the kinematic signals as is extensively discussed in section \ref{s:ID_results}. This means that similarity between the observed path and the one that follows from minimizing the objective $\bm{\theta}^T\bm{F}(\bm{r})$ for chosen weights, is quantified by the difference between the feature values of the observed path and the obtained one. The flow of a single data set learning algorithm can be seen in Figure \ref{fig:basic learning}. The path that is expected to be produced by the driver is the path that is felt the most comfortable and equals $\bm{r}_{expected} =  \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})$\\
+%The goal of the learning algorithm is to output weights that when applied in the objective $\bm{\theta}^T\bm{F}(\bm{r})$, generate feature vector  $\bm{F(\bm{r})}$ that are the best possible fit with the observed feature vector. Without a vehicle mismatch a match of feature values will directly induce a good match of the kinematic signals as is extensively discussed in section \ref{s:ID_results}. 
+
+%This means that similarity between the observed path and the one that follows from minimizing the objective $\bm{\theta}^T\bm{F}(\bm{r})$ for chosen weights, is quantified by the difference between the feature values of the observed path and the obtained one. 
+
+As has been discussed in chapter \ref{cha:Literature_study},  $\bm{\theta}_{opti}$ gives the best possible fit between $\bm{F(\bm{r}_{expected})}$ and $\bm{\tilde{F}(\bm{r})}$.
+Without a vehicle mismatch, a match of feature values will induce a good match of the kinematic signals as is discussed in section \ref{s:ID_results}.
+The flow of a single dataset learning algorithm can be seen in Figure \ref{fig:basic learning}. The path that is expected to be produced by the driver is the path that is felt as the most comfortable and equals $\bm{r}_{expected} =  \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})$.\\
+
+
 
 \begin{figure}[h!]
 	\centering

@@ -18,7 +18,7 @@ This chapter gives some background information on the theory behind optimal cont
 \end{equation}
 
 $\bm{q}$ is called the state vector and contains all the states of the system. $\bm{u}$ is the control vector containing the controls. In theory the amount of states of a system can be infinite, but in order to sufficiently model a system only a well chosen set of states is needed in order to sufficiently describe the system. Typical controls $\bm{u}$ for a vehicle are steerwheelangle and the amount of throttle which can be directly linked the amount of propulsion force. Also higher order controls are possible.\\
-The objective function $l$ of the optimization problem \ref{eq:OCP} is integrating over the desired control horizon $T$. In the objective function it is indicated what should be minimized and this is in function of the different states and controls. $E(\bm{q}(T))$ describes the terminal cost and the objective is reduced when the system comes closer to a predefined final state at the end of the control horizon.
+The objective function $l$ of the optimization problem Eq. (\ref{eq:OCP}) is integrating over the desired control horizon $T$. In the objective function it is indicated what should be minimized and this is in function of the different states and controls. $E(\bm{q}(T))$ describes the terminal cost and the objective is reduced when the system comes closer to a predefined final state at the end of the control horizon.
 The dynamics of the system are modelled by an explicit ordinary differential equation $\bm{\dot{q}}(t) = \bm{f}(\bm{q}(t), \bm{u}(t))$ and the evolution of the vehicle states are retrieved by integrating this ODE during the control horizon.
 $Q$ and $U$ represent the feasible sets from where the solutions of the optimization variables can be taken. It is worth noting that the control horizon time $T$ itself can be an optimization variable. What comes out of an OCP indicates what states will be visited by the system and which controls have to be applied in order to optimize the associated objective function with respect to predefined constraints. \cite{Panos_opti}\\ 
 
@@ -26,7 +26,7 @@ There is a difference between soft and hard constraints. A hard constraint direc
 
 \subsection{Time discretization}
 \label{s:time_dis}
-The optimal control problem \ref{eq:OCP} is continuous in time. This means that it has infinite dimensions, but to be able to run the optimization problem on digital systems there is need for discretization. Several ways to do this are availabe and summarized in Figure \ref{fig:discretization_m}.\cite{Gillis2019}
+The optimal control problem Eq. (\ref{eq:OCP}) is continuous in time. This means that it has infinite dimensions, but to be able to run the optimization problem on digital systems there is need for discretization. Several ways to do this are availabe and summarized in Figure Eq. (\ref{fig:discretization_m}).\cite{Gillis2019}
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{discretized.eps}
@@ -43,7 +43,7 @@ Two different shooting approaches exist:\\
 \begin{enumerate}
 	\item Multiple shooting (MS)\\
 	During multiple shooting every new time sample new states and controls are introduced and taken as optimization variables.
-	Control changes are only allowed on the different discrete time instances which leads to a piece wise control signal. The blue bars in Figure \ref{fig:TS} (left) indicate the control value $U_i$ that is applied to the system.  The red dots are system states that are defined as optimization variables and are not constant during a time interval $\Delta T$. In order to make the connection between states at time $t_i$ and $t_{i+1}$, time integration is used according to $\bm{q}(k+1) = \bm{F}(\bm{q}(k), \bm{u}(k))$. These connections are put as constraints in the optimization \ref{eq:OCP_dis} and are called in literature 'path closing constraints' \cite{Gillis2019}. \\ Equation \ref{eq:OCP_dis} presented the discretized version of \ref{eq:OCP} when using the multiple shooting approach. 
+	Control changes are only allowed on the different discrete time instances which leads to a piece wise control signal. The blue bars in Figure \ref{fig:TS} (left) indicate the control value $U_i$ that is applied to the system.  The red dots are system states that are defined as optimization variables and are not constant during a time interval $\Delta T$. In order to make the connection between states at time $t_i$ and $t_{i+1}$, time integration is used according to $\bm{q}(k+1) = \bm{F}(\bm{q}(k), \bm{u}(k))$. These connections are put as constraints in the optimization Eq. (\ref{eq:OCP_dis}) and are called in literature 'path closing constraints' \cite{Gillis2019}. \\ Equation \ref{eq:OCP_dis} presented the discretized version of Eq. (\ref{eq:OCP}) when using the multiple shooting approach. 
 
 	\begin{equation}
 	\label{eq:OCP_dis}
@@ -58,7 +58,7 @@ Two different shooting approaches exist:\\
 	\end{equation}
 	
 	\item Single shooting (SS)\\  
-	In the single shooting or sequential approach which is visualized in Figure \ref{fig:TS}(right), only the first state and the controls are taken as optimization variables. Other states during the time horizon are derived from the initial state and the applied control. This is achieved by substituting the states during the control horizon by the integration results from the initial state and the applied controls. The mathematical formulation of this is shown by \ref{eq:2}. In Figure \ref{fig:TS} (right) are the states that result from integration indicated in green. \cite{Gillis2019}
+	In the single shooting or sequential approach which is visualized in Figure \ref{fig:TS}(right), only the first state and the controls are taken as optimization variables. Other states during the time horizon are derived from the initial state and the applied control. This is achieved by substituting the states during the control horizon by the integration results from the initial state and the applied controls. The mathematical formulation of this is shown by Eq. (\ref{eq:2}). In Figure \ref{fig:TS} (right) are the states that result from integration indicated in green. \cite{Gillis2019}
 	
 	\begin{equation}\label{eq:2}
 	\begin{aligned}

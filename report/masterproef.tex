@@ -52,7 +52,7 @@
 %	Do not forget to change the 'elt' study to mechanical engineering.
 
 \begin{preface}
-	I would like to thank my family in the first place. During the history of my studies they always have been my biggest fans and I want to show my gratitude for the opportunities they have given me. I also want to thank my promoter Professor Swevers at the KU Leuven and Dr. Tong my mentor at Siemens for the professional discussions and tips they have given me in order to improve results. I also want to thank Flavia Acerbo, an employee at Siemens, who answered my questions on several occasions. Finally I also want to thank my aunt and sister for proofreading this thesis.
+	I would like to thank my family in the first place. During the history of my studies they always have been my biggest fans and I want to show my gratitude for the opportunities they have given me. I also want to thank my promoter Professor Swevers at the KU Leuven and Dr. Tong my mentor at Siemens for the professional discussions and tips they have given me in order to improve my results. I also want to thank Flavia Acerbo, an employee at Siemens, who answered my questions on several occasions. Finally I want to thank my aunt and sister for proofreading this thesis.
 
 \end{preface}
 
@@ -100,8 +100,8 @@
   \renewcommand{\arraystretch}{1.1}
   \begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
   		& Vectors are printed in bold. \\
-    $N$    &  The number of control actions performed during optimization \ref{opt:basic_opti_w}. \\
-    $N_{MPC}$ & amount of control points in the control horizon of \ref{opt:tracking}.\\
+    $N$    &  The number of control actions performed during optimization Eq. (\ref{opt:basic_opti_w}). \\
+    $N_{MPC}$ & amount of control points in the control horizon of Eq. (\ref{opt:tracking}).\\
     $m$ & Amount of observed lane changes.\\
     $Z$ & Amount of features.\\
     $\bm{F(\bm{r})}$ & Feature vector $\in \mathbb{R}^{Z\times 1}$ with on its entries the different feature values for path $bm{r}$.\\
@@ -110,9 +110,9 @@
     $V_{start}$ & Longitudinal speed at the start of the lane change.\\
     $V_{des}$ & Desired longitudinal speed during a lane change. Taken equal to $V_{start}$ during this thesis.\\
    $y_{des}$   & Desired lateral distance travelled at the end of the lane change.\\
-    $\bm{\theta}$ & Weights that are learned in the objective function \ref{eq:obj}.\\
-    $\bm{f}_{obs}$ & Feature vector calculated from observed lane changes according to \ref{s:obj}.\\
-    $\bm{f}_{learned}$ & Feature vector as calculated according to \ref{s:obj} from the lane change following out of solving \ref{opt:basic_opti_w}.\\
+    $\bm{\theta}$ & Weights that are learned in the objective function Eq. (\ref{eq:obj}).\\
+    $\bm{f}_{obs}$ & Feature vector calculated from observed lane changes according to Eq. (\ref{s:obj}).\\
+    $\bm{f}_{learned}$ & Feature vector as calculated according to Eq. (\ref{s:obj}) from the lane change following out of solving Eq. (\ref{opt:basic_opti_w}).\\
     $\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.
 
     

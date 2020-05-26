@@ -19,7 +19,7 @@
 \BOOKMARK [1][-]{section.4.1}{Non-linear bicycle model}{chapter.4}% 19
 \BOOKMARK [1][-]{section.4.2}{Formulation of the algorithm}{chapter.4}% 20
 \BOOKMARK [1][-]{section.4.3}{Ideal data}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.4}{Ideal lane change data learning results}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.4}{Ideal data learning results}{chapter.4}% 22
 \BOOKMARK [1][-]{section.4.5}{Conclusion}{chapter.4}% 23
 \BOOKMARK [0][-]{chapter.5}{Learning from complex vehicle model}{}% 24
 \BOOKMARK [1][-]{section.5.1}{Tracking MPC}{chapter.5}% 25
@@ -35,7 +35,7 @@
 \BOOKMARK [0][-]{appendix.B}{Results of the ideal data validation}{}% 35
 \BOOKMARK [1][-]{section.B.1}{Time limit}{appendix.B}% 36
 \BOOKMARK [1][-]{section.B.2}{Amount of optimization points}{appendix.B}% 37
-\BOOKMARK [0][-]{appendix.C}{Results of the averaging learning on 3 datasets}{}% 38
+\BOOKMARK [0][-]{appendix.C}{Results of the averaging learning on 3 ideal datasets}{}% 38
 \BOOKMARK [0][-]{appendix.D}{Accuracy results of the tracking MPC}{}% 39
 \BOOKMARK [0][-]{appendix.E}{Results of learning with the 15 dof Amesim model}{}% 40
 \BOOKMARK [0][-]{appendix*.128}{Bibliography}{}% 41

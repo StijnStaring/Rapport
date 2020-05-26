@@ -39,12 +39,12 @@
 \contentsline {section}{\numberline {4.3}Ideal data}{27}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Generation}{27}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Validation}{27}{subsection.4.3.2}%
-\contentsline {subsubsection}{Numerical vs Analytical formulation}{28}{section*.25}%
+\contentsline {subsubsection}{Numerical vs Analytical formulation}{27}{section*.25}%
 \contentsline {subsubsection}{Initial guess}{28}{section*.27}%
-\contentsline {subsubsection}{Time limit}{29}{section*.29}%
-\contentsline {subsubsection}{Amount of optimization points}{30}{section*.31}%
+\contentsline {subsubsection}{Time limit}{28}{section*.29}%
+\contentsline {subsubsection}{Amount of optimization points}{29}{section*.31}%
 \contentsline {subsubsection}{Linear tire model}{30}{section*.33}%
-\contentsline {subsubsection}{Feature values}{30}{section*.36}%
+\contentsline {subsubsection}{Feature values}{31}{section*.36}%
 \contentsline {subsubsection}{Conclusion}{31}{section*.37}%
 \contentsline {section}{\numberline {4.4}Ideal data learning results}{32}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{32}{subsection.4.4.1}%

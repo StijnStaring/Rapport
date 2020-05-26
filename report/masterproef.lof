@@ -28,15 +28,15 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear bicycle model (Source: \cite {TongDuySon2019}).\relax }}{17}{figure.caption.20}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Basic flow of the reinforced learning algorithm.\relax }}{21}{figure.caption.22}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A comparison between the numerical jerk (left) based on Eq. (\ref {eq:diff}) and Eq. (\ref {eq:bicycle_model1}) and the analytical jerk (right) based on appendix \ref {app:A} and Eq. (\ref {eq:bicycle_model2}). \relax }}{28}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{31}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{30}{figure.caption.34}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces slip angle during lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.(bleu:front,red:rear)\relax }}{31}{figure.caption.35}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Observed, initial and learned paths for 3 different observed lane changes generated with common underlying weights.\relax }}{34}{figure.caption.39}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces The evolvement of the average $\bm {f}_{rel}$ over the learning iterations.\relax }}{34}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces The different outputted weights over the learning iterations.\relax }}{35}{figure.caption.41}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{36}{figure.caption.42}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces The evolvement of $\bm {f}_{rel}$ of dataset $V_0:22.22\hspace {1mm}\frac {m}{s},\hspace {1mm} L:3.47\hspace {1mm}m$ over the learning iterations.\relax }}{37}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features.(3 datasets: blue, 7 datasets: orange)\relax }}{38}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {|1-f_{rel,i}|}{number\hspace {1mm}datasets}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)\relax }}{39}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values for the three lateral features. (3 datasets: blue, 7 datasets: orange)\relax }}{38}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)\relax }}{39}{figure.caption.46}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steerwheelangle.\relax }}{41}{figure.caption.47}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces The flow of learning with the Amesim model.\relax }}{42}{figure.caption.48}%

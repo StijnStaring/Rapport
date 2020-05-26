@@ -316,7 +316,7 @@ The desired following distance $\hat{d}$ can be calculated based on the stopping
 An other assumption that is not discussed in this thesis is the time limit to finish a maneuver. In a real life application however this limit often influences the maneuver. After the weights are identified, the most comfortable path in a limited time span can be planned for a specific driver. 
 
 \subsubsection{Normalization factors} \label{s:norm}
-In order to reduce the effect of order of size given by the units in the objective, a normalization of the features is used. The kinematic signals of an example lane change are produced and the same features that are used in the objective function are calculated from it. These will be the normalization factors as can be seen in Eq. (\ref{eq:obj_ideal_data}). Table \ref{table:norm} gives an overview of the lane change normalization factors used. 
+To reduce the effect of order of size given by the units in the objective, a normalization of the features is done. The kinematic signals of an example lane change are produced and the same features that are used in the objective function are calculated from it. These will be the normalization factors as can be seen in Eq. (\ref{eq:obj_ideal_data}). Table \ref{table:norm} gives an overview of the lane change normalization factors used. 
 
 %The longitudinal jerk normalization factor is taken equal to the one used for the longitudinal acceleration.
 %Then the objective function is divided by the corresponding normalization factor which means that a feature that inherently gives a small feature value, will be divided by a small value and the other way around, an inherently large feature value will be divided by a large value.
@@ -337,20 +337,24 @@ In order to reduce the effect of order of size given by the units in the objecti
   \label{table:norm}
 \end{table}
 
+Because of the normalization the relative weights defined as $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$, will quantify the trade-offs between different comfort features without disturbance of units used. Aside of this it allows to learn weights faster, because of the absence of big size differences that are present in the absolute weights. During the learning loop (Figure \ref{fig:basic learning}) the weights are set on a maximum of $1$ in this thesis. When the absolute weights are learned instead of the relative ones, this would give a substantially higher amount of iterations.
+
+\textbf{Vanaf hier werd er telkens een kapstok van de structuur met nummers meegegeven aan het begin van elke grote sectie/chapter.}
 
 \section{Ideal data} \label{s:GD}
+As mentioned at the begin of this chapter the term 'ideal data' concerns data that is generated with a non-linear bicycle model and with a beforehand known objective function Eq. (\ref{eq:obj}) which consist out of a linear combination of features and weights $\bm{\theta}$. This means that the algorithm that learns the weights can be validated by checking if it is able to find back the correct weights. First the generation of ideal data is presented in section \ref{s:generation} whereafter is is validated in section \ref{s:GD_val}.
+
 \subsection{Generation}
-As mentioned above the term 'ideal data' concerns data that is generated with a non-linear bicycle model and exactly fulfils the assumption that the observations are minimizing an underlying comfort objective. More over the discomfort objective is the same as the one used in the learning algorithm which means that the generated path is a solution of the objective function discussed in section \ref{s:obj} for weights $\bm{\theta}$ known in advance. Because that the observations are using the same feature frame as the learning algorithm and the absence of vehicle model mismatch, weights can be learned that accurately explain the observations. This is translated in a accurate matching of the feature values discussed in \ref{s:obj}. Because beforehand it is know what the weights should be in Eq. (\ref{eq:obj}), the ideal data can serve as a validation of the learning algorithm discussed in section \ref{s:learning_alg}.\\
+\label{s:generation}
+The relative weights chosen to generate the data are $ \bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$, which gives as absolute weights  $ \bigl[ \begin{smallmatrix} 549.75, &1.90, &137.44  ,&0.53,  &21.43, &0.12\end{smallmatrix}\bigr]$ when the normalization discussed in section \ref{s:norm} is taken into account. The objective that is used in Eq. (\ref{opt:basic_opti_w}) is given by Eq. (\ref{eq:obj_ideal_data}). 
 
-
-The relative weights $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$ chosen are $ \bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$, which gives as absolute weights  $ \bigl[ \begin{smallmatrix} 549.75, &1.90, &137.44  ,&0.53,  &21.43, &0.12\end{smallmatrix}\bigr]$ when the normalization of \ref{s:norm} is taken into account. The objective that is used in Eq. (\ref{opt:basic_opti_w}) and outputs the ideal data is given by Eq. (\ref{eq:obj_ideal_data}). 
 \begin{equation}\label{eq:obj_ideal_data}
 \frac{4}{0.0073} \cdot f_1 +\frac{5}{2.64} \cdot f_2 +\frac{1}{0.0073} \cdot f_3 +\frac{6}{11.28} \cdot f_4 +\frac{1}{0.047} \cdot f_5 +\frac{2}{17.14} \cdot f_6 
 \end{equation}
 \[	f_i \in \mathbb{R}, \hspace{1mm}
-i \in \mathbb{N}\]\\
+i \in \mathbb{N}\]
 
-Because of the normalization the relative weights will quantify the trade-offs between different comfort features without the disturbance of units used. Aside of this it allows to learn weights faster, because of the absence of big size differences that are present in the absolute weights. During the learning loop (Figure \ref{fig:basic learning}) the weights are set on a maximum of $1$. When the absolute weights are learned instead of the relative ones, this would cause a substantially higher amount of iterations.  When multiple ideal data sets have to be generated in order to serve as observations, the initial speed and width of the lateral distance are varied.\\
+ When multiple ideal data sets have to be generated in order to serve as observations, the initial speed and width of the lateral distance are varied.\\
 
 \subsection{Validation} \label{s:GD_val}
 In this section the results of the generated ideal data are discussed. There is being look at an numerical vs analytical formulation, influence of the initial guess, choice of time limit, amount of optimization points, use of linear tire model and an discussion of the resulting feature values of the generated data.
@@ -575,12 +579,12 @@ The learning algorithm is applied on the same three datasets as discussed in sec
 \end{figure}
 
 As can be seen in table \ref{tab:in_conflict} and Figure \ref{fig:3D_conv_conflict} the conflict method is capable to give an adequate convergence towards the observed features. As is demonstrated in section \ref{s:averaging_method} when the feature values match, there is also a good match between the learned and demonstrated kinematic signals.\\
-The algorithm was stopped because no improvement could be realized anymore. It could be hypothesized that if no ideal data is used where the human driver is less consistent in producing observations that resemble its underlying weights, the algorithm is stopped even earlier. This will naturally constrict the algorithm in its feature matching accuracy due to no available direction of improvement. This can already be seen when more datasets are used in the conflict method e.g. 7 datasets. The algorithm stops then at $25$ iterations because it reached earlier a point of no possible improvement anymore. The learned weights for 7 datasets are $\bigl[ \begin{smallmatrix} 14.785,&5.000,&3.223,&5.968,&3.770,&2.000\end{smallmatrix}\bigr]$. Figure \ref{fig:acc_conflict} gives the averaged error that each individual $\bm{f}_{rel}$ vector made with respect to convergence to one for the three important lateral features. The three important lateral features shown in Figure \ref{fig:acc_conflict} are respectively lateral total acceleration, lateral jerk and lateral distance displaced. The individual $\bm{f}_{rel,i}$ at convergence shows how good the match of feature values is when applying the learned weights at Eq. (\ref{opt:basic_opti_w}) with the same parameters for $v_{start}$ and $y_{desired}.$
+The algorithm was stopped because no improvement could be realized anymore. It could be hypothesized that if no ideal data is used where the human driver is less consistent in producing observations that resemble its underlying weights, the algorithm is stopped even earlier. This will naturally constrict the algorithm in its feature matching accuracy due to no available direction of improvement. This can already be seen when more datasets are used in the conflict method e.g. 7 datasets. The algorithm stops then at $25$ iterations because it reached earlier a point of no possible improvement anymore. The learned weights for 7 datasets are $\bigl[ \begin{smallmatrix} 14.785,&5.000,&3.223,&5.968,&3.770,&2.000\end{smallmatrix}\bigr]$. Figure \ref{fig:acc_conflict} gives the averaged error that each individual $\bm{f}_{rel}$ vector made with respect to convergence to one for the three important lateral features. The three important lateral features shown in Figure \ref{fig:acc_conflict} are respectively lateral total acceleration, lateral jerk and lateral distance displaced. The individual $\bm{f}_{rel,i}$ at convergence shows how good the match of feature values is when applying the learned weights at Eq. (\ref{opt:basic_opti_w}) with the same parameters for $v_{start}$ and $y_{desired}.$ $ND$ stands for number of datasets used.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.1\textwidth]{acc_conflict.png}
-	\caption{This figure shows the averaged, relative error given by $\frac{|1-f_{rel,i}|}{number\hspace{1mm}datasets}$ of the matching of the feature values for the three lateral features.(3 datasets: blue, 7 datasets: orange)}
+	\caption{This figure shows the averaged, relative error given by $\frac{100\cdot\sum_{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values for the three lateral features. (3 datasets: blue, 7 datasets: orange)}
 	\label{fig:acc_conflict}
 \end{figure}
 
@@ -592,7 +596,7 @@ In this section a comparison is made between the average and conflict method of 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{acc_comp.png}
-	\caption{This figure shows the averaged, relative error given by $\frac{|1-f_{rel,i}|}{number\hspace{1mm}datasets}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)}
+	\caption{This figure shows the averaged, relative error given by $\frac{100\cdot\sum_{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values for the three lateral features. (Conflict method: blue, Averaging method: orange)}
 	\label{fig:acc_comp}
 \end{figure}
 

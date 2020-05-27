@@ -1,10 +1,13 @@
-\chapter{Future work}
-\label{cha:Validation}
+\chapter{Enhancement of the weight update}
+\label{cha:Enhancement}
 
 Bespreek de validatie van de methode. Implementeer similaties in prescan.
 Bespreek de verschillende software tools bij Siemens --> Amesim, simulink, prescan.
 Hoe werken ze samen en hoe wordt de validatie precies gedaan? Wat zijn de resultaten?
 
+
+
+%EI had an idea about substituting  the gradient update by an update based on an optimization. In short I wanted during solving investigate the relation ofdF/dθ by varyingθ by a small value and solve the very similar solution again in order to get numerical estimates of the first derivative and the second derivative to be able to fill that in the second order taylor approximation forF(θ). After that I can minimize|F_obs-F(θ)| by a standard L1 fitting and this updates my new weights. This was just an idea I had and I didn’t had the time to look if it is feasible.
 \section{The First Topic of this Chapter}
 \subsection{Item 1}
 \subsubsection{Sub-item 1}

@@ -93,7 +93,8 @@
     OCP  & Optimal control problem\\
     MPC  & Model predictive control\\
     ODE  & Ordinary differential equation\\
-    ND	 & Number of datasets
+    ND	 & Number of datasets\\
+    dof  & Degrees of freedom
   \end{tabularx}
 \end{flushleft}
 \section*{Symbols}
@@ -111,8 +112,8 @@
     $V_{0}$ & Longitudinal speed at the start of the lane change.\\
     $V_{des}$ & Desired longitudinal speed during a lane change. Taken equal to $V_{0}$ during this thesis.\\
    $L$   & Desired lateral distance travelled at the end of the lane change.\\
-    $\bm{\theta}$ & Weights that are learned in the objective function Eq. (\ref{eq:obj}).\\
-    $\bm{f}_{obs}$ & Feature vector calculated from observed lane changes according to Eq. (\ref{s:obj}).
+    $\bm{\theta}$ & Weights that are learned in the objective function Eq. (\ref{eq:obj}).
+    
     
 
     
@@ -122,6 +123,7 @@
 \begin{flushleft}
 	\renewcommand{\arraystretch}{1.1}
 	\begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
+		$\bm{f}_{obs}$ & Feature vector calculated from observed lane changes according to Eq. (\ref{s:obj}).\\
 		$\bm{f}_{learned}$ & Feature vector as calculated according to Eq. (\ref{s:obj}) from the lane change following out of solving Eq. (\ref{opt:basic_opti_w}).\\
 		$\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
 		$\bm{r}$ & The 2D path followed during the lane change maneuver.\\

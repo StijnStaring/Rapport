@@ -52,14 +52,14 @@
 \contentsline {subsection}{\numberline {4.4.3}Conflict method}{34}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{38}{subsection.4.4.4}%
 \contentsline {section}{\numberline {4.5}Conclusion}{39}{section.4.5}%
-\contentsline {chapter}{\chapternumberline {5}Learning from complex vehicle model}{41}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}Learning with complex vehicle model}{41}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Flow of the algorithm}{42}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Tracking MPC}{43}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}MPC formulation}{43}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Tracking results}{46}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Learning results with the Amesim model}{47}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Conclusion}{52}{section.5.4}%
-\contentsline {chapter}{\chapternumberline {6}Future work}{55}{chapter.6}%
+\contentsline {section}{\numberline {5.4}Conclusion}{53}{section.5.4}%
+\contentsline {chapter}{\chapternumberline {6}Enhancement of the weight update}{55}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{55}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Item 1}{55}{subsection.6.1.1}%
 \contentsline {subsubsection}{Sub-item 1}{55}{section*.63}%

@@ -1,4 +1,4 @@
-\chapter{Learning from complex vehicle model}
+\chapter{Learning with complex vehicle model}
 \label{cha:Tracking_MPC}
 
 %Plot simulink model en duidt de blokken aan die zullen worden ingevuld. Hier gaat dieper in gegaan worden in de volgende hoofdstukken. 
@@ -152,9 +152,9 @@ To be able to generate adequate jerk signals, it was necessary to include smooth
 \label{s:complex_learning_results}
 Diagram \ref{fig:complex_learning} shows in blue the observed path that is generated out of Eq. (\ref{opt:basic_opti_w}) with known weights whereafter the path based on a bicycle model is tracked by a tracking MPC to get the kinematic signals of the $15$ dof Amesim model. From this $\bm{F}^*(\bm{r})$ is calculated which stays constant during whole the learning process.\\
 
-The learning loop shown in red in diagram \ref{fig:complex_learning} starts at the lane change planner, where Eq. (\ref{opt:basic_opti_w}) is called with an initial guess of the weights an all-one vector. After the planned path is outputted, tracked\footnote{The first $10 \hspace{1mm}s$ of the tracked Amesim signal is removed. The remaining maneuver consists of $5 \hspace{1mm}s$ straight driving before doing the actual lane change.} and the associated feature vector $\bm{F}(\bm{r})$ is calculated, it is checked if the two feature vectors match accurate enough in the convergence block. If this is not the case, the difference of the features is taken as an estimate for $\pdv{\bm{F}}{\bm{\theta}}$ and used in the RPROP algorithm in order to generate a new planned path by calling Eq. (\ref{opt:basic_opti_w}). \\
+The learning loop shown in red in diagram \ref{fig:complex_learning} starts at the lane change planner, where Eq. (\ref{opt:basic_opti_w}) is called with an initial guess of the weights an all-one vector. After the planned path is outputted, tracked\footnote{The first $10 \hspace{1mm}s$ of the tracked Amesim signal is removed. The remaining maneuver consists of $5 \hspace{1mm}s$ straight driving before doing the actual lane change.} and the associated feature vector $\bm{F}(\bm{r})$ is calculated, it is checked if the lateral feature values match accurate enough in the convergence block. If this is not the case, the difference of the features is taken as an estimate for $\pdv{\bm{F}_{diff}}{\bm{\theta}}$ and used in the RPROP algorithm in order to generate a new planned path by calling Eq. (\ref{opt:basic_opti_w}). \\
 
-Four simulations are conducted with respectively one, two, three and five datasets. Table \ref{tab:datasets_overview} shows which longitudinal speed is driven at the begin of the lane change ($V_{0}$) and the desired lateral displacement $(L)$. As is noted before in Chapter $\ref{cha:Learning_algorithm}$, if only the start speed is varied, the lateral feature values stay the same and the longitudinal features stay very small. This means that these datasets are seen as almost the same when learning. When the lateral desired displacement is varied, this gives a clear difference in the lateral feature values. An overview of the different features of the individual datasets is given in table \ref{tab:indi_features}. \footnote{In the calculation of the feature values the $5 \hspace{1mm}s$ straight driving before the lane change is included. This contributes to a higher value for feature number six.} 
+Four simulations are conducted with respectively one, two, three and five datasets. Table \ref{tab:datasets_overview} shows which longitudinal speed is driven at the begin of the lane change ($V_{0}$) and the desired lateral displacement $(L)$. As is noted before in Chapter $\ref{cha:Learning_algorithm}$, if only the start speed is varied, the lateral feature values stay the same and the longitudinal features stay very small. This means that these datasets are seen as almost the same when learning. When the lateral desired displacement is changed, this gives a clear difference in the lateral feature values. An overview of the different features of the individual datasets is given in table \ref{tab:indi_features}. \footnote{In the calculation of the feature values the $5 \hspace{1mm}s$ straight driving before the lane change is included. This contributes to a higher value for feature number six than seen earlier in table \ref{tab:comparinson_models}}.
 
 
 
@@ -184,11 +184,11 @@ Four simulations are conducted with respectively one, two, three and five datase
 		Nr.5              & 9.50e-06&4.42e-05   & 1.66e-05      & 7.08e-05  & 3.71e-05       \\
 		Nr.6              & 91.25 &	364.99      &	91.25	&364.97       & 91.25       \\ \bottomrule
 	\end{tabular}
-	\caption{This table shows the different features for the individual datasets used during simulation.}
+	\caption{This table shows the different features for the individual datasets used.}
 	\label{tab:indi_features}
 \end{table} 
 
-The weights learned for the four different simulations is presented in table \ref{tab:complex_learning_weights}\footnote{The weights that come of the simulations are scaled so that the second weight equals $5.0$.} and $\bm{f}_{rel}$ at convergence is given in table \ref{tab:complex_frel}.   $\bm{f}_{rel}$ displays the matching of the averaged learned feature values with the observed one. Convergence for the four simulations is reached after 28 iterations. The convergence criteria used is matching the lateral features (2,4,6) with a tolerance of $10^{-3}$.\\
+The weights learned for the four different simulations is presented in table \ref{tab:complex_learning_weights}\footnote{The weights that come from the simulations are scaled so that the second weight equals $5.0$.} and $\bm{f}_{rel}$ at convergence is given in table \ref{tab:complex_frel}. $\bm{f}_{rel}$ displays the matching of the averaged learned feature values with the averaged data feature vector. Convergence for the first three simulations is reached after $28$ iterations and for 5 datasets after $26$ iterations. The convergence criteria used, is matching the lateral features (2,4,6) with a tolerance of $10^{-3}$.\\
 
 \begin{table}[h!]
 	\centering
@@ -201,7 +201,7 @@ The weights learned for the four different simulations is presented in table \re
 		Nr.5              & 4.4445     & 1.2705      & 1.1869 &1.5694      \\
 		Nr.6              & 2.0011        & 2.0011         & 2.0011 & 2.0044     \\ \bottomrule
 	\end{tabular}
-	\caption{This table shows the weights learned for the different simulations that start from an all one vector and uses as chosen weights $\bigl[ \begin{smallmatrix} 4.0,&5.0,&1.0,&6.0,&1.0,&2.0\end{smallmatrix}\bigr]$.}
+	\caption{This table shows the weights learned for the different simulations that start from an all-one vector and uses as chosen weights $\bigl[ \begin{smallmatrix} 4.0,&5.0,&1.0,&6.0,&1.0,&2.0\end{smallmatrix}\bigr]$.}
 	\label{tab:complex_learning_weights}
 \end{table}
 
@@ -216,13 +216,13 @@ The weights learned for the four different simulations is presented in table \re
 		Nr.5              & 1.0718     & 1.0030         & 0.9937 &0.9772       \\
 		Nr.6              & 1.0000        & 1.0000      & 1.0000 &1.0000    \\ \bottomrule
 	\end{tabular}
-	\caption{This table shows the final values of $\bm{f}_{rel}$.}
+	\caption{This table shows $\bm{f}_{rel}$ at convergence.}
 	\label{tab:complex_frel}
 \end{table}
 
 Out of table \ref{tab:complex_learning_weights} and \ref{tab:complex_frel} it is concluded that the lateral chosen weights are found back and an accurate match of the lateral features is achieved. It is observed that also the longitudinal weights will come closer to their chosen value and give a better match for the longitudinal feature values, when more observed lane changes are included in the learning.
 
-Figure \ref{fig:complex_path} presents the observed paths, the initial solution when the weight vector is chosen equal to an all-one vector and the learned solution when $2$ datasets are used. Figure \ref{fig:complex_path_error} shows the error made between the observed and learned path which is of order of size of $10^{-4}$. All the resulting kinematic signals are displayed in Appendix \ref{app:E}.
+Figure \ref{fig:complex_path} presents the observed paths, the initial solution when the weight vector is chosen equal to an all-one vector and the learned solution when $2$ datasets are used. Figure \ref{fig:complex_path_error} shows the error made between the observed and learned path which is in order of magnitude of $10^{-4}$. All the resulting kinematic signals are displayed in Appendix \ref{app:E}.
 
 \begin{figure}[h!]
 	\centering
@@ -238,7 +238,7 @@ Figure \ref{fig:complex_path} presents the observed paths, the initial solution 
 	\label{fig:complex_path_error}
 \end{figure}
 
-Figure \ref{fig:complex_convergence} shows the convergence of $\bm{f}_{rel}$ towards one during the learning iterations. Except for the longitudinal jerk (feature $3$) all the feature values converge towards the observed ones.
+Figure \ref{fig:complex_convergence} shows the convergence of $\bm{f}_{rel}$ towards one during the learning iterations when using 2 datasets. Except for the longitudinal jerk (feature $3$) all the learned feature values converge towards the observed ones.
 
 \begin{figure}[h!]
 	\centering
@@ -247,22 +247,21 @@ Figure \ref{fig:complex_convergence} shows the convergence of $\bm{f}_{rel}$ tow
 	\label{fig:complex_convergence}
 \end{figure}
 
-From the retrieved $\bm{f}_{rel}$ of table \ref{tab:complex_frel} and in Figure \ref{fig:complex_convergence}, the feature value for the longitudinal jerk (Nr. $3$), jumps out for its bad feature matching behaviour. ($...$ when five datasets are used) A reason for this is as discussed in \ref{s:tracking_results}, bad quality of the jerk data which contributes to a worsen learning. The jerk during the lane change can be seen in Figure \ref{fig:complex_jerk}. At time zero the longitudinal behaviour is still not fully stabilized and at second $5$ the lane change starts.
+From the retrieved $\bm{f}_{rel}$ of table \ref{tab:complex_frel} and in Figure \ref{fig:complex_convergence}, the feature value for the longitudinal jerk (Nr. $3$), jumps out for its bad feature matching behaviour. ($0.4867$ at convergence when three datasets are used) A reason for this is as discussed in \ref{s:tracking_results}, bad quality of the jerk data which contributes to a deteriorated learning. The jerk during the lane change can be seen in Figure \ref{fig:complex_jerk}. At time zero the longitudinal behaviour is still not fully stabilized and at second $5$ the lane change starts.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.1\textwidth]{7JX_JY_N1000IT28.PNG}
-	\caption{This Figure shows the observed jerk signals, the initial solution retrieved with as weights an all one vector and the learned solution.}	
+	\caption{This Figure shows the observed jerk signals, the initial solution retrieved with as weights an all-one vector and the learned solution.}	
 	\label{fig:complex_jerk}
 \end{figure}
  \newpage                                
 \section{Conclusion}
-In this chapter the learning of driver specific comfort parameters with a realistic $15$ dof Amesim model was discussed. The flow of the different steps of the learning process and how the Amesim model would be embedded, was looked into. The question posed was: "Is it possible to find back the underlying comfort weights when the gradient $\pdv{\bm{F}_{diff}}{\bm{\theta}}$ is estimated by $ \bm{F}^* - \bm{F}(\bm{r}_{expected})$". \\
+In this chapter the learning of driver specific comfort parameters with a realistic $15$ dof Amesim model was discussed. The flow of the different steps of the learning process and how the Amesim model is embedded, was looked into. The question posed at the beginning was: "Is it possible to find back the underlying comfort weights when the gradient $\pdv{\bm{F}_{diff}}{\bm{\theta}}$ is estimated by $ \bm{F}^* - \bm{F}(\bm{r}_{expected})$". It was shown that this estimation is sufficient in order to learn weights that allow matching between an averaged learned feature vector and an averaged data feature vector.\\
 
 First the formulation of the used tracking MPC was presented and its tracking performance evaluated. The results are that tracking of the planned path was possible to an accuracy of $10^{-3}$ and also the other important features $a_y$ and $j_y$ could be tracked to a satisfying accuracy as can be seen in Appendix \ref{app:D}. However $\delta_s$, $t_r$ in steady-state and the peaks of $\dot{\delta_s}$ and $j_y$, gave a difference with the reference when the path generated by the non-linear bicycle model is being accurate tracked. Next a notion was made about the bad quality of the obtained longitudinal jerk signal. Eventually it was stated that only a smooth signal for the lateral jerk can be retrieved when the input signals are at least of first order. \\
 
-When the tracking MPC was validated the learning results with the Amesim model were discussed. Four simulations were conducted with a different amount of observed lane changes. Out of the results it could be concluded that every time there is a good convergence found for $\bm{f}_{rel}$ and the chosen lateral weights are found back. When more observed lane changes are included during the learning also the results for the longitudinal weights improve. \\
-Only the convergence of the longitudinal jerk stayed deficient, which is due to bad quality of the longitudinal jerk data that was used to learn the weights of.
+After the tracking MPC was validated the learning results with the Amesim model were discussed. Four simulations were conducted with a different amount of observed lane changes. Out of the results it could be concluded that for the lateral features there is a good convergence found for $f_{rel,i}$ and the chosen lateral weights are every time found back. When more observed lane changes are included during the learning also the results for the longitudinal weights and the feature matching of the longitudinal feature values improves. Only the convergence of the longitudinal jerk stayed deficient, which is due to bad quality of the longitudinal jerk data that was used to learn the weights from.
 
 
 

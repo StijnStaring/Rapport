@@ -1,10 +1,22 @@
 \chapter{Conclusion}
 \label{cha:conclusion}
-The final chapter contains the overall conclusion. It also contains
-suggestions for future work and industrial applications.
+The contribution made with this thesis is the development of an algorithm based on inverse reinforced learning, that can learn driver specific experiences of comfort during a lane change and cast it into an objective function which explains observed data. \\
+First a literature study was conducted in order to identify comfort during driving. Here it was found that smooth paths play an important role in contributing to the retrieved amount of comfort. Next, it was looked at the theoretical idea of feature based reinforcement learning. This was the starting point and the goal of this thesis was to scale this theoretical idea up to in practise useable models e.g. $15$ dof Amesim model.\\
+In the following chapter, learning from ideal data was discussed. Here it was presented how ideal data was generated and validated and it was shown that the developed algorithm was able to accurately learn the chosen lateral weights that define the lane change maneuver. Thereby it was displayed that the estimation of the gradient $\pdv{\bm{F}_{diff}}{\bm{\theta}}$ by $ \bm{\tilde{F}} - \bm{F}(\bm{r}_{expected})$ can be used in order to converge towards the data feature vectors used.\\
+Further, learning with a $15$ degrees of freedom vehicle model was discussed. For this matter a tracking MPC formulation was developed and it was shown that also here 
+the algorithm was able to accurately learn the chosen lateral weights.\\
+As last the theoretical idea was discussed how to replace the RPROP algorithm for updating the weight vector $\bm{\theta}$ by an optimized update. \\
+
+This work has its practical usage in the avoidance of manual tuning of a comfort objective. When the objective is identified it can be used for path planning. Because this research is conducted together with Siemens, it is in line with the direction of their research and this thesis can be used to build further on.\\
+The maneuver extensively discussed is a lane change maneuver. The only way that this is defined in Eq. \ref{opt:basic_opti_w} is by setting constraints on the end state so that a lane change is performed. It is thereby possible to change these end constraints in a way that also other maneuvers are learned e.g. an acceleration maneuver.\\
+During this thesis the environment is also not taken into account although this is a necessary condition in order to take comfort into account as followed out of section \ref{s:comfort_parameters}. As discussed in section \ref{s:obj} it is possible to add features that encapsulate notions about the environment of the autonomous vehicle so that the feeling of safe driving can be assured. Therefore a suggestion for future work is to perform the developed algorithms on real driver data which also contains information about the vehicle its surroundings.
 
 
-Application: say something about hierarchical control. The comfort controller can work as an inferior controller of the safety of the vehicle. 
+
+%
+%The final chapter contains the overall conclusion. It also contains
+%suggestions for future work and industrial applications.
+%Application: say something about hierarchical control. The comfort controller can work as an inferior controller of the safety of the vehicle. 
 
 
 

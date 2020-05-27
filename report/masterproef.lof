@@ -28,7 +28,7 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Non-linear bicycle model (Source: \cite {TongDuySon2019}).\relax }}{17}{figure.caption.20}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Basic flow of the reinforced learning algorithm.\relax }}{21}{figure.caption.22}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A comparison between the numerical jerk (left) based on Eq. (\ref {eq:diff}) and Eq. (\ref {eq:bicycle_model1}) and the analytical jerk (right) based on appendix \ref {app:A} and Eq. (\ref {eq:bicycle_model2}). \relax }}{28}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{30}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Lateral acceleration during a lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.\relax }}{31}{figure.caption.34}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces slip angle during lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the amesim model.(bleu:front,red:rear)\relax }}{31}{figure.caption.35}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Observed, initial and learned paths for 3 different observed lane changes generated with common underlying weights.\relax }}{34}{figure.caption.39}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces The evolvement of the average $\bm {f}_{rel}$ over the learning iterations.\relax }}{34}{figure.caption.40}%

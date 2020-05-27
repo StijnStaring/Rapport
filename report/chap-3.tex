@@ -129,7 +129,7 @@ The vehicle model parameters used are given in table \ref{table:vehicel_model_pa
 \newpage
 \section{Formulation of the algorithm} 
 \label{s:learning_alg}
-The goal of the learning algorithm is to learn the weights $\bm{\theta}$ in the pre-defined comfort objective function: $\bm{\theta}^T\bm{F}(\bm{r})$. The features that are the entries of the feature vector $\bm{F}(\bm{r})$ capture a notion of comfort felled by the driver. Based on the literature study displayed in Chapter \ref{cha:Literature_study} and on paper \cite{Kuderer2015a}, the amount of discomfort can be modelled by the features discussed in \ref{s:obj} during the timespan $T$ of the maneuver. The scenario of a lane change on a highway is modelled. The time horizon about what the minimization of the comfort objective function is done, itself is also an optimization variable  $T$. The simulations done in this thesis are performed on a notebook provided by Siemens with Intel Core i7-7920HQ CPU @ 3.10GHz and 32 GB of RAM memory.\\
+The goal of the learning algorithm is to learn the weights $\bm{\theta}$ in the pre-defined comfort objective function: $\bm{\theta}^T\bm{F}(\bm{r})$. The features that are the entries of the feature vector $\bm{F}(\bm{r})$ capture a notion of comfort felled by the driver. Based on the literature study displayed in Chapter \ref{cha:Literature_study} and on paper \cite{Kuderer2015a}, the amount of discomfort can be modelled by the features discussed in section \ref{s:obj} during the timespan $T$ of the maneuver. The scenario of a lane change on a highway is modelled. The time horizon about what the minimization of the comfort objective function is done, itself is also an optimization variable  $T$. The simulations done in this thesis are performed on a notebook provided by Siemens with Intel Core i7-7920HQ CPU @ 3.10GHz and 32 GB of RAM memory.\\
 
 
 \subsection{Flow of the algorithm}
@@ -277,10 +277,10 @@ $v_{des}$ is assumed to be a constant value and set equal to the start velocity 
 
 \textit{Feature 6: desired lane change}
 \begin{equation}\label{eq:des_lane_change}
-f_{6}:\bm{r}\xrightarrow{}f_6(\bm{r})=\int_{0}^{T}(y_{lane\_change}-y)^2 dt
+f_{6}:\bm{r}\xrightarrow{}f_6(\bm{r})=\int_{0}^{T}(L-y)^2 dt
 \end{equation}
 
-$y_{des}$ is a constant and set equal to the desired lateral distance completed after the lane change. If the vehicle reaches faster its desired lateral displacement this is perceived as a good response and is interpreted as comfort as is discussed in section \ref{s:comfort_parameters}.
+$L$ is a constant and set equal to the desired lateral distance completed after the lane change. If the vehicle reaches faster its desired lateral displacement this is perceived as a good response and is interpreted as comfort as is discussed in section \ref{s:comfort_parameters}.
 \\
 
 
@@ -337,16 +337,18 @@ To reduce the effect of order of size given by the units in the objective, a nor
   \label{table:norm}
 \end{table}
 
-Because of the normalization the relative weights defined as $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$, will quantify the trade-offs between different comfort features without disturbance of units used. Aside of this it allows to learn weights faster, because of the absence of big size differences that are present in the absolute weights. During the learning loop (Figure \ref{fig:basic learning}) the weights are set on a maximum of $1$ in this thesis. When the absolute weights are learned instead of the relative ones, this would give a substantially higher amount of iterations.
+Because of the normalization the relative weights defined as $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$, will quantify the trade-offs between different comfort features without disturbance of units used. Aside of this it allows to learn weights faster, because of the absence of big size differences induced by unit differences that are present in the absolute weights. During the learning loop (Figure \ref{fig:basic learning}) the max weight update is set on a maximum of $1$ in this thesis. When the absolute weights are learned instead of the relative ones, this would give a substantially higher amount of iterations when started as initial guess an all-one vector.
 
+\textbf{-------------------------------------------------------------------}
 \textbf{Vanaf hier werd er telkens een kapstok van de structuur met nummers meegegeven aan het begin van elke grote sectie/chapter.}
+\textbf{-------------------------------------------------------------------}
 
 \section{Ideal data} \label{s:GD}
-As mentioned at the begin of this chapter the term 'ideal data' concerns data that is generated with a non-linear bicycle model and with a beforehand known objective function Eq. (\ref{eq:obj}) which consist out of a linear combination of features and weights $\bm{\theta}$. This means that the algorithm that learns the weights can be validated by checking if it is able to find back the correct weights. First the generation of ideal data is presented in section \ref{s:generation} whereafter is is validated in section \ref{s:GD_val}.
+As mentioned at the begin of this chapter the term 'ideal data' concerns data that is generated with a non-linear bicycle model and with a beforehand known objective function Eq. (\ref{eq:obj}) which consist out of a linear combination of features and weights $\bm{\theta}$. This means that the algorithm that learns the weights can be validated by checking if it is able to find back the correct weights. First the generation of ideal data is presented in section \ref{s:generation} whereafter it is validated in section \ref{s:GD_val}.
 
 \subsection{Generation}
 \label{s:generation}
-The relative weights chosen to generate the data are $ \bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$, which gives as absolute weights  $ \bigl[ \begin{smallmatrix} 549.75, &1.90, &137.44  ,&0.53,  &21.43, &0.12\end{smallmatrix}\bigr]$ when the normalization discussed in section \ref{s:norm} is taken into account. The objective that is used in Eq. (\ref{opt:basic_opti_w}) is given by Eq. (\ref{eq:obj_ideal_data}). 
+The relative weights chosen to generate the data are $ \bigl[ \begin{smallmatrix} 4,&5,&1,&6,&1,&2\end{smallmatrix}\bigr]$, which gives as absolute weights  $ \bigl[ \begin{smallmatrix} 549.75, &1.90, &137.44  ,&0.53,  &21.43, &0.12\end{smallmatrix}\bigr]$ when the normalization discussed in section \ref{s:norm} is taken into account. The objective that is used in Eq. (\ref{opt:basic_opti_w}) is given by Eq. (\ref{eq:obj_ideal_data}). The different feature values are the ones as defined in section \ref{s:obj}.
 
 \begin{equation}\label{eq:obj_ideal_data}
 \frac{4}{0.0073} \cdot f_1 +\frac{5}{2.64} \cdot f_2 +\frac{1}{0.0073} \cdot f_3 +\frac{6}{11.28} \cdot f_4 +\frac{1}{0.047} \cdot f_5 +\frac{2}{17.14} \cdot f_6 
@@ -354,47 +356,45 @@ The relative weights chosen to generate the data are $ \bigl[ \begin{smallmatrix
 \[	f_i \in \mathbb{R}, \hspace{1mm}
 i \in \mathbb{N}\]
 
- When multiple ideal data sets have to be generated in order to serve as observations, the initial speed and width of the lateral distance are varied.\\
+ When multiple ideal datasets have to be generated in order to serve as observations, the initial speed $V_{0}$ and width of the lateral distance $L$ are varied.\\
 
 \subsection{Validation} \label{s:GD_val}
-In this section the results of the generated ideal data are discussed. There is being look at an numerical vs analytical formulation, influence of the initial guess, choice of time limit, amount of optimization points, use of linear tire model and an discussion of the resulting feature values of the generated data.
+In this section the results of the generated ideal data are discussed. There is being look at an numerical vs analytical formulation, influence of the initial guess, choice of time limit, amount of optimization points, use of linear tire model and a discussion on the resulting feature values of the generated data.
 
 \subsubsection{Numerical vs Analytical formulation}
-In section \ref{sec:Vehicle_models} about the non-linear bicycle model, two different variants were described by Eq. (\ref{eq:bicycle_model1}) and Eq. (\ref{eq:bicycle_model2}). Variant one has only 6 states and the accelerations and jerks in the objective function Eq. (\ref{eq:obj}) are calculated by making use of numerical differentiation described by Eq. (\ref{eq:diff}). Variant two on the other hand uses the total accelerations as direct states in the vehicle model and uses an formulation of the jerk described in appendix \ref{app:A}.
+In section \ref{sec:Vehicle_models} about the non-linear bicycle model, two different variants were described by Eq. (\ref{eq:bicycle_model1}) and Eq. (\ref{eq:bicycle_model2}). Variant one has only 6 states and the accelerations and jerks in the objective function Eq. (\ref{eq:obj}) are calculated by making use of numerical differentiation described by Eq. (\ref{eq:diff}) from the other vehicle states. Variant two on the other hand uses the total accelerations as direct states in the vehicle model and uses an analytical formulation of the jerk described in appendix \ref{app:A}.
 
 \begin{subequations}\label{eq:diff}
 	\begin{equation}
 	\pdv{\phi}{t} = \frac{\phi(i+1)-\phi(i-1)}{2\Delta t}
 	\end{equation}
 	\begin{equation}
-	\pdv[2]{\phi}{t} = \frac{\phi(i+1)\phi(i)+\phi(i-1)}{\Delta t^2}
+	\pdv[2]{\phi}{t} = \frac{\phi(i+1)-2\phi(i)+\phi(i-1)}{\Delta t^2}
 	\end{equation}
 \end{subequations}
 
-In order to validate the two approaches the generated lateral jerk signals are compared. 
+In order to validate the two approaches the generated lateral jerk signals are compared in Figure \ref{fig:comp_jerks}.
 
 \begin{figure}[h!]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=1.0\linewidth]{jerk_num.png}
-		%		\captionof{figure}{Lateral jerk using \ref{eq:diff}.}
-		\label{fig:num}
+		%		\captionof{figure}{Lateral jerk using \ref{eq:diff}.}	
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=1.0\linewidth]{jerk_ana.png}
-		%		\captionof{figure}{Lateral jerk using appendix \ref{app:A} .}
-		\label{fig:ana}
+		%		\captionof{figure}{Lateral jerk using appendix \ref{app:A} .}	
 	\end{minipage}
 	\caption{A comparison between the numerical jerk (left) based on Eq. (\ref{eq:diff}) and Eq. (\ref{eq:bicycle_model1}) and the analytical jerk (right) based on appendix \ref{app:A} and Eq. (\ref{eq:bicycle_model2}). }
+	\label{fig:comp_jerks}
 \end{figure}
 
-It is clear that the analytical formulation (right figure)  of the jerk gives more smooth results and less high peaks which is also seen in the more complex vehicle that is discussed in chapter \ref{cha:Tracking_MPC}. Therefore the analytical formulation approaches reality better. An other way to see this is that the analytical formulation contains more information about the vehicle, because the numerical equation (\ref{eq:diff}) are approximations of the equations shown in appendix \ref{app:A}. 
+It is clear that the analytical formulation (right figure)  of the jerk gives more smooth results and less high peaks which is in line with observations of the more complex $15$ dof Amesim vehicle that is discussed in chapter \ref{cha:Tracking_MPC}. Therefore the analytical formulation approaches reality better. An other way to see this is that the analytical formulation contains more information about the vehicle i.d. the equations resulting from numerical differentiation are approximations of the analytical ones.
 
 \subsubsection{Initial guess}
-
-To determine if the generated data is a local solution of the optimization of Eq. (\ref{eq:obj_ideal_data}), two different initial guesses are used whereof the obtained data feature values are summarized in table \ref{tab:GD_local_test}. In order to calculate the features, time limit is set on $30\hspace{1mm}s$, N on $1000$ and the parameters of the constraints of Eq. (\ref{opt:basic_opti_w}) to $v_{start} = 22.22\hspace{1mm}\frac{m}{s}$ and $y_{des} = 3.47\hspace{1mm}m$. From the results it can be concluded that the optimized features are not a local solution. In table \ref{tab:GD_local_test}  $V_0$ is the initial speed and L the lateral distance of the lane change used as initial guess. The initial guesses are generated with the numerical formulation and the observation is generated making use of the analytical approach. During the learning of the weights as described by Figure \ref{fig:basic learning} the initial guess is set equal to the observed data. 
+To determine if the generated data is a local solution, two different initial guesses $V0:22.22 - L3.47$ and $V0:25.00 - L6.94$ are used whereof the retrieved data feature values are summarized in table \ref{tab:GD_local_test}. $V_0$ is the initial speed and L the lateral distance of the lane change used as initial guess and are generated using the above described numerical formulation. In order to calculate the data features displayed, time limit is set on $30\hspace{1mm}s$, N on $1000$, $V_{0} = 22.22\hspace{1mm}\frac{m}{s}$ and $L = 3.47\hspace{1mm}m$ as parameters in Eq. (\ref{opt:basic_opti_w}) and the analytical formulation is used. From the results it is suggested that the optimized features are not a local solution because the same feature values are found for two different start points of the optimization. During the learning of the weights as described by Figure \ref{fig:basic learning} the initial guess is set equal to the observed data. 
 
 \begin{table}[h!]
 	\centering
@@ -407,12 +407,12 @@ To determine if the generated data is a local solution of the optimization of Eq
 		Nr.5       & 1.98e-6     & 1.98e-6 \\
 		Nr.6       & 30.94      & 30.94\\ \bottomrule
 	\end{tabular}
-	\caption{This table shows the retrieved feature values using different initial guesses in Eq. (\ref{opt:basic_opti_w}).}
+	\caption{This table shows the retrieved feature values using the two different  initial guesses in Eq. (\ref{opt:basic_opti_w}).}
 	\label{tab:GD_local_test}
 \end{table}
 
 \subsubsection{Time limit}
-In order to check the dependency of the generated data on the chosen $T_{limit}$ constraint in Eq. (\ref{opt:basic_opti_w}), data is generated for an lane change with N, the amount of control points equal to $1000$, initial velocity equal to $80 \hspace{1 mm} \frac{km}{h}\hspace{1mm}(V_{start})$, a desired lateral displacement of $3.47\hspace{1mm}m\hspace{1mm}(L)$ and a varying $T_{limit}$ constraint as indicated in table \ref{tab:GD_time_limit}. Figures that  show what the difference in the feature means for the different kinematic signals of the vehicle during a lane change, can be consulted in Appendix \ref{app:B}
+In order to check the dependency of the generated data on the chosen $T_{limit}$ constraint in Eq. (\ref{opt:basic_opti_w}), data is generated for an lane change with N, the amount of control points equal to $1000$, initial velocity equal to $80 \hspace{1 mm} \frac{km}{h}\hspace{1mm}(V_{0})$, a desired lateral displacement of $3.47\hspace{1mm}m\hspace{1mm}(L)$ and a varying $T_{limit}$ constraint as indicated in table \ref{tab:GD_time_limit}. Figures that  show what the difference in the feature means for the different kinematic signals of the vehicle during a lane change, can be consulted in Appendix \ref{app:B}
 
 \begin{table}[h!]
 	\centering
@@ -579,7 +579,7 @@ The learning algorithm is applied on the same three datasets as discussed in sec
 \end{figure}
 
 As can be seen in table \ref{tab:in_conflict} and Figure \ref{fig:3D_conv_conflict} the conflict method is capable to give an adequate convergence towards the observed features. As is demonstrated in section \ref{s:averaging_method} when the feature values match, there is also a good match between the learned and demonstrated kinematic signals.\\
-The algorithm was stopped because no improvement could be realized anymore. It could be hypothesized that if no ideal data is used where the human driver is less consistent in producing observations that resemble its underlying weights, the algorithm is stopped even earlier. This will naturally constrict the algorithm in its feature matching accuracy due to no available direction of improvement. This can already be seen when more datasets are used in the conflict method e.g. 7 datasets. The algorithm stops then at $25$ iterations because it reached earlier a point of no possible improvement anymore. The learned weights for 7 datasets are $\bigl[ \begin{smallmatrix} 14.785,&5.000,&3.223,&5.968,&3.770,&2.000\end{smallmatrix}\bigr]$. Figure \ref{fig:acc_conflict} gives the averaged error that each individual $\bm{f}_{rel}$ vector made with respect to convergence to one for the three important lateral features. The three important lateral features shown in Figure \ref{fig:acc_conflict} are respectively lateral total acceleration, lateral jerk and lateral distance displaced. The individual $\bm{f}_{rel,i}$ at convergence shows how good the match of feature values is when applying the learned weights at Eq. (\ref{opt:basic_opti_w}) with the same parameters for $v_{start}$ and $y_{desired}.$ $ND$ stands for number of datasets used.
+The algorithm was stopped because no improvement could be realized anymore. It could be hypothesized that if no ideal data is used where the human driver is less consistent in producing observations that resemble its underlying weights, the algorithm is stopped even earlier. This will naturally constrict the algorithm in its feature matching accuracy due to no available direction of improvement. This can already be seen when more datasets are used in the conflict method e.g. 7 datasets. The algorithm stops then at $25$ iterations because it reached earlier a point of no possible improvement anymore. The learned weights for 7 datasets are $\bigl[ \begin{smallmatrix} 14.785,&5.000,&3.223,&5.968,&3.770,&2.000\end{smallmatrix}\bigr]$. Figure \ref{fig:acc_conflict} gives the averaged error that each individual $\bm{f}_{rel}$ vector made with respect to convergence to one for the three important lateral features. The three important lateral features shown in Figure \ref{fig:acc_conflict} are respectively lateral total acceleration, lateral jerk and lateral distance displaced. The individual $\bm{f}_{rel,i}$ at convergence shows how good the match of feature values is when applying the learned weights at Eq. (\ref{opt:basic_opti_w}) with the same parameters for $V_0$ and $y_{desired}.$ $ND$ stands for number of datasets used.
 
 \begin{figure}[h!]
 	\centering

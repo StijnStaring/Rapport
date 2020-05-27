@@ -65,7 +65,7 @@ In order to create a generative model that creates vehicle paths $\bm{r}_i$ with
 A feature value maps a trajectory onto a scalar and encapsulates a comfort criteria. The higher the scalar value the more discomfort is experienced by the driver. An example is given by Eq. (\ref{eq:3}) that measures the amount of accelerations in a maneuver.
 
 \begin{equation}\label{eq:3}
-f_j:\bm{r}\xrightarrow{}f_j(\bm{r})=\int_{0}^{T}Ka_x(t)^{2}+a_y(t)^{2} dt
+f_j:\bm{r}\xrightarrow{}f_j(\bm{r})=\int_{0}^{T}a_x(t)^{2}+a_y(t)^{2} dt
 \end{equation}
 
 The path that the centre of gravity of the vehicle is following can be represented by: Eq. (\ref{eq:4}).

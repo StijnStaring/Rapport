@@ -20,7 +20,7 @@
 \addvspace {10pt}
 \contentsline {table}{\numberline {4.1}{\ignorespaces Used vehicle model parameters.\relax }}{20}{table.caption.21}%
 \contentsline {table}{\numberline {4.2}{\ignorespaces Overview of normalization factors.\relax }}{26}{table.caption.24}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces This table shows the retrieved feature values using different initial guesses in Eq. (\ref {opt:basic_opti_w}).\relax }}{29}{table.caption.28}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces This table shows the retrieved feature values using the two different initial guesses in Eq. (\ref {opt:basic_opti_w}).\relax }}{29}{table.caption.28}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces This table shows the retrieved feature values using different time limits in Eq. (\ref {opt:basic_opti_w}).\relax }}{29}{table.caption.30}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces This table shows the retrieved feature values using different amount of control point N in Eq. (\ref {opt:basic_opti_w}).\relax }}{30}{table.caption.32}%
 \contentsline {table}{\numberline {4.6}{\ignorespaces This table shows the $\bm {f}_{rel}$ for each individual dataset at convergence using the average method.\relax }}{33}{table.caption.38}%

@@ -62,72 +62,33 @@
 %  The \texttt{abstract} environment contains a more extensive overview of
 %  the work. But it should be limited to one page.
 
+The human driver transforms from being an active traffic participant into a passive agent due to the developments in autonomous driving. Consequently the human involvement becomes limited by perceiving and rating decisions taken by the vehicle. In order to enhance user acceptance and to increase competitiveness, it is important that a notion of driver specific comfort is taken into account. \\
 
-The human driver transforms to an passive agent in autonomous driving and works as a black box that reacts on decisions taken by the autonomous vehicle that are based on delivering the human driver on its destination. In order to enhance user acceptance, it is important that a notion of driver specific comfort is taken into account. Therefore the objective of this research is to develop an algorithm based on inverse reinforced learning, that can learn driver specific experiences of comfort during a lane change captured in weights of an objective function. Comfort features, which are integrated kinematic vehicle signals that determine a notion of comfort, are used in order to quantify similarity between observed and learned vehicle paths. The contribution of this thesis is to implement the theoretical idea of feature based learning with practical relevant vehicle models e.g. a $15$ dof Amesim model. When the comfort objective is identified, it can be embedded in a path planning formulation.\\
+Therefore the objective of this research is to develop an algorithm based on inverse reinforcement learning which is able to learn driver specific experiences of comfort during a lane change, captured in weights of an objective function. Learning is done by looking at observations performed by the human driver because the learned objective function is an approximation of the one used when the driver generates comfortable paths. Comfort features, which are integrated kinematic vehicle signals in a formulation so that they determine a notion of comfort, are used in order to quantify similarity between observed and learned vehicle paths. The contribution of this thesis is to implement the theoretical idea of feature based learning with practical relevant vehicle models e.g. a $15$ degrees of freedom Amesim model. When the comfort objective is identified, it can be embedded in a path planning formulation.\\
 
-In order to validate the developed algorithms to learn the different weights, data is generated with an known objective function which is tried to learn back. Algorithms to learn the weights of an unknown comfort objective function are developed using a non-linear bicycle model and a more complex $15$ dof Amesim model. Learning is done with gradient descent, wherefore an alternative weight update method is proposed.\\
+In order to validate the developed algorithms for learning driver specific weights, data is generated with a known objective function which is tried to find back. Implementations are attained that make use of a non-linear bicycle model and a more complex $15$ degrees of freedom Amesim model. Learning is done making use of gradient descent, wherefore an alternative method is proposed based on an optimization of the step size.\\
 
-Results were retrieved that show that the lateral features were accurately learned. Due to a good match between the lateral learned and observed feature values, the observed kinematic signals were adequately found back.\\
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+Results were retrieved that show that the lateral weights, that determine a lane change, were accurately learned. Due to a good match between learned and observed feature values, the observed kinematic vehicle signals were adequately learned. This research was performed with the help of Siemens Digital Industries Software. \\
 \end{abstract}
 
 \begin{abstract*}
-  In dit \texttt{abstract} environment wordt een al dan niet uitgebreide
-  Nederlandse samenvatting van het werk gegeven.
-  Wanneer de tekst voor een Nederlandstalige master in het Engels wordt
-  geschreven, wordt hier normaal een uitgebreide samenvatting verwacht,
-  bijvoorbeeld een tiental bladzijden. 
+De menselijke bestuurder transformeert van een actieve naar een passieve deelnemer aan het verkeer door ontwikkelingen die worden verwezenlijkt in onderzoek naar zelfrijdende auto's.  Dit heeft als consequentie dat de rol van de menselijke bestuurder beperkt wordt tot het waarnemen en beoordelen van handelingen uitgevoerd door een zelfrijdend voertuig.  Om consumentenacceptatie te bevorderen en de competitiviteit van het product te verhogen, is het belangrijk dat bestuurderspecifiekebeoordeling van comfort gemodelleerd kan worden.\\
 
-  \lipsum[1]
+Hierdoor is onderzoek uitgevoerd met als doel een algoritme te ontwikkelen gebaseerd op 'inverse reinforcement learning' dat in staat is om specifieke comfort bevindingen bevat in een objectief functie te leren, voor een rijbaanwisseling maneuver. Hiervoor wordt er gekeken naar observaties van het maneuver uitgevoerd door een menselijke bestuurder omdat het geleerde objectief degene benadert die werkelijk gebruikt wordt door de bestuurder om een comfortabel maneuver uit te voeren.
+Comfort features, wat ge{\"i}ntegreerde voertuigsignalen zijn in een formulering zodat ze een notie van comfort bevatten, worden gebruikt om de overeenkomst uit te drukken tussen het geobserveerde en geleerde voertuigpad. De bijdrage van deze thesis is het theoretische idee van feature gebaseerd leren te gebruiken met praktisch relevant voertuigmodellen zoals het 15 vrijheidsgraden bevattende Amesim model. Wanneer het comfort objectief is ge{\"i}dentificeerd, kan het gebruikt worden om paden te plannen voor een zelfrijdend voertuig.\\
+
+Om de ontwikkelde algoritmes voor het leren van bestuurder specifieke wegingsfactoren te valideren, is data gegenereerd met een op voorhand gekend objectief dat zal geprobeerd teruggevonden te worden. Implementaties zijn verwezenlijkt die gebruik maken van een 'non-linear bicycle model' en het meer complexe 15 vrijheidsgraden bevattende Amesim model. Tijdens het leerproces is de gradi{\"e}nt afdaling methode gebruikt waarvoor een alternatief wordt voorgesteld dat gebaseerd op een optimalisatie van de stap grootte.\\ 
+
+Resultaten werden bekomen die tonen dat de laterale wegingsfactoren die bepalen hoe een rijbaanwisseling wordt uitgevoerd, accuraat geleerd kunnen worden. Door een goede match tussen de geleerde en geobserveerde feature waardes werden de geobserveerde voertuigsignalen accuraat geleerd. Dit onderzoek is uitgevoerd met de hulp van Siemens Digital Industries Software.  
+
+
+  
+
+%  environment wordt een al dan niet uitgebreide
+%  Nederlandse samenvatting van het werk gegeven.
+%  Wanneer de tekst voor een Nederlandstalige master in het Engels wordt
+%  geschreven, wordt hier normaal een uitgebreide samenvatting verwacht,
+%  bijvoorbeeld een tiental bladzijden.  
 \end{abstract*}
 
 % Een lijst van figuren en tabellen is optioneel

@@ -17,7 +17,7 @@
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Importance of topic}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Problem formulation and link with previous studies}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Thesis objective}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Thesis objective and structure}{2}{section.1.3}%
 \contentsline {chapter}{\chapternumberline {2}Background in optimal control problems}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Optimal control problem (OCP)}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Time discretization}{6}{subsection.2.1.1}%
@@ -27,13 +27,13 @@
 \contentsline {chapter}{\chapternumberline {3}State of the art modelling of comfort}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}What is comfort during driving?}{11}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Inverse reinforcement learning}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Feature based reinforcement learning}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.1}Feature based reinforcement learning}{14}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}RPROP algorithm}{15}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Conclusion}{16}{section.3.3}%
 \contentsline {chapter}{\chapternumberline {4}Learning from ideal data}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Non-linear bicycle model}{18}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Formulation of the algorithm}{20}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Flow of the algorithm}{20}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.1}Formulation of the learning algorithm}{20}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Objective function}{24}{subsection.4.2.2}%
 \contentsline {subsubsection}{Normalization factors}{26}{section*.23}%
 \contentsline {section}{\numberline {4.3}Ideal data}{27}{section.4.3}%
@@ -41,15 +41,15 @@
 \contentsline {subsection}{\numberline {4.3.2}Validation}{27}{subsection.4.3.2}%
 \contentsline {subsubsection}{Numerical vs Analytical formulation}{27}{section*.25}%
 \contentsline {subsubsection}{Initial guess}{28}{section*.27}%
-\contentsline {subsubsection}{Time limit}{29}{section*.29}%
+\contentsline {subsubsection}{Time limit}{28}{section*.29}%
 \contentsline {subsubsection}{Amount of control points}{29}{section*.31}%
 \contentsline {subsubsection}{Linear tire model}{30}{section*.33}%
-\contentsline {subsubsection}{Feature values}{30}{section*.36}%
-\contentsline {subsubsection}{Conclusion}{32}{section*.37}%
+\contentsline {subsubsection}{Feature values}{31}{section*.36}%
+\contentsline {subsubsection}{Conclusion}{31}{section*.37}%
 \contentsline {section}{\numberline {4.4}Ideal data learning results}{32}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{32}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Averaging method}{33}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Conflict method}{34}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.3}Conflict method}{35}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{38}{subsection.4.4.4}%
 \contentsline {section}{\numberline {4.5}Conclusion}{39}{section.4.5}%
 \contentsline {chapter}{\chapternumberline {5}Learning with complex vehicle model}{41}{chapter.5}%

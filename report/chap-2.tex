@@ -49,6 +49,7 @@ That also jerk plays an important role in the attained amount of comfort, is con
 %Zie quotes van de slides!
 
 \section{Inverse reinforcement learning}
+\label{s:inverse re le}
 Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will besides lead  to sub-optimal solutions in comparison with from data learned parameters. Inverse reinforcement learning is the activity of learning an agents reward function from observations. \\
 
 The goal of the learning algorithm explained in this thesis is to derive the parameters $\theta_j$ of different linearly combined comfort criteria $f_j$ combined in the cost function $J$. When the parameters are learned, the objective function $J$ will as best as possible explain the observed data. As the match with the observed data gets better during learning, it is assumed that $J$ is getting closer to the inner comfort function of the individual driver. However, it should be noted that the driver takes unknowingly a lot of comfort criteria into account and they are not all linearly relating as is suggested by Eq. (\ref{eq:1}). Therefore the comfort cost function in Eq. (\ref{eq:1}), will always be an approximation of reality. Although as discussed in \cite{Kuderer2015a}, it is possible to capture the magnitude of the quantities that contribute to the comfort of the users.\\

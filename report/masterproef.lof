@@ -55,7 +55,7 @@
 \contentsline {figure}{\numberline {C.1}{\ignorespaces This figure shows the amount of throttle and the angle of the front wheel of the bicycle model during the lane change maneuvers.\relax }}{76}{figure.caption.93}%
 \contentsline {figure}{\numberline {C.2}{\ignorespaces This figure shows the amount of first derivative of throttle and the first derivative of the angle of the front wheel of the bicycle model is given as input during the lane change maneuvers.\relax }}{78}{figure.caption.97}%
 \contentsline {figure}{\numberline {C.3}{\ignorespaces The convergence of $\bm {f}_{rel}$ towards one during the learning iterations.\relax }}{79}{figure.caption.98}%
-\contentsline {figure}{\numberline {C.4}{\ignorespaces The gradient $\pdv {\bm {F}}{\bm {\theta }}$ estimated by $\bm {F}_{obs} - \bm {F}(\bm {r}_{expected})$ towards zero during the different learning iterations. \relax }}{79}{figure.caption.99}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces The gradient $\pdv {\bm {F}_{diff}}{\bm {\theta }}$ estimated by $\bm {f}_{obs} - \bm {f}_{learned}$ towards zero during the different learning iterations.\relax }}{79}{figure.caption.99}%
 \contentsline {figure}{\numberline {C.5}{\ignorespaces The learned weights during the different learning iterations.\relax }}{80}{figure.caption.100}%
 \contentsline {figure}{\numberline {C.6}{\ignorespaces The difference of $\bm {\theta }$ with respect to one used in the previous iteration. \relax }}{80}{figure.caption.101}%
 \contentsline {figure}{\numberline {C.7}{\ignorespaces This figure shows which case of the three available in the RPROP algorithm is chosen during the learning iterations.\relax }}{81}{figure.caption.102}%

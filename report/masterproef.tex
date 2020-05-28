@@ -52,7 +52,7 @@
 %	Do not forget to change the 'elt' study to mechanical engineering.
 
 \begin{preface}
-	I would like to thank my family in the first place. During the history of my studies they always have been my biggest fans and I want to show my gratitude for the opportunities they have given me. I also want to thank my promoter Professor Swevers at the KU Leuven and Dr. Tong my mentor at Siemens for the professional discussions and tips they have given me in order to improve my results. I also want to thank Flavia Acerbo, an employee at Siemens, who answered my questions on several occasions. Finally I want to thank my aunt and sister for proofreading this thesis.
+	I would like to thank my family in the first place. During the history of my studies they always have been my biggest fans and I want to show my gratitude for the opportunities they have given me. I also want to thank my promoter Professor Swevers from the KU Leuven and Dr. Tong my mentor from Siemens for the professional discussions and tips they have given me in order to improve my results. I also want to thank Flavia Acerbo, an employee at Siemens, who answered my questions on several occasions. Finally I want to thank my aunt and sister for proofreading this thesis.
 
 \end{preface}
 
@@ -64,7 +64,7 @@
 
 The human driver transforms from being an active traffic participant into a passive agent due to the developments in autonomous driving. Consequently the human involvement becomes limited by perceiving and rating decisions taken by the vehicle. In order to enhance user acceptance and to increase competitiveness, it is important that a notion of driver specific comfort is taken into account. \\
 
-Therefore the objective of this research is to develop an algorithm based on inverse reinforcement learning which is able to learn driver specific experiences of comfort during a lane change, captured in weights of an objective function. Learning is done by looking at observations performed by the human driver because the learned objective function is an approximation of the one used when the driver generates comfortable paths. Comfort features, which are integrated kinematic vehicle signals in a formulation so that they determine a notion of comfort, are used in order to quantify similarity between observed and learned vehicle paths. The contribution of this thesis is to implement the theoretical idea of feature based learning with practical relevant vehicle models e.g. a $15$ degrees of freedom Amesim model. When the comfort objective is identified, it can be embedded in a path planning formulation.\\
+Therefore the objective of this research is to develop an algorithm based on inverse reinforcement learning which is able to learn driver specific experiences of comfort during a lane change, captured in weights of an objective function. Learning is done by looking at observations performed by the human driver because the learned objective function is an approximation of the one used when the driver generates comfortable paths. Comfort features, which are integrated kinematic vehicle signals in a formulation so that they determine a notion of comfort, are used in order to quantify similarity between observed and learned vehicle paths. The contribution of this thesis is to implement the theoretical idea of feature based learning with practical relevant vehicle models e.g. a $15$ degrees of freedom Amesim model. When the comfort objective is identified, it can be embedded in a path planning formulation for autonomous driving.\\
 
 In order to validate the developed algorithms for learning driver specific weights, data is generated with a known objective function which is tried to find back. Implementations are attained that make use of a non-linear bicycle model and a more complex $15$ degrees of freedom Amesim model. Learning is done making use of gradient descent, wherefore an alternative method is proposed based on an optimization of the step size.\\
 
@@ -72,7 +72,7 @@ Results were retrieved that show that the lateral weights, that determine a lane
 \end{abstract}
 
 \begin{abstract*}
-De menselijke bestuurder transformeert van een actieve naar een passieve deelnemer aan het verkeer door ontwikkelingen die worden verwezenlijkt in onderzoek naar zelfrijdende auto's.  Dit heeft als consequentie dat de rol van de menselijke bestuurder beperkt wordt tot het waarnemen en beoordelen van handelingen uitgevoerd door een zelfrijdend voertuig.  Om consumentenacceptatie te bevorderen en de competitiviteit van het product te verhogen, is het belangrijk dat bestuurderspecifiekebeoordeling van comfort gemodelleerd kan worden.\\
+De menselijke bestuurder transformeert van een actieve naar een passieve deelnemer van het verkeer door ontwikkelingen die worden verwezenlijkt in onderzoek naar zelfrijdende auto's.  Dit heeft als consequentie dat de rol van de menselijke bestuurder beperkt wordt tot het waarnemen en beoordelen van handelingen uitgevoerd door een zelfrijdend voertuig.  Om consumentenacceptatie te bevorderen en de competitiviteit van het product te verhogen, is het belangrijk dat bestuurderspecifiekebeoordeling van comfort gemodelleerd kan worden.\\
 
 Hierdoor is onderzoek uitgevoerd met als doel een algoritme te ontwikkelen gebaseerd op 'inverse reinforcement learning' dat in staat is om specifieke comfort bevindingen bevat in een objectief functie te leren, voor een rijbaanwisseling maneuver. Hiervoor wordt er gekeken naar observaties van het maneuver uitgevoerd door een menselijke bestuurder omdat het geleerde objectief degene benadert die werkelijk gebruikt wordt door de bestuurder om een comfortabel maneuver uit te voeren.
 Comfort features, wat ge{\"i}ntegreerde voertuigsignalen zijn in een formulering zodat ze een notie van comfort bevatten, worden gebruikt om de overeenkomst uit te drukken tussen het geobserveerde en geleerde voertuigpad. De bijdrage van deze thesis is het theoretische idee van feature gebaseerd leren te gebruiken met praktisch relevant voertuigmodellen zoals het 15 vrijheidsgraden bevattende Amesim model. Wanneer het comfort objectief is ge{\"i}dentificeerd, kan het gebruikt worden om paden te plannen voor een zelfrijdend voertuig.\\
@@ -119,16 +119,17 @@ Resultaten werden bekomen die tonen dat de laterale wegingsfactoren die bepalen 
   \begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
   		& Vectors are printed in bold. \\
     $N$    &  The number of control actions performed during optimization Eq. (\ref{opt:basic_opti_w}). \\
-    $N_{MPC}$ & amount of control points in the control horizon of Eq. (\ref{opt:tracking}).\\
+    $N_{MPC}$ & Amount of control points in the control horizon of Eq. (\ref{opt:tracking}).\\
     $m$ & Amount of observed lane changes.\\
     $Z$ & Amount of features.\\
-    $\bm{F(\bm{r})}$ & Feature vector $\in \mathbb{R}^{Z\times 1}$ with on its entries the different feature values for path $\bm{r}$.\\
-    $\bm{\tilde{F}(\bm{r})}$ & Observed feature vector $\in \mathbb{R}^{Z\times 1}$ with on its entries the different feature values for path $\bm{r}$.\\
-    $\bm{F}_{diff}$ & The difference between the observed and expected feature vector.\\
+    $\bm{r}$ & The 2D path followed during a lane change maneuver.\\
+    $\bm{F(\bm{r})}$ & Feature vector $\in \mathbb{R}^{Z\times 1}$ with on its entries the different feature values for learned path $\bm{r}$.\\
+    $\bm{\tilde{F}(\bm{r})}$ & Observed feature vector $\in \mathbb{R}^{Z\times 1}$ with on its entries the different feature values for the observed path $\bm{r}$.\\
+    $\bm{F}_{diff}$ & The difference between the observed and expected feature vector: $\tilde{F}(\bm{r}) - F(\bm{r})$.\\
     $V_{0}$ & Longitudinal speed at the start of the lane change.\\
     $V_{des}$ & Desired longitudinal speed during a lane change. Taken equal to $V_{0}$ during this thesis.\\
-   $L$   & Desired lateral distance travelled at the end of the lane change.\\
-    $\bm{\theta}$ & Weights that are learned in the objective function Eq. (\ref{eq:obj}).
+   $L$   & Desired lateral distance travelled at the end of the lane change.
+    
     
     
 
@@ -139,14 +140,14 @@ Resultaten werden bekomen die tonen dat de laterale wegingsfactoren die bepalen 
 \begin{flushleft}
 	\renewcommand{\arraystretch}{1.1}
 	\begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
-		$\bm{f}_{obs}$ & Feature vector calculated from observed lane changes according to Eq. (\ref{s:obj}).\\
-		$\bm{f}_{learned}$ & Feature vector as calculated according to Eq. (\ref{s:obj}) from the lane change following out of solving Eq. (\ref{opt:basic_opti_w}).\\
-		$\bm{f}_{rel}$ & Relative feature vector defined as $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
-		$\bm{r}$ & The 2D path followed during the lane change maneuver.\\
+		$\bm{\theta}$ & Weights that are learned in the objective function Eq. (\ref{eq:obj}).\\
+		$\bm{f}_{obs}$ & Feature vector calculated from observed lane change path according to Eq. (\ref{s:obj}).\\
+		$\bm{f}_{learned}$ & Feature vector as calculated according to Eq. (\ref{s:obj}) from the lane change path following out of solving Eq. (\ref{opt:basic_opti_w}).\\
+		$\bm{f}_{rel}$ & Relative feature vector defined as the element wise division of the learned feature vector by the observed one e.g. $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
 		$t_r$ & Amount of throttle given.\\
 		$\delta$ & Angle of the front wheel of the bicycle model.\\
-		$\delta_{s} $ & The steerwheelangle, related to $\delta$ by $G_s$ according to $\delta_s = Gs \cdot\delta$.  \\
-		$\Delta u$ & Update value used in the RPROP algorithm.
+		$\delta_{s} $ & The steer wheel angle, related to $\delta$ by $G_s$ according to $\delta_s = Gs \cdot\delta$.  \\
+		$\Delta u$ & Update value used in the RPROP algorithm in section \ref{s:RPROP}.
 	\end{tabularx}
 \end{flushleft}
 

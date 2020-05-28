@@ -44,14 +44,14 @@
 \contentsline {subsubsection}{Time limit}{28}{section*.29}%
 \contentsline {subsubsection}{Amount of control points}{29}{section*.31}%
 \contentsline {subsubsection}{Linear tire model}{30}{section*.33}%
-\contentsline {subsubsection}{Feature values}{31}{section*.36}%
+\contentsline {subsubsection}{Feature values}{30}{section*.36}%
 \contentsline {subsubsection}{Conclusion}{31}{section*.37}%
 \contentsline {section}{\numberline {4.4}Ideal data learning results}{32}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{32}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Averaging method}{33}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Conflict method}{35}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{38}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Conclusion}{39}{section.4.5}%
+\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{39}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Conclusion}{40}{section.4.5}%
 \contentsline {chapter}{\chapternumberline {5}Learning with complex vehicle model}{41}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Flow of the algorithm}{42}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Tracking MPC}{43}{section.5.2}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  28 MAY 2020 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  29 MAY 2020 00:41
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -1648,96 +1648,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
+[29]
+<figures/lat_acc.png, id=949, 1197.72469pt x 655.69969pt>
+File: figures/lat_acc.png Graphic file (type png)
+<use figures/lat_acc.png>
+Package pdftex.def Info: figures/lat_acc.png  used on input line 449.
+(pdftex.def)             Requested size: 398.0pt x 217.88234pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[29]
-<figures/lat_acc.png, id=945, 1197.72469pt x 655.69969pt>
-File: figures/lat_acc.png Graphic file (type png)
-<use figures/lat_acc.png>
-Package pdftex.def Info: figures/lat_acc.png  used on input line 450.
-(pdftex.def)             Requested size: 398.0pt x 217.88234pt.
-<figures/slipangle_V25.00-L6.94-amesim.png, id=946, 1191.7022pt x 668.4975pt>
+<figures/slipangle_V25.00-L6.94-amesim.png, id=950, 1191.7022pt x 668.4975pt>
 File: figures/slipangle_V25.00-L6.94-amesim.png Graphic file (type png)
 <use figures/slipangle_V25.00-L6.94-amesim.png>
 Package pdftex.def Info: figures/slipangle_V25.00-L6.94-amesim.png  used on inp
-ut line 457.
+ut line 456.
 (pdftex.def)             Requested size: 398.0pt x 223.25696pt.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+
+ []
+
+[30] [31 <./figures/lat_acc.png> <./figures/slipangle_V25.00-L6.94-amesim.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--477
+
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--466
-
- []
-
-[30 <./figures/lat_acc.png>] [31 <./figures/slipangle_V25.00-L6.94-amesim.png>]
-
-Underfull \hbox (badness 10000) in paragraph at lines 473--475
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--478
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 499--501
+Underfull \hbox (badness 10000) in paragraph at lines 498--500
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 506--508
+Underfull \hbox (badness 10000) in paragraph at lines 505--507
 
  []
 
 [33]
-<figures/3D_LP.png, id=998, 1389.7521pt x 709.6914pt>
+<figures/3D_LP.png, id=1000, 1389.7521pt x 709.6914pt>
 File: figures/3D_LP.png Graphic file (type png)
 <use figures/3D_LP.png>
-Package pdftex.def Info: figures/3D_LP.png  used on input line 531.
+Package pdftex.def Info: figures/3D_LP.png  used on input line 530.
 (pdftex.def)             Requested size: 398.0pt x 203.23875pt.
-<figures/3D_conv.png, id=1000, 1389.7521pt x 709.6914pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/3D_conv.png, id=1002, 1389.7521pt x 709.6914pt>
 File: figures/3D_conv.png Graphic file (type png)
 <use figures/3D_conv.png>
-Package pdftex.def Info: figures/3D_conv.png  used on input line 540.
+Package pdftex.def Info: figures/3D_conv.png  used on input line 539.
 (pdftex.def)             Requested size: 398.0pt x 203.23875pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
  []
 
-[34 <./figures/3D_LP.png>]
-<figures/3D_w.png, id=1008, 1389.7521pt x 709.6914pt>
+<figures/3D_w.png, id=1005, 1389.7521pt x 709.6914pt>
 File: figures/3D_w.png Graphic file (type png)
 <use figures/3D_w.png>
-Package pdftex.def Info: figures/3D_w.png  used on input line 550.
+Package pdftex.def Info: figures/3D_w.png  used on input line 549.
 (pdftex.def)             Requested size: 398.0pt x 203.23875pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--557
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
 
-<figures/conflict.png, id=1012, 687.56876pt x 453.695pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+[35 <./figures/3D_LP.png> <./figures/3D_conv.png>]
+<figures/conflict.png, id=1019, 687.56876pt x 453.695pt>
 File: figures/conflict.png Graphic file (type png)
 <use figures/conflict.png>
-Package pdftex.def Info: figures/conflict.png  used on input line 560.
+Package pdftex.def Info: figures/conflict.png  used on input line 559.
 (pdftex.def)             Requested size: 437.80243pt x 288.88232pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 560--561
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 559--560
  [][] 
  []
 
@@ -1745,28 +1751,42 @@ Overfull \hbox (39.80243pt too wide) in paragraph at lines 560--561
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 565--566
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
 
  []
 
-[35 <./figures/3D_conv.png>]
-Underfull \vbox (badness 3815) has occurred while \output is active []
 
- [36 <./figures/3D_w.png> <./figures/conflict.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 567--568
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
-<figures/3D_conv_conflict.png, id=1034, 1415.0466pt x 756.6669pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
+
+ []
+
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+ [36 <./figures/3D_w.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/3D_conv_conflict.png, id=1032, 1415.0466pt x 756.6669pt>
 File: figures/3D_conv_conflict.png Graphic file (type png)
 <use figures/3D_conv_conflict.png>
-Package pdftex.def Info: figures/3D_conv_conflict.png  used on input line 589.
+Package pdftex.def Info: figures/3D_conv_conflict.png  used on input line 588.
 (pdftex.def)             Requested size: 398.0pt x 212.82358pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[37]
-<figures/acc_conflict.png, id=1045, 1387.584pt x 669.9429pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--594
+
+ []
+
+[37 <./figures/conflict.png>]
+<figures/acc_conflict.png, id=1044, 1387.584pt x 669.9429pt>
 File: figures/acc_conflict.png Graphic file (type png)
 <use figures/acc_conflict.png>
 Package pdftex.def Info: figures/acc_conflict.png  used on input line 600.
@@ -1779,21 +1799,20 @@ Overfull \hbox (39.80243pt too wide) in paragraph at lines 600--601
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/acc_comp.png, id=1048, 1387.584pt x 669.9429pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38 <./figures/3D_conv_conflict.png>]
+<figures/acc_comp.png, id=1052, 1387.584pt x 669.9429pt>
 File: figures/acc_comp.png Graphic file (type png)
 <use figures/acc_comp.png>
 Package pdftex.def Info: figures/acc_comp.png  used on input line 612.
 (pdftex.def)             Requested size: 398.0pt x 192.15218pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 2980) has occurred while \output is active []
-
- [38 <./figures/3D_conv_conflict.png>]
-Underfull \vbox (badness 1205) has occurred while \output is active []
-
- [39 <./figures/acc_conflict.png> <./figures/acc_comp.png>]) [40]
+[39 <./figures/acc_conflict.png>]) [40 <./figures/acc_comp.png>]
 \openout2 = `chap-4.aux'.
 
  (chap-4.tex
@@ -1801,7 +1820,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<figures/Amesim.PNG, id=1070, 688.37175pt x 426.393pt>
+<figures/Amesim.PNG, id=1069, 688.37175pt x 426.393pt>
 File: figures/Amesim.PNG Graphic file (type png)
 <use figures/Amesim.PNG>
 Package pdftex.def Info: figures/Amesim.PNG  used on input line 12.
@@ -1811,7 +1830,7 @@ Package pdftex.def Info: figures/Amesim.PNG  used on input line 12.
 
 
  <./figures/Amesim.PNG>]
-<figures/complex_learning_diagram.PNG, id=1080, 783.92876pt x 297.11pt>
+<figures/complex_learning_diagram.PNG, id=1079, 783.92876pt x 297.11pt>
 File: figures/complex_learning_diagram.PNG Graphic file (type png)
 <use figures/complex_learning_diagram.PNG>
 Package pdftex.def Info: figures/complex_learning_diagram.PNG  used on input li
@@ -1831,7 +1850,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [42 <./figures/complex_learning_diagram.PNG>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Warning: Reference `s:mpc_form' on page 43 undefined on input line 53.
+
+
+Underfull \vbox (badness 3989) has occurred while \output is active []
 
  [43]
 Overfull \hbox (65.03555pt too wide) detected at line 87
@@ -1875,27 +1898,32 @@ mm/b/it/10.95 ref[]\OT1/lmr/m/n/10.95 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
-<figures/simulink_model.PNG, id=1123, 1076.22075pt x 412.54124pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+<figures/simulink_model.PNG, id=1124, 1076.22075pt x 412.54124pt>
 File: figures/simulink_model.PNG Graphic file (type png)
 <use figures/simulink_model.PNG>
-Package pdftex.def Info: figures/simulink_model.PNG  used on input line 119.
+Package pdftex.def Info: figures/simulink_model.PNG  used on input line 120.
 (pdftex.def)             Requested size: 437.80243pt x 167.82108pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 119--120
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 120--121
  [][] 
  []
 
@@ -1907,122 +1935,133 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: figures/2xy_N50_TMPC 0.1_Tf40.PNG Graphic file (type png)
 <use figures/2xy_N50_TMPC 0.1_Tf40.PNG>
 Package pdftex.def Info: figures/2xy_N50_TMPC 0.1_Tf40.PNG  used on input line 
-134.
+135.
 (pdftex.def)             Requested size: 437.80243pt x 240.93999pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 134--135
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 135--136
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
 
  []
 
-[46 <./figures/simulink_model.PNG> <./figures/2xy_N50_TMPC 0.1_Tf40.PNG>]
+[46 <./figures/simulink_model.PNG>]
 <figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG, id=1150, 582.67688pt x 639.13
 782pt>
 File: figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG Graphic file (type png)
 <use figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG>
 Package pdftex.def Info: figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG  used 
-on input line 146.
+on input line 147.
 (pdftex.def)             Requested size: 318.40121pt x 349.26431pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
-[47]
-Overfull \hbox (35.1568pt too wide) in paragraph at lines 163--171
+[47 <./figures/2xy_N50_TMPC 0.1_Tf40.PNG>] [48 <./figures/9jerks_N50_TMPC 0.1_T
+f22.5_adjusted.PNG>]
+Overfull \hbox (35.1568pt too wide) in paragraph at lines 164--172
  [][] 
+ []
+
+
+Overfull \hbox (89.0644pt too wide) in paragraph at lines 179--188
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (89.0644pt too wide) in paragraph at lines 178--187
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/2path_N1000IT28.PNG, id=1180, 1206.75844pt x 662.475pt>
+File: figures/2path_N1000IT28.PNG Graphic file (type png)
+<use figures/2path_N1000IT28.PNG>
+Package pdftex.def Info: figures/2path_N1000IT28.PNG  used on input line 230.
+(pdftex.def)             Requested size: 437.80243pt x 240.34068pt.
+
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 230--231
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<figures/error learned path.PNG, id=1181, 1227.83719pt x 680.5425pt>
+File: figures/error learned path.PNG Graphic file (type png)
+<use figures/error learned path.PNG>
+Package pdftex.def Info: figures/error learned path.PNG  used on input line 237
+.
+(pdftex.def)             Requested size: 437.80243pt x 242.65866pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 237--238
+ [][] 
  []
 
-[48 <./figures/9jerks_N50_TMPC 0.1_Tf22.5_adjusted.PNG>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [49]
-<figures/2path_N1000IT28.PNG, id=1187, 1206.75844pt x 662.475pt>
-File: figures/2path_N1000IT28.PNG Graphic file (type png)
-<use figures/2path_N1000IT28.PNG>
-Package pdftex.def Info: figures/2path_N1000IT28.PNG  used on input line 229.
-(pdftex.def)             Requested size: 437.80243pt x 240.34068pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 229--230
- [][] 
- []
+LaTeX Warning: Text page 50 contains only floats.
 
-<figures/error learned path.PNG, id=1188, 1227.83719pt x 680.5425pt>
-File: figures/error learned path.PNG Graphic file (type png)
-<use figures/error learned path.PNG>
-Package pdftex.def Info: figures/error learned path.PNG  used on input line 236
-.
-(pdftex.def)             Requested size: 437.80243pt x 242.65866pt.
-
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 236--237
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/12frel.PNG, id=1190, 1110.39844pt x 630.85687pt>
+[50 <./figures/2path_N1000IT28.PNG>]
+<figures/12frel.PNG, id=1194, 1110.39844pt x 630.85687pt>
 File: figures/12frel.PNG Graphic file (type png)
 <use figures/12frel.PNG>
-Package pdftex.def Info: figures/12frel.PNG  used on input line 245.
+Package pdftex.def Info: figures/12frel.PNG  used on input line 246.
 (pdftex.def)             Requested size: 437.80243pt x 248.72849pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 245--246
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 246--247
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50 <./figures/2path_N1000IT28.PNG>] [51 <./figures/error learned path.PNG> <./
-figures/12frel.PNG>]
-<figures/7JX_JY_N1000IT28.PNG, id=1203, 1229.34282pt x 642.14906pt>
+<figures/7JX_JY_N1000IT28.PNG, id=1199, 1229.34282pt x 642.14906pt>
 File: figures/7JX_JY_N1000IT28.PNG Graphic file (type png)
 <use figures/7JX_JY_N1000IT28.PNG>
-Package pdftex.def Info: figures/7JX_JY_N1000IT28.PNG  used on input line 254.
+Package pdftex.def Info: figures/7JX_JY_N1000IT28.PNG  used on input line 255.
 (pdftex.def)             Requested size: 437.80243pt x 228.6847pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 254--255
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 255--256
  [][] 
  []
 
-[52 <./figures/7JX_JY_N1000IT28.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[51 <./figures/error learned path.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52 <./figures/12frel.PNG> <./figures/7JX_JY_N1000IT28.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
@@ -2041,15 +2080,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 3--9
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
- [57])
-[58] [59
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+[57]) [58] [59
 
 
 ] [60]
@@ -2785,16 +2840,19 @@ Package rerunfilecheck Info: File `masterproef.out' has not changed.
 (rerunfilecheck)             Checksum: F750573C68996BCAFAC533BBBF82CBAD;2810.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
  ) 
 Here is how much of TeX's memory you used:
- 17263 strings out of 481518
- 279086 string characters out of 2911616
- 787774 words of memory out of 3000000
- 31481 multiletter control sequences out of 15000+200000
- 639827 words of font info for 187 fonts, out of 3000000 for 9000
+ 17260 strings out of 481518
+ 279056 string characters out of 2911616
+ 789774 words of memory out of 3000000
+ 31482 multiletter control sequences out of 15000+200000
+ 639661 words of font info for 185 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,15n,50p,1747b,553s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.e
@@ -2827,7 +2885,7 @@ lic/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Program
 s/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local
 /Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (112 pages, 6835774 bytes).
+Output written on masterproef.pdf (112 pages, 6837623 bytes).
 PDF statistics:
  1743 PDF objects out of 2073 (max. 8388607)
  369 named destinations out of 1000 (max. 500000)

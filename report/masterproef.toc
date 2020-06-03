@@ -1,16 +1,14 @@
 \babel@toc {english}{}
-\babel@toc {dutch}{}
-\babel@toc {english}{}
-\babel@toc {dutch}{}
 \babel@toc {english}{}
 \babel@toc {english}{}
-\babel@toc {dutch}{}
+\babel@toc {english}{}
+\babel@toc {english}{}
 \babel@toc {english}{}
 \babel@toc {english}{}
 \contentsline {chapter}{Preface}{i}{chapter*.1}%
 \contentsline {chapter}{Abstract}{iv}{chapter*.3}%
-\babel@toc {dutch}{}
-\contentsline {chapter}{Samenvatting}{v}{chapter*.4}%
+\babel@toc {english}{}
+\contentsline {chapter}{Abstract}{v}{chapter*.4}%
 \babel@toc {english}{}
 \contentsline {chapter}{List of Figures and Tables}{vi}{chapter*.5}%
 \contentsline {chapter}{List of Abbreviations and Symbols}{ix}{chapter*.10}%

@@ -226,7 +226,7 @@ As discussed above, the solver used to calculate the states and control signals 
 % Every time that the expected path has to be calculated as is visualised in flow diagram \ref{fig:basic learning}, the optimization \ref{opt:basic_opti_w} is performed with as initial guess the observed maneuver.\\
 
 \subsection{Objective function}\label{s:obj}
-The objective function used in Eq. (\ref{opt:basic_opti_w}) has to represent comfort felt by the driver and is based on the literature study displayed in section \ref{s:comfort_parameters}. The choice made in how to define the different features is important because it sets the fixed framework where the weighting factors will be learned in.  It can be expected that the linear relation of features given by $\bm{\theta}^T\bm{F}(\bm{r})$ will serve as an approximation for the real, more complex comfort objective of a human drive. The feature framework that is further discussed in this section, can be validated and adjusted based on an user study.\\
+The objective function used in Eq. (\ref{opt:basic_opti_w}) has to represent comfort felt by the driver and is based on the literature study displayed in section \ref{s:comfort_parameters}. The choice made in how to define the different features is important because it sets the fixed framework where the weighting factors will be learned in. It can be expected that the linear relation of features given by $\bm{\theta}^T\bm{F}(\bm{r})$ will serve as an approximation for the real, more complex comfort objective of a human drive. The feature framework that is further discussed in this section, can be validated and adjusted based on an user study.\\
 
 %As is showed in \cite this linear approximation of features can already capture  the main trends that contribute to an comfortable maneuver experience.
 
@@ -241,25 +241,25 @@ i \in \mathbb{N}\]
 \begin{equation}\label{eq:flong_acc}
 f_{1}:\bm{r}\xrightarrow{}f_1(\bm{r})=\int_{0}^{T}a_{x,total}^{2}(t) dt
 \end{equation}
-Feature one is assessing the amount of discomfort by integrating the total longitudinal acceleration in the local axis. The local axis is fixed to the centre of gravity of the vehicle, as can be seen in Figure \ref{fig:bicycle_model}. The total longitudinal acceleration  $a_{x,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in Eq. (\ref{eq:bicycle_model_eqmotion}). \\
+Feature one assesses the amount of discomfort by integrating the total longitudinal acceleration in the local axis. The local axis is fixed to the centre of gravity of the vehicle, as can be seen in Figure \ref{fig:bicycle_model}. The total longitudinal acceleration  $a_{x,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in Eq. (\ref{eq:bicycle_model_eqmotion}). \\
 
 \textit{Feature 2: lateral acceleration}
 \begin{equation}\label{eq:flat_acc}
 f_{2}:\bm{r}\xrightarrow{}f_2(\bm{r})=\int_{0}^{T}a_{y,total}^{2}(t) dt
 \end{equation}
-Feature two is assessing the amount of discomfort by integrating the total lateral acceleration in the local axis. The total lateral acceleration  $a_{y,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in Eq. (\ref{eq:bicycle_model_eqmotion}).\\
+Feature two assesses the amount of discomfort by integrating the total lateral acceleration in the local axis. The total lateral acceleration  $a_{y,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in Eq. (\ref{eq:bicycle_model_eqmotion}).\\
 
 \textit{Feature 3: longitudinal jerk}
 \begin{equation}\label{eq:flong_jerk}
 f_{3}:\bm{r}\xrightarrow{}f_3(\bm{r})=\int_{0}^{T}j_{x}^{2}(t) dt
 \end{equation}
-Feature three is giving the amount of comfort by integrating the total change of longitudinal acceleration during the followed path. \\
+Feature three gives the amount of comfort by integrating the total change of longitudinal acceleration during the followed path. \\
 
 \textit{Feature 4: lateral jerk}
 \begin{equation}\label{eq:flat_jerk}
 f_{4}:\bm{r}\xrightarrow{}f_4(\bm{r})=\int_{0}^{T}j_y^{2}(t) dt
 \end{equation}
-Feature four is given the amount of comfort by integrating the total change of lateral acceleration during the followed path. \\
+Feature four gives the amount of comfort by integrating the total change of lateral acceleration during the followed path. \\
 
 \textit{Feature 5: desired speed}
 \begin{equation}\label{eq:des_speed}
@@ -272,9 +272,9 @@ $v_{des}$ is assumed to be a constant value and set equal to the start velocity 
 f_{6}:\bm{r}\xrightarrow{}f_6(\bm{r})=\int_{0}^{T}(L-y)^2 dt
 \end{equation}
 
-$L$ is a constant and set equal to the desired lateral distance. If the vehicle reaches its desired lateral displacement faster, this is perceived as a good response and is interpreted as comfort as is discussed in section \ref{s:comfort_parameters}.\\
+$L$ is a constant and set equal to the desired lateral distance. If the vehicle reaches its desired lateral displacement faster, this is perceived as a good response and is interpreted as comfort, as discussed in section \ref{s:comfort_parameters}.\\
 
-In order to implement the above defined integrals in the objective function of Eq. (\ref{opt:basic_opti_w}), discretization is needed. For this the Crank-Nicolson numerical integration is used as is shown in Eq. (\ref{eq:CN}) for feature $f_j$. 
+In order to implement the integrals defined above in the objective function of Eq. (\ref{opt:basic_opti_w}), discretization is needed. For this the Crank-Nicolson numerical integration is used as is shown in Eq. (\ref{eq:CN}) for feature $f_j$. 
 \begin{subequations}\label{eq:CN}
 	\begin{equation}
 	\int_{f_j(t^n)}^{f_j(t^{n+1})}df_j=\int_{t^n}^{t^{n+1}} P(t) \cdot dt	
@@ -284,9 +284,9 @@ In order to implement the above defined integrals in the objective function of E
 	\end{equation}
 \end{subequations}\\
 
-To summarize, the objective described by Eq. (\ref{eq:obj}) consists out of a set of comfort features that model the amount of discomfort experienced during a maneuver. This is achieved by mapping kinematic signals onto scalar feature values through integration. By finding the driver specific weighting factors $\bm{\theta}$ in Eq. (\ref{eq:obj}), it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a lane change for a specific driver.\\
+To summarize, the objective described by Eq. (\ref{eq:obj}) consists of of a set of comfort features that model the amount of discomfort experienced during a maneuver. This is achieved by mapping kinematic signals onto scalar feature values through integration. By finding the driver specific weighting factors $\bm{\theta}$ in Eq. (\ref{eq:obj}), it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a lane change for a specific driver.\\
 
-As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of save driving contributes to the amount of comfort that is experienced. Save driving comprises next to smooth behaviour also distances between other road agents. However features that consider the environment are not taken into account in Eq. (\ref{eq:obj}). This can be done if data of the position of other vehicles during the maneuver is available. Paper \cite{Kuderer2015a} gives some suggestions showed by Eq. (\ref{eq:comfort_feature}) and  Eq. (\ref{eq:lane_d}).  
+As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of save driving contributes to the amount of comfort that is experienced. Save driving comprises next to smooth behaviour also distances between other road agents. However features that consider the environment are not taken into account in Eq. (\ref{eq:obj}). This can be achieved if data of the position of other vehicles during the maneuver is available. The paper of Kuderer \cite{Kuderer2015a} gives some suggestions showed by Eq. (\ref{eq:comfort_feature}) and  Eq. (\ref{eq:lane_d}).  
 \newpage
 
 \begin{equation}\label{eq:comfort_feature}

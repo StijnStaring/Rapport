@@ -32,20 +32,20 @@
 \contentsline {section}{\numberline {3.3}Conclusion}{16}{section.3.3}%
 \contentsline {chapter}{\chapternumberline {4}Learning from ideal data}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Non-linear bicycle model}{18}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Formulation of the algorithm}{20}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Formulation of the learning algorithm}{20}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.2}Learning algorithm}{20}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Formulation of the algorithm}{20}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Objective function}{24}{subsection.4.2.2}%
-\contentsline {subsubsection}{Normalization factors}{26}{section*.23}%
+\contentsline {subsection}{\numberline {4.2.3}Normalization factors}{26}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3}Ideal data}{27}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Generation}{27}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Validation}{27}{subsection.4.3.2}%
-\contentsline {subsubsection}{Numerical vs Analytical formulation}{27}{section*.25}%
-\contentsline {subsubsection}{Initial guess}{28}{section*.27}%
-\contentsline {subsubsection}{Time limit}{29}{section*.29}%
-\contentsline {subsubsection}{Amount of control points}{30}{section*.31}%
-\contentsline {subsubsection}{Linear tire model}{30}{section*.33}%
-\contentsline {subsubsection}{Feature values}{30}{section*.36}%
-\contentsline {subsubsection}{Conclusion}{32}{section*.37}%
+\contentsline {subsubsection}{Numerical vs Analytical formulation}{27}{section*.24}%
+\contentsline {subsubsection}{Initial guess}{28}{section*.26}%
+\contentsline {subsubsection}{Time limit}{29}{section*.28}%
+\contentsline {subsubsection}{Amount of control points}{30}{section*.30}%
+\contentsline {subsubsection}{Linear tire model}{30}{section*.32}%
+\contentsline {subsubsection}{Feature values}{30}{section*.35}%
+\contentsline {subsubsection}{Conclusion}{32}{section*.36}%
 \contentsline {section}{\numberline {4.4}Ideal data learning results}{32}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{32}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Averaging method}{33}{subsection.4.4.2}%
@@ -62,8 +62,8 @@
 \contentsline {chapter}{\chapternumberline {6}Enhancement of the weight update}{55}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{55}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Item 1}{55}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{55}{section*.63}%
-\contentsline {subsubsection}{Sub-item 2}{55}{section*.64}%
+\contentsline {subsubsection}{Sub-item 1}{55}{section*.62}%
+\contentsline {subsubsection}{Sub-item 2}{55}{section*.63}%
 \contentsline {subsection}{\numberline {6.1.2}Item 2}{55}{subsection.6.1.2}%
 \contentsline {section}{\numberline {6.2}The Second Topic}{55}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Conclusion}{55}{section.6.3}%
@@ -76,4 +76,4 @@
 \contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 ideal datasets}{73}{appendix.C}%
 \contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{83}{appendix.D}%
 \contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{89}{appendix.E}%
-\contentsline {chapter}{Bibliography}{99}{appendix*.129}%
+\contentsline {chapter}{Bibliography}{99}{appendix*.128}%

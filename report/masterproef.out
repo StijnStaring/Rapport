@@ -17,7 +17,7 @@
 \BOOKMARK [1][-]{section.3.3}{Conclusion}{chapter.3}% 17
 \BOOKMARK [0][-]{chapter.4}{Learning from ideal data}{}% 18
 \BOOKMARK [1][-]{section.4.1}{Non-linear bicycle model}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.2}{Formulation of the algorithm}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Learning algorithm}{chapter.4}% 20
 \BOOKMARK [1][-]{section.4.3}{Ideal data}{chapter.4}% 21
 \BOOKMARK [1][-]{section.4.4}{Ideal data learning results}{chapter.4}% 22
 \BOOKMARK [1][-]{section.4.5}{Conclusion}{chapter.4}% 23
@@ -39,4 +39,4 @@
 \BOOKMARK [0][-]{appendix.C}{Results of the averaging learning on 3 ideal datasets}{}% 39
 \BOOKMARK [0][-]{appendix.D}{Accuracy results of the tracking MPC}{}% 40
 \BOOKMARK [0][-]{appendix.E}{Results of learning with the 15 dof Amesim model}{}% 41
-\BOOKMARK [0][-]{appendix*.129}{Bibliography}{}% 42
+\BOOKMARK [0][-]{appendix*.128}{Bibliography}{}% 42

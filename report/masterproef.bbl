@@ -6,6 +6,12 @@ P.~Abbeel and A.~Y. Ng.
 \newblock {\em Proceedings, Twenty-First International Conference on Machine
   Learning, ICML 2004}, pages 1--8, 2004.
 
+\bibitem{Arenz2017}
+O.~Arenz.
+\newblock {Inverse Optimal Control}.
+\newblock {\em Encyclopedia of Machine Learning and Data Mining}, pages
+  678--678, 2017.
+
 \bibitem{Bae2019}
 I.~Bae, J.~Moon, and J.~Seo.
 \newblock {Toward a comfortable driving experience for a self-driving shuttle

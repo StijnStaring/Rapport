@@ -1,13 +1,15 @@
 \babel@toc {english}{}
+\babel@toc {dutch}{}
+\babel@toc {english}{}
+\babel@toc {dutch}{}
 \babel@toc {english}{}
 \babel@toc {english}{}
-\babel@toc {english}{}
-\babel@toc {english}{}
+\babel@toc {dutch}{}
 \babel@toc {english}{}
 \babel@toc {english}{}
 \addvspace {10pt}
 \addvspace {10pt}
-\babel@toc {english}{}
+\babel@toc {dutch}{}
 \addvspace {10pt}
 \babel@toc {english}{}
 \addvspace {10pt}
@@ -21,7 +23,7 @@
 \contentsline {table}{\numberline {4.3}{\ignorespaces This table shows the retrieved feature values using the two different initial guesses in Eq. (\ref {opt:basic_opti_w}).\relax }}{29}{table.caption.28}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces This table shows the retrieved feature values using different time limits in Eq. (\ref {opt:basic_opti_w}).\relax }}{29}{table.caption.30}%
 \contentsline {table}{\numberline {4.5}{\ignorespaces This table shows the retrieved feature values using different amount of control point N in Eq. (\ref {opt:basic_opti_w}).\relax }}{30}{table.caption.32}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces This table shows the weights learned from the dataset $V_0:22.22\frac {m}{s}-L:3.47m$ and the associated $\bm {f}_{rel}$ at a two different amount of iterations.\relax }}{33}{table.caption.38}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces This table shows the weighting factors learned from the dataset $V_0:22.22\frac {m}{s}-L:3.47m$ and the associated $\bm {f}_{rel}$ at a two different amount of iterations.\relax }}{33}{table.caption.38}%
 \contentsline {table}{\numberline {4.7}{\ignorespaces This table shows the $\bm {f}_{rel}$ for each individual dataset at convergence using the average method.\relax }}{34}{table.caption.39}%
 \contentsline {table}{\numberline {4.8}{\ignorespaces This table shows the $\bm {f_{rel}}$ for each individual dataset at convergence using the conflict method.\relax }}{38}{table.caption.44}%
 \addvspace {10pt}

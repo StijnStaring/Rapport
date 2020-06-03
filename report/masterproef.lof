@@ -1,13 +1,15 @@
 \babel@toc {english}{}
+\babel@toc {dutch}{}
+\babel@toc {english}{}
+\babel@toc {dutch}{}
 \babel@toc {english}{}
 \babel@toc {english}{}
-\babel@toc {english}{}
-\babel@toc {english}{}
+\babel@toc {dutch}{}
 \babel@toc {english}{}
 \babel@toc {english}{}
 \addvspace {10pt}
 \addvspace {10pt}
-\babel@toc {english}{}
+\babel@toc {dutch}{}
 \addvspace {10pt}
 \babel@toc {english}{}
 \addvspace {10pt}
@@ -30,7 +32,7 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces slip angle during lane change $V_0: 25.00 \frac {m}{s}$ and $L:6.94 m$ generated with the $15$ dof Amesim model.(blue:front,red:rear)\relax }}{31}{figure.caption.35}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Observed, initial and learned paths for 3 different observed lane changes generated with common underlying objective function.\relax }}{35}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces The evolvement of the average $\bm {f}_{rel}$ over the learning iterations.\relax }}{35}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces The different outputted weights over the learning iterations.\relax }}{36}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The different outputted weighting factors over the learning iterations.\relax }}{36}{figure.caption.42}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{37}{figure.caption.43}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces The evolvement of $\bm {f}_{rel}$ of dataset $V_0:22.22\hspace {1mm}\frac {m}{s},\hspace {1mm} L:3.47\hspace {1mm}m$ over the learning iterations.\relax }}{38}{figure.caption.45}%
 \contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values for the three lateral features. (3 datasets: blue, 7 datasets: orange)\relax }}{39}{figure.caption.46}%

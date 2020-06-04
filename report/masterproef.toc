@@ -59,7 +59,7 @@
 \contentsline {subsection}{\numberline {5.2.2}Tracking results}{46}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Learning results with the Amesim model}{48}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Conclusion}{53}{section.5.4}%
-\contentsline {chapter}{\chapternumberline {6}Enhancement of the weight update}{55}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {6}Enhanced weighting factor update}{55}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{55}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Item 1}{55}{subsection.6.1.1}%
 \contentsline {subsubsection}{Sub-item 1}{55}{section*.62}%

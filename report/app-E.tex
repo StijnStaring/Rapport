@@ -1,7 +1,7 @@
 \chapter{Results of learning with the 15 dof Amesim model}
 \label{app:E}
-This appendix shows the learning results of the 15 dof Amesim model on two distinct as possible datasets $V022.22 - L3.47$ and $V025.00 - L6.94$. Except for the longitudinal total acceleration and jerk, all the learned kinematic signals match closely with the observed one. The most important conclusions about the results can be find in section \ref{s:complex_learning_results}.\\
-It should be noted that Figure \ref{fig:app_deltaE} and \ref{fig:app_delta_dotE}  show the angle of the front wheel of the bicycle model. In order to obtain the steerwheelangle, this relation is linearised by the factor $Gs = 16.96$ which means that $\delta_{SWA} = Gs\cdot\delta_{front}$. Further Figure \ref{fig:app_convE} displays the convergence during the learning process and plots $\bm{f}_{rel}$ over the iterations. Figure \ref{fig:app_gradE} shows the absolute difference between the learned and observed features. In Figure\ref{fig:app_weightsE} the learning of the weights towards the final ones are presented. Figure \ref{fig:app_updateE} gives the difference of current weight with respect to the previous one and as last Figure \ref{fig:app_multigradE} shows which of the three RPROP cases that is used in order to update a certain weight.
+This appendix shows the learning results of the 15 dof Amesim model on two distinct datasets $V022.22 - L3.47$ and $V025.00 - L6.94$. Except for the longitudinal total acceleration and jerk, all the learned kinematic signals match closely with the observed one. The most important conclusions about the results can be found in section \ref{s:complex_learning_results}.\\
+It should be noted that Figure \ref{fig:app_deltaE} and \ref{fig:app_delta_dotE}  show the angle of the front wheel of the bicycle model. In order to obtain the steerwheelangle, this relation is linearised by the factor $Gs = 16.96$ which means that $\delta_{SWA} = Gs\cdot\delta_{front}$. Further Figure \ref{fig:app_convE} displays the convergence during the learning process and plots $\bm{f}_{rel}$ over the iterations. Figure \ref{fig:app_gradE} shows the absolute difference between the learned and observed features. In Figure \ref{fig:app_weightsE} the learning of the weighting factors towards the final ones are presented. Figure \ref{fig:app_updateE} gives the difference of current weighting factors with respect to the previous one and as last Figure \ref{fig:app_multigradE} shows which of the three RPROP cases is used in order to update a certain weight factor.
 
 
 
@@ -84,7 +84,7 @@ It should be noted that Figure \ref{fig:app_deltaE} and \ref{fig:app_delta_dotE}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.15\textwidth]{14weights.PNG}
-	\caption{The learned weights during the different learning iterations.}
+	\caption{The learned weighting factors during the different learning iterations.}
 	\label{fig:app_weightsE}
 \end{figure}
 

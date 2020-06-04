@@ -8,14 +8,14 @@ The chapter is structured as follows. First, the formulation of the method to up
 The goal of the learning algorithm is to find a set of weight factors $\bm{\theta}$ that will match $\bm{F}$ as closely as possible to $\bm{F}_{obs}$. From this naturally the unconstrained minimization of the error function as defined by Eq. (\ref{eq:obj_enh}) follows.
 
 \begin{multline}\label{eq:obj_enh}
-E(\bm{\theta}) = |\bm{f}_{obs,1} - \bm{f}_1(\bm{\theta})|+|\bm{f}_{obs,2} - \bm{f}_2(\bm{\theta})|+|\bm{f}_{obs,3} - \bm{f}_3(\bm{\theta})|\\
-+|\bm{f}_{obs,4} - \bm{f}_4(\bm{\theta})|+|\bm{f}_{obs,5} - \bm{f}_5(\bm{\theta})|+|\bm{f}_{obs,6} - \bm{f}_6(\bm{\theta})|
+E(\bm{\theta}) = |f_{obs,1} - f_1(\bm{\theta})|+|f_{obs,2} - f_2(\bm{\theta})|+|f_{obs,3} - f_3(\bm{\theta})|\\
++|f_{obs,4} - f_4(\bm{\theta})|+|f_{obs,5} - f_5(\bm{\theta})|+|f_{obs,6} - f_6(\bm{\theta})|
 \end{multline}
 
 However $\bm{F}(\bm{\theta})$ is not knowns analytically and therefore should be approximated by a second order multivariate Taylor expansion as described by \ref{eq:taylor}. The gradient and the hessian are respectively given by Eq. (\ref{eq:Grad}) and Eq. (\ref{eq:Hess}). The solution of the minimization of Eq. (\ref{eq:obj_enh}) is taken as $\bm{\theta}^{k+1}$.
 
 \begin{equation}\label{eq:taylor}
-	f_i({\bm{\theta}}) \approx f_i(\bm{\theta}_k) + \nabla f_i(\bm{\theta})^T|_{\bm{\theta} = \bm{\theta}_k}\cdot (\bm{\theta} - \bm{\theta}_k) + \frac{1}{2}(\bm{\theta} - \bm{\theta}_k)^T\cdot \bm{H}_i(\bm{\theta})|_{\bm{\theta} = \bm{\theta}_k}\cdot(\bm{\theta} - \bm{\theta}_k)
+	f_i({\bm{\theta}}) \approx f_i(\bm{\theta}^k) + \nabla f_i(\bm{\theta})^T|_{\bm{\theta} = \bm{\theta}^k}\cdot (\bm{\theta} - \bm{\theta}^k) + \frac{1}{2}(\bm{\theta} - \bm{\theta}^k)^T\cdot \bm{H}_i(\bm{\theta})|_{\bm{\theta} = \bm{\theta}^k}\cdot(\bm{\theta} - \bm{\theta}^k)
 \end{equation}
 \[\forall i,k \in \mathbb{N}\]
 
@@ -47,8 +47,46 @@ However $\bm{F}(\bm{\theta})$ is not knowns analytically and therefore should be
 \end{bmatrix}
 \end{equation}\\
 
-In order to investigate the local behaviour of a certain feature value $f_i$ in function of $\bm{\theta}$, the weight factors are slightly varied around $f_i(\bm{\theta}_k)$. This is done as described by Eq. $(\ref{})$ 
+In order to investigate the local behaviour of a certain feature value $f_i$ in function of $\bm{\theta}$, the weight factors are slightly varied around $f_i(\bm{\theta}^k)$. This is done as described by Eq. $(\ref{eq:theta_a})$ for weight $\theta_j$.
 
+\begin{subequations}\label{eq:theta_a}
+\begin{equation}\label{eq:tplus}
+	\theta^{k,+}_j = \theta^k_j + \Delta \theta
+\end{equation} 
+
+\begin{equation}\label{eq:tmin}
+	\theta^{k,-}_j = \theta^k_j - \Delta \theta
+\end{equation}
+\end{subequations}
+
+\begin{subequations}\label{eq:diff_enh}
+	\begin{equation}\label{eq:1azer}
+	\pdv{f_i}{\theta^k_j} = \frac{f_i|_{\theta^{k,+}_j}-f_i|_{\theta^{k,-}_j}}{2\Delta \theta}
+	\end{equation}
+	\begin{equation}
+	\pdv[2]{f_i}{\theta_{k,j}} = \frac{f_i|_{\theta^{k,+}_j}-2f_i|_{\theta^k_j}+f_i|_{\theta^{k,-}_j}}{\Delta \theta^2}
+	\end{equation}
+\end{subequations}
+
+For every evaluation of $f_i$, Eq. (\ref{opt:basic_opti_w}) is called and outputs six feature values. The solution of the optimization variables and lambda multipliers are knowns for $\bm{\theta}^k$ from the previous iteration and is used as initial guess which only difference with a very small value $\Delta \theta$ for a certain weight. It is expected that when the SQP method is used, that exploits that very good initial guess, convergence is fast reached.\\
+Eq. (\ref{opt:basic_opti_w}) is called $12$ times in order to estimate the $6$ gradients of the different features and the diagonals of the six Hessians, when making use of the previous solution $\bm{F}(\bm{\theta}^k)$. \\
+
+The hessian is assumed to be symmetrical, which means that only the cross derivates above the diagonal have to be calculated. The derivation of the of the cross derivatives can become quite complex, but an intuitive approach relies on the subsequent use of one-dimensional finite-difference discretization as in the example given by Eq. (\ref{eq:book}). This formulation is second order when the mesh is equidistant, orthogonal and with p, and z the mesh-point numbering \cite{Meyers}
+
+\begin{equation}\label{eq:book}
+	\pdv{\phi}{x}{y} \approx \frac{\pdv{\phi}{y}|_{p+1,z} - \pdv{\phi}{y}|_{p-1,z}}{2 \Delta x}.
+\end{equation}
+
+\[p,z \in \mathbb{N}\]
+
+This translates with the use of Eq. (\ref{eq:1azer}) into Eq. (\ref{eq:1azerty}) 
+
+\begin{equation}\label{eq:1azerty}
+\pdv{f_i}{\theta^{k}_p}{\theta^{k}_z} \approx \frac{f_i|_{\theta^{k,+}_p,\theta^{k,+}_z} - f_i|_{\theta^{k,+}_p,\theta^{k,-}_z} - f_i|_{\theta^{k,-}_p,\theta^{k,+}_z}+f_i|_{\theta^{k,-}_p,\theta^{k,-}_z}}{4(\Delta \theta)^2}.
+\end{equation}
+
+The conditions of an equidistant mesh is fulfilled when $\Delta \theta$ is taken the same for the different weights. The condition of an orthogonal mesh is automatically satisfied because a weight factor can be changed independently of the other weight factors. \\
+Because for the calculation of every cross derivative Eq. (\ref{opt:basic_opti_w}) is called $4$ times, this means the in order to calculate the full Hessian a total of $72$ evaluations of Eq. (\ref{opt:basic_opti_w}) are needed. After this, the error function of Eq. (\ref{eq:obj_enh}) can be minimized. 
 
 
 
@@ -56,9 +94,13 @@ In order to investigate the local behaviour of a certain feature value $f_i$ in 
 %EI had an idea about substituting  the gradient update by an update based on an optimization. In short I wanted during solving investigate the relation ofdF/dθ by varyingθ by a small value and solve the very similar solution again in order to get numerical estimates of the first derivative and the second derivative to be able to fill that in the second order taylor approximation forF(θ). After that I can minimize|F_obs-F(θ)| by a standard L1 fitting and this updates my new weights. This was just an idea I had and I didn’t had the time to look if it is feasible.
 
 \section{Discussion} \label{s:discussion_enh}
+Because 
+
+
 Have to check if it is feasible to evaluate the opti zo vaak
 ook kijken of hessian niet kan benaderen
 of enkel naar eerste orde kijken
+approximations for the hessian
 \section{Conclusion}\label{s:conclusion_enh}
 
 %\begin{algorithm}[H]

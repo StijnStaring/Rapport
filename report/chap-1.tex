@@ -36,7 +36,7 @@ The optimal control problem Eq. (\ref{eq:OCP}) is continuous in time. This means
 Since direct methods are best suited to solve practically relevant OCPs \cite{Mercy2018}, this thesis has chosen for to use this method. To implement the discretization of time when using the Direct method, a time shooting approach is used.
 
 \subsection{Time shooting}
-A shooting approach makes use of a time grid. Time will be sampled and on every time instant the optimal control problem is assessed. On these discrete points constraints will not be violated, but there are no limits on the amount of violation between the different time samples. In order to reduce the amount of constraint violation, the sampling rate should be taken high enough, while bearing in mind the extra optimization variables introduced and therefore, the calculation load. An other approach to take constraint violation into account, is using spline based optimization formulations. \cite{Mercy2018}\\
+A shooting approach makes use of a time grid. Time will be sampled and on every time instant the optimal control problem is assessed. On these discrete points constraints will not be violated, but there are no limits on the amount of violation between the different time samples. In order to reduce the amount of constraint violation the sample rate should be taken high enough, while bearing in mind the extra optimization variables introduces higher calculation load. Another approach to take constraint violation into account, is using spline based optimization formulations. \cite{Mercy2018}\\
 
 Two different shooting approaches exist:\\
 \begin{enumerate}

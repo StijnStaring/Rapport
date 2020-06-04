@@ -1,28 +1,65 @@
 \chapter{Enhanced weighting factor update}
 \label{cha:Enhancement}
 
-Bespreek de validatie van de methode. Implementeer similaties in prescan.
-Bespreek de verschillende software tools bij Siemens --> Amesim, simulink, prescan.
-Hoe werken ze samen en hoe wordt de validatie precies gedaan? Wat zijn de resultaten?
+This chapters proposes a theoretical alternative for updating $\bm{\theta}^k$ during the learning iterations. The previous method made use of the gradient approximation $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ embedded in a gradient descent formulation and the step size determined by the RPROP algorithm. The method proposed here, calculates $\bm{\theta}^{k+1}$ based on an unconstrained optimization.\\
+
+The chapter is structured as follows. First, the formulation of the method to update the weight factor is discussed in section \ref{s:formulation_enh}. Afterwards a discussion follows in section \ref{s:discussion_enh} and finally a conclusion is given in section \ref{s:conclusion_enh}
+\section{Formulation}\label{s:formulation_enh}
+The goal of the learning algorithm is to find a set of weight factors $\bm{\theta}$ that will match $\bm{F}$ as closely as possible to $\bm{F}_{obs}$. From this naturally the unconstrained minimization of the error function as defined by Eq. (\ref{eq:obj_enh}) follows.
+
+\begin{multline}\label{eq:obj_enh}
+E(\bm{\theta}) = |\bm{f}_{obs,1} - \bm{f}_1(\bm{\theta})|+|\bm{f}_{obs,2} - \bm{f}_2(\bm{\theta})|+|\bm{f}_{obs,3} - \bm{f}_3(\bm{\theta})|\\
++|\bm{f}_{obs,4} - \bm{f}_4(\bm{\theta})|+|\bm{f}_{obs,5} - \bm{f}_5(\bm{\theta})|+|\bm{f}_{obs,6} - \bm{f}_6(\bm{\theta})|
+\end{multline}
+
+However $\bm{F}(\bm{\theta})$ is not knowns analytically and therefore should be approximated by a second order multivariate Taylor expansion as described by \ref{eq:taylor}. The gradient and the hessian are respectively given by Eq. (\ref{eq:Grad}) and Eq. (\ref{eq:Hess}). The solution of the minimization of Eq. (\ref{eq:obj_enh}) is taken as $\bm{\theta}^{k+1}$.
+
+\begin{equation}\label{eq:taylor}
+	f_i({\bm{\theta}}) \approx f_i(\bm{\theta}_k) + \nabla f_i(\bm{\theta})^T|_{\bm{\theta} = \bm{\theta}_k}\cdot (\bm{\theta} - \bm{\theta}_k) + \frac{1}{2}(\bm{\theta} - \bm{\theta}_k)^T\cdot \bm{H}_i(\bm{\theta})|_{\bm{\theta} = \bm{\theta}_k}\cdot(\bm{\theta} - \bm{\theta}_k)
+\end{equation}
+\[\forall i,k \in \mathbb{N}\]
+
+\begin{equation}\label{eq:Grad}
+\centering
+\nabla f_i(\bm{\theta})^T = 
+\begin{bmatrix}
+\pdv{f_i}{\theta_1} & \pdv{f_i}{\theta_2} & \pdv{f_i}{\theta_3} & \pdv{f_i}{\theta_4} &\pdv{f_i}{\theta_5} & \pdv{f_i}{\theta_5} & \pdv{f_i}{\theta_6}
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}\label{eq:Hess}
+\centering
+\bm{H}_i(\bm{\theta}) = 
+\begin{bmatrix}
+
+ \pdv[2]{f_i}{\theta_1} & \pdv{f_i}{\theta_1}{\theta_2}& \pdv{f_i}{\theta_1}{\theta_3}& \pdv{f_i}{\theta_1}{\theta_4}& \pdv{f_i}{\theta_1}{\theta_5}& \pdv{f_i}{\theta_1}{\theta_6}\\
+ 
+  \pdv{f_i}{\theta_2}{\theta_1}&\pdv[2]{f_i}{\theta_2} & \pdv{f_i}{\theta_2}{\theta_3}& \pdv{f_i}{\theta_2}{\theta_4}&\pdv{f_i}{\theta_2}{\theta_5}&\pdv{f_i}{\theta_2}{\theta_6}\\
+  
+  \pdv{f_i}{\theta_3}{\theta_1}&\pdv{f_i}{\theta_3}{\theta_2}&\pdv[2]{f_i}{\theta_3} &  \pdv{f_i}{\theta_3}{\theta_4}&\pdv{f_i}{\theta_3}{\theta_5}&\pdv{f_i}{\theta_3}{\theta_6}\\
+  
+  \pdv{f_i}{\theta_4}{\theta_1}&\pdv{f_i}{\theta_4}{\theta_2} &  \pdv{f_i}{\theta_4}{\theta_3}&\pdv[2]{f_i}{\theta_4}&\pdv{f_i}{\theta_4}{\theta_5}&\pdv{f_i}{\theta_4}{\theta_6}\\
+  
+  \pdv{f_i}{\theta_5}{\theta_1}&\pdv{f_i}{\theta_5}{\theta_2} &  \pdv{f_i}{\theta_5}{\theta_3}&\pdv{f_i}{\theta_5}{\theta_4}&\pdv[2]{f_i}{\theta_5}&\pdv{f_i}{\theta_5}{\theta_6}\\
+  
+  \pdv{f_i}{\theta_6}{\theta_1}&\pdv{f_i}{\theta_6}{\theta_2} &  \pdv{f_i}{\theta_6}{\theta_3}&\pdv{f_i}{\theta_6}{\theta_4}&\pdv{f_i}{\theta_6}{\theta_5}&\pdv[2]{f_i}{\theta_6}
+
+\end{bmatrix}
+\end{equation}\\
+
+In order to investigate the local behaviour of a certain feature value $f_i$ in function of $\bm{\theta}$, the weight factors are slightly varied around $f_i(\bm{\theta}_k)$. This is done as described by Eq. $(\ref{})$ 
+
+
 
 
 
 %EI had an idea about substituting  the gradient update by an update based on an optimization. In short I wanted during solving investigate the relation ofdF/dθ by varyingθ by a small value and solve the very similar solution again in order to get numerical estimates of the first derivative and the second derivative to be able to fill that in the second order taylor approximation forF(θ). After that I can minimize|F_obs-F(θ)| by a standard L1 fitting and this updates my new weights. This was just an idea I had and I didn’t had the time to look if it is feasible.
-\section{The First Topic of this Chapter}
-\subsection{Item 1}
-\subsubsection{Sub-item 1}
 
-
-\subsubsection{Sub-item 2}
-
-
-\subsection{Item 2}
-
-
-\section{The Second Topic}
-
-
-\section{Conclusion}
+\section{Discussion} \label{s:discussion_enh}
+Have to check if it is feasible to evaluate the opti zo vaak
+ook kijken of hessian niet kan benaderen
+of enkel naar eerste orde kijken
+\section{Conclusion}\label{s:conclusion_enh}
 
 %\begin{algorithm}[H]
 %	\SetAlgoLined

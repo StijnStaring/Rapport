@@ -60,13 +60,9 @@
 \contentsline {section}{\numberline {5.3}Learning results with the Amesim model}{48}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Conclusion}{53}{section.5.4}%
 \contentsline {chapter}{\chapternumberline {6}Enhanced weighting factor update}{55}{chapter.6}%
-\contentsline {section}{\numberline {6.1}The First Topic of this Chapter}{55}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Item 1}{55}{subsection.6.1.1}%
-\contentsline {subsubsection}{Sub-item 1}{55}{section*.62}%
-\contentsline {subsubsection}{Sub-item 2}{55}{section*.63}%
-\contentsline {subsection}{\numberline {6.1.2}Item 2}{55}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}The Second Topic}{55}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{55}{section.6.3}%
+\contentsline {section}{\numberline {6.1}Formulation}{55}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Discussion}{56}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{56}{section.6.3}%
 \contentsline {chapter}{\chapternumberline {7}Conclusion}{57}{chapter.7}%
 \contentsline {appendix}{\chapternumberline {A}Jerk equations of the non-linear bicycle model}{61}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Equations}{61}{section.A.1}%
@@ -76,4 +72,4 @@
 \contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 ideal datasets}{73}{appendix.C}%
 \contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{83}{appendix.D}%
 \contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{89}{appendix.E}%
-\contentsline {chapter}{Bibliography}{99}{appendix*.128}%
+\contentsline {chapter}{Bibliography}{99}{appendix*.126}%

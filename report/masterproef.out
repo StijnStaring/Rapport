@@ -27,8 +27,8 @@
 \BOOKMARK [1][-]{section.5.3}{Learning results with the Amesim model}{chapter.5}% 27
 \BOOKMARK [1][-]{section.5.4}{Conclusion}{chapter.5}% 28
 \BOOKMARK [0][-]{chapter.6}{Enhanced weighting factor update}{}% 29
-\BOOKMARK [1][-]{section.6.1}{The First Topic of this Chapter}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.2}{The Second Topic}{chapter.6}% 31
+\BOOKMARK [1][-]{section.6.1}{Formulation}{chapter.6}% 30
+\BOOKMARK [1][-]{section.6.2}{Discussion}{chapter.6}% 31
 \BOOKMARK [1][-]{section.6.3}{Conclusion}{chapter.6}% 32
 \BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 33
 \BOOKMARK [0][-]{appendix.A}{Jerk equations of the non-linear bicycle model}{}% 34
@@ -39,4 +39,4 @@
 \BOOKMARK [0][-]{appendix.C}{Results of the averaging learning on 3 ideal datasets}{}% 39
 \BOOKMARK [0][-]{appendix.D}{Accuracy results of the tracking MPC}{}% 40
 \BOOKMARK [0][-]{appendix.E}{Results of learning with the 15 dof Amesim model}{}% 41
-\BOOKMARK [0][-]{appendix*.128}{Bibliography}{}% 42
+\BOOKMARK [0][-]{appendix*.126}{Bibliography}{}% 42

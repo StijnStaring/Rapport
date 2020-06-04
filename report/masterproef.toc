@@ -47,8 +47,8 @@
 \contentsline {subsubsection}{Feature values}{30}{section*.35}%
 \contentsline {subsubsection}{Conclusion}{32}{section*.36}%
 \contentsline {section}{\numberline {4.4}Ideal data learning results}{32}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{32}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Averaging method}{33}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{33}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Averaging method}{34}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Conflict method}{36}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{39}{subsection.4.4.4}%
 \contentsline {section}{\numberline {4.5}Conclusion}{40}{section.4.5}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  4 JUN 2020 08:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.2.19)  4 JUN 2020 09:23
 entering extended mode
 **./masterproef.tex
 (masterproef.tex
@@ -1632,7 +1632,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/lat_acc.png, id=953, 1197.72469pt x 655.69969pt>
 File: figures/lat_acc.png Graphic file (type png)
 <use figures/lat_acc.png>
-Package pdftex.def Info: figures/lat_acc.png  used on input line 448.
+Package pdftex.def Info: figures/lat_acc.png  used on input line 446.
 (pdftex.def)             Requested size: 398.0pt x 217.88234pt.
 
 
@@ -1642,39 +1642,39 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: figures/slipangle_V25.00-L6.94-amesim.png Graphic file (type png)
 <use figures/slipangle_V25.00-L6.94-amesim.png>
 Package pdftex.def Info: figures/slipangle_V25.00-L6.94-amesim.png  used on inp
-ut line 455.
+ut line 453.
 (pdftex.def)             Requested size: 398.0pt x 223.25696pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
 [30] [31 <./figures/lat_acc.png> <./figures/slipangle_V25.00-L6.94-amesim.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--473
+Underfull \hbox (badness 10000) in paragraph at lines 469--471
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--476
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 502--504
 
  []
 
 [33]
-Overfull \hbox (25.39049pt too wide) in paragraph at lines 509--510
+Overfull \hbox (25.39049pt too wide) in paragraph at lines 507--508
 \T1/lmr/m/n/10.95 (-20) and av-er-age $\OML/lmm/b/it/10.95 f[]$ \T1/lmr/m/n/10.
 95 (-20) found af-ter $\OT1/lmr/m/n/10.95 (-20) 25$ \T1/lmr/m/n/10.95 (-20) it-
 er-a-tions are re-spec-tively $[][] [] []$
@@ -1683,7 +1683,7 @@ er-a-tions are re-spec-tively $[][] [] []$
 <figures/3D_LP.png, id=1005, 1389.7521pt x 709.6914pt>
 File: figures/3D_LP.png Graphic file (type png)
 <use figures/3D_LP.png>
-Package pdftex.def Info: figures/3D_LP.png  used on input line 529.
+Package pdftex.def Info: figures/3D_LP.png  used on input line 527.
 (pdftex.def)             Requested size: 398.0pt x 203.23875pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1691,13 +1691,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures/3D_conv.png, id=1007, 1389.7521pt x 709.6914pt>
 File: figures/3D_conv.png Graphic file (type png)
 <use figures/3D_conv.png>
-Package pdftex.def Info: figures/3D_conv.png  used on input line 538.
+Package pdftex.def Info: figures/3D_conv.png  used on input line 536.
 (pdftex.def)             Requested size: 398.0pt x 203.23875pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
 
  []
 
@@ -1705,14 +1705,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 543--544
 <figures/3D_w.png, id=1014, 1389.7521pt x 709.6914pt>
 File: figures/3D_w.png Graphic file (type png)
 <use figures/3D_w.png>
-Package pdftex.def Info: figures/3D_w.png  used on input line 548.
+Package pdftex.def Info: figures/3D_w.png  used on input line 546.
 (pdftex.def)             Requested size: 398.0pt x 203.23875pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--555
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
@@ -1723,10 +1723,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/conflict.png, id=1024, 687.56876pt x 453.695pt>
 File: figures/conflict.png Graphic file (type png)
 <use figures/conflict.png>
-Package pdftex.def Info: figures/conflict.png  used on input line 558.
+Package pdftex.def Info: figures/conflict.png  used on input line 556.
 (pdftex.def)             Requested size: 437.80243pt x 288.88232pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 558--559
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 556--557
  [][] 
  []
 
@@ -1734,17 +1734,17 @@ Overfull \hbox (39.80243pt too wide) in paragraph at lines 558--559
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 563--564
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 565--566
-
- []
-
 [36 <./figures/3D_w.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 567--568
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
 
  []
 
@@ -1754,13 +1754,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures/3D_conv_conflict.png, id=1037, 1415.0466pt x 756.6669pt>
 File: figures/3D_conv_conflict.png Graphic file (type png)
 <use figures/3D_conv_conflict.png>
-Package pdftex.def Info: figures/3D_conv_conflict.png  used on input line 587.
+Package pdftex.def Info: figures/3D_conv_conflict.png  used on input line 585.
 (pdftex.def)             Requested size: 398.0pt x 212.82358pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
@@ -1768,17 +1768,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 592--593
 <figures/acc_conflict.png, id=1054, 1387.584pt x 669.9429pt>
 File: figures/acc_conflict.png Graphic file (type png)
 <use figures/acc_conflict.png>
-Package pdftex.def Info: figures/acc_conflict.png  used on input line 599.
+Package pdftex.def Info: figures/acc_conflict.png  used on input line 597.
 (pdftex.def)             Requested size: 437.80243pt x 211.37047pt.
 
-Overfull \hbox (39.80243pt too wide) in paragraph at lines 599--600
+Overfull \hbox (39.80243pt too wide) in paragraph at lines 597--598
  [][] 
  []
 
 <figures/acc_comp.png, id=1057, 1387.584pt x 669.9429pt>
 File: figures/acc_comp.png Graphic file (type png)
 <use figures/acc_comp.png>
-Package pdftex.def Info: figures/acc_comp.png  used on input line 611.
+Package pdftex.def Info: figures/acc_comp.png  used on input line 609.
 (pdftex.def)             Requested size: 398.0pt x 192.15218pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -2832,7 +2832,7 @@ lic/lm/lmsy8.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb><C:/Users/t2vosx/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/t2vosx/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on masterproef.pdf (112 pages, 6815586 bytes).
+Output written on masterproef.pdf (112 pages, 6815546 bytes).
 PDF statistics:
  1746 PDF objects out of 2073 (max. 8388607)
  370 named destinations out of 1000 (max. 500000)

@@ -419,7 +419,7 @@ In order to check the dependency of the generated data on the chosen $T_{limit}$
 \end{table}
 Looking at even greater time limits is not desirable because beyond a time limit of $100 \hspace{1mm}s$ the time discretization gets larger than $0.1\hspace{1mm}s$ for N equal to $1000$, which will result in a less reliable discretization.\\
 
-From the result of table \ref{tab:GD_time_limit} it can be concluded that the influence of manually setting the time limit in Eq. (\ref{opt:basic_opti_w}), can be neglected. The most important lateral features, as will be discussed in section \ref{s:fv_val}, are very similar and also the kinematic signals for the lateral variables found in Appendix \ref{app:B} show the same behaviour.
+From the result of table \ref{tab:GD_time_limit} it can be concluded that the influence of manually setting the time limit in Eq. (\ref{opt:basic_opti_w}), can be neglected. The lateral features that are the most important ones, as will be discussed in section \ref{s:fv_val}, are very similar and also the kinematic signals for the lateral variables found in Appendix \ref{app:B} show the same behaviour.
 
 \subsubsection{Amount of control points}
 The test carried out to investigate the dependence of the resulting feature values on the amount of control points $N$, uses the same parameters as described in the previous section but fixes the time limit on $30\hspace{1mm}s$ and varies N over $500$, $1000$ and $1500$ points. The results are shown in table \ref{tab:GD_N} whereof it follows that a choice of N equal to $1000$ is justified considering the small difference of the obtained features when N is chosen equal to $1500$. For a full overview of the different kinematic signals, reference is made to Appendix \ref{app:B}. Again the kinematic vehicle signals confirm the same conclusion as taken from table \ref{tab:GD_N}.
@@ -438,8 +438,6 @@ The test carried out to investigate the dependence of the resulting feature valu
 	\caption{This table shows the retrieved feature values using different amount of control point N in Eq. (\ref{opt:basic_opti_w}).}
 	\label{tab:GD_N}
 \end{table}
-
-
 \subsubsection{Linear tire model}
 In this section it is checked if the conditions to use a linearised lateral tire model is valid. In literature \cite{TongDuySon2019} it was found that this is the case when there are small lateral accelerations ($a_y <= 4 \frac{m}{s^2}$) and slip angles ($\alpha <= 5^o $) during the maneuver. Figure \ref{fig:lat} gives the total lateral acceleration during a lane change maneuver that moves two lanes or an estimated lateral distance of $6.94 m$. Figure \ref{fig:slip} shows the slip angle during this maneuver. From the graphs it can be concluded that the linearisation of the lateral tire forces is valid and there is no need for a more complex tyre model embedded in Eq. (\ref{opt:basic_opti_w}).  Both figures are generated with the complex vehicle model discussed in chapter \ref{cha:Tracking_MPC} and make use of Eq. \ref{eq:bicycle_slipangle} in order to estimate the slip angle.
 

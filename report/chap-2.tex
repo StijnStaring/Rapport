@@ -49,10 +49,10 @@ That also jerk plays an important role in the attained amount of comfort, is con
 
 %Zie quotes van de slides!
 
-\section{Inverse reinforcement learning}
+\section{Inverse optimal control}
 \label{s:inverse re le}
 Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will besides lead  to suboptimal solutions in comparison with data learned parameters. 
-Inverse Reinforcement Learning, which is sometimes also called Inverse Optimal Control, is the activity of learning an agents objective function from expert demonstrations. \cite{Arenz2017} \\
+Inverse optimal control is the activity of learning an agents objective function from expert demonstrations. \cite{Arenz2017} \\
 
 The goal of the learning algorithm explained in this thesis is to derive the parameters $\theta_j$ of different linearly combined comfort criteria $f_j$ combined in the cost function $J$. When the parameters are learned, the objective function $J$ will as best as possible explain the observed data. As the match with the observed data gets better during learning, it is assumed that $J$ is getting closer to the inner comfort function of the individual driver. However, it should be noted that the driver takes unknowingly a lot of comfort criteria into account and they are not all linearly relating as is suggested by Eq. (\ref{eq:1}). Therefore the comfort cost function in Eq. (\ref{eq:1}), will always be an approximation of reality. Although as discussed in \cite{Kuderer2015a}, it is possible to capture the magnitude of the main drivers that contribute to the comfort experienced by the users.\\
 
@@ -64,7 +64,7 @@ The goal of the learning algorithm explained in this thesis is to derive the par
 
 In order to create a generative model that creates vehicle paths $\bm{r}_i$ with equivalent kinematic characteristics as the path that was observed $\tilde{\bm{r}_i}$, a feature-based inverse reinforcement learning is applied, with $i \in [1 ... m]$ and $m$ the amount of observed trajectories.\cite{Kuderer2015a,Abbeel2004} A feature is encoding relevant kinematic properties onto a scalar value and the difference between the demonstrated and calculated features give a clear indication about the similarity of the kinematic signals i.e. displacement,velocity, acceleration and jerk. \\
 
-\subsection{Feature based reinforcement learning}
+\subsection{Feature-based inverse optimal control}
 A feature value maps a signal onto a scalar and encapsulates a comfort criteria. The higher the scalar value the more discomfort is experienced by the driver. An example is given by Eq. (\ref{eq:3}) that measures the amount of accelerations in a maneuver.
 
 \begin{equation}\label{eq:3}
@@ -177,7 +177,7 @@ If the derivative retains its sign with respect to the previous iteration, the u
 \section{Conclusion}
 In order to find parameters of driving comfort that will be used as comfort criteria, a literature study was conducted which was mainly questionnaire based. The results were that to be able to evaluate comfort, higher order kinematic variables like accelerations and jerks must be considered. These variables are important to acquire a smooth vehicle path and to give a continuous and natural feeling when driving. The quickness of the maneuver and the feeling of save driving should also be taken into account. Therefore comfort is naturally influenced by the environment of the vehicle. It was found that when more traffic is present, a higher tolerance for less smooth trajectories is granted. Finally, it was explained that if the goal of the maneuver was more rapidly completed, this influenced the amount of comfort in a positive way.\\
 
-In the second part of the literature study the concept of inverse reinforcement learning was clarified and it was explained that it is the process of identifying the unknown objective of the human driver. Next, feature based learning has been looked into and a practical method was found in order to retrieve $\bm{\theta}_{opti}$ making use of gradient descent. After this the RPROP algorithm was introduced that will be used to update the weighting factors while making use of the gradient descent method in order to match expected feature values with the observed ones.
+In the second part of the literature study the concept of inverse optimal control was clarified and it was explained that it is the process of identifying the unknown objective of the human driver. Next, feature based learning has been looked into and a practical method was found in order to retrieve $\bm{\theta}_{opti}$ making use of gradient descent. After this the RPROP algorithm was introduced that will be used to update the weighting factors while making use of the gradient descent method in order to match expected feature values with the observed ones.
 
 \newpage
 

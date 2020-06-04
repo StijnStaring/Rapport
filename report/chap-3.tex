@@ -286,26 +286,27 @@ In order to implement the integrals defined above in the objective function of E
 
 To summarize, the objective described by Eq. (\ref{eq:obj}) consists of of a set of comfort features that model the amount of discomfort experienced during a maneuver. This is achieved by mapping kinematic signals onto scalar feature values through integration. By finding the driver specific weighting factors $\bm{\theta}$ in Eq. (\ref{eq:obj}), it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a lane change for a specific driver.\\
 
-As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of save driving contributes to the amount of comfort that is experienced. Save driving comprises next to smooth behaviour also distances between other road agents. However features that consider the environment are not taken into account in Eq. (\ref{eq:obj}). This can be achieved if data of the position of other vehicles during the maneuver is available. The paper of Kuderer \cite{Kuderer2015a} gives some suggestions showed by Eq. (\ref{eq:comfort_feature}) and  Eq. (\ref{eq:lane_d}).  
+As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of driving safe contributes to the amount of comfort that is experienced. Save driving comprises next to smooth behaviour also distances between other road agents. However features that consider the environment are not taken into account in Eq. (\ref{eq:obj}). This can be achieved if data of the position of other vehicles during the maneuver is available. The paper 'Learning driving styles for autonomous vehicles from demonstration' \cite{Kuderer2015a}, gives some suggestions showed by Eq. (\ref{eq:comfort_feature}) and  Eq. (\ref{eq:lane_d}).  
 \newpage
 
 \begin{equation}\label{eq:comfort_feature}
 f_d= \sum_{k = 1}^{NA}\int_{0}^{T}\frac{1}{(x_{o,k}(t)-x)^2+(y_{o,k}(t)-y)^2}\cdot dt
 \end{equation}
-\[L \in \mathbb{N}\]
+\[NA \in \mathbb{N}\]
 
 With $[x_o,y_o]_k$ the position of the closest point of a different agent and $NA$ the total amount of road agents in the nearby area.\\
 
-Not only the bird's eye view distance between two different vehicles plays a role, also the following distance of vehicle in the same lane is important. This can be modelled as:  
+Not only the bird's eye view distance between two vehicles plays a role, also the following distance of a vehicle in the same lane is important. This can be modelled as:  
 
 \begin{equation}\label{eq:lane_d}
 f_d= \int_{0}^{T} max(0,\hat{d}-d(t))\cdot dt
 \end{equation}
+\[\hat{d} \in \mathbb{R}\]
 
 
 The minimum desired following distance $\hat{d}$ can be calculated based on the  distance needed to avoid collision during unexpected events when driving at a certain longitudinal velocity. \\
 
-An other assumption that is not discussed in this thesis is the time limit to finish a maneuver. In a real life application however, this limit often influences the maneuver. After the weighting factors are identified, the most comfortable path with a constraint time horizon can be planned for a specific driver. 
+An other assumption, which is not discussed in this thesis, is the time limit to finish a maneuver. In a real life application however, this limit often influences the maneuver. After the weighting factors are identified, the most comfortable path with a constraint time horizon can be planned for a specific driver. 
 
 \subsection{Normalization factors} \label{s:norm}
 To reduce the effect of order of magnitude given by the units in the objective, a normalization of the features is done. The kinematic signals of an example lane change are produced and the same features that are used in the objective function are calculated from it. These will be the normalization factors as can be seen in Eq. (\ref{eq:obj_ideal_data}). Table \ref{table:norm} gives an overview of the lane change normalization factors used.  % hoe ook al weer gegenereerd? 
@@ -329,10 +330,10 @@ To reduce the effect of order of magnitude given by the units in the objective, 
   \label{table:norm}
 \end{table}
 
-Because of the normalization the relative weighting factors defined as $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$, will quantify the trade-offs between different comfort features without disturbance of units used. Aside of this it allows to learn weighting factors faster, because of the absence of big size differences induced by unit differences that are present in the absolute weighting factors. During the learning loop (Figure \ref{fig:basic learning}) the max weight update is set to a maximum of $1$ in this thesis. When the absolute weighting factors are learned instead of the relative ones, this would give a substantially higher amount of iterations when started from an initial guess an all-one vector.
+Because of the normalization the relative weighting factors defined as $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$, will quantify the trade-offs between different comfort features without disturbance of units used. Aside of this, it allows to learn weighting factors faster, because of the absence of large size differences induced by unit differences that are present in the absolute weighting factors. During the learning loop (Figure \ref{fig:basic learning}) the max weight update is set to a maximum of $1$ in this thesis. When the absolute weighting factors are learned instead of the relative ones, it would give a substantially higher amount of iterations when started from an all-one vector as initial guess.
 
 \section{Ideal data} \label{s:GD}
-As mentioned at the begin of this chapter the term 'ideal data' concerns data that is generated with a non-linear bicycle model and with a beforehand known objective function Eq. (\ref{eq:obj}) which consist out of a linear combination of features and weighting factors $\bm{\theta}$. This means that the algorithm that learns the weighting factors can be validated by checking if it is able to find back the correct weighting factors. First the generation of ideal data is presented in section \ref{s:generation} whereafter it is validated in section \ref{s:GD_val}.
+As mentioned at the begin of this chapter the term 'ideal data' concerns data that is generated with a non-linear bicycle model and with an objective function Eq. (\ref{eq:obj}) known beforehand which consist of a linear combination of features and weighting factors $\bm{\theta}$. This means that the algorithm that learns the weighting factors can be validated by checking if it is able to find back the correct weighting factors. First the generation of ideal data is presented in section \ref{s:generation} whereafter it is validated in section \ref{s:GD_val}.
 
 \subsection{Generation}
 \label{s:generation}
@@ -347,10 +348,10 @@ i \in \mathbb{N}\]
  When multiple ideal datasets have to be generated in order to serve as observations, the initial speed $V_{0}$ and width of the lateral distance $L$ are varied.
 
 \subsection{Validation} \label{s:GD_val}
-In this section the results of the generated ideal data are discussed. There is being look at an numerical vs analytical formulation, influence of the initial guess, choice of time limit, amount of control points, use of linear tire model and a discussion on the resulting feature values of the generated data.
+In this section the results of the generated ideal data are discussed. There is being look at a numerical vs analytical formulation, influence of the initial guess, choice of time limit, amount of control points, use of linear tire model and a discussion on the resulting feature values of the generated data.
 
-\subsubsection{Numerical vs Analytical formulation}
-In section \ref{sec:Vehicle_models} about the non-linear bicycle model, two different variants were described by Eq. (\ref{eq:bicycle_model1}) and Eq. (\ref{eq:bicycle_model2}). Variant one has only 6 states and the accelerations and jerks in the objective function Eq. (\ref{eq:obj}) are calculated by making use of numerical differentiation described by Eq. (\ref{eq:diff}) from the other vehicle states. Variant two on the other hand has the total accelerations as direct states in the vehicle model and uses an analytical formulation of the jerk described in appendix \ref{app:A}.
+\subsubsection{Numerical vs Analytical formulation} \label{s:numvsana}
+In section \ref{sec:Vehicle_models} about the non-linear bicycle model, two different variants were described by Eq. (\ref{eq:bicycle_model1}) and Eq. (\ref{eq:bicycle_model2}). Variant one has only 6 states and the accelerations and jerks in the objective function Eq. (\ref{eq:obj}) are calculated by making use of numerical differentiation described by Eq. (\ref{eq:diff}) from the other vehicle states. Variant two on the other hand has the total accelerations as direct states in the vehicle model and uses an analytical formulation of the jerk as defined in appendix \ref{app:A}.
 
 \begin{subequations}\label{eq:diff}
 	\begin{equation}
@@ -379,10 +380,10 @@ In order to validate the two approaches the generated lateral jerk signals are c
 	\label{fig:comp_jerks}
 \end{figure}
 
-It is clear that the analytical formulation (right figure)  of the jerk gives more smooth results and less high peaks which is in line with observations of the more complex $15$ dof Amesim vehicle that is discussed in chapter \ref{cha:Tracking_MPC}. Therefore the analytical formulation approaches reality better. An other way to see this is that the analytical formulation contains more information about the vehicle i.e. the equations resulting from numerical differentiation are approximations of the analytical ones.
+It is clear that the analytical formulation (right figure)  of the jerk gives smoother results and less high peaks which is in line with observations of the more complex $15$ dof Amesim vehicle that is discussed in chapter \ref{cha:Tracking_MPC}. Therefore the analytical formulation is a better approach of reality. The analytical formulation contains more information about the vehicle i.e. the equations resulting from numerical differentiation are approximations of the analytical ones.
 
 \subsubsection{Initial guess}
-To determine if the generated data is a local solution, two different initial guesses $V0:22.22 - L3.47$ and $V0:25.00 - L6.94$ are used whereof the retrieved data feature values are summarized in table \ref{tab:GD_local_test}. $V_0$ is the initial speed and $L$ the lateral distance of the lane change used as initial guess and are generated using the above described numerical formulation. In order to calculate the data features displayed, time limit is set on $30\hspace{1mm}s$, N on $1000$, $V_{0} = 22.22\hspace{1mm}\frac{m}{s}$ and $L = 3.47\hspace{1mm}m$ as parameters in Eq. (\ref{opt:basic_opti_w}) and the analytical formulation is used. From the results it is suggested that the generated data feature values are not a local solution because they are found back from different start points of the optimization. During the learning of the weighting factors as described in Figure \ref{fig:basic learning} the initial guess is set equal to the observed data. 
+To determine if the generated data is a local solution, two different initial guesses $V0:22.22 - L3.47$ and $V0:25.00 - L6.94$ are used whereof the retrieved data feature values are summarized in table \ref{tab:GD_local_test}. $V_0$ is the initial speed and $L$ the desired lateral distance of the lane change used as initial guess. These two initial guesses are generated using the numerical formulation as described in section \ref{s:numvsana}. In order to calculate the data features displayed, time limit is set on $30\hspace{1mm}s$, N on $1000$, $V_{0} = 22.22\hspace{1mm}\frac{m}{s}$ and $L = 3.47\hspace{1mm}m$ as parameters in Eq. (\ref{opt:basic_opti_w}) and the analytical formulation is used. The results suggest that the generated data feature values are not a local solution because they are found back from different start points of the optimization. During the learning of the weighting factors as described in Figure \ref{fig:basic learning}, the initial guess is set equal to the observed data. 
 
 \begin{table}[h!]
 	\centering
@@ -398,9 +399,9 @@ To determine if the generated data is a local solution, two different initial gu
 	\caption{This table shows the retrieved feature values using the two different  initial guesses in Eq. (\ref{opt:basic_opti_w}).}
 	\label{tab:GD_local_test}
 \end{table}
-
+\newpage
 \subsubsection{Time limit}
-In order to check the dependency of the generated data on the chosen $T_{limit}$ constraint in Eq. (\ref{opt:basic_opti_w}), data is generated for a lane change with N, the amount of control points equal to $1000$, initial velocity equal to $80 \hspace{1 mm} \frac{km}{h}\hspace{1mm}(V_{0})$, a desired lateral displacement of $3.47\hspace{1mm}m\hspace{1mm}(L)$ and a varying $T_{limit}$ constraint as indicated in table \ref{tab:GD_time_limit}. Figures that  show what the difference in feature values actually means for the different kinematic signals of the vehicle, can be consulted in Appendix \ref{app:B}.
+In order to check the dependency of the generated data on the chosen $T_{limit}$ constraint in Eq. (\ref{opt:basic_opti_w}), data is generated for a lane change with N, the amount of control points equal to $1000$, initial velocity equal to $80 \hspace{1 mm} \frac{km}{h}\hspace{1mm}(V_{0})$, a desired lateral displacement of $3.47\hspace{1mm}m\hspace{1mm}(L)$ and a varying $T_{limit}$ constraint as indicated in table \ref{tab:GD_time_limit}. Appendix \ref{app:B} shows what the difference in feature values actually means for the different kinematic signals of the vehicle.
 
 \begin{table}[h!]
 	\centering
@@ -416,9 +417,9 @@ In order to check the dependency of the generated data on the chosen $T_{limit}$
 	\caption{This table shows the retrieved feature values using different time limits in Eq. (\ref{opt:basic_opti_w}).}
 	\label{tab:GD_time_limit}
 \end{table}
-Looking at even greater time limits is not desirable because beyond a time limit of $100 \hspace{1mm}s$, the time discretization gets larger than $0.1\hspace{1mm}s$ for N equal to $1000$ which will result in an more unreliable discretization.\\
+Looking at even greater time limits is not desirable because beyond a time limit of $100 \hspace{1mm}s$ the time discretization gets larger than $0.1\hspace{1mm}s$ for N equal to $1000$, which will result in a less reliable discretization.\\
 
-From the result of table \ref{tab:GD_time_limit} it can be concluded that the influence of the manually setting of the time limit in Eq. (\ref{opt:basic_opti_w}), can be neglected. The lateral features that are the most important ones as will be discussed in section \ref{s:fv_val} are very similar and also the kinematic signals for the lateral variables found in Appendix \ref{app:B} show the same behaviour.
+From the result of table \ref{tab:GD_time_limit} it can be concluded that the influence of manually setting the time limit in Eq. (\ref{opt:basic_opti_w}), can be neglected. The most important lateral features, as will be discussed in section \ref{s:fv_val}, are very similar and also the kinematic signals for the lateral variables found in Appendix \ref{app:B} show the same behaviour.
 
 \subsubsection{Amount of control points}
 The test carried out to investigate the dependence of the resulting feature values on the amount of control points $N$, uses the same parameters as described in the previous section but fixes the time limit on $30\hspace{1mm}s$ and varies N over $500$, $1000$ and $1500$ points. The results are shown in table \ref{tab:GD_N} whereof it follows that a choice of N equal to $1000$ is justified considering the small difference of the obtained features when N is chosen equal to $1500$. For a full overview of the different kinematic signals, reference is made to Appendix \ref{app:B}. Again the kinematic vehicle signals confirm the same conclusion as taken from table \ref{tab:GD_N}.

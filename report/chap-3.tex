@@ -151,7 +151,7 @@ The learning is started by proposing a set of weighting factors e.g. all equal t
 \end{figure}
 
   
-While no convergence takes place the weighting factors are updated, making use of the estimation of the approximated gradient and the RPROP algorithm explained in Chapter \ref{cha:Literature_study}. The new weighting factors are used to calculate a new expected path which will result in different expected feature values $\bm{F}(\bm{r}_{expected})$.  Next, a more detailed description of the calculation of the expected path is given by Eq. (\ref{opt:basic_opti_w}) which uses as vehicle model Eq. (\ref{eq:bicycle_model2}). \\
+While no convergence takes place the weighting factors are updated, making use of the estimation of the approximated gradient and the RPROP algorithm explained in Chapter \ref{cha:Literature_study}. The new weighting factors are used to calculate a new expected path which will result in different expected feature values $\bm{F}(\bm{r}_{expected})$.  Next, a more detailed description of the calculation of the expected path is given by Eq. (\ref{opt:basic_opti_w}) which uses as vehicle model Eq. (\ref{eq:bicycle_model2}) \\
 
 %In order to apply the RPROP method only the sign of the gradient is used which means that the size of the gradient is decoupled from the update value of the weighting factors. The estimate of the gradient is given by $\pdv{\bm{F}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$  and the update of the weight is achieved by applying the gradient method according to $\bm{\theta}^{k+1} = \bm{\theta}^{k} - |\Delta \theta^{k}|sign( \pdv{\bm{F}}{\bm{\theta}}^k )$ where $\Delta \theta^{k}$ is calculated according section \ref{s:RPROP}. If follows that the weight $\theta_i$ is decreased if $f_{obs,i}>f_{i}(\bm{r_{exptected}})$ and increased when $f_{obs,i}<f_{i}(\bm{r}_{exptected})$.
 
@@ -166,7 +166,7 @@ While no convergence takes place the weighting factors are updated, making use o
 & \bm{X}^{k}\in \mathbb{R}^{10\times 1}  & k = [0,\cdots, N]\\
 & \bm{U}^{k}\in \mathbb{R}^{2\times 1} \hspace{3 mm} & k = [0,\cdots, N-1]\\
 & T \in \mathbb{R},\hspace{3 mm} N \in \mathbb{N}
-\end{aligned}
+\end{aligned}.
 \end{equation}
 
 Where $\bm{X} \in \mathbb{R}^{10\times N+1}$ and $\bm{U}\in \mathbb{R}^{2\times N}$ contain respectively the states and controls of Eq.(\ref{eq:bicycle_model2}) during the maneuver. The time of the maneuver is represented as $T$. In order to discretize time, a multiple shooting approach is adopted as explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and determines the  amount of controls applied to go from the initial state towards the end state. 
@@ -195,7 +195,7 @@ vy^N = 0 \\\vspace{1mm}
 \end{Bmatrix}.
 \end{equation}\vspace{5mm}
 
-The constraints displayed in $\bm{H}$ make sure that at the end of the lane change, the slip angles in the tires and the steer wheel angle are zero. From Eq. (\ref{eq:bicycle_model_eqmotion}) this induces that the lateral velocity, acceleration and yaw acceleration also become zero and this marks the end of the lane change. $y^N$ ensures that the wanted lateral distance is covered. This distance can be calculated from the start position of the vehicle and the width of the lane in order to end up at the centre line of the desired lane. \\ At the start of the lane change, straight driving at constant longitudinal speed is assumed. To achieve this, the constraints of Eq. (\ref{eq:X0}) are used. No constraints for acceleration is needed. This would give a redundancy due to the other initial states in combination with the equations of motion \ref{eq:bicycle_model_eqmotion}. In Eq. (\ref{eq:X0}) all initial states are zero except the initial speed $v_{x,start}$ and $t_{r,start}$. The amount of throttle at the start of the lane change is chosen to overcome the aerodynamic drag without accelerating. This is given by $t_r^0 = \frac{(C_{r0}+C_{r1}v_{start}^2)r_w}{T_{max}}$. Therefore, it can be concluded that the parameters that distinguish different lane changes are $v_{x,start}$ and $Width\hspace{1mm}Lane$. This is exploited when generating different ideal lane change datasets for chosen weighting factors. 
+The constraints displayed in $\bm{H}$ make sure that at the end of the lane change, the slip angles in the tires and the steer wheel angle are zero. From Eq. (\ref{eq:bicycle_model_eqmotion}) this induces that the lateral velocity, acceleration and yaw acceleration also become zero and this marks the end of the lane change. $y^N$ ensures that the wanted lateral distance is covered. This distance can be calculated from the start position of the vehicle and the width of the lane in order to end up at the centre line of the desired lane. \\ At the start of the lane change, straight driving at constant longitudinal speed is assumed. To achieve this, the constraints of Eq. (\ref{eq:X0}) are used. No constraints for acceleration is needed. This would give a redundancy due to the other initial states in combination with the equations of motion \ref{eq:bicycle_model_eqmotion}. In Eq. (\ref{eq:X0}) all initial states are zero except the initial speed $v_{x,start}$ and $t_{r,start}$. The amount of throttle at the start of the lane change is chosen to overcome the aerodynamic drag without accelerating. This is given by $t_r^0 = \frac{(C_{r0}+C_{r1}v_{start}^2)r_w}{T_{max}}$. Therefore, it can be concluded that the parameters that distinguish different lane changes are $v_{x,start}$ and $Width\hspace{1mm}Lane$. This is exploited when generating different ideal lane change datasets for chosen weighting factors
 \newpage
 \begin{equation}\label{eq:X0}
 \bm{X}_{initial} =
@@ -209,30 +209,30 @@ The constraints displayed in $\bm{H}$ make sure that at the end of the lane chan
  t_{r,start}\\
  \delta_{start}\\
 
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 
 
 % discuss time limit is chosen equal to 25 s.
-The time limit constraint in Eq. (\ref{opt:basic_opti_w}) is needed in order to demarcate the optimization solution space. When set, it has to take two conflicting criteria into account. It has to be chosen large enough in order to have a minor influence on the lane change behaviour introduced by this constraint. Secondly, it has to be taken small enough to preserve good conditions for the numerical integration performed inside $\bm{F}(\bm{X},\bm{U}, T)$, as will be seen in in \ref{s:obj}. This is because the number of optimization points $N+1$ of the states is fixed, which means that a larger time limit will give a coarser time discretization. In this thesis the time limits used are $25\hspace{1mm}s$ and $30\hspace{1mm}s$, which is a compromise between the two criteria. This choice is validated in section \ref{s:GD_val}.\\It is worth noting that with the removal of the time limit constraint the optimized comfortable lane change takes around $160 \hspace{1mm}s$. This is not a realistic results because the objective will, as previously explained, not have good numerical properties.\\ 
+The time limit constraint in Eq. (\ref{opt:basic_opti_w}) is needed in order to demarcate the optimization solution space. When set, it has to take two conflicting criteria into account. It has to be chosen large enough in order to have a minor influence on the lane change behaviour introduced by this constraint. Secondly, it has to be taken small enough to preserve good conditions for the numerical integration performed inside $\bm{F}(\bm{X},\bm{U}, T)$, as will be seen in in \ref{s:obj}. This is because the number of optimization points $N+1$ of the states is fixed, which means that a larger time limit will give a coarser time discretization. In this thesis the time limits used are $25\hspace{1mm}s$ and $30\hspace{1mm}s$, which is a compromise between the two criteria. This choice is validated in section \ref{s:GD_val}. It is worth noting that with the removal of the time limit constraint the solution of Eq. (\ref{opt:basic_opti_w}) gives a lane change that takes around $160 \hspace{1mm}s$. This is not a realistic results because the objective will, as previously explained, not have good numerical properties.\\ 
 
 In order to solve Eq. (\ref{opt:basic_opti_w}) an initial guess is needed for the longitudinal velocity in order to avoid the emergence of an invalid number. The default initial guess used in the CasADi software is an all zero vector. As can be seen in Eq. (\ref{eq:bicycle_slipangle}) this would give a division by zero in the calculation of the slip angles. \\
-To further enhance the solving speed of Eq. (\ref{opt:basic_opti_w}) also initial guesses are given for the other vehicle states and additionally the controls. To do this, a feasible solution of the non-linear bicycle model for a lane change is needed because IPOPT is an interior point method. Therefore, the initial guesses for $\bm{X}, \bm{U} \;and\; T$ are taken from the observed ideal data. \\
+To further enhance the solving speed of Eq. (\ref{opt:basic_opti_w}) also initial guesses are given for the other vehicle states and additionally the controls. To do this, a feasible solution of the non-linear bicycle model for a lane change is needed because IPOPT, which is used to calculate the solution of Eq. (\ref{opt:basic_opti_w}), is an interior point method. Therefore, the initial guesses for $\bm{X}, \bm{U} \;and\; T$ are taken from the observed ideal data.\\
 
-Another way to speed up the solving time of the IPOPT solver, is setting the initial guess of the lambda multipliers internally used, equal to the ones found during the previous call of Eq. (\ref{opt:basic_opti_w}) during the loop visualized by figure \ref{fig:basic learning}. \\The time needed for the CPU to calculate the expected path for a certain set of weighting factors and thus solving Eq. (\ref{opt:basic_opti_w}), takes around $5\hspace{1mm}s$ (python implementation) when a time limit of $30$ seconds and N equal to $1000$ is chosen.\\
+Another way to speed up the solving time of the IPOPT solver, is setting the initial guess of the lambda multipliers internally used, equal to the ones found during the previous call of Eq. (\ref{opt:basic_opti_w}) during the loop visualized by figure \ref{fig:basic learning}. \\The time needed for the CPU to calculate the expected path for a certain set of weighting factors and thus solving Eq. (\ref{opt:basic_opti_w}), takes around $5\hspace{1mm}s$ (python implementation) when a time limit of $30$ seconds and N equal to $1000$ is used.\\
 
-As discussed above, the solver used to calculate the states and control signals in Eq. (\ref{opt:basic_opti_w}), is IPOPT which is an open source solver. The idea behind it is to smoothing the KKT conditions and transform it into a smooth root finding problem. \cite{Panos_opti} \\
+As discussed above, the solver used to calculate the states and control signals in Eq. (\ref{opt:basic_opti_w}), is IPOPT which is an open source solver. The idea behind it is to smoothing the KKT conditions and transform the optimization problem into a smooth root finding problem \cite{Panos_opti}. \\
 
 %Because IPOPT is a interior boundary method, a feasible initial guess is needed.
 % Every time that the expected path has to be calculated as is visualised in flow diagram \ref{fig:basic learning}, the optimization \ref{opt:basic_opti_w} is performed with as initial guess the observed maneuver.\\
 
 \subsection{Objective function}\label{s:obj}
-The objective function used in Eq. (\ref{opt:basic_opti_w}) has to represent comfort felt by the driver and is based on the literature study displayed in section \ref{s:comfort_parameters}. The choice made in how to define the different features is important because it sets the fixed framework where the weighting factors will be learned in. It can be expected that the linear relation of features given by $\bm{\theta}^T\bm{F}(\bm{r})$ will serve as an approximation for the real, more complex comfort objective of a human drive. The feature framework that is further discussed in this section, can be validated and adjusted based on an user study.\\
+The objective function used in Eq. (\ref{opt:basic_opti_w}) has to represent comfort felt by the driver and is based on the literature study displayed in section \ref{s:comfort_parameters}. The choice made in how to define the different features is important because it sets the fixed framework where the weighting factors will be learned in. It can be expected that the linear relation of features given by $\bm{\theta}^T\bm{F}(\bm{r})$ will serve as an approximation for the real, more complex comfort objective of a human drive. The feature framework that is further discussed in this section, can be validated and adjusted based on an user study\\
 
 %As is shown in \cite this linear approximation of features can already capture  the main trends that contribute to an comfortable maneuver experience.
 
 \begin{equation}\label{eq:obj}
-discomfort = \theta_1 \cdot f_1 +\theta_2 \cdot f_2 +\theta_3 \cdot f_3 +\theta_4 \cdot f_4 +\theta_5 \cdot f_5 +\theta_6 \cdot f_6 \\
+discomfort = \theta_1 \cdot f_1 +\theta_2 \cdot f_2 +\theta_3 \cdot f_3 +\theta_4 \cdot f_4 +\theta_5 \cdot f_5 +\theta_6 \cdot f_6 .\\
 \end{equation}
 \[	f_i, \theta_i \in \mathbb{R} \hspace{5mm}
 i \in \mathbb{N}\]
@@ -240,58 +240,58 @@ i \in \mathbb{N}\]
 
 \textit{Feature 1: longitudinal acceleration}
 \begin{equation}\label{eq:flong_acc}
-f_{1}:\bm{r}\xrightarrow{}f_1(\bm{r})=\int_{0}^{T}a_{x,total}^{2}(t) dt
+f_{1}:\bm{r}\xrightarrow{}f_1(\bm{r})=\int_{0}^{T}a_{x,total}^{2}(t) dt.
 \end{equation}
 Feature one assesses the amount of discomfort by integrating the total longitudinal acceleration in the local axis. The local axis is fixed to the centre of gravity of the vehicle, as can be seen in Figure \ref{fig:bicycle_model}. The total longitudinal acceleration  $a_{x,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in Eq. (\ref{eq:bicycle_model_eqmotion}). \\
 
 \textit{Feature 2: lateral acceleration}
 \begin{equation}\label{eq:flat_acc}
-f_{2}:\bm{r}\xrightarrow{}f_2(\bm{r})=\int_{0}^{T}a_{y,total}^{2}(t) dt
+f_{2}:\bm{r}\xrightarrow{}f_2(\bm{r})=\int_{0}^{T}a_{y,total}^{2}(t) dt.
 \end{equation}
-Feature two assesses the amount of discomfort by integrating the total lateral acceleration in the local axis. The total lateral acceleration  $a_{y,total} $ is the sum of  $ a_{x,tangential}$ and $a_{x,normal}$ as described in Eq. (\ref{eq:bicycle_model_eqmotion}).\\
+Feature two assesses the amount of discomfort by integrating the total lateral acceleration in the local axis. The total lateral acceleration  $a_{y,total} $ is the sum of  $ a_{y,tangential}$ and $a_{y,normal}$ as described in Eq. (\ref{eq:bicycle_model_eqmotion}).\\
 
 \textit{Feature 3: longitudinal jerk}
 \begin{equation}\label{eq:flong_jerk}
-f_{3}:\bm{r}\xrightarrow{}f_3(\bm{r})=\int_{0}^{T}j_{x}^{2}(t) dt
+f_{3}:\bm{r}\xrightarrow{}f_3(\bm{r})=\int_{0}^{T}j_{x}^{2}(t) dt.
 \end{equation}
 Feature three gives the amount of comfort by integrating the total change of longitudinal acceleration during the followed path. \\
 
 \textit{Feature 4: lateral jerk}
 \begin{equation}\label{eq:flat_jerk}
-f_{4}:\bm{r}\xrightarrow{}f_4(\bm{r})=\int_{0}^{T}j_y^{2}(t) dt
+f_{4}:\bm{r}\xrightarrow{}f_4(\bm{r})=\int_{0}^{T}j_y^{2}(t) dt.
 \end{equation}
 Feature four gives the amount of comfort by integrating the total change of lateral acceleration during the followed path. \\
 
 \textit{Feature 5: desired speed}
 \begin{equation}\label{eq:des_speed}
-f_{5}:\bm{r}\xrightarrow{}f_5(\bm{r})=\int_{0}^{T}(v_{des}-v_x)^2 dt
+f_{5}:\bm{r}\xrightarrow{}f_5(\bm{r})=\int_{0}^{T}(v_{des}-v_x)^2 dt.
 \end{equation}
 $v_{des}$ is assumed to be a constant value and set equal to the start velocity just before the lane change.\\
 
 \textit{Feature 6: desired lane change}
 \begin{equation}\label{eq:des_lane_change}
-f_{6}:\bm{r}\xrightarrow{}f_6(\bm{r})=\int_{0}^{T}(L-y)^2 dt
+f_{6}:\bm{r}\xrightarrow{}f_6(\bm{r})=\int_{0}^{T}(L-y)^2 dt.
 \end{equation}
 
 $L$ is a constant and set equal to the desired lateral distance. If the vehicle reaches its desired lateral displacement faster, this is perceived as a good response and is interpreted as comfort, as discussed in section \ref{s:comfort_parameters}.\\
 
-In order to implement the integrals defined above in the objective function of Eq. (\ref{opt:basic_opti_w}), discretization is needed. For this the Crank-Nicolson numerical integration is used as is shown in Eq. (\ref{eq:CN}) for feature $f_j$. 
+In order to implement the integrals defined above in the objective function of Eq. (\ref{opt:basic_opti_w}), discretization is needed. For this the Crank-Nicolson numerical integration is used as is shown in Eq. (\ref{eq:CN}) for feature $f_j$
 \begin{subequations}\label{eq:CN}
 	\begin{equation}
-	\int_{f_j(t^n)}^{f_j(t^{n+1})}df_j=\int_{t^n}^{t^{n+1}} P(t) \cdot dt	
+	\int_{f_j^n}^{f_j^{n+1}}df_j=\int_{t^n}^{t^{n+1}} P(t) \cdot dt,
 	\end{equation}
 	\begin{equation}
-	f_j^{n+1} -f_j^{n} = \frac{1}{2}\frac{P(t^{n+1})+P(t^n)}{\Delta T}
+	f_j^{n+1} -f_j^{n} = \frac{1}{2}\frac{P(t^{n+1})+P(t^n)}{\Delta T}.
 	\end{equation}
 \end{subequations}\\
 
-To summarize, the objective described by Eq. (\ref{eq:obj}) consists of of a set of comfort features that model the amount of discomfort experienced during a maneuver. This is achieved by mapping kinematic signals onto scalar feature values through integration. By finding the driver specific weighting factors $\bm{\theta}$ in Eq. (\ref{eq:obj}), it is possible to model driver preferences between different comfort features. With this information an autonomous vehicle can perform path planning of the most comfortable path to do a lane change for a specific driver.\\
+To summarize, the objective described by Eq. (\ref{eq:obj}) consists of of a set of comfort features that model the amount of discomfort experienced during a maneuver. This is achieved by mapping kinematic signals onto scalar feature values through integration. By finding the driver specific weighting factors $\bm{\theta}$ in Eq. (\ref{eq:obj}), it is possible to model driver preferences between different comfort features. With the information of the identified objective function an autonomous vehicle can perform path planning of the most comfortable path to do a lane change for a specific driver.\\
 
-As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of driving safe contributes to the amount of comfort that is experienced. Save driving comprises next to smooth behaviour also distances between other road agents. However features that consider the environment are not taken into account in Eq. (\ref{eq:obj}). This can be achieved if data of the position of other vehicles during the maneuver is available. The paper 'Learning driving styles for autonomous vehicles from demonstration' \cite{Kuderer2015a}, gives some suggestions showed by Eq. (\ref{eq:comfort_feature}) and  Eq. (\ref{eq:lane_d}).  
+As is shortly discussed in Chapter \ref{cha:Literature_study}, the perception of driving safe contributes to the amount of comfort that is experienced. Save driving comprises next to smooth behaviour also distances between other road agents. However features that consider the environment are not taken into account in Eq. (\ref{eq:obj}). This can be achieved if data of the position of other vehicles during the maneuver is available. The paper 'Learning driving styles for autonomous vehicles from demonstration' \cite{Kuderer2015a}, gives some suggestions showed by Eq. (\ref{eq:comfort_feature}) and  Eq. (\ref{eq:lane_d})  
 \newpage
 
 \begin{equation}\label{eq:comfort_feature}
-f_d= \sum_{k = 1}^{NA}\int_{0}^{T}\frac{1}{(x_{o,k}(t)-x)^2+(y_{o,k}(t)-y)^2}\cdot dt
+f_d= \sum_{k = 1}^{NA}\int_{0}^{T}\frac{1}{(x_{o,k}(t)-x)^2+(y_{o,k}(t)-y)^2}\cdot dt.
 \end{equation}
 \[NA \in \mathbb{N}\]
 
@@ -300,14 +300,14 @@ With $[x_o,y_o]_k$ the position of the closest point of a different agent and $N
 Not only the bird's eye view distance between two vehicles plays a role, also the following distance of a vehicle in the same lane is important. This can be modelled as:  
 
 \begin{equation}\label{eq:lane_d}
-f_d= \int_{0}^{T} max(0,\hat{d}-d(t))\cdot dt
+f_d= \int_{0}^{T} max(0,\hat{d}-d(t))\cdot dt.
 \end{equation}
 \[\hat{d} \in \mathbb{R}\]
 
 
-The minimum desired following distance $\hat{d}$ can be calculated based on the  distance needed to avoid collision during unexpected events when driving at a certain longitudinal velocity. \\
+The minimum desired following distance $\hat{d}$, can be calculated based on the  distance needed to avoid collision during unexpected events when driving at a certain longitudinal velocity. \\
 
-An other assumption, which is not discussed in this thesis, is the time limit to finish a maneuver. In a real life application however, this limit often influences the maneuver. After the weighting factors are identified, the most comfortable path with a constraint time horizon can be planned for a specific driver. 
+An other assumption, which is not discussed in this thesis, is the time limit to finish a maneuver. In a real life application however, this limit often influences the maneuver. After the weighting factors are identified, the most comfortable path with a set time limit can be planned for a specific driver. 
 
 \subsection{Normalization factors} \label{s:norm}
 To reduce the effect of order of magnitude given by the units in the objective, a normalization of the features is done. The kinematic signals of an example lane change are produced and the same features that are used in the objective function are calculated from it. These will be the normalization factors as can be seen in Eq. (\ref{eq:obj_ideal_data}). Table \ref{table:norm} gives an overview of the lane change normalization factors used.  % hoe ook al weer gegenereerd? 
@@ -331,10 +331,10 @@ To reduce the effect of order of magnitude given by the units in the objective, 
   \label{table:norm}
 \end{table}
 
-Because of the normalization the relative weighting factors defined as $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$, will quantify the trade-offs between different comfort features without disturbance of units used. Aside of this, it allows to learn weighting factors faster, because of the absence of large size differences induced by unit differences that are present in the absolute weighting factors. During the learning loop (Figure \ref{fig:basic learning}) the max weighting factor update is set to a maximum of $1$ in this thesis. When the absolute weighting factors are learned instead of the relative ones, it would give a substantially higher amount of iterations when started from an all-one vector as initial guess.
+Because of the normalization the relative weighting factors defined as $\theta_{r,i} = \frac{\theta_{abs,i}}{norm_i}$, will quantify the trade-offs between different comfort features without disturbance of units used. Aside of this, it allows to learn weighting factors faster, because of the absence of large size differences induced by unit differences that are present in the absolute weighting factors. During the learning loop (Figure \ref{fig:basic learning}) the max weighting factor update is set to $1$ in this thesis. When the absolute weighting factors are learned instead of the relative ones, it would give a substantially higher amount of iterations when started from an all-one vector as initial guess. When the algorithm is used in practise, these normalization factors can be recalculated from an observed lane change making use of the definition of the features as defined in section \ref{s:obj}.
 
 \section{Ideal data} \label{s:GD}
-As mentioned at the begin of this chapter the term 'ideal data' concerns data that is generated with a non-linear bicycle model and with an objective function Eq. (\ref{eq:obj}) known beforehand which consist of a linear combination of features and weighting factors $\bm{\theta}$. This means that the algorithm that learns the weighting factors can be validated by checking if it is able to find back the correct weighting factors. First the generation of ideal data is presented in section \ref{s:generation} whereafter it is validated in section \ref{s:GD_val}.
+As mentioned at the begin of this chapter the term 'ideal data' concerns data that is generated with a non-linear bicycle model and with an objective function Eq. (\ref{eq:obj}) known beforehand which consists of a linear combination of features and weighting factors $\bm{\theta}$. This means that the algorithm that learns the weighting factors can be validated by checking if it is able to find back the correct weighting factors. First the generation of ideal data is presented in section \ref{s:generation} whereafter it is validated in section \ref{s:GD_val}.
 
 \subsection{Generation}
 \label{s:generation}
@@ -346,10 +346,10 @@ The relative weighting factors chosen to generate the data are $ \bigl[ \begin{s
 \[	f_i \in \mathbb{R}, \hspace{1mm}
 i \in \mathbb{N}\]
 
- When multiple ideal datasets have to be generated in order to serve as observations, the initial speed $V_{0}$ and width of the lateral distance $L$ are varied.
+ When multiple ideal datasets have to be generated in order to serve as observations, the initial speed $V_{0}$ and width of the lateral distance $L$ are varied, while using the same set of weighting factors.
 
 \subsection{Validation} \label{s:GD_val}
-In this section the results of the generated ideal data are discussed. There is being look at a numerical vs analytical formulation, influence of the initial guess, choice of time limit, amount of control points, use of linear tire model and a discussion on the resulting feature values of the generated data.
+In this section the results of the generated ideal data are discussed. There is looked at a numerical vs analytical formulation, influence of the initial guess, choice of time limit, amount of control points, use of linear tire model and a discussion on the resulting feature values of the generated data.
 
 \subsubsection{Numerical vs Analytical formulation} \label{s:numvsana}
 In section \ref{sec:Vehicle_models} about the non-linear bicycle model, two different variants were described by Eq. (\ref{eq:bicycle_model1}) and Eq. (\ref{eq:bicycle_model2}). Variant one has only 6 states and the accelerations and jerks in the objective function Eq. (\ref{eq:obj}) are calculated by making use of numerical differentiation described by Eq. (\ref{eq:diff}) from the other vehicle states. Variant two on the other hand has the total accelerations as direct states in the vehicle model and uses an analytical formulation of the jerk as defined in appendix \ref{app:A}.

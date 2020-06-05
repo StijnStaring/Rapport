@@ -34,8 +34,8 @@
 \contentsline {figure}{\numberline {4.7}{\ignorespaces The evolvement of the average $\bm {f}_{rel}$ over the learning iterations.\relax }}{35}{figure.caption.40}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces The different outputted weighting factors over the learning iterations.\relax }}{36}{figure.caption.41}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Flow of the conflict method as part of the basic flow diagram of Figure \ref {fig:basic learning}\relax }}{37}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces The evolvement of $\bm {f}_{rel}$ of dataset $V_0:22.22\hspace {1mm}\frac {m}{s},\hspace {1mm} L:3.47\hspace {1mm}m$ over the learning iterations.\relax }}{38}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values for the three lateral features. (3 datasets: blue, 7 datasets: orange)\relax }}{39}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces The evolvement of $\bm {f}_{rel}$ for dataset $V_0:22.22\hspace {1mm}\frac {m}{s},\hspace {1mm} L:3.47\hspace {1mm}m$ over the learning iterations.\relax }}{38}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of matching of the feature values for the three lateral features. (3 datasets: blue, 7 datasets: orange)\relax }}{39}{figure.caption.45}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values of the three lateral features. (Averaging method: blue, conflict method: orange)\relax }}{40}{figure.caption.46}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steerwheelangle.\relax }}{41}{figure.caption.47}%

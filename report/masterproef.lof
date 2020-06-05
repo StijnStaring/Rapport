@@ -38,7 +38,7 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of matching of the feature values for the three lateral features. (3 datasets: blue, 7 datasets: orange)\relax }}{39}{figure.caption.45}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces This figure shows the averaged, relative error given by $\frac {100\cdot \DOTSB \sum@ \slimits@ _{n=1}^{ND}|1-f_{rel,i}|}{ND}$ of the matching of the feature values of the three lateral features. (Averaging method: blue, conflict method: orange)\relax }}{40}{figure.caption.46}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steerwheelangle.\relax }}{41}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The 15 dof amesim model with as inputs the amount of throttle, braking and steer wheel angle.\relax }}{41}{figure.caption.47}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces The flow of learning with the Amesim model.\relax }}{42}{figure.caption.48}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces This figure shows hows the tracking MPC is connected with the Amesim model using different sampling times. (red: $T_s: 0.01\hspace {1mm}s$ and green: $T_{MPC}:0.1\hspace {1mm}s$)\relax }}{46}{figure.caption.51}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces This figure shows the tracking result of the reference (red) by the Amesim model (blue).\relax }}{47}{figure.caption.52}%

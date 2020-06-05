@@ -139,12 +139,12 @@ Resultaten werden bekomen die aantonen dat de laterale wegingsfactoren die bepal
 	\renewcommand{\arraystretch}{1.1}
 	\begin{tabularx}{\textwidth}{@{}p{12mm}X@{}}
 		$\bm{\theta}$ & Weights that are learned in the objective function Eq. (\ref{eq:obj}).\\
-		$\bm{f}_{obs}$ & Feature vector calculated from observed lane change path according to Eq. (\ref{s:obj}).\\
-		$\bm{f}_{learned}$ & Feature vector as calculated according to Eq. (\ref{s:obj}) from the lane change path following out of solving Eq. (\ref{opt:basic_opti_w}).\\
-		$\bm{f}_{rel}$ & Relative feature vector defined as the element wise division of the learned feature vector by the observed one e.g. $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
-		$t_r$ & Amount of throttle given.\\
+		$\bm{f}_{obs}$ & Feature vector calculated from the observed lane change path according to Eq. (\ref{s:obj}).\\
+		$\bm{f}_{learned}$ & Feature vector as calculated according to Eq. (\ref{s:obj}) from the lane change path, following out of solving Eq. (\ref{opt:basic_opti_w}).\\
+		$\bm{f}_{rel}$ & Relative feature vector defined as the element wise division of the learned feature vector by the observed one i.e. $\frac{\bm{f}_{learned}}{\bm{f}_{obs}}$.\\
+		$t_r$ & Amount of normalized throttle given.\\
 		$\delta$ & Angle of the front wheel of the bicycle model.\\
-		$\delta_{s} $ & The steer wheel angle, related to $\delta$ by $G_s$ according to $\delta_s = Gs \cdot\delta$.  \\
+		$\delta_{s} $ & The steer wheel angle related to $\delta$ by $G_s$ according to $\delta_s = Gs \cdot\delta$.  \\
 		$\Delta u$ & Update value used in the RPROP algorithm in section \ref{s:RPROP}.
 	\end{tabularx}
 \end{flushleft}

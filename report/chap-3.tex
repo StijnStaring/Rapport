@@ -126,7 +126,7 @@ The vehicle model parameters used are described in table \ref{table:vehicel_mode
 \newpage
 \section{Learning algorithm} 
 \label{s:learning_alg}
-The goal of the learning algorithm is to learn the weighting factors $\bm{\theta}$ in the comfort objective function: $\bm{\theta}^T\bm{F}(\bm{r})$. It's formulation is presented in section \ref{s:flow alg}. The features that are the entries of the feature vector $\bm{F}(\bm{r})$ capture a notion of comfort felt by the driver. Based on the literature study displayed in Chapter \ref{cha:Literature_study} and on paper of Kuderer \cite{Kuderer2015a}, the amount of discomfort can be modelled by the features discussed in section \ref{s:obj} during the timespan $T$ of the maneuver. The scenario of a lane change on a straight road is modelled with the time horizon itself taken as an optimization variable $T$.
+The goal of the learning algorithm is to learn the weighting factors $\bm{\theta}$ in the comfort objective function: $\bm{\theta}^T\bm{F}(\bm{r})$. Its formulation is presented in section \ref{s:flow alg}. The features that are the entries of the feature vector $\bm{F}(\bm{r})$ capture a notion of comfort felt by the driver. Based on the literature study displayed in Chapter \ref{cha:Literature_study} and on paper \cite{Kuderer2015a}, the comfort criteria embedded in the different feature values are presented in section \ref{s:obj}. The scenario of a lane change on a straight road is modelled with the time horizon of the maneuver itself taken as an optimization variable $T$.
 
 
 \subsection{Formulation of the algorithm}\label{s:flow alg}
@@ -134,13 +134,14 @@ The goal of the learning algorithm is to learn the weighting factors $\bm{\theta
 
 %This means that similarity between the observed path and the one that follows from minimizing the objective $\bm{\theta}^T\bm{F}(\bm{r})$ for chosen weighting factors, is quantified by the difference between the feature values of the observed path and the obtained one. 
 
-As has been discussed in chapter \ref{cha:Literature_study},  $\bm{\theta}_{opti}$ gives the best possible fit between $\bm{F}(\bm{r}_{expected})$ and $\bm{\tilde{F}(\bm{r})}$.
-Without a vehicle mismatch, a match of feature values will induce a good match of the kinematic vehicle signals as will be further discussed in section \ref{s:ID_results}.
+As has been discussed in chapter \ref{cha:Literature_study},  $\bm{\theta}_{opti}$ gives the best possible fit between $\bm{F}(\bm{r}_{expected})$ and $\bm{F_{obs}(\bm{r}_{obs})}$.
+Without vehicle mismatch, a match of feature values will induce a good match of the kinematic vehicle signals as will be further discussed in section \ref{s:ID_results}.
 The flow of a single dataset learning algorithm can be seen in Figure \ref{fig:basic learning}.\\
 
 %The path that is expected to be produced by the driver is the path that is felt as the most comfortable and equals $\bm{r}_{expected} =  \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})$.\\
 
-The learning is started by proposing a set of weighting factors e.g. all equal to one. Equation \ref{eq:6} is minimized in order to generate an expected path. From this $\bm{F}(\bm{r}_{expected})$ can be retrieved by using the definition discussed in section \ref{s:obj}. Afterwards, the relative features $f_{rel,i}$ are calculated by element-wise  divide  the expected feature vector by the observed one $\bm{\tilde{F}}$. A perfect match is acquired when the division equals one and the learning algorithm is terminated. The tolerance on convergence towards one, is chosen during this chapter equal to $10^{-3}$.
+The learning is started by proposing a set of weighting factors e.g. all equal to one. Eq. (\ref{eq:6a})  is minimized in order to generate an expected path. From this $\bm{F}(\bm{r}_{expected})$ can be retrieved by using the definition discussed in section \ref{s:obj}. Afterwards, the relative features $f_{rel,i}$ are calculated by element-wise  divide  the expected feature vector by the observed one $\bm{F}_{obs}$. A perfect match is acquired when the division equals one and the learning algorithm is terminated. The tolerance on convergence towards one, is chosen during this chapter equal to $10^{-3}$.\\
+\vspace{5mm}
 
 \begin{figure}[h!]
 	\centering
@@ -150,7 +151,7 @@ The learning is started by proposing a set of weighting factors e.g. all equal t
 \end{figure}
 
   
-While no convergence takes place the weighting factors are updated, making use of the estimation of the gradient and the RPROP algorithm explained in Chapter \ref{cha:Literature_study}. The new weighting factors are used to calculate a new expected path which will result in different expected feature values $\bm{F}(\bm{r}_{expected})$.  Next, a more detailed description of the calculation of the expected path is given by Eq. (\ref{opt:basic_opti_w}) which uses as vehicle model Eq. (\ref{eq:bicycle_model2}). \\
+While no convergence takes place the weighting factors are updated, making use of the estimation of the approximated gradient and the RPROP algorithm explained in Chapter \ref{cha:Literature_study}. The new weighting factors are used to calculate a new expected path which will result in different expected feature values $\bm{F}(\bm{r}_{expected})$.  Next, a more detailed description of the calculation of the expected path is given by Eq. (\ref{opt:basic_opti_w}) which uses as vehicle model Eq. (\ref{eq:bicycle_model2}). \\
 
 %In order to apply the RPROP method only the sign of the gradient is used which means that the size of the gradient is decoupled from the update value of the weighting factors. The estimate of the gradient is given by $\pdv{\bm{F}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$  and the update of the weight is achieved by applying the gradient method according to $\bm{\theta}^{k+1} = \bm{\theta}^{k} - |\Delta \theta^{k}|sign( \pdv{\bm{F}}{\bm{\theta}}^k )$ where $\Delta \theta^{k}$ is calculated according section \ref{s:RPROP}. If follows that the weight $\theta_i$ is decreased if $f_{obs,i}>f_{i}(\bm{r_{exptected}})$ and increased when $f_{obs,i}<f_{i}(\bm{r}_{exptected})$.
 
@@ -169,7 +170,7 @@ While no convergence takes place the weighting factors are updated, making use o
 \end{equation}
 
 Where $\bm{X} \in \mathbb{R}^{10\times N+1}$ and $\bm{U}\in \mathbb{R}^{2\times N}$ contain respectively the states and controls of Eq.(\ref{eq:bicycle_model2}) during the maneuver. The time of the maneuver is represented as $T$. In order to discretize time, a multiple shooting approach is adopted as explained in section \ref{s:time_dis}. The amount of integration intervals $N$ is chosen equal to $1000$ and determines the  amount of controls applied to go from the initial state towards the end state. 
-Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states over time when a certain control is applied for $\Delta T$. Here the equations of motion Eq. (\ref{eq:bicycle_model_eqmotion}) are inputted in the optimization because derivatives of the vehicle states are needed. The time discretization used can be categorized as a direct method and because a multiple shooting approach is conducted at every time instance, a new set of state optimization variables is introduced as explained in section \ref{s:time_dis}. The path constrain vector $\bm{F}$ demarcates together with the equality constraint vector $\bm{H}$, the feasible space of the solutions for $\bm{X}$ and $\bm{U}$. An overview of the constraints used, is given by Eq. (\ref{eq:F}) and Eq. (\ref{eq:H}).
+Inside the function $I$ the Runge-Kutta time integration method is embedded in order to connect different states when a certain control is applied for $\Delta T$. Here the equations of motion Eq. (\ref{eq:bicycle_model_eqmotion}) are inputted in the optimization because derivatives of the vehicle states are needed. The time discretization used can be categorized as a direct method and because a multiple shooting approach is conducted at every time instance, a new set of state optimization variables is introduced. The path constraint vector $\bm{F}$ demarcates together with the equality constraint vector $\bm{H}$, the feasible space of the solutions for $\bm{X}$ and $\bm{U}$. An overview of the constraints used, is given by Eq. (\ref{eq:F}) and Eq. (\ref{eq:H})
 
 \begin{equation}\label{eq:F}
 \bm{F} =
@@ -179,7 +180,7 @@ Inside the function $I$ the Runge-Kutta time integration method is embedded in o
 -\frac{\pi\cdot 150}{180 Gs} \leq \delta^k \leq \frac{\pi\cdot 150}{180 Gs}, & k = [0,\cdots, N] \\
 -1 \leq t_r^k \leq 1, & k = [0,\cdots, N]
 
-\end{Bmatrix}
+\end{Bmatrix},
 \end{equation}\\
 
 \begin{equation}\label{eq:H}
@@ -191,10 +192,10 @@ vy^N = 0 \\\vspace{1mm}
 \dot{\psi}^N = 0 \\\vspace{1mm}
 \delta^N = 0 
 
-\end{Bmatrix}
+\end{Bmatrix}.
 \end{equation}\vspace{5mm}
 
-The constraints displayed in $\bm{H}$ make sure that at the end of the lane change, the slip angles in the tires and the steer wheel angle are zero. From Eq. (\ref{eq:bicycle_model_eqmotion}) this induces that the lateral velocity, acceleration and yaw acceleration also become zero and this marks the end of the lane change. $y^N$ ensures that the wanted lateral distance is covered. This distance can be calculated from the start position of the vehicle and the width of the lane in order to end up at the centre line of the desired lane. \\ At the start of the lane change, straight driving at constant longitudinal speed is assumed. To achieve this, the constraints of Eq. (\ref{eq:X0}) are used. No constraints for accelerations are needed. This would give a redundancy due to the other initial states in combination with the equations of motion \ref{eq:bicycle_model_eqmotion}. In Eq. (\ref{eq:X0}) all initial states are zero except the initial speed $v_{x,start}$ and $t_{r,start}$. The amount of throttle at the start of the lane change is chosen to overcome the aerodynamic drag without accelerating. This is given by $t_r^0 = \frac{(C_{r0}+C_{r1}v_{start}^2)r_w}{T_{max}}$. Therefore it can be concluded that the parameters that distinguish different lane changes are $v_{x,start}$ and $Width\hspace{1mm}Lane$. This is exploited when generating different ideal lane change datasets for chosen weighting factors. 
+The constraints displayed in $\bm{H}$ make sure that at the end of the lane change, the slip angles in the tires and the steer wheel angle are zero. From Eq. (\ref{eq:bicycle_model_eqmotion}) this induces that the lateral velocity, acceleration and yaw acceleration also become zero and this marks the end of the lane change. $y^N$ ensures that the wanted lateral distance is covered. This distance can be calculated from the start position of the vehicle and the width of the lane in order to end up at the centre line of the desired lane. \\ At the start of the lane change, straight driving at constant longitudinal speed is assumed. To achieve this, the constraints of Eq. (\ref{eq:X0}) are used. No constraints for acceleration is needed. This would give a redundancy due to the other initial states in combination with the equations of motion \ref{eq:bicycle_model_eqmotion}. In Eq. (\ref{eq:X0}) all initial states are zero except the initial speed $v_{x,start}$ and $t_{r,start}$. The amount of throttle at the start of the lane change is chosen to overcome the aerodynamic drag without accelerating. This is given by $t_r^0 = \frac{(C_{r0}+C_{r1}v_{start}^2)r_w}{T_{max}}$. Therefore, it can be concluded that the parameters that distinguish different lane changes are $v_{x,start}$ and $Width\hspace{1mm}Lane$. This is exploited when generating different ideal lane change datasets for chosen weighting factors. 
 \newpage
 \begin{equation}\label{eq:X0}
 \bm{X}_{initial} =

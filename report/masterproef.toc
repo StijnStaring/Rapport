@@ -41,35 +41,35 @@
 \contentsline {subsection}{\numberline {4.3.2}Validation}{27}{subsection.4.3.2}%
 \contentsline {subsubsection}{Numerical vs Analytical formulation}{27}{section*.24}%
 \contentsline {subsubsection}{Initial guess}{28}{section*.26}%
-\contentsline {subsubsection}{Time limit}{30}{section*.28}%
+\contentsline {subsubsection}{Time limit}{29}{section*.28}%
 \contentsline {subsubsection}{Amount of control points}{30}{section*.30}%
 \contentsline {subsubsection}{Linear tire model}{30}{section*.32}%
-\contentsline {subsubsection}{Feature values}{31}{section*.35}%
+\contentsline {subsubsection}{Feature values}{30}{section*.35}%
 \contentsline {subsubsection}{Conclusion}{32}{section*.36}%
-\contentsline {section}{\numberline {4.4}Ideal data learning results}{33}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{33}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Averaging method}{34}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.4}Ideal data learning results}{32}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Single dataset learning}{32}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Averaging method}{33}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Conflict method}{36}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{40}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Conclusion}{41}{section.4.5}%
-\contentsline {chapter}{\chapternumberline {5}Learning with complex vehicle model}{43}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Flow of the algorithm}{44}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Tracking MPC}{45}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}MPC formulation}{45}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Tracking results}{48}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Learning results with the Amesim model}{50}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Conclusion}{55}{section.5.4}%
-\contentsline {chapter}{\chapternumberline {6}Enhanced weighting factor update}{57}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Formulation}{57}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Discussion}{59}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{59}{section.6.3}%
-\contentsline {chapter}{\chapternumberline {7}Conclusion}{61}{chapter.7}%
-\contentsline {appendix}{\chapternumberline {A}Jerk equations of the non-linear bicycle model}{65}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Equations}{65}{section.A.1}%
-\contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{67}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Time limit}{67}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Amount of optimization points}{72}{section.B.2}%
-\contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 ideal datasets}{77}{appendix.C}%
-\contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{87}{appendix.D}%
-\contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{93}{appendix.E}%
-\contentsline {chapter}{Bibliography}{103}{appendix*.126}%
+\contentsline {subsection}{\numberline {4.4.4}Comparison of methods}{39}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Conclusion}{40}{section.4.5}%
+\contentsline {chapter}{\chapternumberline {5}Learning with complex vehicle model}{41}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Flow of the algorithm}{42}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Tracking MPC}{43}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}MPC formulation}{43}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Tracking results}{46}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Learning results with the Amesim model}{48}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Conclusion}{53}{section.5.4}%
+\contentsline {chapter}{\chapternumberline {6}Enhanced weighting factor update}{55}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Formulation}{55}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Discussion}{57}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{57}{section.6.3}%
+\contentsline {chapter}{\chapternumberline {7}Conclusion}{59}{chapter.7}%
+\contentsline {appendix}{\chapternumberline {A}Jerk equations of the non-linear bicycle model}{63}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Equations}{63}{section.A.1}%
+\contentsline {appendix}{\chapternumberline {B}Results of the ideal data validation}{65}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Time limit}{65}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Amount of optimization points}{70}{section.B.2}%
+\contentsline {appendix}{\chapternumberline {C}Results of the averaging learning on 3 ideal datasets}{75}{appendix.C}%
+\contentsline {appendix}{\chapternumberline {D}Accuracy results of the tracking MPC}{85}{appendix.D}%
+\contentsline {appendix}{\chapternumberline {E}Results of learning with the 15 dof Amesim model}{91}{appendix.E}%
+\contentsline {chapter}{Bibliography}{101}{appendix*.126}%

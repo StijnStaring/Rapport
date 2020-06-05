@@ -4,7 +4,7 @@ This chapter gives some background information on the theory behind optimal cont
 
 \section{Optimal control problem (OCP)}
 \label{Optimal control problem (OCP)}
-"An optimal control problem determines the desired inputs and corresponding state trajectories to change the system from an initial state to a desired final state in an optimal way while satisfying input and state constraints." \cite{Mercy2018}.
+An optimal control problem determines the desired inputs and corresponding state trajectories to change the system from an initial state to a desired final state in an optimal way while satisfying input and state constraints \cite{Mercy2018}
 
 \begin{equation}
 \label{eq:OCP}
@@ -13,19 +13,19 @@ This chapter gives some background information on the theory behind optimal cont
 \textrm{s.t.} \quad & \bm{\dot{q}}(t) = \bm{f}(\bm{q}(t), \bm{u}(t))\\
 & \bm{q}(0)= \bm{q}_{0},\hspace{2 mm}\bm{q}(T)= \bm{q}_{T}    \\
 & \bm{q}(t)\in Q,\hspace{3 mm} \bm{u}(t)\in U, \hspace{3 mm} t\in [0, T]
-\end{aligned}
+\end{aligned}.
 \end{equation}
 
-$\bm{q}$ is called the state vector and contains all the states of the system. $\bm{u}$ is the control vector containing the controls. In theory the amount of states of a system can be infinite, but in order to sufficiently model a system, only a well chosen set of states is needed. Typical controls for a vehicle are steerwheelangle and the amount of throttle, which can be directly linked to the amount of propulsion force. Higher order controls are also possible.\\
+$\bm{q}$ is called the state vector and contains all the states of the system. $\bm{u}$ is the control vector containing the controls. In theory the amount of states of a system can be infinite, but in order to sufficiently model a system, only a well chosen set of states is needed. Typical controls for a vehicle are steer wheel angle and the amount of throttle, which can be directly linked to the amount of propulsion force. Higher order controls are also possible.\\
 The objective function $l$ of the optimization problem Eq. (\ref{eq:OCP}) is integrating over the desired control horizon $T$. In the objective function it is indicated what should be minimized and this is in function of the different states and controls. $E(\bm{q}(T))$ describes the terminal cost and the objective is reduced when the system comes closer to a predefined final state at the end of the control horizon.
 The dynamics of the system are modelled by an explicit ordinary differential equation $\bm{\dot{q}}(t) = \bm{f}(\bm{q}(t), \bm{u}(t))$ and the evolution of the vehicle states are retrieved by integrating this ODE over the control horizon.
-$Q$ and $U$ represent the feasible space wherein solutions for the OCP can be sought. It is worth noting that the control horizon time $T$ itself can be an optimization variable. What comes out of an OCP indicates what states will be visited by the system and which controls have to be applied in order to optimize the associated objective function with respect to predefined constraints. \cite{Panos_opti}\\ 
+$Q$ and $U$ represent the feasible space wherein solutions for the OCP can be sought. It is worth noting that the control horizon time $T$ itself can be an optimization variable. What comes out of an OCP indicates what states will be visited by the system and which controls have to be applied in order to optimize the associated objective function with respect to predefined constraints \cite{Panos_opti}.\\ 
 
-There is a difference between soft and hard constraints. A hard constraint directly demarcates the feasible solution spaces $\bm{q}(t)\in Q,\hspace{3 mm} \bm{u}(t)\in U$. A soft constraint is added in the objective function $l$ and will contribute to a more optimal solution when it is better fulfilled. Also, when a soft constraint is not met, this can be an optimal solution which is not the case for a hard constraint. \cite{Yankov} \\
+There is a difference between soft and hard constraints. A hard constraint directly demarcates the feasible solution spaces $\bm{q}(t)\in Q,\hspace{3 mm} \bm{u}(t)\in U$. A soft constraint is added in the objective function $l$ and will contribute to a more optimal solution when it is better fulfilled. Also when a soft constraint is not met, this can be an optimal solution which is not the case for a hard constraint \cite{Yankov}. \\
 
 \subsection{Time discretization}
 \label{s:time_dis}
-The optimal control problem Eq. (\ref{eq:OCP}) is continuous in time. This means that it has infinite dimensions, but to be able to run the optimization problem on digital systems there is need for discretization. Several ways to do this are summarized in Figure Eq. (\ref{fig:discretization_m}).\cite{Gillis2019}
+The optimal control problem Eq. (\ref{eq:OCP}) is continuous in time. This means that it has infinite dimensions, but to be able to run the optimization problem on digital systems, there is need for discretization. Several ways to do this are summarized in Figure Eq. (\ref{fig:discretization_m}) \cite{Gillis2019}.
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{discretized.eps}
@@ -36,13 +36,13 @@ The optimal control problem Eq. (\ref{eq:OCP}) is continuous in time. This means
 Since direct methods are best suited to solve practically relevant OCPs \cite{Mercy2018}, this thesis has chosen for to use this method. To implement the discretization of time when using the Direct method, a time shooting approach is used.
 
 \subsection{Time shooting}
-A shooting approach makes use of a time grid. Time will be sampled and on every time instant the optimal control problem is assessed. On these discrete points constraints will not be violated, but there are no limits on the amount of violation between the different time samples. In order to reduce the amount of constraint violation the sample rate should be taken high enough, while bearing in mind the extra optimization variables introduces higher calculation load. Another approach to take constraint violation into account, is using spline based optimization formulations. \cite{Mercy2018}\\
+A shooting approach makes use of a time grid. Time will be sampled and on every time instant the optimal control problem is assessed. On these discrete points constraints will not be violated, but there are no limits on the amount of violation between the different time samples. In order to reduce the amount of constraint violation the sample rate should be taken high enough, while bearing in mind the extra optimization variables introduces a higher calculation load. Another approach to take constraint violation into account, is using spline based optimization formulations \cite{Mercy2018}. Control changes are only allowed on the different discrete time instances which leads to a piecewise control signal.\\
 
 Two different shooting approaches exist:\\
 \begin{enumerate}
 	\item Multiple shooting (MS)\\
-	During multiple shooting, every new time sample new optimization variables are defined for the states and controls.
-	Control changes are only allowed on the different discrete time instances which leads to a piecewise control signal. The blue bars in Figure \ref{fig:TS} (left) indicate the control signal applied to the system.  The red dots are system states that are defined as optimization variables and are not constant during a time interval $\Delta T$. In order to make the connection between states at time $t_i$ and $t_{i+1}$, time integration is embedded in $\bm{F}$ according to $\bm{q}^{k+1} = \bm{F}(\bm{q}^k, \bm{u}^k)$. These connections are put as constraints in the optimization and are called in literature 'path closing constraints' \cite{Gillis2019}. Eq. (\ref{eq:dis_ocpp}) presents the discretized version of Eq. (\ref{eq:OCP}) when using the multiple shooting approach. 
+    During multiple shooting, every new time sample new optimization variables are defined for the states and controls.
+	 The blue bars in Figure \ref{fig:TS} (left) indicate the control signal applied to the system.  The red dots are system states that are defined as optimization variables and are not constant during a time interval $\Delta T$. In order to make the connection between states at time $t_i$ and $t_{i+1}$, time integration is embedded in $\bm{F}$ according to $\bm{q}^{k+1} = \bm{F}(\bm{q}^k, \bm{u}^k)$. These connections are put as constraints in the optimization and are called in literature 'path closing constraints' \cite{Gillis2019}. Eq. (\ref{eq:dis_ocpp}) presents the discretized version of Eq. (\ref{eq:OCP}) when using the multiple shooting approach
 
 	\begin{equation*}
 	\label{eq:OCP_dis}
@@ -57,7 +57,7 @@ Two different shooting approaches exist:\\
 	& \bm{q}^{k}\in Q,\hspace{3 mm} & k = [0,\cdots, N]\\
 	& \bm{u}^{k}\in U \hspace{3 mm} & k = [0,\cdots, N-1]\\
 	& \bm{q}^{N}\in Q_f,\hspace{3 mm} N \in \mathbb{N}
-	\end{aligned}
+	\end{aligned}.
 	\end{equation}
 
 %	\begin{equation*}
@@ -73,7 +73,7 @@ Two different shooting approaches exist:\\
 %	\end{equation*}
 %	
 	\item Single shooting (SS)\\  
-	In the single shooting or sequential approach which is visualized in Figure \ref{fig:TS} (right), only the first state and the controls are taken as optimization variables. Other states during the time horizon are derived from the initial state and the applied control. This is achieved by substituting the states during the control horizon by the integration results from the initial state. The mathematical formulation of this is shown in Eq. (\ref{eq:2}). In Figure \ref{fig:TS} (right) are the states that result from integration indicated in green. \cite{Gillis2019}
+	In the single shooting or sequential approach which is visualized in Figure \ref{fig:TS} (right), only the first state and the controls are taken as optimization variables. Other states during the time horizon are derived from the initial state and the applied control. This is achieved by substituting the states during the control horizon by the integration results from the initial state. The mathematical formulation of this is shown in Eq. (\ref{eq:2}). In Figure \ref{fig:TS} (right) are the states that result from integration indicated in green \cite{Gillis2019}
 	
 	\begin{equation}\label{eq:2}
 	\begin{aligned}
@@ -81,12 +81,12 @@ Two different shooting approaches exist:\\
 	\bm{q}^2 &= \bm{F}(\bm{F}(\bm{q}^0, \bm{u}^0), \bm{u}^1)\\
 	\bm{q}^3 &= \bm{F}(\bm{F}(\bm{F}(\bm{q}^0, \bm{u}^0), \bm{u}^1), \bm{u}^2)\\
 	...
-	\end{aligned}
+	\end{aligned}.
 	\end{equation}
 \end{enumerate}
 %\vspace{1 cm}
 
-This thesis has opted for the multiple shooting approach and a Runge-Kutta numerical integration scheme is implemented in order to define the path closing constraints. Runge-Kutta is an explicit integration scheme which has a higher calculation cost than a standard Euler scheme but is more reliable for non-linear systems and has a higher stability with respect to the chosen time step. \cite{Mercy2018}
+This thesis has opted for the multiple shooting approach and a Runge-Kutta numerical integration scheme is implemented in order to define the path closing constraints. Runge-Kutta is an explicit integration scheme which has a higher calculation cost than a standard Euler scheme but is more reliable for non-linear systems and has a higher stability with respect to the chosen time step \cite{Mercy2018}.
 
 \begin{figure}[htp]
 	\centering
@@ -103,14 +103,14 @@ This thesis has opted for the multiple shooting approach and a Runge-Kutta numer
 	\label{fig:TS}
 \end{figure}
 
-It can be noted that the difference between the two shooting approaches is that 'Multiple shooting'(MS) will lead to a larger Hessian of the objective and a larger Jacobian of the constraints. The reason for this is the introduction of more optimization variables. The advantage of MS is then again that these matrices are more sparse because a certain state is only dependent on the previous one and a certain control. Therefore these matrices can be used more efficiently with respect to calculation load. In single shooting every state depends on the begin state and different controls which give smaller, more densely populated matrices which are more calculation expensive. \cite{Gillis2019}
+It can be noted that the difference between the two shooting approaches is that 'Multiple shooting'(MS) will lead to a larger Hessian of the objective and a larger Jacobian of the constraints. The reason for this is the introduction of more optimization variables. The advantage of MS is then again that these matrices are more sparse because a certain state is only dependent on the previous one and a certain control. Therefore these matrices can be used more efficiently with respect to calculation load. In single shooting every state depends on the begin state and different controls which give smaller, more densely populated matrices which are more calculation expensive \cite{Gillis2019}.
 
 \section{Model predictive control}
 \label{s:MPC_e}
-In slow changing environments as for example a chemical plant, MPC is already a mature control technique. More recently this technology also made its introduction in controlling systems with higher dynamics e.g. vehicle control, due to an increase of computational power and the use of more efficient algorithms. \cite{Mercy2018}. In the next section a short introduction of the formulation is given. \\
+In slow changing environments as for example a chemical plant, MPC is already a mature control technique. More recently this technology also made its introduction in controlling systems with higher dynamics e.g. vehicle control, due to an increase of computational power and the use of more efficient algorithms \cite{Mercy2018}. In the next section a short introduction of the formulation is given. \\
 
 During MPC, optimizations are solved in a loop to be able to notice disturbances, changing environments and model-plant mismatch. Therefore it makes use of a moving control horizon\footnote{There are also other implementations e.g. shrinking time horizon, where the control horizon gets smaller after each iteration.}. Every iteration an OCP is solved, starting from the current state and using a certain control horizon.  From the resulting control signals only the first control value is applied for one time interval of the finite control horizon $N\cdot T_{s}$ as is visualized in Figures \ref{fig:MPC1} and \ref{fig:MPC2}.\\
-The decision on the amount of samples $N$ that are used in the control horizon is based on a trade-off between higher accuracy and calculation effort. \cite{TongDuySon2019, Mercy2018}. In Figure \ref{fig:MPC1} the solving of an OCP during one MPC iteration on time sample $t+1$ is depicted. Figure \ref{fig:MPC2} shows that only the first control of the computed control signal will be applied.  This induces the system to change its current state. Next a new OCP can be solved. A single OCP-iteration only takes the model of the system into account to calculate the control signals. The iterative way of solving makes the MPC able to deal with unexpected acquired states through feedback that is given by each new current state. As stated earlier the downside of this approach is a bigger computational load, which makes efficiently written software a necessity.  \cite{Patrinos2019}\\
+The decision on the amount of samples $N$ that are used in the control horizon is based on a trade-off between higher accuracy and calculation effort \cite{TongDuySon2019, Mercy2018}. In Figure \ref{fig:MPC1} the solving of an OCP during one MPC iteration on time sample $t+1$ is depicted. Figure \ref{fig:MPC2} shows that only the first control of the computed control signal will be applied.  This induces the system to change its current state. Next a new OCP can be solved. A single OCP-iteration only takes the model of the system into account to calculate the control signals. The iterative way of solving makes the MPC able to deal with unexpected acquired states through feedback that is given by each new current state. As stated earlier, the downside of this approach is a bigger computational load, which makes efficiently written software a necessity \cite{Patrinos2019}.\\
 
 \begin{figure}[h!]
 	\centering

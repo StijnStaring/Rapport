@@ -6,7 +6,7 @@ This chapter is structured as follows. First, the definition of comfortable driv
 
 \section{What is comfort during driving?}
 \label{s:comfort_parameters}
-In the patent of L. Daniel \cite{Daniel2018} the idea is to assess the amount of comfort by calculating a value for carsickness. This value is calculated by a weighted sum of sway motion, surge motion and heave motion of the vehicle. These motions are being directly calculated from the lateral acceleration, fore-aft acceleration and the vertical acceleration of the vehicle. \\
+In the US patent of L. Daniel \cite{Daniel2018}, the idea is to assess the amount of comfort by calculating a value for carsickness. This value is calculated by a weighted sum of sway motion, surge motion and heave motion of the vehicle. These motions are being directly calculated from the lateral acceleration, fore-aft acceleration and the vertical acceleration of the vehicle. \\
 
 \begin{figure}[h!]
 	\centering
@@ -24,13 +24,13 @@ In the patent of L. Daniel \cite{Daniel2018} the idea is to assess the amount of
 %\end{wrapfigure}
 In the paper 'Investigating ride comfort measures in autonomous cars' \cite{Elbanhawi2015}, it is explained that due to the introduction of autonomous vehicles there will be an other perception of comfort. Figure \ref{fig:Comfort} indicates in blue the claimed traditional comfort factors and in red the new ones that additionally have to be taken into account when driving in autonomous vehicles. Concretely this can be translated into the preference of smooth trajectories and low lateral motions when the roads are assumed to be sufficiently smooth. A hypothesis taken, is that motion sickness will be more prominent in autonomous driving due to the loss of control. It is also argued that the distance to an obstacle is contributing to a comfortable feeling.\\
 
-In 'Analysis of Driving Style Preference in Automated Driving' \cite{Bellem} three studies were completed to capture the definition of comfortable driving in autonomous vehicles.\\
-During the first study, human drivers drove manually with their own driving style a set of maneuvers and in this data, there was sought after relevant metrics that could be used in defining comfortable driving. The results of this research was that accelerations play a key role in comfort but are not the only factor. \cite{Bellem}
+In 'Analysis of Driving Style Preference in Automated Driving' \cite{Bellem}, three studies were completed to capture the definition of comfortable driving in autonomous vehicles.\\
+During the first study, human drivers drove manually with their own driving style a set of maneuvers and in this data, there was sought after relevant metrics that could be used to define comfortable driving. The results of this research was that accelerations play a key role in comfort but are not the only factor \cite{Bellem}.
 
 \begin{quote}
 	The different comfort metrics found were:
 	\begin{itemize}
-		\item longitudinal acceleration;
+		\item lateral and longitudinal acceleration;
 		\item lateral and longitudinal jerk;
 		\item quickness of the maneuver;
 		\item headway distance;
@@ -40,9 +40,9 @@ During the first study, human drivers drove manually with their own driving styl
 Quickness of the maneuver indicates that it is received as comfortable when the vehicle gives a good response and reaches the desired lateral displacement faster.
 Additionally comfortable driving as assessed in \cite{Bellem}, can be summarized as  sufficiently smooth trajectories and keeping enough headway distance in order to have a feeling of control and safety. These results suggest that when an algorithm is evaluating comfort, a notion of the surrounding traffic should be present. It was found when the traffic density on the road is higher, the driver is more tolerant towards less smooth driving behaviour e.g. to be able to insert in a busy lane. In this case higher comfort can be attained if the driver has the feeling of a fast response of the vehicle, translating in early peaks of acceleration. Vertical vibrations are outside the scope when roads are assumed sufficiently smooth.\\
 
-In a second study the main metrics found from study one are rated making use of a questionnaire, asking about the amount of comfort retrieved. "Out of this it followed that accelerations are again playing a key factor." \cite{Bellem} For lane changes it could be concluded that maneuvers with a small lateral acceleration and early perceivable onset were more comfortable.\\
+In a second study the main metrics found from study one are rated making use of a questionnaire, asking about the amount of comfort retrieved. ''Out of this it followed that accelerations are again playing a key factor'', according to paper \cite{Bellem}. For lane changes it could be concluded that maneuvers with a small lateral acceleration and early perceivable onset were more comfortable.\\
 
-That also jerk plays an important role in the attained amount of comfort, is confirmed by paper \cite{Gianna1996} where it is stated that: "Jerk has been shown to elicit a stronger influence on comfort than acceleration".
+That also jerk plays an important role in the attained amount of comfort, is confirmed by paper \cite{Gianna1996} where it is stated that: ''Jerk has been shown to elicit a stronger influence on comfort than acceleration''.
 
 
 % In mijn maneuver wordt de kleine waardes van longitudinale snelheid en versnellingen gecompenseerd door de normalisatie waarden. Dus ookal zijn ze klein, krijgen toch een grote impact mee in het berekenen van een optimale oplossing. Daarin tegen kan er wel makkelijker voldaan worden aan het perfect voldoen van de longitudinale parameters in de lane change zonder het algemene resultaat veel te veranderen. De keuzen van de wegingsfactoren worden hierdoor minder significant en sensitiviteit wordt lager. --> als verschillende maneuvers worden gecombineerd zal dit de uniekheid van de gevonden wegingsfactoren opdrijven.
@@ -51,101 +51,101 @@ That also jerk plays an important role in the attained amount of comfort, is con
 
 \section{Inverse optimal control}
 \label{s:inverse re le}
-Because every human has its own driving style it is a cumbersome task to tune these parameters for each individual in order to model a personal perception of comfort. In \cite{Powers} it is showed that manual tuned parameters will besides lead  to suboptimal solutions in comparison with data learned parameters. 
-Inverse optimal control is the activity of learning an agents objective function from expert demonstrations. \cite{Arenz2017} \\
+Because every human has its own driving style, it is a cumbersome task to tune the weighting factors of an objective function for each individual in order to model a personal perception of comfort. In paper \cite{Powers} it is showed that manual tuned weighting factors will besides lead  to suboptimal solutions in comparison with learned ones from data. 
+Inverse optimal control is the activity of learning an agent's objective function from expert demonstrations \cite{Arenz2017}.\\
 
-The goal of the learning algorithm explained in this thesis is to derive the parameters $\theta_j$ of different linearly combined comfort criteria $f_j$ combined in the cost function $J$. When the parameters are learned, the objective function $J$ will as best as possible explain the observed data. As the match with the observed data gets better during learning, it is assumed that $J$ is getting closer to the inner comfort function of the individual driver. However, it should be noted that the driver takes unknowingly a lot of comfort criteria into account and they are not all linearly relating as is suggested by Eq. (\ref{eq:1}). Therefore the comfort cost function in Eq. (\ref{eq:1}), will always be an approximation of reality. Although as discussed in \cite{Kuderer2015a}, it is possible to capture the magnitude of the main drivers that contribute to the comfort experienced by the users.\\
+The goal of the learning algorithm explained in this thesis is to derive the weighting factors $\theta_j$ of different linearly combined comfort criteria $f_j$, embedded in the cost function $J$. As the observed data is explained better during learning, it is assumed that $J$ is getting closer to the inner comfort objective of the individual driver. However, it should be noted that the driver takes unknowingly a lot of comfort criteria into account and they are not all linearly related as is suggested by Eq. (\ref{eq:1}). Therefore the comfort cost function in Eq. (\ref{eq:1}), will always be an approximation of reality. Although as discussed in paper \cite{Kuderer2015a}, it is possible to capture the magnitude of the main contributors of comfort experienced by the users\\
 
 \begin{equation}\label{eq:1}
-	J = \sum_{j=1}^{Z}\theta_j\cdot f_j	
+	J = \sum_{j=1}^{Z}\theta_j\cdot f_j	.
 \end{equation}
 
 %"Inverse optimal control, also known as inverse reinforcement learning, is the problem of recovering an unknown reward function in a Markov decision process from expert demonstrations of the optimal policy." \cite{Levine2012} In contrary what this classic definition, the approach followed by \cite{Kuderer2015a} is not modelling teh
 
-In order to create a generative model that creates vehicle paths $\bm{r}_i$ with equivalent kinematic characteristics as the path that was observed $\bm{r}_{obs,i}$, a feature-based inverse optimal control is applied, with $i \in [1 ... m]$ and $m$ the amount of observed trajectories.\cite{Kuderer2015a,Abbeel2004} A feature is encoding relevant kinematic properties onto a scalar value and the difference between the demonstrated and calculated features give a clear indication about the similarity of the kinematic signals i.e. displacement,velocity, acceleration and jerk. \\
+In order to create a generative model that creates vehicle paths $\bm{r}_i$ with equivalent kinematic characteristics as the path that was observed $\bm{r}_{obs,i}$, a feature-based inverse optimal control is applied, with $i \in [1 ... m]$ and $m$ the amount of observed trajectories \cite{Kuderer2015a,Abbeel2004}. A feature is encoding relevant kinematic properties onto a scalar value and the difference between the demonstrated and calculated feature values, give an indication about the similarity of the kinematic signals i.e. displacement, velocity, acceleration and jerk. \\
 
 \subsection{Feature-based inverse optimal control}
-A feature value maps a signal onto a scalar and encapsulates a comfort criteria. The higher the scalar value the more discomfort is experienced by the driver. An example is given by Eq. (\ref{eq:3}) that measures the amount of accelerations in a maneuver.
+A feature value maps a signal onto a scalar and encapsulates a comfort criteria. The higher the scalar value the more discomfort is experienced by the driver. An example is given by Eq. (\ref{eq:3}) that measures the amount of accelerations in a maneuver
 
 \begin{equation}\label{eq:3}
-f_j:\bm{r}\xrightarrow{}f_j(\bm{r})=\int_{0}^{T}a_x(t)^{2}+a_y(t)^{2} dt
+f_j:\bm{r}\xrightarrow{}f_j(\bm{r})=\int_{0}^{T}a_x(t)^{2}+a_y(t)^{2} dt.
 \end{equation}
 The different feature values are collected in a feature vector $\bm{F} \in \mathbb{R}^Z$ with on its entries the different feature values $f_j$.
-The path that the centre of gravity of the vehicle is following can be represented by Eq. (\ref{eq:4}).
-\begin{equation}\label{eq:4}
-\bm{r}:t \xrightarrow{}\bm{r}(t) =  \bigl( \begin{smallmatrix} x(t)\\ y(t) \end{smallmatrix}\bigr)
-\end{equation}
+The path that is followed by the vehicle is represented by $\bm{r}$.
 
-The human driver is not a deterministic agent and is modelled by a stochastic distribution $p(\bm{r}|\bm{\theta})$. For certain weighting factors $\bm{\theta} \in \mathbb{R}^Z$ a path $\bm{r}$ is produced as being a sample of a stochastic distribution. The distribution that is chosen for this is the distribution of maximum entropy Eq. (\ref{eq:entropy}). \cite{Ziebart2008}. 
-The distribution with the highest entropy represents the given information best since it does not favour any particular outcome besides the observed constraints. \cite{Abbeel2004}
+%the centre of gravity of the vehicle is following can be represented by Eq. (\ref{eq:4}).
+%\begin{equation}\label{eq:4}
+%\bm{r}:t \xrightarrow{}\bm{r}(t) =  \bigl( \begin{smallmatrix} x(t)\\ y(t) \end{smallmatrix}\bigr)
+%\end{equation}
+
+The human driver is not a deterministic agent and is modelled by a stochastic distribution $p(\bm{r}|\bm{\theta})$. For certain weighting factors $\bm{\theta} \in \mathbb{R}^Z$ a path $\bm{r}$ is produced as being a sample of a stochastic distribution. The distribution chosen, is the distribution of maximum entropy Eq. (\ref{eq:entropy}) as suggested in paper \cite{Ziebart2008}. When using the maximum entropy distribution the amount of prior information embedded in the distribution is minimized. It is also stated that many physical systems will move towards a maximal entropy configuration over time
+%''The distribution with the highest entropy represents the given information best since it does not favour any particular outcome besides the observed constraints'', according to \cite{Abbeel2004}.
 	
 \begin{equation}\label{eq:entropy}
-	p(\bm{r}|\bm{\theta}) = exp(-\bm{\theta}^T\cdot \bm{F}(\bm{r}))
+	p(\bm{r}|\bm{\theta}) = exp(-\bm{\theta}^T\cdot \bm{F}(\bm{r})).
 \end{equation}
-Eq. (\ref{eq:entropy}) can be interpreted as a cost function $\bm{\theta}^T\bm{F}(\bm{r})$ where agents are exponentially more likely to select trajectories with lower cost \cite{Kuderer2015a}.
-The observed feature vector $\bm{F}_{obs} \in \mathbb{R}^Z$ has on its entries the different feature values $f_{obs,j}$. 
-
+Eq. (\ref{eq:entropy}) can be interpreted as a cost function $\bm{\theta}^T\bm{F}(\bm{r})$ where agents are exponentially more likely to select trajectories with a lower cost which is felt as more comfortable \cite{Kuderer2015a}.
 %The averaged observed feature vector is $\til{\bm{F}}_{av} = \frac{1}{m}\sum_{j=1}^{m}\til{\bm{F}_j}$.\\
 
-In order to explain the observed feature vector, the weighting factors $\bm{\theta}$ need to be found that match the expected features vector $\bm{F}(\bm{r}_{expected})$ with $\bm{F}_{obs}$. $\bm{r}_{expected}$ is defined as $ E(p(\bm{r}|\bm{\theta}))$. To go towards a match with the observed feature vector, a gradient descent method can be used with an estimation of the gradient $\pdv{\bm{F}_{diff}}{\bm{\theta}}$ by $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ and with $\bm{F}_{diff}$ the difference between the feature vectors \cite{Ziebart2008, Kretzschmar2014}. Only the sign of the gradient is used and there are two directions for every weighting factor update: increase or decrease. Therefore an intuitive explanation exist for using $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ as estimation for the gradient. The weighting factor is increased when the expected feature is higher than the observed one, which means that the associated comfort feature will be punished more severely during the generation of $\bm{r}_{expected}$ in the next iterate. Consequently, the weighting factor will be decreased when the expected feature is lower than the observed one \cite{Kuderer2015a}. Eq. (\ref{eq:5}) summarizes the gradient descent method with $\alpha$ the step size taken in the direction of descent
+In order to explain the observed feature vector $\bm{F}_{obs}$, the weighting factors $\bm{\theta}$ need to be found that match the expected feature vector $\bm{F}(\bm{r}_{expected})$ with $\bm{F}_{obs}$. The observed feature vector $\bm{F}_{obs} \in \mathbb{R}^Z$ has on its entries the different feature values $f_{obs,j}$. $\bm{r}_{expected}$ is defined as $ E(p(\bm{r}|\bm{\theta}))$. To go towards a match with the observed feature vector, a gradient descent method can be used with as estimation of the gradient $\pdv{\bm{F}_{diff}}{\bm{\theta}}$ by $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ and with $\bm{F}_{diff}$ the difference between the feature vectors \cite{Ziebart2008, Kretzschmar2014}. Only the sign of the gradient is used and there are two directions for every weighting factor update: increase or decrease. Therefore an intuitive explanation exist for using $\bm{F}_{obs} - \bm{F}(\bm{r}_{expected})$ as estimation for the gradient. The weighting factor is increased when the expected feature is higher than the observed one, which means that the associated comfort feature will be punished more severely in Eq. (\ref{eq:entropy}) and paths with a higher value of that comfort feature become less likely. The weighting factor will be decreased when the expected feature is lower than the observed one \cite{Kuderer2015a}. Eq. (\ref{eq:5}) summarizes the gradient descent method with $\alpha$ the step size taken in the direction of descent
 
 \begin{equation}\label{eq:5}
 	\bm{\theta}^{k+1} = \bm{\theta}^{k} - \alpha \pdv{\bm{F}_{diff}}{\bm{\theta}}^k .
 \end{equation}
 
-When $\bm{\theta}_{optimal}$ is found the gradient is minimized and the feature vectors will match as closely as possible. But the problem remains how to retrieve $\bm{F}(\bm{r}_{expected})$. In order to calculate $\bm{F}(\bm{r}_{expected})$ a Hamiltonian Markov chain
-Monte Carlo stochastic distribution sampling method was used in paper \cite{Kretzschmar2014}. In paper \cite{Kuderer2015a} a simplified and less calculation demanding approach is proposed, where it is assumed that the expected path is also the one that is been assessed as the most comfortable by the human driver. The path that is perceived as the most comfortable can be estimated by minimizing Eq. (\ref{eq:1}) for certain weighting factors. Equation \ref{eq:6} summarizes the method proposed by \cite{Kuderer2015a}.
+When $\bm{\theta}_{optimal}$ is found the gradient is minimized and the feature vectors will match as closely as possible. In order to achieve this, the problem remains how to retrieve $\bm{F}(\bm{r}_{expected})$. In order to calculate $\bm{F}(\bm{r}_{expected})$ a Hamiltonian Markov chain
+Monte Carlo stochastic distribution sampling method was used in paper \cite{Kretzschmar2014}. In paper \cite{Kuderer2015a} a simplified and less calculation demanding approach is proposed, where it is assumed that the expected path is also the one that is been assessed as the most comfortable by the human driver. The path that is perceived as the most comfortable can be estimated by minimizing Eq. (\ref{eq:1}) for certain weighting factors. Equation \ref{eq:6} summarizes the method proposed by paper \cite{Kuderer2015a}
 \newcommand{\argmax}{argmax}
 \newcommand{\argmin}{argmin}
 \begin{subequations}
 	\label{eq:6}
-\begin{equation}
-	\bm{r}_{expected} = \underset{\bm{r}}{\argmax} \hspace{1mm} p(\bm{r}|\bm{\theta}) = \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r})
+\begin{equation}\label{eq:6a}
+	\bm{r}_{expected} = \underset{\bm{r}}{\argmax} \hspace{1mm} p(\bm{r}|\bm{\theta}) = \underset{\bm{r}}{\argmin} \hspace{1mm}  \bm{\theta}^T\cdot \bm{F}(\bm{r}),
 \end{equation}
 \begin{equation}\label{eq:new}
-	\pdv{\bm{F}_{diff}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected})
+	\pdv{\bm{F}_{diff}}{\bm{\theta}} = \bm{F}_{obs} - \bm{F}(\bm{r}_{expected}).
 \end{equation}
 \end{subequations}
 
 %\DeclareMathOperator*{\argmin}{argmin}
 
 \subsection{RPROP algorithm}\label{s:RPROP}
-From \cite{Panos_opti} it is known that not every step size of the gradient is leading to convergence towards a minimum. When the step size is too small, it will take a long time to converge. However when it is chosen too big, cycling behaviour between limit points can occur. In order to avoid this unwanted behaviour, a  method is needed to change the step size taken during the course of the algorithm. For this the Resilient backpropagation algorithm (RPROP) \cite{RPROP} is used as it was first proposed by Martin Riedmiller and Heinrich Braun in 1993.\\
+From reference \cite{Panos_opti} it is known that not every step size of the gradient is leading to convergence towards a minimum. When the step size is too small, it will take a long time to converge. However when it is chosen too big, cycling behaviour between limit points occurs. In order to avoid this unwanted behaviour, a  method is needed to change the step size taken during the course of the algorithm. For this the resilient backpropagation algorithm (RPROP) \cite{RPROP} is used as it was first proposed by Martin Riedmiller and Heinrich Braun in 1993.\\
 
-The main advantage when using RPROP is that the size of the gradient is not blurring the update value of the weighting factors. The update value $\Delta u$ is solely dependent on the sign of the current gradient, the sign of the gradient in the previous iteration and the update value in the previous iteration. The three possible cases for the update value during iteration $t$ is given by: 
+The main advantage when using RPROP is that the size of the gradient is not blurring the update value of the weighting factors. The update value $\Delta u$ is solely dependent on the sign of the current gradient, the sign of the gradient in the previous iteration and the update value in the previous iteration. The three possible cases for the update value during iteration $t$ are given by: 
 
 \begin{equation}\label{eq:7}
-	\Delta u^t_i =
+	\Delta u^t_j =
 	\begin{Bmatrix}
-		 \eta^+ \cdot \Delta u^{t-1}_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} > 0 \\
-		 \eta^- \cdot \Delta u^{t-1}_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} < 0 \\
-		  \Delta u^{t-1}_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} = 0 \\
-	\end{Bmatrix}
+		 \eta^+ \cdot \Delta u^{t-1}_j, & if \hspace{1 mm} \pdv{f_j}{\theta_j}^t \cdot \pdv{f_j}{\theta_j}^{t-1} > 0 \\
+		 \eta^- \cdot \Delta u^{t-1}_j, & if \hspace{1 mm} \pdv{f_j}{\theta_j}^t \cdot \pdv{f_j}{\theta_j}^{t-1} < 0 \\
+		  \Delta u^{t-1}_j, & if \hspace{1 mm} \pdv{f_j}{\theta_j}^t \cdot \pdv{f_j}{\theta_j}^{t-1} = 0 \\
+	\end{Bmatrix}.
 \end{equation}
 \begin{equation}\label{eq:9}
 0 <\eta^-<1<\eta^+
 \end{equation}
 
-When the update value of the weighting factor is determined it is applied in the direction of steepest descent which equals the opposite direction of the current gradient. 
+When the update value of the weighting factor is determined, it is applied in the direction of steepest descent which equals the opposite direction of the current gradient
 
 \begin{equation}\label{eq:8}
-\Delta \theta^t_i =
+\Delta \theta^t_j =
 \begin{Bmatrix}
-	-\Delta u^t_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t > 0 \\
-	+ \Delta u^t_i, & if \hspace{1 mm} \pdv{f_i}{\theta_i}^t < 0 \\
+	-\Delta u^t_j, & if \hspace{1 mm} \pdv{f_j}{\theta_j}^t > 0 \\
+	+ \Delta u^t_j, & if \hspace{1 mm} \pdv{f_j}{\theta_j}^t < 0 \\
 	0, & else 
-\end{Bmatrix}
+\end{Bmatrix}.
 \end{equation}
 Exception on Eq. (\ref{eq:8}):
 
 \begin{equation}\label{eq:10}
-	\Delta \theta^t_i = -\Delta \theta^{t-1}_i, \hspace{1mm} if \hspace{1mm} \pdv{f_i}{\theta_i}^t \cdot \pdv{f_i}{\theta_i}^{t-1} < 0
+	\Delta \theta^t_j = -\Delta \theta^{t-1}_j, \hspace{1mm} if \hspace{1mm} \pdv{f_j}{\theta_j}^t \cdot \pdv{f_j}{\theta_j}^{t-1} < 0.
 \end{equation}
 
 
 
-With $\theta_i^{t+1} = \theta_i^{t} + \Delta \theta^t_i$, $i \in \mathbb{N}_{[1\cdots Z]}$ and $t \in \mathbb{N}_{[1 \cdots \mathbb{\tau}]}$ the amount of iterations. Every time the partial derivative $\pdv{f_i}{\theta_i}^t$ of the corresponding weighting factor $\theta_i^t$ changes its sign, it is assumed that the last update was too big and the local minimum was passed. In Eq. (\ref{eq:7}) the step size is then reduced and in order to go back to the previous situation the update of the weighting factor is done as indicated by Eq. (\ref{eq:10}). To not again decrease the update value when going back to the previous situation where the gradient will again change it's sign,  $\pdv{f_i}{\theta_i}^{t}$ is set to zero.\\
-If the derivative retains its sign with respect to the previous iteration, the update value is slightly increased in order to accelerate convergence in shallow regions. \cite{RPROP} Parameters set by the user are $\Delta u^0_i,\Delta u^{max}_i,\Delta u^{min}_i, \eta^+$ and $\eta^-$. In this thesis following values were chosen: $\Delta u^0_i = 0.1$, $\Delta u^{max}_i=1.0$, $\Delta u^{min}_i=10^{-7}$, $\eta^+ = 1.2$ and $\eta^- = 0.5$.
+With $\theta_j^{t+1} = \theta_j^{t} + \Delta \theta^t_j$, $j \in \mathbb{N}_{[1\cdots Z]}$ and $t \in \mathbb{N}_{[1 \cdots \mathbb{\tau}]}$ the amount of iterations. Every time the partial derivative $\pdv{f_j}{\theta_j}^t$ of the corresponding weighting factor $\theta_j^t$ changes its sign, it is assumed that the last update was too big and the local minimum was passed. In Eq. (\ref{eq:7}) the step size is then reduced and in order to go back to the previous situation the update of the weighting factor is done as indicated by Eq. (\ref{eq:10}). To not again decrease the update value when going back to the previous situation where the gradient will again change it's sign,  $\pdv{f_j}{\theta_j}^{t}$ is set to zero.\\
+If the derivative retains its sign with respect to the previous iteration, the update value is slightly increased in order to accelerate convergence in shallow regions \cite{RPROP}. Parameters set by the user are: $\Delta u^0_j,\Delta u^{max}_j,\Delta u^{min}_j, \eta^+$ and $\eta^-$. In this thesis following values were chosen: $\Delta u^0_j = 0.1$, $\Delta u^{max}_j=1.0$, $\Delta u^{min}_j=10^{-7}$, $\eta^+ = 1.2$ and $\eta^- = 0.5$.
 
 %e the assumption of calculating most likely path --> features expected = f(r_exp) instead of sampling as is done in this paper.
 %(Hamiltonian Markov chain Monte Carlo methods = very computation expensive)
@@ -176,7 +176,7 @@ If the derivative retains its sign with respect to the previous iteration, the u
 
 
 \section{Conclusion}
-In order to find parameters of driving comfort that will be used as comfort criteria, a literature study was conducted which was mainly questionnaire based. The results were that to be able to evaluate comfort, higher order kinematic variables like accelerations and jerks must be considered. These variables are important to acquire a smooth vehicle path and to give a continuous and natural feeling when driving. The quickness of the maneuver and the feeling of save driving should also be taken into account. Therefore comfort is naturally influenced by the environment of the vehicle. It was found that when more traffic is present, a higher tolerance for less smooth trajectories is granted. Finally, it was explained that if the goal of the maneuver was more rapidly completed, this influenced the amount of comfort in a positive way.\\
+In order to identify comfort criteria during driving, a literature study was conducted which was mainly questionnaire based. The results were that to be able to evaluate comfort, higher order kinematic variables like accelerations and jerks must be considered. These variables are important to acquire a smooth vehicle path and to give a continuous and natural feeling when driving. The quickness of the maneuver and the feeling of save driving should also be taken into account. Therefore comfort is naturally influenced by the environment of the vehicle. It was found that when more traffic is present, a higher tolerance for less smooth trajectories is granted. Finally, it was explained that if the goal of the maneuver is more rapidly completed, this influences the amount of comfort in a positive way.\\
 
 In the second part of the literature study the concept of inverse optimal control was clarified and it was explained that it is the process of identifying the unknown objective of the human driver. Next, feature based learning has been looked into and a practical method was found in order to retrieve $\bm{\theta}_{opti}$ making use of gradient descent. After this the RPROP algorithm was introduced that will be used to update the weighting factors while making use of the gradient descent method in order to match expected feature values with the observed ones.
 
